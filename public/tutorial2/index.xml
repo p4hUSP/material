@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorial2/</guid>
-      <description>knitr::opts_chunk$set(echo = TRUE)  Começando do zero - O básico do R No tutorial anterior, começamos &amp;ldquo;do meio&amp;rdquo;, ou seja, fizemos a primeira incursão na linguagem R aprendendo um pouco sobre data frames. Esperamos que, com isso, o seu primeiro contato com essa linguagem tenha sido um pouco menos esquisito e até divertido.
+      <description>Começando do zero - O básico do R No tutorial anterior, começamos &amp;ldquo;do meio&amp;rdquo;, ou seja, fizemos a primeira incursão na linguagem R aprendendo um pouco sobre data frames. Esperamos que, com isso, o seu primeiro contato com essa linguagem tenha sido um pouco menos esquisito e até divertido.
 Agora vamos &amp;ldquo;começar do zero&amp;rdquo; e aprender sobre os aspectos elementares da linguagem R para, na etapa seguinte, avançar nosso conhecimento sobre data frames e demais aspectos da linguagem.</description>
     </item>
     

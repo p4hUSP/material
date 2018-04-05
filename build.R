@@ -20,7 +20,9 @@ create_tutoriais <- function(){
   file.remove(file)
 }
 
+create_tutoriais()
+
 #Construir o site
-blogdown::install_hugo(version = "0.38", force = T)
+blogdown::install_hugo(version = "0.22", force = T)
 blogdown::build_site()
 

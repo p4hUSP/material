@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tutorial4/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +15,10 @@
     <item>
       <title>Abrindo Dados no R</title>
       <link>/tutorial4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tutorial4/</guid>
-      <description>Abrindo dados no R Neste tutorial vamos cobrir uma série de métodos disponíveis para abrirmos arquivos de texto. excel e de outros softwares de análise de dadoss no R. Vamos dar atenção aos argumentos das funções de forma a solucionar dificuldades de abertura de dados com diferentes características ou em sistemas operacionais variados.
+      <description>Neste tutorial vamos cobrir uma série de métodos disponíveis para abrirmos arquivos de texto. excel e de outros softwares de análise de dadoss no R. Vamos dar atenção aos argumentos das funções de forma a solucionar dificuldades de abertura de dados com diferentes características ou em sistemas operacionais variados.
 Pacotes no R Antes de avançarmos à tarefa principal, vamos aprender um pouco mais sobre pacotes. Já foi destacado diversas vezes que uma das vantagens do R é a existência de uma comunidade produtiva e que desenvolve continuamente novas funcionalidades, tudo em código aberto.</description>
     </item>
     

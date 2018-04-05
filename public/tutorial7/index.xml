@@ -7,18 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tutorial7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Manipulação de dados em R</title>
+      <title>Dados Relacionais com o Dplyr</title>
       <link>/tutorial7/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tutorial7/</guid>
-      <description>knitr::opts_chunk$set(echo = TRUE)  Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
-O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função fread, disponível no pacote data.</description>
+      <description>Bases de dados relacionais com a gramática básica do pacote dplyr Até agora, partimos de uma única base de dados e fizemos diversas transformações: mudamos de nomes de variáveis, computamos novas variáveis, selecionamos linhas e colunas, agrupamos e ordenamos. A partir de agora vamos aprender a combinar data frames diferentes usando as funções do tipo join do pacote dplyr. Vamos começar carregando o pacote:
+library(dplyr)  Comparação dos pagamentos entre janeiro de 2011 e janeiro de 2017 no Programa Bolsa Família No lugar de uma amostra dos dados, como no tutorial anterior, utilizaremos no começo deste tutorial os dados de pagamento do Programa Bolsa Família em um município de pequeno porte: Borá, cidade do interior de São Paulo.</description>
     </item>
     
   </channel>

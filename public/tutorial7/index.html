@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Manipulação de dados em R - R Sociais</title>
+    <title>Dados Relacionais com o Dplyr - R Sociais</title>
     <meta name="generator" content="Hugo 0.22" />
 
     
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Manipulação de dados em R
+        Dados Relacionais com o Dplyr
       </div>
     </div>
 
@@ -446,397 +446,200 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Manipulação de dados em R </h1>
+			<h1>Dados Relacionais com o Dplyr </h1>
 
 			
 
-<pre><code class="language-r setup, include=FALSE">knitr::opts_chunk$set(echo = TRUE)
+<h2 id="bases-de-dados-relacionais-com-a-gramática-básica-do-pacote-dplyr">Bases de dados relacionais com a gramática básica do pacote dplyr</h2>
+
+<p>Até agora, partimos de uma única base de dados e fizemos diversas transformações: mudamos de nomes de variáveis, computamos novas variáveis, selecionamos linhas e colunas, agrupamos e ordenamos. A partir de agora vamos aprender a combinar <em>data frames</em> diferentes usando as funções do tipo <strong>join</strong> do pacote <em>dplyr</em>. Vamos começar carregando o pacote:</p>
+
+<pre><code class="language-r">library(dplyr)
 </code></pre>
 
-<h1 id="manipulação-de-dados-com-a-gramática-básica-do-pacote-dplyr">Manipulação de dados com a gramática básica do pacote dplyr</h1>
+<h2 id="comparação-dos-pagamentos-entre-janeiro-de-2011-e-janeiro-de-2017-no-programa-bolsa-família">Comparação dos pagamentos entre janeiro de 2011 e janeiro de 2017 no Programa Bolsa Família</h2>
 
-<h2 id="um-primeiro-exemplo">Um primeiro exemplo</h2>
+<p>No lugar de uma amostra dos dados, como no tutorial anterior, utilizaremos no começo deste tutorial os dados de pagamento do Programa Bolsa Família em um município de pequeno porte: Borá, cidade do interior de São Paulo.</p>
 
-<p>Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao <a href="http://www.portaldatransparencia.gov.br/downloads/mensal.asp?c=BolsaFamiliaSacado#exercicios2017">portal da transparência</a>.</p>
+<p>Vamos começar importando os dados do mês de janeiro de cada um dos anos para o município de Borá, que foram extraídos dos dados baixados no Portal da Transparência.</p>
 
-<p>O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função <em>fread</em>, disponível no pacote <em>data.table</em>. Caso você esteja com problemas para abrir a base clique <a href="https://github.com/ngiachetta/ProgCienciasSociais/blob/master/data/AMOSTRA_201701_BolsaFamiliaSacado.csv.zip">aqui</a> para baixar uma amostra do banco. Num futuro breve veremos o que são funções e pacotes. Por enquanto, basta saber que tornamos as funções de um pacote disponíveis se importarmos o pacote para nossa biblioteca usando a função <em>library</em>.</p>
-
-<pre><code class="language-r">library(data.table)
-library(dplyr)
-</code></pre>
-
-<p>Vamos agora abrir os dados com a função <em>fread</em>, que vimos em tutoriais passados. Ob!servação: Fiquem atentos ao diretório em que o arquivo está!</p>
-
-<pre><code class="language-r, include = F">saques &lt;- fread(&quot;/home/acsa/Downloads/201701_BolsaFamiliaSacado.csv&quot;, encoding = &quot;Latin-1&quot;)
-</code></pre>
-
-<pre><code class="language-r, eval = F">saques &lt;- fread(&quot;201701_BolsaFamiliaSacado.csv&quot;, encoding = &quot;Latin-1&quot;)
-</code></pre>
-
-<p>Simples, não? Vamos ver o resultado da importação com a função <em>head</em>, que retorna as 6 primeiras linhas do banco de dados:</p>
-
-<pre><code class="language-r">head(saques)
-</code></pre>
-
-<p>Para checar quantas linhas e colunas há nos dados importados, usamos a função <em>dim</em>:</p>
-
-<pre><code class="language-r">dim(saques)
-</code></pre>
-
-<p>E observar os nomes das variáveis:</p>
-
-<pre><code class="language-r">names(saques)
-</code></pre>
-
-<p>Nomes com espaços, acentos e caracteres especiais são bastante ruins de se trabalhar. Além disso, há um problema nesse banco de dados: a coluna &ldquo;Valor Parcela&rdquo;, que contém os valores sacados, não foi lida automaticamente como número. Assim, vamos renomear algumas variáveis (NIS, UF, Mês do saque e código do município, por exemplo), e vamos construir uma nova variável &ldquo;valor&rdquo;, que contenha números e não números interpretados como texto:</p>
-
-<pre><code class="language-r">saques &lt;- saques %&gt;% 
-  rename(nis = `NIS Favorecido`, uf = UF, munic = `Nome Município`, mes = `Mês Referência Parcela`) %&gt;%
-  mutate(valor = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, saques$`Valor Parcela`)))
-</code></pre>
-
-<p>Se você prestar atenção no código acima, verá que ele é mais simples do que parece. Ele é um exemplo de como podemos usar o pacote <em>dplyr</em> para manipularmos dados.</p>
-
-<p>Agora que as variáveis têm nomes mais curtos e fáceis de trabalhar e a coluna &ldquo;valor&rdquo; foi construída, podemos explorar os dados. Vamos fazer uma tabela de contagem de saques por UF, um histograma com a distribuição dos valores sacados e uma tabela com a soma dos valores por UF.</p>
-
-<p>Primeiro, a tabela que contém a contagem por UF de todos os beneficiários que sacaram em janeiro de 2017:</p>
-
-<pre><code class="language-r">saques %&gt;% group_by(uf) %&gt;% summarise(contagem = n())
-</code></pre>
-
-<p>Vejamos agora a distribuição de valores sacados em janeiro de 2017 em um histograma:</p>
-
-<pre><code class="language-r">hist(saques$valor, main = &quot;Distribuição dos valores sacados em jan/2017&quot;, xlab = &quot;R$&quot;, ylab = &quot;Frequência&quot;)
-</code></pre>
-
-<p>Legal, não?</p>
-
-<p>Finalmente, vamos fazer o somatório dos valores sacado por UF em 2017:</p>
-
-<pre><code class="language-r">saques %&gt;% group_by(uf) %&gt;% summarise(valores = sum(valor))
-</code></pre>
-
-<p>Note que com poucas linhas de código processamos um bocado de dados e geramos informações úteis para a compreensão do programa bolsa família. Em um futuro breve, veremos como organizar, manipular e &ldquo;misturar&rdquo; bases de dados volumosas e extrair informações delas.</p>
-
-<h2 id="introdução-ao-pacote-dplyr">Introdução ao pacote dplyr</h2>
-
-<p>Um dos aspectos mais incríveis da linguagem R é o desenvolvimento de novas funcionalidades pela comunidade de usuários. Algumas das melhores soluções desenvolvidas são relacionadas à &ldquo;gramática para bases de dados&rdquo;, ou seja, à maneira como importamos, organizamos, manipulamos e extraímos informações das bases de dados.</p>
-
-<p>Neste tutorial vamos nos concentrar na &ldquo;gramática&rdquo; mais popular: o pacote <em>dplyr</em>. Já vimos um pouco como ele funciona no exemplo, com dados dos saques do Bolsa Família em janeiro de 2017. Voltemos a este exemplo, mas agora com uma versão mais simples dos dados extraído aleatoriamente do banco original, com apenas 10 mil saques.</p>
+<p>Se você estiver com tempo em sala de aula, faça como exercício a construção desses dados (em vez de baixá-los do repositório do curso). A recomendação é baixar os dados manualmente no Portal da Transparência, abrí-los com a função <em>fread</em> do pacote <em>data.table</em> e selecionar as linhas de Borá com a função <em>filter</em> do pacote <em>dplyr</em>. Se não estiver com tempo, use o código abaixo.</p>
 
 <pre><code class="language-r">library(readr)
-saques_amostra_201701 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv&quot;, delim = &quot;;&quot;, col_names = T)
+pagamentos11 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/pagamentos11.csv&quot;, delim = &quot;;&quot;, col_names = T)
+pagamentos17 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/pagamentos17.csv&quot;, delim = &quot;;&quot;, col_names = T)
 </code></pre>
 
-<p>Para explorar os dados vamos usar uma função nova, <em>glimpse</em>, aplicável a <strong>tibbles</strong>:</p>
+<p>Veja que os dados são semelhantes e têm a mesma estrutura. Esperamos, entretanto, que haja variação entre os anos e que os beneficiários e os valores pagos não sejam os mesmos, seja por que as pessoas entraram e saíram do programa ao longo do tempo, seja por que mudaram de município, seja por que os valores sofreram alteração em virtude de reajuste e mudanças na estrutura das famílias.</p>
 
-<pre><code class="language-r">glimpse(saques_amostra_201701)
-</code></pre>
-
-<h2 id="renomeando-variáveis">Renomeando variáveis</h2>
-
-<p>Com certa frequência, obtemos dados cujos nomes das colunas são compostos, contêm acentuação, cecedilha e demais caracteres especiais. Dá um tremendo trabalho usar nomes com tais característica. O ideal é termos nomes sem espaço (você pode usar ponto ou subscrito para separar palavras em um nome composto), preferencialmente com letras minísculas sem acento e números, apenas. Vamos começar renomeando algumas variáveis no nosso banco de dados, cujos nomes vemos com o comando abaixo:</p>
-
-<pre><code class="language-r">names(saques_amostra_201701)
-</code></pre>
-
-<p>O primeiro argumento da função <em>rename</em> deve ser a base de dados cujos nomes das variáveis serão renomeados. Depois da primeir vírgula, inserimos todos as modificações de nomes, novamente separadas por vírgulas, e da seguinte maneira. Exemplo: nome_novo = nome_velho. Caso os nomes tenha espaço, como no nosso exemplo, é preciso usar o acento agudo antes e depois do nome antigo para que o R entenda onde ele começa e termina. Exemplo: nome|_novo = `Nome Velho`. Veja o exemplo, em que damos novos nomes às variáveis &ldquo;UF&rdquo; e &ldquo;Nome Município&rdquo;</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- rename(saques_amostra_201701, uf = UF, munic = `Nome Município`)
-</code></pre>
+<p>Como descobrir tais mudanças? Como saber quem estava em 2011 e também em 2017? Como calcular a variação dos valores para cada beneficiário?</p>
 
 <h2 id="exercício">Exercício</h2>
 
-<p>Renomeie as variáveis &ldquo;Código SIAFI Município&rdquo;, &ldquo;Nome Favorecido&rdquo;, &ldquo;Valor Parcela&rdquo;, &ldquo;Mês Competência&rdquo; e &ldquo;Data do Saque&rdquo; como &ldquo;cod_munic&rdquo;, &ldquo;nome&rdquo;, &ldquo;valor&rdquo;, &ldquo;mes&rdquo;, &ldquo;data_saque&rdquo;, respectivamente.</p>
+<p>Examine as bases de dados &ldquo;pagamentos11&rdquo; e &ldquo;pagamentos17&rdquo; antes de começarmos a trabalhar com elas. Faça também as seguintes alterações:</p>
 
-<pre><code class="language-r, include = F">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  rename(cod_munic = `Código SIAFI Município`,
-          nome = `Nome Favorecido`, 
-          valor = `Valor Parcela`, 
-          mes = `Mês Competência`,
-          data_saque = `Data do Saque`)
+<ul>
+<li>Renomeie as variáveis &ldquo;NIS Favorecido&rdquo;, &ldquo;Nome Favorecido&rdquo; e &ldquo;Valor Parcela&rdquo; para &ldquo;nis&rdquo;, &ldquo;nome&rdquo; e &ldquo;valor&rdquo;, repectivamente.</li>
+<li>Transforme a variável valor em numérica.</li>
+<li>Selecione apenas as três variáveis renomeadas.</li>
+<li>Quantas linhas tem cada base de dados?</li>
+</ul>
+
+<h2 id="resposta-parcial-ao-exercício-anterior-3-primeiros-itens">Resposta parcial ao exercício anterior (3 primeiros itens)</h2>
+
+<pre><code class="language-r"># 2011
+pagamentos11 &lt;- pagamentos11 %&gt;% 
+  rename(nis = `NIS Favorecido`, nome = `Nome Favorecido`, valor = `Valor Parcela`) %&gt;%
+  mutate(valor = gsub(&quot;,&quot;, &quot;&quot;, valor), valor = as.numeric(valor)) %&gt;%
+  select(nis, nome, valor)
+
+# 2017
+pagamentos17 &lt;- pagamentos17 %&gt;% 
+  rename(nis = `NIS Favorecido`, nome = `Nome Favorecido`, valor = `Valor Parcela`) %&gt;%
+  mutate(valor = gsub(&quot;,&quot;, &quot;&quot;, valor), valor = as.numeric(valor)) %&gt;%
+  select(nis, nome, valor)
 </code></pre>
 
-<h2 id="uma-gramática-duas-formas">Uma gramática, duas formas</h2>
+<h2 id="left-e-right-join">Left e Right Join</h2>
 
-<p>Se voltarmos ao exemplo do começo da apostila, veremos que usamos uma sintaxe ligeiramente diferente para a mesma tarefa, renomear variáveis. Vamos olhar para ela:</p>
+<p>Tendo as bases preparadas e sabendo que os beneficiários variam entre os anos, podemos começar a &ldquo;juntá-las&rdquo;.</p>
 
-<pre><code class="language-r, eval = F">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% rename(uf = UF, munic = `Nome Município`)
+<p>O elemento essencial dos &ldquo;joins&rdquo;, ou seja, das combinações de bases de dados, é que haja uma variável que associe observações em uma base com observações em outras. Algumas variáveis costumam ser candidatas naturais para tal tarefa: CPF, NIS e Título de Eleitor, para indíduos e Código de município e UF para unidades político-administrativas. Mas, veremos adiante, podemos ser criativos e utilizar diversas outras &ldquo;chaves&rdquo; para conectar tabelas. O identificador que temos disponível em nossos dados é o NIS.</p>
+
+<p>&ldquo;Letf join&rdquo; e &ldquo;right join&rdquo; são os nomes dados às combinações que mantém todas as linhas de uma das bases de dados, mesmo sem haver correspondente na outra tabela, e inclui apenas os dados da segunda base que encontram correspondência na primeira tabela.</p>
+
+<p>Vamos operar os dois &ldquo;joins&rdquo; e ver o que ocorre. Primeiro, &ldquo;left join&rdquo;:</p>
+
+<pre><code class="language-r">comb_left &lt;- left_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
 </code></pre>
 
-<p>Usando o operador %&gt;%, denominado <em>pipe</em>, retiramos de dentro da função <em>rename</em> o banco de dados cujas variáveis serão renomeadas. Essa outra sintaxe tem uma vantagem grande sobre a anterior: ela permite emendar uma operação de transformação do banco de dados na outra. Veremos adiante como fazer isso. Por enquanto, tenha em mente que o resultado é o mesmo para qualquer uma das duas formas.</p>
+<p>Veja que informamos ao R que a variável que conecta as tabelas é &ldquo;nis&rdquo; informando o parâmetro &ldquo;by&rdquo;.</p>
 
-<h2 id="selecionando-colunas">Selecionando colunas</h2>
+<p>Quantas linhas resultaram da combinação? Exatamente o mesmo número de linhas de &ldquo;pagamentos11&rdquo;. Use o <em>View</em> para ver o resultado.</p>
 
-<p>Algumas colunas são claramente dispensáveis em nosso banco de dados. Por exemplo, já sabemos que &ldquo;Código Função&rdquo;, &ldquo;Código Subfunção&rdquo;, &ldquo;Código Programa&rdquo; e &ldquo;Código Ação&rdquo; não variam entre as linhas, pois todas se referem ao Programa Bolsa Família. Vamos ficar apenas com as variáveis que já havíamos renomeado.</p>
+<p>Note que há duas variáveis de valor, uma com final &ldquo;.x&rdquo; e outra com o final &ldquo;.y&rdquo;. Isso ocorre por que as duas bases tem os mesmos nomes de variáveis. &ldquo;.x&rdquo; significa que a variável veio da primeira tabela do &ldquo;join&rdquo; e &ldquo;.y&rdquo;, da segunda. O mesmo ocorre com a variável &ldquo;nome&rdquo;. Vamos aproveitar e renomeá-las:</p>
 
-<pre><code class="language-r">saques_amostra_201701 &lt;- select(saques_amostra_201701, uf, munic, cod_munic, nome, valor, mes, data_saque)
+<pre><code class="language-r">comb_left &lt;- comb_left %&gt;% rename(valor11 = valor.x, nome11 = nome.x, 
+                                  valor17 = valor.y, nome17 = nome.y)
 </code></pre>
 
-<p>ou usando o operador %&gt;%, chamado <strong>pipe</strong>,</p>
+<p>Note que em diversas observações o valor e o nome para 2017 contém &ldquo;NA&rdquo;, que é o símbolo do R para &ldquo;missing values&rdquo;. O que isso significa? Significa que aquela observações existia em 2011, mas não em 2017. Ao não encontrar correspondência, o R manteve a observação, mas não inseriu nenhum valor.</p>
 
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% select(uf, munic, cod_munic, nome, valor, mes, data_saque)
+<p>Se o número de linhas da combinação é o mesmo de 2011, onde estão as observações de 2017 que faltam? Não foram incluídas. O &ldquo;left join&rdquo; garante que todas as observações de 2011 sejam mantidas, mesmo sem correspondência, mas exclui todas as observações de 2017 que não encontrem par em 2011.</p>
+
+<p>Vamos deixar de lado rapidamente esta primeira combinação e realizar o &ldquo;right join&rdquo; das mesmas tabelas:</p>
+
+<pre><code class="language-r">comb_right &lt;- right_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
 </code></pre>
 
-<h2 id="operador-para-emendar-tarefas">Operador %&gt;% para &ldquo;emendar&rdquo; tarefas</h2>
+<p>Novamente, vamos renomear as variáveis:</p>
 
-<p>O que o operador <strong>pipe</strong> faz é simplesmente colocar o primeiro argumento da função (no caso acima, o <em>data frame</em>), fora e antes da própria função. Ele permite lermos o código, informalmente, da seguinte maneira: &ldquo;pegue o data frame x e aplique a ele esta função&rdquo;. Veremos abaixo que podemos fazer uma cadeia de operações (&ldquo;pipeline&rdquo;), que pode ser lida informalmente como: &ldquo;pegue o data frame x e aplique a ele esta função, e depois essa, e depois essa outra, etc&rdquo;.</p>
-
-<p>A grande vantagem de trabalharmos com o operador %&gt;% é não precisar repetir o nome do <em>data frame</em> diversas vezes ao aplicarmos a ele um conjunto de operações.</p>
-
-<p>Use o comando <em>rm</em> para deletar a base de dados e abra novamente. Vejamos agora como usamos o operador %&gt;% para &ldquo;emendar&rdquo; tarefas:</p>
-
-<pre><code class="language-r, include = F">saques_amostra_201701 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv&quot;, delim = &quot;;&quot;, col_names = T)
+<pre><code class="language-r">comb_right &lt;- comb_right %&gt;% rename(valor11 = valor.x, nome11 = nome.x, 
+                                    valor17 = valor.y, nome17 = nome.y)
 </code></pre>
 
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  rename(uf = UF, munic = `Nome Município`,
-         cod_munic = `Código SIAFI Município`, nome = `Nome Favorecido`,
-         valor = `Valor Parcela`, mes = `Mês Competência`, data_saque =`Data do Saque`)  %&gt;%
-  select(uf, munic, cod_munic, nome, valor, mes, data_saque)
+<p>Veja que agora há &ldquo;missing values&rdquo; nos valores e nomes de 2011. O &ldquo;right join&rdquo; preserva todas as observações de 2017, mesmo sem correspondência em 2011, e não inclui nenhum de 2011 que não encontre correspondência.</p>
+
+<p>Note que &ldquo;left&rdquo; e &ldquo;right&rdquo; são exatamente a mesma operação, mas com as tabelas em posição (x e y, 1a e 2a, etc) invertidas.</p>
+
+<h2 id="inner-e-full-join">Inner e Full Join</h2>
+
+<p>E se quisermos apenas as observações que estão, com certeza, em ambos os anos? Usamos o &ldquo;inner join&rdquo;. Veja o resultado (já renomeado):</p>
+
+<pre><code class="language-r">comb_inner &lt;- inner_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
+comb_inner &lt;- comb_inner %&gt;% rename(valor11 = valor.x, nome11 = nome.x, 
+                                    valor17 = valor.y, nome17 = nome.y)
 </code></pre>
 
-<p>Em uma única sequência de operações, alteramos os nomes das variáveis e selecionamos as que permaneceriam no banco de dados. Esta forma de programa, tenha certeza, é bastante mais econômica.</p>
+<p>Agora, não há &ldquo;missing values&rdquo;. Permanecem na combinação apenas os casos que estão presentes em ambas tabelas.</p>
 
-<p>Voltemos agora aos dados. Se observarmos as dimensões da nossa base dados, veremos que ela tem 10 mil linhas, mas apenas 7 colunas agora:</p>
+<p>Finalmente, o &ldquo;full join&rdquo; adota o critério oposto: inclui todas as observações de ambos tabelas, não importando se há ou não correspondência, e insere &ldquo;missing values&rdquo; onde não há correspondência:</p>
 
-<pre><code class="language-r">dim(saques_amostra_201701)
+<pre><code class="language-r">comb_full &lt;- full_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
+comb_full &lt;- comb_full %&gt;% rename(valor11 = valor.x, nome11 = nome.x, 
+                                  valor17 = valor.y, nome17 = nome.y)
 </code></pre>
 
-<h2 id="transformando-variáveis">Transformando variáveis</h2>
+<h2 id="semi-e-anti-joins">Semi e anti joins</h2>
 
-<p>Vimos no exemplo que a variável valor, apesar de conter números, foi lida como texto. Isso ocorre por que o R não entende o uso da vírgula como separador de mlhar. Como resolver um problema desses?</p>
+<p>Os quatro tipos de &ldquo;join&rdquo; apresentados anteriormente cobrem a totalidade de situações de combinação entre tabelas a partir de um &ldquo;chave&rdquo;, ou seja, de um índice ou variável que permita estabelecer a relação entre elas.</p>
 
-<p>Usaremos a função <em>mutate</em> para operar transformações nas variáveis existentes e criar variáveis novas. Há inúmeras transformações possíveis e elas lembram bastante as funções de outros softwares, como MS Excel. Vamos ver algumas das mais importantes.</p>
+<p>Há, porém, dois outros tipos de &ldquo;joins&rdquo; disponíveis no R bastante úteis.</p>
 
-<p>Um exemplo simples: vamor gerar uma nova variável com os nomes dos beneficiários em minúsculo usando a função <em>tolower</em>. Veja:</p>
+<p>Se quisermos trabalhar apenas em uma única base de dados, por exemplo, pagamentos11, mas queremos saber quais das observações de 2011 também estão na tabela de 2017, então utilizamos a função <em>semi_join</em>. O resultado será semelhante ao da aplicação de <em>inner_join</em>, mas sem que novas colunas com os dados de 2017 tenham sido criadas:</p>
 
-<pre><code class="language-r">glimpse(saques_amostra_201701)
-saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% mutate(nome_min = tolower(nome))
+<pre><code class="language-r">comb_semi &lt;- semi_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
 </code></pre>
 
-<p>ou, em uma forma alternativa,</p>
+<p>Por fim, <em>anti_join</em>, tem comportamento semelhante a <em>semi_join</em>, mas, em vez de retornar as observações de 2011 que têm correspondência em 2017, retorna as que nâo têm par em 2017:</p>
 
-<pre><code class="language-r">saques_amostra_201701 &lt;-mutate(saques_amostra_201701, nome_min = tolower(nome))
+<pre><code class="language-r">comb_anti &lt;- anti_join(pagamentos11, pagamentos17, by = &quot;nis&quot;)
 </code></pre>
 
-<p>Use o comando View para visualizar o resultado da coluna criada à direita do banco de dados. Simples, não? Basta inserimos dentro do comando mutate a expressão da transformação que queremos.</p>
+<p>É perfeitamente possível usar o operador %&gt;% (pipe, como é chamado), para os &ldquo;joins&rdquo;. Basta colocar a base na posição &ldquo;x&rdquo; (primeira a ser inserida) antes do operador. Veja um exemplo:</p>
 
-<p>Vamos a um exemplo um pouco mais difícil: substituir vírgula por vazio em um texto e, a seguir, indicar que o texto é, na verdade, um número. Em vez de criar uma nova variável &ldquo;valor&rdquo;, vamos apenas alterar a variável já existente duas vezes. Com a função <em>gsub</em>, faremos a substituição da vírgula por vazio e com a função <em>as.numeric</em> faremos a transformação texto-número.</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(valor_num = gsub(&quot;,&quot;, &quot;&quot;, valor)) %&gt;% 
-  mutate(valor_num = as.numeric(valor_num))
+<pre><code class="language-r">comb_left &lt;- pagamentos11 %&gt;% left_join(pagamentos17, by = &quot;nis&quot;)
 </code></pre>
-
-<p>A operação reversa a <em>as.numeric</em>, que transforma número em texto, é <em>as.character</em>. Vamos explorar as funções de texto e tranformação de variáveis em outro tutorial.</p>
-
-<p>Precisamos usar <em>mutate</em> duas vezes? Não. As duas formas abaixo são equivalentes à acima:</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(valor_num = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, valor)))
-</code></pre>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(valor_num = gsub(&quot;,&quot;, &quot;&quot;, valor), valor_num = as.numeric(valor_num))
-</code></pre>
-
-<p>Vamos ver um novo exemplo. Faremos agora duas operações separadas, cada uma resultando em uma nova variável: dividiremos o valor por 3.2 para transformar o valor em dólares; e somaremos R$ 10 ao valor, pelo simples exercício de ver a transformação.</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(valor_dolar = valor / 3.2, valor10 = valor_num + 10)
-</code></pre>
-
-<p>Use o comando <em>View</em> para ver as novas variáveis no banco de dados.</p>
-
-<p>As operações de soma, subtração, divisão, multiplicação, módulo entre mais de uma variável ou entre variáveis e valores são válidas e facilmente executadas como acima mostramos.</p>
-
-<p>Nem todas as transformações de variáveis, porém, são operações matemáticas. Vamos transformar a variável valor em uma nova variável que indique se o valor sacado é &ldquo;Alto&rdquo; (acima de R\$ 300) ou &ldquo;Baixo&rdquo; (abaixo de R\$ 500) com o comando <em>cut</em>:</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(valor_categorico = cut(valor_num, c(0, 300, Inf), c(&quot;Baixo&quot;, &quot;Alto&quot;)))
-</code></pre>
-
-<p>Para entender um pouco mais sobre o comando <em>cut</em> clique <a href="https://www.r-bloggers.com/r-function-of-the-day-cut-2/">aqui</a></p>
-
-<p>E se quisermos recodificar uma variável de texto? Por exemplo, vamos examinar a variável &ldquo;mes&rdquo;. Ela contém o &ldquo;Mês de Competência&rdquo; do saque. Usemos a função <em>table</em> para examiná-la:</p>
-
-<pre><code class="language-r">table(saques_amostra_201701$mes)
-</code></pre>
-
-<p>São 3 valores possíveis em nossa amostra: &ldquo;<sup>11</sup>&frasl;<sub>2016</sub>&rdquo;, &ldquo;<sup>12</sup>&frasl;<sub>2016</sub>&rdquo; e &ldquo;01/2017&rdquo; em nossa amostra. Vamos gerar uma nova variável, ano, que indica apenas se a competência é 2016 ou 2017. Vamos começar fazendo uma cópia da variável original e depois substituiremos cada um dos valores:</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(ano = mes,
-         ano = replace(ano, ano == &quot;11/2016&quot;, &quot;2016&quot;),
-         ano = replace(ano, ano == &quot;12/2016&quot;, &quot;2016&quot;),
-         ano = replace(ano, ano == &quot;01/2017&quot;, &quot;2017&quot;))
-</code></pre>
-
-<p>Um pouco trabalhoso, mas cumpre o objetivo. Uma maneira mais inteligente é usar o comando <em>recode</em>:</p>
-
-<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
-  mutate(ano = recode(mes, &quot;11/2016&quot; = &quot;2016&quot;, &quot;12/2016&quot; = &quot;2016&quot;, &quot;01/2017&quot; = &quot;2017&quot;))
-</code></pre>
-
-<p>Com as operações matemáticas, as transformações <em>as.numeric</em> e <em>as.character</em> e os comandos <em>cut</em>, <em>replace</em> e <em>recode</em> podemos fazer praticamente qualquer recodifição de variáveis que envolva texto e números. A exceção, por enquanto, serão as variáveis da classe <em>factor</em>, que já vimos em tutorais anteriores. Para os interessados em expressões regulares, recomendo a leitura do arquivo &ldquo;help&rdquo; da família da função <em>gsub</em>, que inclui <em>grep</em>, <em>regexpre</em> e outras.</p>
 
 <h2 id="exercício-1">Exercício</h2>
 
-<p>Use os exemplos acima para gerar novas variáveis conforme instruções abaixo:</p>
+<p>Respire fundo e gaste um tempo refletindo sobre os &ldquo;joins&rdquo;. Você acabou de aprender como operar bancos de dados relacionais e pode parecer bastante difícil num primeiro momento.</p>
 
-<ul>
-<li>Faça uma nova divisão da variável &ldquo;valor&rdquo; a seu critério. Chame a nova variável de &ldquo;valor_categorico2&rdquo;.</li>
-<li>Cria uma variável &ldquo;valor_euro&rdquo;, que é o valor calculado em Euros.</li>
-<li>Recodifique &ldquo;valor_categorico&rdquo; chamando as categorias de &ldquo;Abaixo de R\$300&rdquo; e &ldquo;Acima de R\$300&rdquo;. Chame a nova variável de &ldquo;valor_categorico3&rdquo;.</li>
-<li>Usando a função <em>recode</em> Recodifique &ldquo;mes&rdquo; em 3 novos valores: &ldquo;Novembro&rdquo;, &ldquo;Dezembro&rdquo; e &ldquo;Janeiro&rdquo;. Chame a nova variável de &ldquo;mes_novo&rdquo;.</li>
-<li>Usando a função <em>replace</em> Recodifique &ldquo;mes&rdquo; em 3 novos valores: &ldquo;Novembro&rdquo;, &ldquo;Dezembro&rdquo; e &ldquo;Janeiro&rdquo;. Chame a nova variável de &ldquo;mes_novo2&rdquo;.</li>
-</ul>
+<h2 id="combinação-de-tabela-e-agregações-cumulativas">Combinação de tabela e agregações cumulativas</h2>
 
-<h2 id="filtrando-linhas">Filtrando linhas</h2>
-
-<p>Por vezes, queremos trabalhar apenas com um conjunto de linhas do nosso banco de dados. Por exemplo, se quisermos selecionar apenas os beneficiários do estado do Espírito Santo e salvarmos em um objeto chamado saques_amostra_ES:</p>
-
-<pre><code class="language-r">saques_amostra_ES &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;ES&quot;)
-</code></pre>
-
-<p>ou</p>
-
-<pre><code class="language-r">saques_amostra_ES &lt;-filter(saques_amostra_201701, uf == &quot;ES&quot;)
-</code></pre>
-
-<p>Até o uso da função <em>filter</em>, não há nada de novo para nós. A novidade está na condição uf == &ldquo;ES&rdquo;, que indica que apenas as linhas cuja variável <em>uf</em> assumo valor igual a ES devem ser consideradas. Em primeiro lugar, qual é a razão de usarmos duas vezes o sinal de igualdade (==)? Normalmente, usamos um igual para atribuir algo a um nome ou para definir algo igual a um valor. Neste caso, estamos comparando duas coisas, ou seja, estamos verificando se o conteúdo de cada linha é igual a um valor.</p>
-
-<p>Além da igualdade, poderíamos usar outros símbolos: maior (&gt;). maior ou igual (&gt;=), menor (&lt;), menor ou igual (&lt;=) e diferente (!=).</p>
-
-<p>Também utilizamos aspas em &ldquo;ES&rdquo;. Como estamos comparando os valores para cada linha a um texto, devemos usar as aspas.</p>
-
-<p>Vamos supor agora que apenas os estados do Centro-Oeste nos interessam. Vamos criar um novo <em>data frame</em>, chamado saques_amostra_CO, que atenda a este critério:</p>
-
-<pre><code class="language-r">saques_amostra_CO &lt;- saques_amostra_201701 %&gt;% 
-  filter(uf == &quot;MT&quot; | uf == &quot;MS&quot; | uf == &quot;Df&quot; | uf == &quot;GO&quot;)
-</code></pre>
-
-<p>Note que, para dizer que queremos as quatro condições atendidas, utilizamos uma barra vertical. A barra é o símbolo &ldquo;ou&rdquo;, e indica que todas as observações que atenderem a uma ou outra condição serão incluídas.</p>
-
-<p>Vamos supor que queremos estabelecer agora condições para a seleção de linhas a partir de duas variáveis. Por exemplo, queremos incluir observações do Mato Grosso e que também tenham ano de competência (variável que criamos acima) igual a 2016. O símbolo da conjunção &ldquo;e&rdquo; é &ldquo;&amp;&ldquo;. Veja como utilizá-lo:</p>
-
-<pre><code class="language-r">saques_amostra_MT_2016 &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;MT&quot; &amp; ano == &quot;2016&quot;)
-</code></pre>
-
-<p>Ao usar duas variáveis diferentes para filter e a conjunção &ldquo;e&rdquo;, podemos escrever o comando separando as condições por vírgula e dispensar o operador &ldquo;&amp;&rdquo;:</p>
-
-<pre><code class="language-r">saques_amostra_MT_2016 &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;MT&quot;, ano == &quot;2016&quot;)
-</code></pre>
-
-<p>Você pode combinar quantas condições precisar. Se houver ambiguidade quanto à ordem das condições, use parênteses das mesma forma que usamos com operações aritméticas.</p>
+<p>Vamos supor que queremos calcular os valores total, médio, máximo, etc, por município e, a seguir, apresentar esses valores como colunas para cada observação. Uma maneira eficiente de fazer isso é a usando a combinação de tabelas. Vamos er como voltando ao exemplo da amostra de saques do Programa Bolsa Família em 2017.</p>
 
 <h2 id="exercício-2">Exercício</h2>
 
-<ul>
-<li>Crie um novo <em>data frame</em> apenas com as observações cujo mês de competência é janeiro.</li>
-<li>Crie um novo <em>data frame</em> apenas com as observações cujo valor é superior a R\$ 500.</li>
-<li>Crie um novo <em>data frame</em> apenas com as observações da região Sul.</li>
-</ul>
+<p>Abra a base de dados e faça as transformações necessárias (renomear variáveis e transformar a variável valor em numérica) antes de prosseguir. Tente fazê-lo sem olhar a resposta abaixo.</p>
 
-<h2 id="agrupando">Agrupando</h2>
+<h2 id="resposta-ao-exercício-anterior">Resposta ao exercício anterior</h2>
 
-<p>Por enquanto, por mais que transformássemos as variáveis do banco de dados ou selecionássemos linhas, as unidades continuavam a ser os saques realizados por cada beneficiário. E se, no entanto, nos interessar trabalhar no nível mais agregado? Voltemos ao exemplo do início do tutorial.</p>
+<pre><code class="language-r">library(readr)
+saques_amostra_201701 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv&quot;, delim = &quot;;&quot;, col_names = T)
 
-<p>Vamos começar produzindo um novo <em>data frame</em>, mas que agora contenha a informação de quantos saques foram realizados em cada UF:</p>
-
-<pre><code class="language-r">contagem_uf &lt;- saques_amostra_201701 %&gt;% 
-  group_by(uf) %&gt;% 
-  summarise(contagem = n())
+saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  rename(uf = UF, 
+         munic = `Nome Município`,
+         cod_munic = `Código SIAFI Município`, 
+         nome = `Nome Favorecido`,
+         valor = `Valor Parcela`, 
+         mes = `Mês Competência`, 
+         data_saque =`Data do Saque`) %&gt;% 
+  select(uf, munic, cod_munic, nome, valor, mes, data_saque) %&gt;% 
+  mutate(valor_num = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, valor)))
 </code></pre>
 
-<p>Veja que usamos simultaneamente 2 funções, <em>group_by</em> e <em>summarise</em>. Eles tem significado literal: na primeira, inserimos as variáveis pelas quais agruparemos o banco de dados. Na segunda, as operações de &ldquo;sumário&rdquo;, ou seja, de condensação, que faremos com o banco de dados e com as demais variáveis. No exemplo acima, apenas contamos, usando a função n(), quantas linhas pertencem a cada uf, que é a variável de grupo.</p>
+<h2 id="passos-para-agregações-cumulativas">Passos para agregações cumulativas</h2>
 
-<p>Vamos complicar um pouco mais. Suponhamos que, além da contagem, tenhamos interesse na soma, média, mediana, desvio padrão, mínimo, máximo dos valores no mesmo resultado. Neste caso, devemos inserir novas operações na função <em>summarize</em>, separadas por vírgula:</p>
+<p>Em primeiro lugar, vamos construir uma tabela agrupada por município usando <em>group_by</em> e <em>summarise</em>:</p>
 
-<pre><code class="language-r">valores_uf &lt;- saques_amostra_201701 %&gt;% 
-  group_by(uf) %&gt;% 
+<pre><code class="language-r">valores_munic &lt;- saques_amostra_201701 %&gt;% 
+  group_by(cod_munic) %&gt;% 
   summarise(contagem = n(),
-            soma = sum(valor),
-            media = mean(valor),
-            mediana = median(valor),
-            desvio = sd(valor),
-            minimo = min(valor),
-            maximo = max(valor))
+            soma = sum(valor_num),
+            media = mean(valor_num),
+            mediana = median(valor_num),
+            desvio = sd(valor_num),
+            minimo = min(valor_num),
+            maximo = max(valor_num))
 </code></pre>
 
-<p>Use <em>View</em> para observar o resultado.</p>
+<p>Note que agora temos dois <em>data frames</em>, o original e &ldquo;valores_munic&rdquo;, que pode ser combinados utilizando a variável &ldquo;cod_munic&rdquo;. Usando <em>left_join</em> podemos levar as colunas da nova tabela à base de dados original:</p>
 
-<p>A sessão <em>Useful Summary Functions</em> do livro <em>R for Data Science</em> traz uma relação mais completa de funçoes que podem ser usandas com <em>summarise</em>. O <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf">&ldquo;cheatsheet&rdquo; da RStudio</a> oferece uma lista para uso rápido.</p>
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  left_join(valores_munic, by = &quot;cod_munic&quot;)
+</code></pre>
+
+<p>Use <em>View</em> para observar que a base de dados original tem agora 7 novas colunas com informações agregadas por município (e que, portanto, se repetem para observações de um mesmo município).</p>
 
 <h2 id="exercício-3">Exercício</h2>
 
-<p>Usando a variável &ldquo;mes_novo&rdquo;, calcule a contagem, soma e média de valores para cada mês.</p>
-
-<h2 id="mais-de-um-grupo">Mais de um grupo</h2>
-
-<p>E se quisermos agrupar por mais de uma variável? Veja como fazer um agrupamento por &ldquo;mes&rdquo;&rdquo; e &ldquo;uf&rdquo;, reportando apenas a contagem de saques em cada combinação de grupos:</p>
-
-<pre><code class="language-r">contagem_uf_mes &lt;- saques_amostra_201701 %&gt;% 
-  group_by(uf, mes) %&gt;% 
-  summarise(contagem = n())
-</code></pre>
-
-<p>Note que, agora, cada uf é repetida duas ou três vezes, uma para cada mês. Cada grupo gera uma nova coluna e as linhas representam exatamente a combinação de grupos de cada variável presente nos dados.</p>
-
-<p>Finalmente, podemos utilizar múltiplas variáveis de grupo em conjunto e também gerar um sumário com diversas varáveis, como no exemplo a seguir, que combina parte dos dois anteriores:</p>
-
-<pre><code class="language-r">valores_uf_mes &lt;- saques_amostra_201701 %&gt;% 
-  group_by(uf, mes) %&gt;% 
-  summarise(contagem = n(),
-            soma = sum(valor),
-            media = mean(valor),
-            desvio = sd(valor))
-</code></pre>
-
-<h2 id="novo-data-frame-ou-tabela-para-análise">Novo <em>data frame</em> ou tabela para análise?</h2>
-
-<p>O uso das funções <em>group_by</em> e <em>summarise</em> pode ter 2 propósitos: produzir uma tabela para análise, como fizemos acima, ou gerar um novo <em>data frame</em>. Basicamente, os usos dependem do tamanho redução que geramos no banco de dados. Por exemplo, podemos gerar os totais de valores transferidos para cada município (que, se tivessemos o banco completo, geraria um banco de aprox. 5,5 mil linhas) para, a seguir, inserí-lo nos dados originais como coluna. Por enquanto, ainda não aprendemos a relacionar dois <em>data frames</em> entre si, mas vejamos como seria a base de dados com municípios como linhas:</p>
-
-<pre><code class="language-r">saques_amostra_munic &lt;- saques_amostra_201701 %&gt;% 
-  group_by(munic) %&gt;% 
-  summarise(contagem = n(),
-            soma = sum(valor),
-            media = mean(valor))
-</code></pre>
-
-<h2 id="ordenando-a-base-de-dados">Ordenando a base de dados</h2>
-
-<p>Quando trabalhamos com bases de dados muito grandes, faz pouco sentido ordená-las. Entretanto, quando trabalhamos numa escala menor, com poucas linha, como nos exemplos acima, convém ordenar a tabela (veja que, neste ponto, faz pouco sentido diferenciar tabela de <em>data frame</em>, pois tornam-se sinônimos) por alguma variável de interesse.</p>
-
-<p>Se quisermos ordenar, de forma crescente, a tabela de valores por uf pela soma de valores, basta usar o comando <em>arrange</em>:</p>
-
-<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(soma)
-</code></pre>
-
-<p>Apenas para ilustrar, poderíamos ter usado o comando <em>arrange</em> diretamente ao gerar a tabela:</p>
-
-<pre><code class="language-r">valores_uf &lt;- saques_amostra_201701 %&gt;% 
-  group_by(uf) %&gt;% 
-  summarise(contagem = n(),
-            soma = sum(valor),
-            media = mean(valor),
-            mediana = median(valor),
-            desvio = sd(valor),
-            minimo = min(valor),
-            maximo = max(valor)) %&gt;%
-  arrange(soma)
-</code></pre>
-
-<p>Se quisermos rearranjar uma tabela, agora em ordem decrescente de média de valores, por exemplo, usamos <em>desc</em>:</p>
-
-<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(desc(soma))
-</code></pre>
-
-<p>Para usar mais de uma variável ao ordenar, basta colocá-las em ordem de prioridade e separá-las por vírgula. No exemplo abaixo ordenamos pela mediana (descendente) e depois pelo máximo:</p>
-
-<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(desc(mediana), maximo)
-</code></pre>
+<ul>
+<li>Calcule o total de valores por UF em um novo <em>data frame</em>.</li>
+<li>Combine o novo <em>data frame</em> com o original para levar a coluna de total de valores ao último.</li>
+<li>A seguir, calcule quanto cada indivíduo na amostra representa, em termor percentuais (dica: crie uma nova variável utilizando <em>mutate</em>).</li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -855,7 +658,7 @@ saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% mutate(nome_min = tolow
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="../tutorial6/" title="Manipulação de dados em R">
+      <a href="../tutorial1/" title="Começando pelo Meio">
         <span class="direction">
           Previous
         </span>
@@ -865,7 +668,7 @@ saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% mutate(nome_min = tolow
           </div>
           <div class="stretch">
             <div class="title">
-              Manipulação de dados em R
+              Começando pelo Meio
             </div>
           </div>
         </div>
@@ -875,14 +678,14 @@ saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% mutate(nome_min = tolow
 
   <div class="next">
   
-      <a href="../tutorial8/" title="Mapas">
+      <a href="../tutorial13/" title="Funções no R">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Mapas
+              Funções no R
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

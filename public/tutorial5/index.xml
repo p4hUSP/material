@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tutorial5/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +15,7 @@
     <item>
       <title>Manipulação de Dados</title>
       <link>/tutorial5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tutorial5/</guid>
       <description>Manipulação de dados com a gramática básica do R A esta altura do campeonato, você já tem bastante recursos para programar em R. Combinando seu conhecimento sobre vetores, data frames, tipos de dados, loops, condicionais e funções dá para fazer um bocado de coisas legais. Depois deste tutorial, voltaremos a esteś tópicos para exercitar o que aprendemos.

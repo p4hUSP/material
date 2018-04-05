@@ -3,7 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tutorial4/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial1/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial7/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial13/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial6/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial12/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial5/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial8/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial9/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial3/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorial11/</loc>
     <lastmod>2018-04-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -12,40 +67,8 @@
   </url>
   
   <url>
-    <loc>/tutorial4/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial1/</loc>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tutorial3/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial5/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial6/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial7/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial8/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial9/</loc>
   </url>
   
   <url>
@@ -64,39 +87,31 @@
   </url>
   
   <url>
-    <loc>/tutorial11/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial13/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorial12/</loc>
-  </url>
-  
-  <url>
     <loc>/tutorial10/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial11/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial12/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial13/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial1/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,36 +122,43 @@
   
   <url>
     <loc>/tutorial3/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial4/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial5/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial6/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial7/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial8/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tutorial9/</loc>
+    <lastmod>2018-04-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,17 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tutorial6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Manipulação de dados em R</title>
+      <title>Gramática do Dplyr</title>
       <link>/tutorial6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tutorial6/</guid>
-      <description>knitr::opts_chunk$set(echo = TRUE)  Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
+      <description>Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
 O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função fread, disponível no pacote data.</description>
     </item>
     

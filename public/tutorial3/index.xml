@@ -7,17 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tutorial3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Condicionais, loops e funções</title>
+      <title>Teste Lógico</title>
       <link>/tutorial3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tutorial3/</guid>
-      <description>knitr::opts_chunk$set(echo = TRUE)  Botando o computador para trabalhar Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos, cláusulas condicionais, loops e funções.
+      <description>Botando o computador para trabalhar Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos, cláusulas condicionais, loops e funções.
 Neste tutorial faremos uma introdução mais breve e intuitiva. Voltaremos aos 3 últimos assuntos &amp;ndash; condicionais, loops e funções &amp;ndash; no próximo tutorial com um pouco mais de complexidade.</description>
     </item>
     
