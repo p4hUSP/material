@@ -8,8 +8,48 @@
   </url>
   
   <url>
+    <loc>/tutorial10/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial4/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial1/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial3/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial5/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial6/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial7/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial8/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial9/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial2/</loc>
   </url>
   
   <url>
@@ -20,6 +60,83 @@
   
   <url>
     <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial11/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial13/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial12/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorial10/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial11/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial12/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial13/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial1/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial2/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial3/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial4/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial5/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial6/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial7/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial8/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tutorial9/</loc>
     <priority>0</priority>
   </url>
   

@@ -1,8 +1,7 @@
 library(magrittr)
-library(stringr)
-library(readr)
 
-#função para baixar o conteúdo do repositório de materiais
+# 1. Implementar o Conteúdo -----------------------------------------------
+
 create_tutoriais <- function(){
   
   download_url <- "https://github.com/R4CS/material/archive/master.zip"
@@ -13,8 +12,7 @@ create_tutoriais <- function(){
     download_url,
     httr::write_disk(file)
   )
-    
-  
+
   unzip(file, exdir = "./temp")
   
   system('mv ./temp/material-master/content/tutorial* ./content/')
@@ -23,4 +21,6 @@ create_tutoriais <- function(){
 }
 
 #Construir o site
+blogdown::install_hugo(version = "0.38", force = T)
 blogdown::build_site()
+

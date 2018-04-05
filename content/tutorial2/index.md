@@ -1,5 +1,5 @@
 ---
-title: "Operações matemáticas, vetores e matrizes"
+title: "R Básico"
 date: "March 20, 2017"
 ---
 

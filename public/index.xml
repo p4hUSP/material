@@ -6,6 +6,7 @@
     <description>Recent content on R Sociais</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -19,6 +20,133 @@
       <guid>/</guid>
       <description>1. Estrutura do Curso 2. O que é o R 3. Instalando o R 4. Instalando o RStudio 5. Agora é com você!   Bem-vinda ao Curso de Programação para Cientistas Sociais! Estamos muito felizes com a oportunidade de lhe ensinar o pouco do que nós sabemos.
 1. Estrutura do Curso Esse curso tem como bojetivo apresentar as ferramentas básicas disponíveis no R. A aprendizagem será realizada por meio de tutoriais, que podem ser divididos em 4 grandes temas da análise de dados.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/tutorial10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial10/</guid>
+      <description>Tutorial não desenvolvido</description>
+    </item>
+    
+    <item>
+      <title>Abrindo Dados no R</title>
+      <link>/tutorial4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial4/</guid>
+      <description>Abrindo dados no R Neste tutorial vamos cobrir uma série de métodos disponíveis para abrirmos arquivos de texto. excel e de outros softwares de análise de dadoss no R. Vamos dar atenção aos argumentos das funções de forma a solucionar dificuldades de abertura de dados com diferentes características ou em sistemas operacionais variados.
+Pacotes no R Antes de avançarmos à tarefa principal, vamos aprender um pouco mais sobre pacotes. Já foi destacado diversas vezes que uma das vantagens do R é a existência de uma comunidade produtiva e que desenvolve continuamente novas funcionalidades, tudo em código aberto.</description>
+    </item>
+    
+    <item>
+      <title>Básico da Linguagem e Data Frame</title>
+      <link>/tutorial1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial1/</guid>
+      <description>Começando pelo meio: data frames Uma característica distintiva da linguagem de programação R é ter sido desenvolvida para a análise de dados. E quando pensamos em análise de dados, a protagonista do show é a base de dados ou, como vamos conhecer a partir de agora, data frame.
+Por esta razão, em vez de aprender como fazer aritmética, elaborar funções ou executar loops para repetir tarefas e outros aspectos básicos da linguagem, vamos começar olhando para o R como um software concorrente dos demais utilizados para análise de dados em ciências sociais, como SPSS, Stata, SAS e companhia.</description>
+    </item>
+    
+    <item>
+      <title>Condicionais, loops e funções</title>
+      <link>/tutorial3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial3/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)  Botando o computador para trabalhar Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos, cláusulas condicionais, loops e funções.
+Neste tutorial faremos uma introdução mais breve e intuitiva. Voltaremos aos 3 últimos assuntos &amp;ndash; condicionais, loops e funções &amp;ndash; no próximo tutorial com um pouco mais de complexidade.</description>
+    </item>
+    
+    <item>
+      <title>Manipulação de Dados</title>
+      <link>/tutorial5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial5/</guid>
+      <description>Manipulação de dados com a gramática básica do R A esta altura do campeonato, você já tem bastante recursos para programar em R. Combinando seu conhecimento sobre vetores, data frames, tipos de dados, loops, condicionais e funções dá para fazer um bocado de coisas legais. Depois deste tutorial, voltaremos a esteś tópicos para exercitar o que aprendemos.
+Falta, porém, algo essencial e muito próprio da linguagem R: como manipular variáveis e observações em um data frame.</description>
+    </item>
+    
+    <item>
+      <title>Manipulação de dados em R</title>
+      <link>/tutorial6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial6/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)  Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
+O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função fread, disponível no pacote data.</description>
+    </item>
+    
+    <item>
+      <title>Manipulação de dados em R</title>
+      <link>/tutorial7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial7/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)  Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
+O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função fread, disponível no pacote data.</description>
+    </item>
+    
+    <item>
+      <title>Mapas</title>
+      <link>/tutorial8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial8/</guid>
+      <description>Mapas no R Data frames foram, até este momento do curso, o protagonista de nossa análise de dados. Vimos como manipular dados que estão sempre no mesmo formato
+Informação espacial armazenada em data frames - pontos no google maps Vamos começar a trabalhar com mapas a partir de um exemplo que, veremos, utilizará as ferramentas que aprendemos até então para produzir nossos primeiros mapas. Para tanto, vamos utilizar o cadastro de escolas que a Prefeitura Municipal de São Paulo disponibiliza aqui.</description>
+    </item>
+    
+    <item>
+      <title>MySQL e dplyr</title>
+      <link>/tutorial9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial9/</guid>
+      <description>MySQL e dplyr Uma das soluções mais simples para trabalharmos com bases de dados grandes em R é, em vez de carregar os dados na memória, conectar o R a uma fonte remota de dados e usar a gramática que aprendemos nos tutoriais anteriores para manipularmos os dados. Veremos a seguir um exemplo para dados em um servidor MySQL, mas ele vale para outros sistemas de gerenciamento de dados como PostgreSQL, MariaDB ou BigQuery.</description>
+    </item>
+    
+    <item>
+      <title>R Básico</title>
+      <link>/tutorial2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial2/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)  Começando do zero - O básico do R No tutorial anterior, começamos &amp;ldquo;do meio&amp;rdquo;, ou seja, fizemos a primeira incursão na linguagem R aprendendo um pouco sobre data frames. Esperamos que, com isso, o seu primeiro contato com essa linguagem tenha sido um pouco menos esquisito e até divertido.
+Agora vamos &amp;ldquo;começar do zero&amp;rdquo; e aprender sobre os aspectos elementares da linguagem R para, na etapa seguinte, avançar nosso conhecimento sobre data frames e demais aspectos da linguagem.</description>
+    </item>
+    
+    <item>
+      <title>Texto no R</title>
+      <link>/tutorial11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial11/</guid>
+      <description>Texto no R O pacote stringr Webscrapping para capturar material para o tutorial Nossa primeira tarefa será obter um conjunto de textos com o qual trabalharemos. Classicamente, tutoriais de R sobre strings e mineração de texto utilizam &amp;ldquo;corpus&amp;rdquo; (já veremos o que é isso) de literatura clássica.
+Para tornar nosso exemplo mais interessante, vamos utilizar discursos na Câmara dos Deputados. Em particular, vamos raspar todos os discursos da Deputada Luiza Erundina no site da Câmara dos Deputados.</description>
+    </item>
+    
+    <item>
+      <title>Treinando Funções no R</title>
+      <link>/tutorial13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial13/</guid>
+      <description>Treinando funções no R Neste tutorial vamos treinar a construção de funções no R. Cada um dos 7 tópico abaixo contém um desafio de criação de uma função.
+Exercícios de função de programação costumam ser bastante &amp;ldquo;bobos&amp;rdquo;, ou seja, são bons exercícios didáticos, mas não servem para a prática de programação. A necessidade de criar funções aparece somente quando temos um problema prático. É difícil pensar em funções que sirvam para casos gerais, pois estas são justamente as funçõe que provavelmente alguém já implementou.</description>
+    </item>
+    
+    <item>
+      <title>Treinando Gráficos no R</title>
+      <link>/tutorial12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial12/</guid>
+      <description>Treinando gráficos no R Neste tutorial vamos treinar o uso do pacote ggplot2. Diferentemente dos demais tutoriais do curso, o objetivo deste é oferecer desafios, e não códigos. Você deve ver o gráfico e tentar reproduzí-lo. Recomendo que você use a versão deste tutorial em .pdf, que contém os gráficos, e tente criar os gráficos sem ajuda alguma. Ao final do tutorial estão &amp;ldquo;colados&amp;rdquo; os códigos de todos os gráficos, na sequência, para serem consultados em caso de dúvida.</description>
     </item>
     
   </channel>

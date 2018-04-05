@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial12s on R Sociais</title>
+    <link>/tutorial12/</link>
+    <description>Recent content in Tutorial12s on R Sociais</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/tutorial12/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Treinando Gráficos no R</title>
+      <link>/tutorial12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial12/</guid>
+      <description>Treinando gráficos no R Neste tutorial vamos treinar o uso do pacote ggplot2. Diferentemente dos demais tutoriais do curso, o objetivo deste é oferecer desafios, e não códigos. Você deve ver o gráfico e tentar reproduzí-lo. Recomendo que você use a versão deste tutorial em .pdf, que contém os gráficos, e tente criar os gráficos sem ajuda alguma. Ao final do tutorial estão &amp;ldquo;colados&amp;rdquo; os códigos de todos os gráficos, na sequência, para serem consultados em caso de dúvida.</description>
+    </item>
+    
+  </channel>
+</rss>

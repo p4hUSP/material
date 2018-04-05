@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial7s on R Sociais</title>
+    <link>/tutorial7/</link>
+    <description>Recent content in Tutorial7s on R Sociais</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/tutorial7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manipulação de dados em R</title>
+      <link>/tutorial7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorial7/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)  Manipulação de dados com a gramática básica do pacote dplyr Um primeiro exemplo Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao portal da transparência.
+O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função fread, disponível no pacote data.</description>
+    </item>
+    
+  </channel>
+</rss>
