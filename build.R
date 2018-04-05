@@ -1,23 +1,26 @@
 library(magrittr)
 library(stringr)
+library(readr)
 
-tutoriais <- 1:13
-
-create_tutoriais <- function(tutorial){
+#função para baixar o conteúdo do repositório de materiais
+create_tutoriais <- function(){
   
-  dir.create(sprintf("./content/tutorial%s", tutorial))
+  download_url <- "https://github.com/R4CS/material/archive/master.zip"
   
-  tutorial <- as.character(tutorial)
+  file <- tempfile()
   
-  download_url <- str_replace("https://raw.githubusercontent.com/ngiachetta/ProgCienciasSociais/master/tutorials/tutorialNUM.Rmd",
-                              "NUM",
-                              tutorial)
+  res <- httr::GET(
+    download_url,
+    httr::write_disk(file)
+  )
+    
   
-  dest_file <- str_replace("/content/tutorialNUM/", "NUM", tutorial)
+  unzip(file, exdir = "./temp")
   
-  url(download_url)
+  system('mv ./temp/material-master/content/tutorial* ./content/')
+  system('rm -Rf ./temp')
+  file.remove(file)
 }
 
-purrr::walk(tutoriais, create_tutoriais)
-
-dir.create()
+#Construir o site
+blogdown::build_site()

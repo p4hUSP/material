@@ -12,16 +12,16 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
 	# General information
-	author = "Curso de Programação"
+	author = "Curso de Programação para Ciências Sociais"
 	description = "Material do Curso de Programação para Ciências Sociais"
 	copyright = "Released under the MIT license"
 
 	# Repository
 	provider = "GitHub"
-	repo_url = "https://github.com/RCCSilva/materialR"
+	repo_url = "https://github.com/R4CS/site"
 
 	version = ""
-	logo = "images/logo.png"
+	logo = "logo_r4sc.jpg"
 	favicon = ""
 
 	permalink = "#"
@@ -44,8 +44,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [social]
 	twitter = ""
-	github  = "RCCSilva"
-	email   = "programacaosociais@gmail.com"
+	github  = "R4CS"
+	email   = "programacao.sociais@gmail.com"
 
 [[menu.main]]
 	name   = "Primeiros Passos"
@@ -118,8 +118,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	weight = 75
 	
 [[menu.main]]
-	name   = "Teste"
-	url    = "teste/"
+	name   = "E-mails pelo R"
+	url    = "gmailr/"
 	weight = 80
 
 [blackfriday]
