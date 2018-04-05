@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Treinando Funções no R - R Sociais</title>
+    <meta name="generator" content="Hugo 0.38" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial13/">
+    
+    <meta name="author" content="Curso de Programação">
+    
+
+    <meta property="og:url" content="/tutorial13/">
+    <meta property="og:title" content="R Sociais">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="R Sociais">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Treinando Funções no R
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/RCCSilva" title="@RCCSilva on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/RCCSilva/materialR" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>R Sociais </strong>
+        
+          <br>
+          RCCSilva/materialR
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/RCCSilva/materialR/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/RCCSilva/materialR/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Primeiros Passos" href="../">
+	
+	Primeiros Passos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 1" href="../tutorial1/">
+	
+	Tutorial 1
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 2" href="../tutorial2/">
+	
+	Tutorial 2
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 3" href="../tutorial3/">
+	
+	Tutorial 3
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 4" href="../tutorial4/">
+	
+	Tutorial 4
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 5" href="../tutorial5/">
+	
+	Tutorial 5
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 6" href="../tutorial6/">
+	
+	Tutorial 6
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 7" href="../tutorial7/">
+	
+	Tutorial 7
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 8" href="../tutorial8/">
+	
+	Tutorial 8
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 9" href="../tutorial9/">
+	
+	Tutorial 9
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 10" href="../tutorial10/">
+	
+	Tutorial 10
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 11" href="../tutorial11/">
+	
+	Tutorial 11
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 12" href="../tutorial12/">
+	
+	Tutorial 12
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Tutorial 13" href="../tutorial13/">
+	
+	Tutorial 13
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/RCCSilva" target="_blank" title="@RCCSilva on GitHub">
+              @RCCSilva on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacaosociais@gmail.com" title="Email of programacaosociais@gmail.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Treinando Funções no R </h1>
+
+			
+
+<h1 id="treinando-funções-no-r">Treinando funções no R</h1>
+
+<p>Neste tutorial vamos treinar a construção de funções no R. Cada um dos 7 tópico abaixo contém um desafio de criação de uma função.</p>
+
+<p>Exercícios de função de programação costumam ser bastante &ldquo;bobos&rdquo;, ou seja, são bons exercícios didáticos, mas não servem para a prática de programação. A necessidade de criar funções aparece somente quando temos um problema prático. É difícil pensar em funções que sirvam para casos gerais, pois estas são justamente as funçõe que provavelmente alguém já implementou.</p>
+
+<p>Os desafios abaixo são para criação de funções úteis, a maioria delas funções que eu mesmo tive de criar no passado para resolver algum problema.</p>
+
+<p>Vou disponibilizar um gabarito ao final da aula, mas quero mesmo que vocês quebrem a cabeça tentando construir as funções. Algumas terão poucas linhas (as vezes até uma única) de código, mas serão complexas. Outras serão simples, mesmo que você tenha que escrever muito.</p>
+
+<h2 id="normalização-de-variáveis">Normalização de variáveis</h2>
+
+<p>Contrua uma função para &ldquo;normalizar&rdquo; uma variável contínua (ou vetor numérico), ou seja, uma função que subtraia de cada valor $x_i$ da variável $X$ a média $\bar{x}$ e divida pelo desvio padrão $s_x$.</p>
+
+<p>Teste seu dados com as variáveis &ldquo;income&rdquo; e &ldquo;savings&rdquo; do data frame &ldquo;fake_data&rdquo;, utilizado no curso.</p>
+
+<h2 id="remoção-de-acentos-agudos-circunflexos-tils-e-crases">Remoção de acentos agudos, circunflexos, tils e crases</h2>
+
+<p>Construa uma variável que remova de um vetor de texto (ou variável) todos os acentos agudos, circunflexos, tils e crases, sem, no entanto, remover outros caracteres especiais (como cecedilha). Dica: use <em>str_replace_all</em> ou <em>gsub</em>.</p>
+
+<p>Teste seu dados com os discursos da deputada Luiza Erundina, utilizados na aula anterior.</p>
+
+<h2 id="remoção-de-todos-os-caracteres-especiais">Remoção de todos os caracteres especiais</h2>
+
+<p>A função <em>iconv</em> converte o encoding de um texto. &ldquo;ASCII//TRANSLIT&rdquo; é um encoding sem caracteres especiais. Veja seu uso:</p>
+
+<pre><code class="language-r">texto_com_cecedilha_e_acento &lt;- &quot;remoção de caracteres especiais&quot;
+iconv(texto_com_cecedilha_e_acento, to = &quot;ASCII//TRANSLIT&quot;)
+</code></pre>
+
+<p>Crie uma função que remove todos os caracteres especiais de um vetor de texto usando a função iconv e o encoding &ldquo;ASCII//TRANSLIT&rdquo;. Teste seu dados com os discursos da deputada Luiza Erundina, utilizados na aula anterior.</p>
+
+<h2 id="download-unzip">Download + unzip</h2>
+
+<p>Crie uma função que recebe como argumento um endereço url, faz o download do arquivo .zip contido no endereço e descompacta o arquivo. Teste com dados do repositório do TSE.</p>
+
+<h2 id="combinando-arquivos">Combinando arquivos</h2>
+
+<p>Crie uma função que recebe como argumento uma pasta de seu computador que contenha diversos arquivos e combina todos os arquivos com a extensão .txt (e não inclui os demais). Teste com dados do repositório do TSE.</p>
+
+<p>Dica: você precisará usar loop ou funções que fazem iterações (a exemplo das funções da família &ldquo;lapply&rdquo; ou das funções &ldquo;map&rdquo; do pacote <em>purrr</em>).</p>
+
+<h2 id="capturando-beta-de-uma-regressão">Capturando beta de uma regressão</h2>
+
+<p>Para produzir uma regressão linear entre x e y fazemos:</p>
+
+<pre><code class="language-r">reg &lt;- lm(x ~ y, data = my_data)
+</code></pre>
+
+<p>Com o comando abaixo, observamos os coeficientes do modelo estimado:</p>
+
+<pre><code class="language-r">summary(reg)$coefficients
+</code></pre>
+
+<p>Se quisermos apenas o coeficiente de x, por exemplo, fazemos:</p>
+
+<pre><code class="language-r">summary(reg)$coefficients[2,1]
+</code></pre>
+
+<p>Crie uma função que calcula uma regressão linear entre duas variáveis, x e y, retorna um vetor com dois valores, que contém o valor do coeficiente de x e seu respectivo erro padrão, nesta ordem.</p>
+
+<p>Teste seu dados com as variáveis &ldquo;income&rdquo; e &ldquo;savings&rdquo; do data frame &ldquo;fake_data&rdquo;, utilizado no curso.</p>
+
+<h2 id="exportando-gráficos">Exportando gráficos</h2>
+
+<p>Crie uma função que recebe como argumento duas variáveis contínuas, x e y, um título (&ldquo;titulo&rdquo;), um rótulo para a variável x (&ldquo;rotulo_x&rdquo;), um rótulo para a variável y (rotulo_y) e um nome de arquivo (&ldquo;arquivo&rdquo;) e exporta para uma pasta local com nome &ldquo;arquivo&rdquo; um um gráfico de dispersão com uma reta de regressão de y por x, com título e rótulos dos eixos.</p>
+
+<p>Teste seu dados com as variáveis &ldquo;income&rdquo; e &ldquo;savings&rdquo; do data frame &ldquo;fake_data&rdquo;, utilizado no curso.</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial11/" title="Texto no R">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Texto no R
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial12/" title="Treinando Gráficos no R">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Treinando Gráficos no R
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'RCCSilva\/materialR';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

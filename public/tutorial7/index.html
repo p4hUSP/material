@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Manipulação de dados em R - R Sociais</title>
+    <meta name="generator" content="Hugo 0.38" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial7/">
+    
+    <meta name="author" content="Curso de Programação">
+    
+
+    <meta property="og:url" content="/tutorial7/">
+    <meta property="og:title" content="R Sociais">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="R Sociais">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Manipulação de dados em R
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/RCCSilva" title="@RCCSilva on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/RCCSilva/materialR" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>R Sociais </strong>
+        
+          <br>
+          RCCSilva/materialR
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/RCCSilva/materialR/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/RCCSilva/materialR/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Primeiros Passos" href="../">
+	
+	Primeiros Passos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 1" href="../tutorial1/">
+	
+	Tutorial 1
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 2" href="../tutorial2/">
+	
+	Tutorial 2
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 3" href="../tutorial3/">
+	
+	Tutorial 3
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 4" href="../tutorial4/">
+	
+	Tutorial 4
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 5" href="../tutorial5/">
+	
+	Tutorial 5
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 6" href="../tutorial6/">
+	
+	Tutorial 6
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Tutorial 7" href="../tutorial7/">
+	
+	Tutorial 7
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 8" href="../tutorial8/">
+	
+	Tutorial 8
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 9" href="../tutorial9/">
+	
+	Tutorial 9
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 10" href="../tutorial10/">
+	
+	Tutorial 10
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 11" href="../tutorial11/">
+	
+	Tutorial 11
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 12" href="../tutorial12/">
+	
+	Tutorial 12
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 13" href="../tutorial13/">
+	
+	Tutorial 13
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/RCCSilva" target="_blank" title="@RCCSilva on GitHub">
+              @RCCSilva on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacaosociais@gmail.com" title="Email of programacaosociais@gmail.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Manipulação de dados em R </h1>
+
+			
+
+<pre><code class="language-r setup, include=FALSE">knitr::opts_chunk$set(echo = TRUE)
+</code></pre>
+
+<h1 id="manipulação-de-dados-com-a-gramática-básica-do-pacote-dplyr">Manipulação de dados com a gramática básica do pacote dplyr</h1>
+
+<h2 id="um-primeiro-exemplo">Um primeiro exemplo</h2>
+
+<p>Nosso primeiro exemplo será a base de dados dos saques efetuados pelos beneficiários do Bolsa Família em janeiro de 2017. Em primeiro lugar, podemos ir ao <a href="http://www.portaldatransparencia.gov.br/downloads/mensal.asp?c=BolsaFamiliaSacado#exercicios2017">portal da transparência</a>.</p>
+
+<p>O arquivo de 2017 contém 1.6Gb. É um arquivo bastante grande, com 14 variáveis (colunas) e mais de 12 milhões de linhas. Arquivos grandes podem ser abertos no R usando a função <em>fread</em>, disponível no pacote <em>data.table</em>. Caso você esteja com problemas para abrir a base clique <a href="https://github.com/ngiachetta/ProgCienciasSociais/blob/master/data/AMOSTRA_201701_BolsaFamiliaSacado.csv.zip">aqui</a> para baixar uma amostra do banco. Num futuro breve veremos o que são funções e pacotes. Por enquanto, basta saber que tornamos as funções de um pacote disponíveis se importarmos o pacote para nossa biblioteca usando a função <em>library</em>.</p>
+
+<pre><code class="language-r">library(data.table)
+library(dplyr)
+</code></pre>
+
+<p>Vamos agora abrir os dados com a função <em>fread</em>, que vimos em tutoriais passados. Ob!servação: Fiquem atentos ao diretório em que o arquivo está!</p>
+
+<pre><code class="language-r, include = F">saques &lt;- fread(&quot;/home/acsa/Downloads/201701_BolsaFamiliaSacado.csv&quot;, encoding = &quot;Latin-1&quot;)
+</code></pre>
+
+<pre><code class="language-r, eval = F">saques &lt;- fread(&quot;201701_BolsaFamiliaSacado.csv&quot;, encoding = &quot;Latin-1&quot;)
+</code></pre>
+
+<p>Simples, não? Vamos ver o resultado da importação com a função <em>head</em>, que retorna as 6 primeiras linhas do banco de dados:</p>
+
+<pre><code class="language-r">head(saques)
+</code></pre>
+
+<p>Para checar quantas linhas e colunas há nos dados importados, usamos a função <em>dim</em>:</p>
+
+<pre><code class="language-r">dim(saques)
+</code></pre>
+
+<p>E observar os nomes das variáveis:</p>
+
+<pre><code class="language-r">names(saques)
+</code></pre>
+
+<p>Nomes com espaços, acentos e caracteres especiais são bastante ruins de se trabalhar. Além disso, há um problema nesse banco de dados: a coluna &ldquo;Valor Parcela&rdquo;, que contém os valores sacados, não foi lida automaticamente como número. Assim, vamos renomear algumas variáveis (NIS, UF, Mês do saque e código do município, por exemplo), e vamos construir uma nova variável &ldquo;valor&rdquo;, que contenha números e não números interpretados como texto:</p>
+
+<pre><code class="language-r">saques &lt;- saques %&gt;% 
+  rename(nis = `NIS Favorecido`, uf = UF, munic = `Nome Município`, mes = `Mês Referência Parcela`) %&gt;%
+  mutate(valor = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, saques$`Valor Parcela`)))
+</code></pre>
+
+<p>Se você prestar atenção no código acima, verá que ele é mais simples do que parece. Ele é um exemplo de como podemos usar o pacote <em>dplyr</em> para manipularmos dados.</p>
+
+<p>Agora que as variáveis têm nomes mais curtos e fáceis de trabalhar e a coluna &ldquo;valor&rdquo; foi construída, podemos explorar os dados. Vamos fazer uma tabela de contagem de saques por UF, um histograma com a distribuição dos valores sacados e uma tabela com a soma dos valores por UF.</p>
+
+<p>Primeiro, a tabela que contém a contagem por UF de todos os beneficiários que sacaram em janeiro de 2017:</p>
+
+<pre><code class="language-r">saques %&gt;% group_by(uf) %&gt;% summarise(contagem = n())
+</code></pre>
+
+<p>Vejamos agora a distribuição de valores sacados em janeiro de 2017 em um histograma:</p>
+
+<pre><code class="language-r">hist(saques$valor, main = &quot;Distribuição dos valores sacados em jan/2017&quot;, xlab = &quot;R$&quot;, ylab = &quot;Frequência&quot;)
+</code></pre>
+
+<p>Legal, não?</p>
+
+<p>Finalmente, vamos fazer o somatório dos valores sacado por UF em 2017:</p>
+
+<pre><code class="language-r">saques %&gt;% group_by(uf) %&gt;% summarise(valores = sum(valor))
+</code></pre>
+
+<p>Note que com poucas linhas de código processamos um bocado de dados e geramos informações úteis para a compreensão do programa bolsa família. Em um futuro breve, veremos como organizar, manipular e &ldquo;misturar&rdquo; bases de dados volumosas e extrair informações delas.</p>
+
+<h2 id="introdução-ao-pacote-dplyr">Introdução ao pacote dplyr</h2>
+
+<p>Um dos aspectos mais incríveis da linguagem R é o desenvolvimento de novas funcionalidades pela comunidade de usuários. Algumas das melhores soluções desenvolvidas são relacionadas à &ldquo;gramática para bases de dados&rdquo;, ou seja, à maneira como importamos, organizamos, manipulamos e extraímos informações das bases de dados.</p>
+
+<p>Neste tutorial vamos nos concentrar na &ldquo;gramática&rdquo; mais popular: o pacote <em>dplyr</em>. Já vimos um pouco como ele funciona no exemplo, com dados dos saques do Bolsa Família em janeiro de 2017. Voltemos a este exemplo, mas agora com uma versão mais simples dos dados extraído aleatoriamente do banco original, com apenas 10 mil saques.</p>
+
+<pre><code class="language-r">library(readr)
+saques_amostra_201701 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv&quot;, delim = &quot;;&quot;, col_names = T)
+</code></pre>
+
+<p>Para explorar os dados vamos usar uma função nova, <em>glimpse</em>, aplicável a <strong>tibbles</strong>:</p>
+
+<pre><code class="language-r">glimpse(saques_amostra_201701)
+</code></pre>
+
+<h2 id="renomeando-variáveis">Renomeando variáveis</h2>
+
+<p>Com certa frequência, obtemos dados cujos nomes das colunas são compostos, contêm acentuação, cecedilha e demais caracteres especiais. Dá um tremendo trabalho usar nomes com tais característica. O ideal é termos nomes sem espaço (você pode usar ponto ou subscrito para separar palavras em um nome composto), preferencialmente com letras minísculas sem acento e números, apenas. Vamos começar renomeando algumas variáveis no nosso banco de dados, cujos nomes vemos com o comando abaixo:</p>
+
+<pre><code class="language-r">names(saques_amostra_201701)
+</code></pre>
+
+<p>O primeiro argumento da função <em>rename</em> deve ser a base de dados cujos nomes das variáveis serão renomeados. Depois da primeir vírgula, inserimos todos as modificações de nomes, novamente separadas por vírgulas, e da seguinte maneira. Exemplo: nome_novo = nome_velho. Caso os nomes tenha espaço, como no nosso exemplo, é preciso usar o acento agudo antes e depois do nome antigo para que o R entenda onde ele começa e termina. Exemplo: nome|_novo = `Nome Velho`. Veja o exemplo, em que damos novos nomes às variáveis &ldquo;UF&rdquo; e &ldquo;Nome Município&rdquo;</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- rename(saques_amostra_201701, uf = UF, munic = `Nome Município`)
+</code></pre>
+
+<h2 id="exercício">Exercício</h2>
+
+<p>Renomeie as variáveis &ldquo;Código SIAFI Município&rdquo;, &ldquo;Nome Favorecido&rdquo;, &ldquo;Valor Parcela&rdquo;, &ldquo;Mês Competência&rdquo; e &ldquo;Data do Saque&rdquo; como &ldquo;cod_munic&rdquo;, &ldquo;nome&rdquo;, &ldquo;valor&rdquo;, &ldquo;mes&rdquo;, &ldquo;data_saque&rdquo;, respectivamente.</p>
+
+<pre><code class="language-r, include = F">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  rename(cod_munic = `Código SIAFI Município`,
+          nome = `Nome Favorecido`, 
+          valor = `Valor Parcela`, 
+          mes = `Mês Competência`,
+          data_saque = `Data do Saque`)
+</code></pre>
+
+<h2 id="uma-gramática-duas-formas">Uma gramática, duas formas</h2>
+
+<p>Se voltarmos ao exemplo do começo da apostila, veremos que usamos uma sintaxe ligeiramente diferente para a mesma tarefa, renomear variáveis. Vamos olhar para ela:</p>
+
+<pre><code class="language-r, eval = F">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% rename(uf = UF, munic = `Nome Município`)
+</code></pre>
+
+<p>Usando o operador %&gt;%, denominado <em>pipe</em>, retiramos de dentro da função <em>rename</em> o banco de dados cujas variáveis serão renomeadas. Essa outra sintaxe tem uma vantagem grande sobre a anterior: ela permite emendar uma operação de transformação do banco de dados na outra. Veremos adiante como fazer isso. Por enquanto, tenha em mente que o resultado é o mesmo para qualquer uma das duas formas.</p>
+
+<h2 id="selecionando-colunas">Selecionando colunas</h2>
+
+<p>Algumas colunas são claramente dispensáveis em nosso banco de dados. Por exemplo, já sabemos que &ldquo;Código Função&rdquo;, &ldquo;Código Subfunção&rdquo;, &ldquo;Código Programa&rdquo; e &ldquo;Código Ação&rdquo; não variam entre as linhas, pois todas se referem ao Programa Bolsa Família. Vamos ficar apenas com as variáveis que já havíamos renomeado.</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- select(saques_amostra_201701, uf, munic, cod_munic, nome, valor, mes, data_saque)
+</code></pre>
+
+<p>ou usando o operador %&gt;%, chamado <strong>pipe</strong>,</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% select(uf, munic, cod_munic, nome, valor, mes, data_saque)
+</code></pre>
+
+<h2 id="operador-para-emendar-tarefas">Operador %&gt;% para &ldquo;emendar&rdquo; tarefas</h2>
+
+<p>O que o operador <strong>pipe</strong> faz é simplesmente colocar o primeiro argumento da função (no caso acima, o <em>data frame</em>), fora e antes da própria função. Ele permite lermos o código, informalmente, da seguinte maneira: &ldquo;pegue o data frame x e aplique a ele esta função&rdquo;. Veremos abaixo que podemos fazer uma cadeia de operações (&ldquo;pipeline&rdquo;), que pode ser lida informalmente como: &ldquo;pegue o data frame x e aplique a ele esta função, e depois essa, e depois essa outra, etc&rdquo;.</p>
+
+<p>A grande vantagem de trabalharmos com o operador %&gt;% é não precisar repetir o nome do <em>data frame</em> diversas vezes ao aplicarmos a ele um conjunto de operações.</p>
+
+<p>Use o comando <em>rm</em> para deletar a base de dados e abra novamente. Vejamos agora como usamos o operador %&gt;% para &ldquo;emendar&rdquo; tarefas:</p>
+
+<pre><code class="language-r, include = F">saques_amostra_201701 &lt;- read_delim(&quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/saques_amostra_201701.csv&quot;, delim = &quot;;&quot;, col_names = T)
+</code></pre>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  rename(uf = UF, munic = `Nome Município`,
+         cod_munic = `Código SIAFI Município`, nome = `Nome Favorecido`,
+         valor = `Valor Parcela`, mes = `Mês Competência`, data_saque =`Data do Saque`)  %&gt;%
+  select(uf, munic, cod_munic, nome, valor, mes, data_saque)
+</code></pre>
+
+<p>Em uma única sequência de operações, alteramos os nomes das variáveis e selecionamos as que permaneceriam no banco de dados. Esta forma de programa, tenha certeza, é bastante mais econômica.</p>
+
+<p>Voltemos agora aos dados. Se observarmos as dimensões da nossa base dados, veremos que ela tem 10 mil linhas, mas apenas 7 colunas agora:</p>
+
+<pre><code class="language-r">dim(saques_amostra_201701)
+</code></pre>
+
+<h2 id="transformando-variáveis">Transformando variáveis</h2>
+
+<p>Vimos no exemplo que a variável valor, apesar de conter números, foi lida como texto. Isso ocorre por que o R não entende o uso da vírgula como separador de mlhar. Como resolver um problema desses?</p>
+
+<p>Usaremos a função <em>mutate</em> para operar transformações nas variáveis existentes e criar variáveis novas. Há inúmeras transformações possíveis e elas lembram bastante as funções de outros softwares, como MS Excel. Vamos ver algumas das mais importantes.</p>
+
+<p>Um exemplo simples: vamor gerar uma nova variável com os nomes dos beneficiários em minúsculo usando a função <em>tolower</em>. Veja:</p>
+
+<pre><code class="language-r">glimpse(saques_amostra_201701)
+saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% mutate(nome_min = tolower(nome))
+</code></pre>
+
+<p>ou, em uma forma alternativa,</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;-mutate(saques_amostra_201701, nome_min = tolower(nome))
+</code></pre>
+
+<p>Use o comando View para visualizar o resultado da coluna criada à direita do banco de dados. Simples, não? Basta inserimos dentro do comando mutate a expressão da transformação que queremos.</p>
+
+<p>Vamos a um exemplo um pouco mais difícil: substituir vírgula por vazio em um texto e, a seguir, indicar que o texto é, na verdade, um número. Em vez de criar uma nova variável &ldquo;valor&rdquo;, vamos apenas alterar a variável já existente duas vezes. Com a função <em>gsub</em>, faremos a substituição da vírgula por vazio e com a função <em>as.numeric</em> faremos a transformação texto-número.</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(valor_num = gsub(&quot;,&quot;, &quot;&quot;, valor)) %&gt;% 
+  mutate(valor_num = as.numeric(valor_num))
+</code></pre>
+
+<p>A operação reversa a <em>as.numeric</em>, que transforma número em texto, é <em>as.character</em>. Vamos explorar as funções de texto e tranformação de variáveis em outro tutorial.</p>
+
+<p>Precisamos usar <em>mutate</em> duas vezes? Não. As duas formas abaixo são equivalentes à acima:</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(valor_num = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, valor)))
+</code></pre>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(valor_num = gsub(&quot;,&quot;, &quot;&quot;, valor), valor_num = as.numeric(valor_num))
+</code></pre>
+
+<p>Vamos ver um novo exemplo. Faremos agora duas operações separadas, cada uma resultando em uma nova variável: dividiremos o valor por 3.2 para transformar o valor em dólares; e somaremos R$ 10 ao valor, pelo simples exercício de ver a transformação.</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(valor_dolar = valor / 3.2, valor10 = valor_num + 10)
+</code></pre>
+
+<p>Use o comando <em>View</em> para ver as novas variáveis no banco de dados.</p>
+
+<p>As operações de soma, subtração, divisão, multiplicação, módulo entre mais de uma variável ou entre variáveis e valores são válidas e facilmente executadas como acima mostramos.</p>
+
+<p>Nem todas as transformações de variáveis, porém, são operações matemáticas. Vamos transformar a variável valor em uma nova variável que indique se o valor sacado é &ldquo;Alto&rdquo; (acima de R\$ 300) ou &ldquo;Baixo&rdquo; (abaixo de R\$ 500) com o comando <em>cut</em>:</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(valor_categorico = cut(valor_num, c(0, 300, Inf), c(&quot;Baixo&quot;, &quot;Alto&quot;)))
+</code></pre>
+
+<p>Para entender um pouco mais sobre o comando <em>cut</em> clique <a href="https://www.r-bloggers.com/r-function-of-the-day-cut-2/">aqui</a></p>
+
+<p>E se quisermos recodificar uma variável de texto? Por exemplo, vamos examinar a variável &ldquo;mes&rdquo;. Ela contém o &ldquo;Mês de Competência&rdquo; do saque. Usemos a função <em>table</em> para examiná-la:</p>
+
+<pre><code class="language-r">table(saques_amostra_201701$mes)
+</code></pre>
+
+<p>São 3 valores possíveis em nossa amostra: &ldquo;<sup>11</sup>&frasl;<sub>2016</sub>&rdquo;, &ldquo;<sup>12</sup>&frasl;<sub>2016</sub>&rdquo; e &ldquo;01/2017&rdquo; em nossa amostra. Vamos gerar uma nova variável, ano, que indica apenas se a competência é 2016 ou 2017. Vamos começar fazendo uma cópia da variável original e depois substituiremos cada um dos valores:</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(ano = mes,
+         ano = replace(ano, ano == &quot;11/2016&quot;, &quot;2016&quot;),
+         ano = replace(ano, ano == &quot;12/2016&quot;, &quot;2016&quot;),
+         ano = replace(ano, ano == &quot;01/2017&quot;, &quot;2017&quot;))
+</code></pre>
+
+<p>Um pouco trabalhoso, mas cumpre o objetivo. Uma maneira mais inteligente é usar o comando <em>recode</em>:</p>
+
+<pre><code class="language-r">saques_amostra_201701 &lt;- saques_amostra_201701 %&gt;% 
+  mutate(ano = recode(mes, &quot;11/2016&quot; = &quot;2016&quot;, &quot;12/2016&quot; = &quot;2016&quot;, &quot;01/2017&quot; = &quot;2017&quot;))
+</code></pre>
+
+<p>Com as operações matemáticas, as transformações <em>as.numeric</em> e <em>as.character</em> e os comandos <em>cut</em>, <em>replace</em> e <em>recode</em> podemos fazer praticamente qualquer recodifição de variáveis que envolva texto e números. A exceção, por enquanto, serão as variáveis da classe <em>factor</em>, que já vimos em tutorais anteriores. Para os interessados em expressões regulares, recomendo a leitura do arquivo &ldquo;help&rdquo; da família da função <em>gsub</em>, que inclui <em>grep</em>, <em>regexpre</em> e outras.</p>
+
+<h2 id="exercício-1">Exercício</h2>
+
+<p>Use os exemplos acima para gerar novas variáveis conforme instruções abaixo:</p>
+
+<ul>
+<li>Faça uma nova divisão da variável &ldquo;valor&rdquo; a seu critério. Chame a nova variável de &ldquo;valor_categorico2&rdquo;.</li>
+<li>Cria uma variável &ldquo;valor_euro&rdquo;, que é o valor calculado em Euros.</li>
+<li>Recodifique &ldquo;valor_categorico&rdquo; chamando as categorias de &ldquo;Abaixo de R\$300&rdquo; e &ldquo;Acima de R\$300&rdquo;. Chame a nova variável de &ldquo;valor_categorico3&rdquo;.</li>
+<li>Usando a função <em>recode</em> Recodifique &ldquo;mes&rdquo; em 3 novos valores: &ldquo;Novembro&rdquo;, &ldquo;Dezembro&rdquo; e &ldquo;Janeiro&rdquo;. Chame a nova variável de &ldquo;mes_novo&rdquo;.</li>
+<li>Usando a função <em>replace</em> Recodifique &ldquo;mes&rdquo; em 3 novos valores: &ldquo;Novembro&rdquo;, &ldquo;Dezembro&rdquo; e &ldquo;Janeiro&rdquo;. Chame a nova variável de &ldquo;mes_novo2&rdquo;.</li>
+</ul>
+
+<h2 id="filtrando-linhas">Filtrando linhas</h2>
+
+<p>Por vezes, queremos trabalhar apenas com um conjunto de linhas do nosso banco de dados. Por exemplo, se quisermos selecionar apenas os beneficiários do estado do Espírito Santo e salvarmos em um objeto chamado saques_amostra_ES:</p>
+
+<pre><code class="language-r">saques_amostra_ES &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;ES&quot;)
+</code></pre>
+
+<p>ou</p>
+
+<pre><code class="language-r">saques_amostra_ES &lt;-filter(saques_amostra_201701, uf == &quot;ES&quot;)
+</code></pre>
+
+<p>Até o uso da função <em>filter</em>, não há nada de novo para nós. A novidade está na condição uf == &ldquo;ES&rdquo;, que indica que apenas as linhas cuja variável <em>uf</em> assumo valor igual a ES devem ser consideradas. Em primeiro lugar, qual é a razão de usarmos duas vezes o sinal de igualdade (==)? Normalmente, usamos um igual para atribuir algo a um nome ou para definir algo igual a um valor. Neste caso, estamos comparando duas coisas, ou seja, estamos verificando se o conteúdo de cada linha é igual a um valor.</p>
+
+<p>Além da igualdade, poderíamos usar outros símbolos: maior (&gt;). maior ou igual (&gt;=), menor (&lt;), menor ou igual (&lt;=) e diferente (!=).</p>
+
+<p>Também utilizamos aspas em &ldquo;ES&rdquo;. Como estamos comparando os valores para cada linha a um texto, devemos usar as aspas.</p>
+
+<p>Vamos supor agora que apenas os estados do Centro-Oeste nos interessam. Vamos criar um novo <em>data frame</em>, chamado saques_amostra_CO, que atenda a este critério:</p>
+
+<pre><code class="language-r">saques_amostra_CO &lt;- saques_amostra_201701 %&gt;% 
+  filter(uf == &quot;MT&quot; | uf == &quot;MS&quot; | uf == &quot;Df&quot; | uf == &quot;GO&quot;)
+</code></pre>
+
+<p>Note que, para dizer que queremos as quatro condições atendidas, utilizamos uma barra vertical. A barra é o símbolo &ldquo;ou&rdquo;, e indica que todas as observações que atenderem a uma ou outra condição serão incluídas.</p>
+
+<p>Vamos supor que queremos estabelecer agora condições para a seleção de linhas a partir de duas variáveis. Por exemplo, queremos incluir observações do Mato Grosso e que também tenham ano de competência (variável que criamos acima) igual a 2016. O símbolo da conjunção &ldquo;e&rdquo; é &ldquo;&amp;&ldquo;. Veja como utilizá-lo:</p>
+
+<pre><code class="language-r">saques_amostra_MT_2016 &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;MT&quot; &amp; ano == &quot;2016&quot;)
+</code></pre>
+
+<p>Ao usar duas variáveis diferentes para filter e a conjunção &ldquo;e&rdquo;, podemos escrever o comando separando as condições por vírgula e dispensar o operador &ldquo;&amp;&rdquo;:</p>
+
+<pre><code class="language-r">saques_amostra_MT_2016 &lt;- saques_amostra_201701 %&gt;% filter(uf == &quot;MT&quot;, ano == &quot;2016&quot;)
+</code></pre>
+
+<p>Você pode combinar quantas condições precisar. Se houver ambiguidade quanto à ordem das condições, use parênteses das mesma forma que usamos com operações aritméticas.</p>
+
+<h2 id="exercício-2">Exercício</h2>
+
+<ul>
+<li>Crie um novo <em>data frame</em> apenas com as observações cujo mês de competência é janeiro.</li>
+<li>Crie um novo <em>data frame</em> apenas com as observações cujo valor é superior a R\$ 500.</li>
+<li>Crie um novo <em>data frame</em> apenas com as observações da região Sul.</li>
+</ul>
+
+<h2 id="agrupando">Agrupando</h2>
+
+<p>Por enquanto, por mais que transformássemos as variáveis do banco de dados ou selecionássemos linhas, as unidades continuavam a ser os saques realizados por cada beneficiário. E se, no entanto, nos interessar trabalhar no nível mais agregado? Voltemos ao exemplo do início do tutorial.</p>
+
+<p>Vamos começar produzindo um novo <em>data frame</em>, mas que agora contenha a informação de quantos saques foram realizados em cada UF:</p>
+
+<pre><code class="language-r">contagem_uf &lt;- saques_amostra_201701 %&gt;% 
+  group_by(uf) %&gt;% 
+  summarise(contagem = n())
+</code></pre>
+
+<p>Veja que usamos simultaneamente 2 funções, <em>group_by</em> e <em>summarise</em>. Eles tem significado literal: na primeira, inserimos as variáveis pelas quais agruparemos o banco de dados. Na segunda, as operações de &ldquo;sumário&rdquo;, ou seja, de condensação, que faremos com o banco de dados e com as demais variáveis. No exemplo acima, apenas contamos, usando a função n(), quantas linhas pertencem a cada uf, que é a variável de grupo.</p>
+
+<p>Vamos complicar um pouco mais. Suponhamos que, além da contagem, tenhamos interesse na soma, média, mediana, desvio padrão, mínimo, máximo dos valores no mesmo resultado. Neste caso, devemos inserir novas operações na função <em>summarize</em>, separadas por vírgula:</p>
+
+<pre><code class="language-r">valores_uf &lt;- saques_amostra_201701 %&gt;% 
+  group_by(uf) %&gt;% 
+  summarise(contagem = n(),
+            soma = sum(valor),
+            media = mean(valor),
+            mediana = median(valor),
+            desvio = sd(valor),
+            minimo = min(valor),
+            maximo = max(valor))
+</code></pre>
+
+<p>Use <em>View</em> para observar o resultado.</p>
+
+<p>A sessão <em>Useful Summary Functions</em> do livro <em>R for Data Science</em> traz uma relação mais completa de funçoes que podem ser usandas com <em>summarise</em>. O <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf">&ldquo;cheatsheet&rdquo; da RStudio</a> oferece uma lista para uso rápido.</p>
+
+<h2 id="exercício-3">Exercício</h2>
+
+<p>Usando a variável &ldquo;mes_novo&rdquo;, calcule a contagem, soma e média de valores para cada mês.</p>
+
+<h2 id="mais-de-um-grupo">Mais de um grupo</h2>
+
+<p>E se quisermos agrupar por mais de uma variável? Veja como fazer um agrupamento por &ldquo;mes&rdquo;&rdquo; e &ldquo;uf&rdquo;, reportando apenas a contagem de saques em cada combinação de grupos:</p>
+
+<pre><code class="language-r">contagem_uf_mes &lt;- saques_amostra_201701 %&gt;% 
+  group_by(uf, mes) %&gt;% 
+  summarise(contagem = n())
+</code></pre>
+
+<p>Note que, agora, cada uf é repetida duas ou três vezes, uma para cada mês. Cada grupo gera uma nova coluna e as linhas representam exatamente a combinação de grupos de cada variável presente nos dados.</p>
+
+<p>Finalmente, podemos utilizar múltiplas variáveis de grupo em conjunto e também gerar um sumário com diversas varáveis, como no exemplo a seguir, que combina parte dos dois anteriores:</p>
+
+<pre><code class="language-r">valores_uf_mes &lt;- saques_amostra_201701 %&gt;% 
+  group_by(uf, mes) %&gt;% 
+  summarise(contagem = n(),
+            soma = sum(valor),
+            media = mean(valor),
+            desvio = sd(valor))
+</code></pre>
+
+<h2 id="novo-data-frame-ou-tabela-para-análise">Novo <em>data frame</em> ou tabela para análise?</h2>
+
+<p>O uso das funções <em>group_by</em> e <em>summarise</em> pode ter 2 propósitos: produzir uma tabela para análise, como fizemos acima, ou gerar um novo <em>data frame</em>. Basicamente, os usos dependem do tamanho redução que geramos no banco de dados. Por exemplo, podemos gerar os totais de valores transferidos para cada município (que, se tivessemos o banco completo, geraria um banco de aprox. 5,5 mil linhas) para, a seguir, inserí-lo nos dados originais como coluna. Por enquanto, ainda não aprendemos a relacionar dois <em>data frames</em> entre si, mas vejamos como seria a base de dados com municípios como linhas:</p>
+
+<pre><code class="language-r">saques_amostra_munic &lt;- saques_amostra_201701 %&gt;% 
+  group_by(munic) %&gt;% 
+  summarise(contagem = n(),
+            soma = sum(valor),
+            media = mean(valor))
+</code></pre>
+
+<h2 id="ordenando-a-base-de-dados">Ordenando a base de dados</h2>
+
+<p>Quando trabalhamos com bases de dados muito grandes, faz pouco sentido ordená-las. Entretanto, quando trabalhamos numa escala menor, com poucas linha, como nos exemplos acima, convém ordenar a tabela (veja que, neste ponto, faz pouco sentido diferenciar tabela de <em>data frame</em>, pois tornam-se sinônimos) por alguma variável de interesse.</p>
+
+<p>Se quisermos ordenar, de forma crescente, a tabela de valores por uf pela soma de valores, basta usar o comando <em>arrange</em>:</p>
+
+<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(soma)
+</code></pre>
+
+<p>Apenas para ilustrar, poderíamos ter usado o comando <em>arrange</em> diretamente ao gerar a tabela:</p>
+
+<pre><code class="language-r">valores_uf &lt;- saques_amostra_201701 %&gt;% 
+  group_by(uf) %&gt;% 
+  summarise(contagem = n(),
+            soma = sum(valor),
+            media = mean(valor),
+            mediana = median(valor),
+            desvio = sd(valor),
+            minimo = min(valor),
+            maximo = max(valor)) %&gt;%
+  arrange(soma)
+</code></pre>
+
+<p>Se quisermos rearranjar uma tabela, agora em ordem decrescente de média de valores, por exemplo, usamos <em>desc</em>:</p>
+
+<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(desc(soma))
+</code></pre>
+
+<p>Para usar mais de uma variável ao ordenar, basta colocá-las em ordem de prioridade e separá-las por vírgula. No exemplo abaixo ordenamos pela mediana (descendente) e depois pelo máximo:</p>
+
+<pre><code class="language-r">valores_uf &lt;- valores_uf %&gt;% arrange(desc(mediana), maximo)
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial6/" title="Manipulação de dados em R">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Manipulação de dados em R
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial8/" title="Mapas">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Mapas
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'RCCSilva\/materialR';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

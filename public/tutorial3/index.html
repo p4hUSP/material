@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Condicionais, loops e funções - R Sociais</title>
+    <meta name="generator" content="Hugo 0.38" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial3/">
+    
+    <meta name="author" content="Curso de Programação">
+    
+
+    <meta property="og:url" content="/tutorial3/">
+    <meta property="og:title" content="R Sociais">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="R Sociais">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Condicionais, loops e funções
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/RCCSilva" title="@RCCSilva on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/RCCSilva/materialR" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>R Sociais </strong>
+        
+          <br>
+          RCCSilva/materialR
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/RCCSilva/materialR/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/RCCSilva/materialR/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Primeiros Passos" href="../">
+	
+	Primeiros Passos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 1" href="../tutorial1/">
+	
+	Tutorial 1
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 2" href="../tutorial2/">
+	
+	Tutorial 2
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Tutorial 3" href="../tutorial3/">
+	
+	Tutorial 3
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 4" href="../tutorial4/">
+	
+	Tutorial 4
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 5" href="../tutorial5/">
+	
+	Tutorial 5
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 6" href="../tutorial6/">
+	
+	Tutorial 6
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 7" href="../tutorial7/">
+	
+	Tutorial 7
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 8" href="../tutorial8/">
+	
+	Tutorial 8
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 9" href="../tutorial9/">
+	
+	Tutorial 9
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 10" href="../tutorial10/">
+	
+	Tutorial 10
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 11" href="../tutorial11/">
+	
+	Tutorial 11
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 12" href="../tutorial12/">
+	
+	Tutorial 12
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 13" href="../tutorial13/">
+	
+	Tutorial 13
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/RCCSilva" target="_blank" title="@RCCSilva on GitHub">
+              @RCCSilva on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacaosociais@gmail.com" title="Email of programacaosociais@gmail.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Condicionais, loops e funções </h1>
+
+			
+
+<pre><code class="language-r setup, include=FALSE">knitr::opts_chunk$set(echo = TRUE)
+</code></pre>
+
+<h1 id="botando-o-computador-para-trabalhar">Botando o computador para trabalhar</h1>
+
+<p>Se há um tutorial sobre lógica de programação, é este. Os tópicos deste tutorial são os mais importantes para que possamos escrever algoritmos e botar o computador para fazer o que sabe de melhor: repetir instruções e tarefas. Veremos, em primeiro lugar, operadores relacionais e lógicos, cláusulas condicionais, loops e funções.</p>
+
+<p>Neste tutorial faremos uma introdução mais breve e intuitiva. Voltaremos aos 3 últimos assuntos &ndash; condicionais, loops e funções &ndash; no próximo tutorial com um pouco mais de complexidade.</p>
+
+<h2 id="operadores-relacionais">Operadores relacionais</h2>
+
+<p>Uma das especialidades do computador é verificar se proposições simples são verdadeiras ou falsas. <strong>Operadores relacionais</strong> servem para verificar se objetos são iguais, diferentes, maiores ou menores. São seis operadores relacionais e a tabela abaixo apresenta os seus símbolos.</p>
+
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th align="center">Símbolo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Igual</td>
+<td align="center">==</td>
+</tr>
+
+<tr>
+<td>Diferente</td>
+<td align="center">!=</td>
+</tr>
+
+<tr>
+<td>Maior</td>
+<td align="center">&gt;</td>
+</tr>
+
+<tr>
+<td>Maior ou igual</td>
+<td align="center">&gt;=</td>
+</tr>
+
+<tr>
+<td>Menor</td>
+<td align="center">&lt;</td>
+</tr>
+
+<tr>
+<td>Menor ou igual</td>
+<td align="center">&lt;=</td>
+</tr>
+</tbody>
+</table>
+
+<p>Não discutiremos todas as regras de comparação de objetos, mas passaremos por um conjunto grande de exemplos a partir do qual elas podem ser inferidas.</p>
+
+<p>Vamos começar com alguns exemplos simples:</p>
+
+<pre><code class="language-r">42 == 41
+42 != 41
+(2 + 2) == (3 + 1)
+(2 + 2) != (3 + 1)
+5 &gt; 3
+5 &lt; 3
+42 &gt; 42
+42 &lt; 41
+42 &gt;= 42
+42 &lt;= 41
+</code></pre>
+
+<p>Antes de avanças, tenha certeza que entendeu os exemplos acima.</p>
+
+<p>Operadores relacionais também vale para textos:</p>
+
+<pre><code class="language-r">&quot;texto&quot; == &quot;texto&quot;
+&quot;texto&quot; == &quot;texTo&quot;
+&quot;texto&quot; != &quot;texto&quot;
+</code></pre>
+
+<p>Note no segundo exemplo que o R é &ldquo;case sensitive&rdquo;, ou seja, diferencia maiúsculas de minúsculas ao comparar textos.</p>
+
+<p>Textos também podem ser ordenados:</p>
+
+<pre><code class="language-r">&quot;a&quot; &gt; &quot;b&quot;
+&quot;a&quot; &lt; &quot;b&quot;
+&quot;A&quot; &lt; &quot;b&quot;
+&quot;A&quot; &gt; &quot;a&quot;
+</code></pre>
+
+<p>Inclusive palavras inteiras e sentenças:</p>
+
+<pre><code class="language-r">&quot;cachorro&quot; &lt; &quot;cachorro quente&quot;
+&quot;churrasco de gato&quot; &gt;  &quot;cachorro quente&quot;
+</code></pre>
+
+<p>E valores lógicos? Veja se entende o que acontece nos exemplos abaixo:</p>
+
+<pre><code class="language-r">TRUE == 1
+FALSE == 0
+TRUE &gt; FALSE
+</code></pre>
+
+<p>Podemos comparar valores armazenados em variáveis da mesma maneira que fizemos nos exemplos até aqui:</p>
+
+<pre><code class="language-r">x &lt;- 5
+y &lt;- 10
+x &gt; y
+</code></pre>
+
+<h2 id="operadores-relacionais-e-vetores">Operadores relacionais e vetores</h2>
+
+<p>É possível comparar um vetor com um valor. Neste caso, cada elemento do vetor é comparado individualmente ao valor e o resultado é um vetor lógico de tamanho igual ao vetor comparado.</p>
+
+<pre><code class="language-r">votos16 &lt;- c(1030, 551, 992, 345, 203, 2037)
+votos16 &gt;= 1000
+</code></pre>
+
+<p>Vamos usar o vetor &ldquo;votos16&rdquo;, que contém votos de candidatos fictícios em 2016, com os votos dos mesmo candidatos em 2012:</p>
+
+<pre><code class="language-r">votos12 &lt;- c(890, 354, 950, 400, 50, 3416)
+votos16 &gt; votos12
+</code></pre>
+
+<p>Veja que, na comparação entre dois vetores, os elementos são comparados par a par de acordo com a sua posição no vetor. O vetor lógico resultante tem o mesmo tamanho dos vetores comparados.</p>
+
+<h2 id="operadores-lógicos-booleanos">Operadores Lógicos (Booleanos)</h2>
+
+<p>É perfeitamente possível combinar proposições com os <strong>operadores lógicos</strong> &ldquo;e&rdquo;, &ldquo;ou&rdquo; e &ldquo;não&rdquo;:</p>
+
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th align="center">Símbolo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>E</td>
+<td align="center">&amp;</td>
+</tr>
+
+<tr>
+<td>Ou</td>
+<td align="center">|</td>
+</tr>
+
+<tr>
+<td>Não</td>
+<td align="center">!</td>
+</tr>
+</tbody>
+</table>
+
+<p>Por exemplo, se queremos verificar todos os candidatos que obtivaram acima de 500 (exclusive) <strong>E</strong> abaixo de 1500 (inclusive) votos, fazemos:</p>
+
+<pre><code class="language-r">votos16 &gt; 500 &amp; votos16 &lt;= 1500
+</code></pre>
+
+<p>Veja a tabela de possibilidades de combinação de duas proposições com a conjunção &ldquo;e&rdquo;:</p>
+
+<p>| Proposição 1 | Proposição 2 | Combinação |
+| &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;- |
+| TRUE         | TRUE         | TRUE       |<br />
+| TRUE         | FALSE        | FALSE      |
+| FALSE        | TRUE         | FALSE      |
+| FALSE        | FALSE        | FALSE      |</p>
+
+<p>Se o valor atende às duas condições, então o resultado é TRUE. Se ao menos uma proposição é falsa, sob a conjunção é, então a combinação das proposições também é.</p>
+
+<p>Com o operador &ldquo;Ou&rdquo;, a combinação de proposições é verdadeira se pelo menos uma delas for verdadeira.</p>
+
+<pre><code class="language-r">votos16 &lt; 500 | votos12 &gt; 1500
+</code></pre>
+
+<p>Veja a tabela de possibilidades de combinação de duas proposições com a conjunção &ldquo;ou&rdquo;:</p>
+
+<p>| Proposição 1 | Proposição 2 | Combinação |
+| &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;- |
+| TRUE         | TRUE         | TRUE       |<br />
+| TRUE         | FALSE        | TRUE       |
+| FALSE        | TRUE         | TRUE       |
+| FALSE        | FALSE        | FALSE      |</p>
+
+<p>Finalmente, o operador lógico &ldquo;não&rdquo; tem a única função de reverter um proposição:</p>
+
+<pre><code class="language-r">!TRUE
+!(5 &gt; 3)
+!(votos16 &gt; 500 &amp; votos16 &lt;= 1500)
+</code></pre>
+
+<p>Lembre-se que, quando trabalhamos com vetores lógicos, podemos tratá-los como se fossem zeros e uns, tal qual no exemplo:</p>
+
+<pre><code class="language-r">sum(votos16 &gt; votos12)
+</code></pre>
+
+<h2 id="cláusulas-condicionais">Cláusulas condicionais</h2>
+
+<p>Um dos usos mais importantes dos operadores relacionais e lógicos é na construção de <strong>cláusulas condicionais</strong>, &ldquo;if&rdquo;, &ldquo;else&rdquo; e &ldquo;else if&rdquo;. Elas são fundamentais para a construção de funções e algoritmos. Veja um uso simples do condicional <em>if</em>, para o cálculo do valor absoluto de uma variável:</p>
+
+<pre><code class="language-r"># exemplo com x negativo
+x &lt;- -23
+
+if (x &lt; 0){
+  x &lt;- -x
+}
+
+print(x)
+
+# exemplo com x positivo
+x &lt;- 23
+
+if (x &lt; 0){
+  x &lt;- -x
+}
+
+print(x)
+
+</code></pre>
+
+<p>A condição que o <em>if</em> deve atender vem entre parênteses. A instrução a ser atendida caso a cláusula seja verdadeira, vem dentro das chaves. Aliás, é boa prática (na maioria dos casos) abrir as chaves em uma linha, escrever as instruções em outra, e fechar as chaves na linha seguinte ao fim das instruções, como no exemplo. Também é boa prática &ldquo;identar&rdquo;, ou seja, desalinhar as instruções do restante do código. Falaremos sobre &ldquo;estilo&rdquo; em algum momento do curso, Por enquanto, apenas observe e não se assuste. Diferentemente de outras linguagens, R não requer identação para funcionar.</p>
+
+<p>Vamos supor que um candidato teve determinada quantia de votos. Ele precisava de 700 para ser eleito. Vamos criar uma nova variável, &ldquo;status&rdquo;, que receberá valor &ldquo;eleito&rdquo; se &ldquo;votos&rdquo; for maior que 700. Supondo que o candidato recebeu 800 votos, fazemos:</p>
+
+<pre><code class="language-r">votos &lt;- 800
+
+if (votos &gt; 700){
+  status &lt;- &quot;eleito&quot;
+}
+
+print(status)
+
+</code></pre>
+
+<p>Mas e se quisermos dar o valor &ldquo;nao eleito&rdquo; a &ldquo;status&rdquo; caso ele não tenha recebido mais de 700 votos? Usamos <em>else</em> para indicar o que fazer em todos os casos em que a condição em <em>if</em> não foi atendida.</p>
+
+<pre><code class="language-r">if (votos &gt; 700){
+  status &lt;- &quot;eleito&quot;
+} else {
+  status &lt;- &quot;nao eleito&quot;
+}
+
+print(status)
+</code></pre>
+
+<p>Por fim, vamos imaginar um regra mais complexa. Se o total de &ldquo;votos&rdquo; do candidato for maior que 1200, então ele está eleito. Se a votação tiver ficado entre 700 (exclusive) e 1200 (inclusive), ele recebe &ldquo;status&rdquo; igual a &ldquo;suplente&rdquo;. Com 700 votos ou menos, o &ldquo;status&rdquo; é não eleito.</p>
+
+<p>Veja como traduzir a regra acima em código usando <em>if</em>, <em>else if</em> e <em>else</em>.</p>
+
+<pre><code class="language-r">if (votos &gt; 1200){
+  status &lt;- &quot;eleito&quot;
+} else if (votos &gt; 700  &amp; votos &lt;= 1200){
+  status &lt;- &quot;suplente&quot;
+} else {
+  status &lt;- &quot;nao eleito&quot;
+}
+
+print(status)
+</code></pre>
+
+<p>Outro exemplos simples do uso de condicionais, agora com variável de texto e cláusulas</p>
+
+<pre><code class="language-r">partido &lt;- &quot;PMDB&quot;
+
+if (partido == &quot;PMDB&quot; | partido == &quot;PSD&quot; | partido == &quot;DEM&quot;) {
+  print(&quot;governo&quot;)
+} else {
+  print(&quot;oposição&quot;)
+}
+</code></pre>
+
+<p>É possível complicar bastante o uso dos condicionais &ldquo;aninhando&rdquo; uma cláusula dentro da outra e criando labirintos de condições. Fazer isso, porém, é mais uma questão de lógica do que de uso da linguagem. Não há variações relevantes do uso em relação aos exemplos simples apresentados acima. Se você consegue fazer os condicionais em papel e caneta, então consegue fazê-los em R se os exemplos anteriores tiverem ficado claro.</p>
+
+<h2 id="exercício">Exercício</h2>
+
+<ul>
+<li>Anote quantos cafés você no fim de semana</li>
+<li>Reprense com condicionais a regra: se você tomou 3 ou mais, imprima &ldquo;Hummm, café!&rdquo;. Se você tomou menos de 3, imprima &ldquo;zzzzzz&rdquo;.</li>
+</ul>
+
+<h2 id="repetindo-tarefas-while-loop">Repetindo tarefas - while loop</h2>
+
+<p>Uma das vantagens dos computadores em relação aos seres humanos é a capacidade de repetir tarefas a um custo baixo. Vamos ver um exemplo simples: contar até 42. Usaremos como recurso um <em>while</em> loop, ou seja, daremos um estado inicial, uma condição e uma instrução para o computador e pediremos para ele repetir <strong>enquanto</strong> a instrução enquanto a condição não for atendida.</p>
+
+<p>Nosso caso, a instrução será: imprima o número &ldquo;atual&rdquo; (você já entenderá isso), armazenado na variável &ldquo;contador&rdquo;, e some mais um. A condição será: enquanto a variável &ldquo;contador&rdquo; for menor ou igual a 42. Se vamos começar a contar a partir do 1, nosso estado inicial será igualar o &ldquo;contador&rdquo; a um Veja:</p>
+
+<pre><code class="language-r">contador &lt;- 1
+
+while (contador &lt;= 42) {
+  print(contador)
+  contador &lt;- contador + 1
+}
+
+print(contador)
+
+</code></pre>
+
+<p>Traduzindo para o português: &ldquo;enquanto o contador for menor ou igual a 42, imprima e some um&rdquo;. A estrutura de um <em>while</em> loop é sempre: &ldquo;enquanto&rdquo; (condição), &ldquo;faça&rdquo;.</p>
+
+<p>Veja que, precisamos planejar muito bem o <em>while</em> loop. Se, por exemplo, esquecermos de pensar como a condição inicial será alterada a cada <strong>iteração</strong> (sem o &ldquo;n&rdquo; mesmo, pois é diferente de &ldquo;interação&rdquo;), corremos o risco de criar um &ldquo;loop infinito&rdquo;. O critério de parada (condição entre parênteses)</p>
+
+<p>Vamos complicar. Seguiremos contando até 42, mas todas as vezes em que o número for par (ou seja, múltiplo de 2), deixaremos de imprimir o número. Como fazer isso? Com <em>if</em>.</p>
+
+<p>Dica: para saber se um número é divisível por outro, basta usar o resto da divisão (consulte o tutorial anterior %%) e checar se é igual a zero.</p>
+
+<pre><code class="language-r">contador &lt;- 1
+
+while (contador &lt;= 42) {
+  if ((contador %% 2) != 0){
+    print(contador)
+  }
+  contador &lt;- contador + 1
+}
+
+print(contador)
+</code></pre>
+
+<p>Veja que temos agora um código &ldquo;aninhado&rdquo;, pois colocamos um condicional dentro de um loop. Novamente, combinar estruturas de código são mais um problema de lógica do que de linguagem e, se você consegue fazer no papel, consegue traduzir para o R.</p>
+
+<p>Faremos exercícios com loops e condicionais no futuro.</p>
+
+<h2 id="repetindo-tarefas-for-loop">Repetindo tarefas - for loop</h2>
+
+<p>E se em vez de repetir uma tarefa até atingir uma condição já soubermos quantas vezes queremos repetí-la? Neste caso, podemos usar o <em>for</em> loop. O loop não será mais do tipo &ldquo;enquanto x faça y&rdquo; mas &ldquo;para todo i em a até b&rdquo;. Veja como o exemplo de contar até 42 ficaria com <em>for</em> loop:</p>
+
+<pre><code class="language-r">for (i in 1:42){
+  print(i)
+}
+</code></pre>
+
+<p>Neste caso, lemos &ldquo;para cada i em 1 até 42, faça&rdquo;. O que o <em>for</em> loop faz é variar o i a cada iteração de acordo com a sequência estabelecida. Outro exemplo, agora na ordem reversa:</p>
+
+<pre><code class="language-r">for (i in 10:-10){
+  print(i)
+}
+</code></pre>
+
+<p>Agora com a condição de não imprimir os pares:</p>
+
+<pre><code class="language-r">for (i in 1:42){
+  if((i %% 2) != 0){
+    print(i)
+  }
+}
+</code></pre>
+
+<p><em>for</em> loops não precisam ser apenas com números. Na verdade, você pode colocar após o &ldquo;in&rdquo; qualquer vetor. Por exemplo, um vetor das regiões brasileiras (ou UFs, se você tiver paciência de escrever todas):</p>
+
+<pre><code class="language-r">vetor_regioes &lt;- c(&quot;norte&quot;, &quot;nordeste&quot;, &quot;sudeste&quot;,&quot;sul&quot;, &quot;centro-oeste&quot;)
+
+for (regiao in vetor_regioes){
+  print(regiao)
+}
+</code></pre>
+
+<p>Se você já trabalhou com dados eleitorais brasileiros, você certamente teve de abrir diversos arquivos semelhantes, cada um contendo informações de um estado brasileiro. Ou ainda, se você já obteve informações na internet, talvez tenha precisado &ldquo;passar&rdquo; por diversas páginas semelhantes. Loops resolvem problemas desse tipo: eles repetem procedimentos variando apenas um índice. Aprender a usar loops economiza um tempo enorme, pois conseguimos automatizar tarefas ou, pelo menos, escrever um código mais curto para aplicar o mesmo comando inúmeras vezes.</p>
+
+<p>Vamos para por aqui com <em>loops</em> e voltaremos a eles para fazermos exercícios.</p>
+
+<h2 id="escrevendo-funções">Escrevendo funções</h2>
+
+<p>Ao longo dos três tutorais que fizemos, usamos diversas funções e já estamos acostumados com elas. Vamos agora aprender a construir funções simples. Vamos do exemplo à aplicação e nosso exemplo será um conversos de farenheit para celsius:</p>
+
+<pre><code class="language-r">conversor &lt;- function(farenheit){
+  celsius &lt;- ((farenheit - 32) / 9) * 5
+  return(celsius)
+}
+
+conversor(212)
+conversor(32)
+</code></pre>
+
+<p>Temos vários elementos no &ldquo;construtor&rdquo; de funções. Em primeiro lugar, criamos a função como criamos um objeto. Quer dizer, escolhemos um nome para ela e atribuímos a função criada a esse nome.</p>
+
+<p>Para criar uma função, usamos <em>function</em>. Basicamente, o &ldquo;construtor&rdquo; tem duas partes: or argumentos da função, que inserimos no parênteses após <em>function</em>; e o corpo da função, que utiliza os argumentos para realizar uma tarefa e retorna um resultado, indicado pela função <em>return</em>.</p>
+
+<h2 id="exercício-1">Exercício</h2>
+
+<p>Crie uma função chamada &ldquo;quadrado&rdquo; que recebe um número &ldquo;x&rdquo; e retorna o quadrado de x.</p>
+
+<h2 id="reposta">Reposta</h2>
+
+<pre><code class="language-r">quadrado &lt;- function(x){
+  resultado &lt;- x * x
+  return(resultado)
+}
+
+quadrado(4)
+quadrado(17)
+</code></pre>
+
+<h2 id="exercício-2">Exercício</h2>
+
+<ul>
+<li>Crie uma função que recebe um valor em reais e retorna o valor em dólares (use a 3.2 como cotação do dólar)</li>
+<li>Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares.</li>
+</ul>
+
+<h2 id="reposta-do-segundo-item">Reposta do segundo item</h2>
+
+<pre><code class="language-r">conversor_moeda &lt;- function(valor, cotacao){
+  dolares &lt;- valor / cotacao
+  return(dolares)
+}
+
+conversor_moeda(42, 3.2)
+</code></pre>
+
+<h2 id="paramos-por-aqui">Paramos por aqui</h2>
+
+<p>Hoje percorremos um caminho longo no aprendizado da linguagem R. Vamos parar por aqui para respirar e assentar o que aprendemos.</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial1/" title="Básico da Linguagem e Data Frame">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Básico da Linguagem e Data Frame
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial5/" title="Manipulação de Dados">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Manipulação de Dados
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'RCCSilva\/materialR';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

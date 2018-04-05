@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Operações matemáticas, vetores e matrizes - R Sociais</title>
+    <meta name="generator" content="Hugo 0.38" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial2/">
+    
+    <meta name="author" content="Curso de Programação">
+    
+
+    <meta property="og:url" content="/tutorial2/">
+    <meta property="og:title" content="R Sociais">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="R Sociais">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Operações matemáticas, vetores e matrizes
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/RCCSilva" title="@RCCSilva on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/RCCSilva/materialR" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>R Sociais </strong>
+        
+          <br>
+          RCCSilva/materialR
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/RCCSilva/materialR/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/RCCSilva/materialR/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Primeiros Passos" href="../">
+	
+	Primeiros Passos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 1" href="../tutorial1/">
+	
+	Tutorial 1
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Tutorial 2" href="../tutorial2/">
+	
+	Tutorial 2
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 3" href="../tutorial3/">
+	
+	Tutorial 3
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 4" href="../tutorial4/">
+	
+	Tutorial 4
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 5" href="../tutorial5/">
+	
+	Tutorial 5
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 6" href="../tutorial6/">
+	
+	Tutorial 6
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 7" href="../tutorial7/">
+	
+	Tutorial 7
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 8" href="../tutorial8/">
+	
+	Tutorial 8
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 9" href="../tutorial9/">
+	
+	Tutorial 9
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 10" href="../tutorial10/">
+	
+	Tutorial 10
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 11" href="../tutorial11/">
+	
+	Tutorial 11
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 12" href="../tutorial12/">
+	
+	Tutorial 12
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 13" href="../tutorial13/">
+	
+	Tutorial 13
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/RCCSilva" target="_blank" title="@RCCSilva on GitHub">
+              @RCCSilva on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacaosociais@gmail.com" title="Email of programacaosociais@gmail.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Operações matemáticas, vetores e matrizes </h1>
+
+			
+
+<pre><code class="language-r setup, include=FALSE">knitr::opts_chunk$set(echo = TRUE)
+</code></pre>
+
+<h1 id="começando-do-zero-o-básico-do-r">Começando do zero - O básico do R</h1>
+
+<p>No tutorial anterior, começamos &ldquo;do meio&rdquo;, ou seja, fizemos a primeira incursão na linguagem R aprendendo um pouco sobre <em>data frames</em>. Esperamos que, com isso, o seu primeiro contato com essa linguagem tenha sido um pouco menos esquisito e até divertido.</p>
+
+<p>Agora vamos &ldquo;começar do zero&rdquo; e aprender sobre os aspectos elementares da linguagem R para, na etapa seguinte, avançar nosso conhecimento sobre <em>data frames</em> e demais aspectos da linguagem.</p>
+
+<h2 id="operações-matemáticas-e-vetores-atômicos">Operações matemáticas e vetores atômicos</h2>
+
+<p>R serve como calculadora é bastante simples realizar operações matemáticas.</p>
+
+<p>Soma:</p>
+
+<pre><code class="language-r">42 + 84
+</code></pre>
+
+<p>Subtração:</p>
+
+<pre><code class="language-r">84 - 42
+</code></pre>
+
+<p>Multiplicação</p>
+
+<pre><code class="language-r">42 * 2
+</code></pre>
+
+<p>Divisão:</p>
+
+<pre><code class="language-r">42 / 6
+</code></pre>
+
+<p>Potência:</p>
+
+<pre><code class="language-r">2 ^ 5
+</code></pre>
+
+<p>Divisão inteira (sem resto):</p>
+
+<pre><code class="language-r">42 %/% 5
+</code></pre>
+
+<p>Resto da divisão:</p>
+
+<pre><code class="language-r">42 %% 5
+</code></pre>
+
+<p>Nos exemplos acima realizamos operações bastante simples sem usar objetos, ou, como costumamos chamar, variáveis. Note que há dois usos para a palavra &ldquo;variável&rdquo;. O primeiro deles, que vimos no tutorial anterior, é o sinônimo de coluna em um <em>data frame</em>, e registra uma característica específica para todas as observações (por exemplo, a coluna com idade em um <em>data frame</em> com indivíduos).</p>
+
+<p>O outro uso é sinônimo de objeto no R. Nos referimos à &ldquo;variável x&rdquo;, quando atribuímos algo &ndash; um número ou um texto, por exemplo &ndash; a &ldquo;x&rdquo;.</p>
+
+<p>Nos tutoriais, vamos fazer uso de variável com ambos significados. Fique atent@, mas com o tempo você se acostumará.</p>
+
+<p>Voltando às operações matemáticas, vamos criar uma variável &ldquo;x&rdquo; com o valor 42. Ao criar uma variável que armazena apenas um número, estamos criando um vetor atômico (pois, vetores atômicos são os vetores de tamanho 1).</p>
+
+<pre><code class="language-r">x &lt;- 42
+</code></pre>
+
+<p>Lembre-se: podemos usar o &ldquo;&lt;-&rdquo; ou &ldquo;=&rdquo; para fazermos uma atribuição:</p>
+
+<pre><code class="language-r">x = 42
+</code></pre>
+
+<p>No entanto, vale a pena usar &ldquo;&lt;-&rdquo; para não confundir os usos de &ldquo;=&rdquo;, que também é usado para estabelecer valores nos argumentos de uma função.</p>
+
+<p>Podemos imprimir o valor de uma variável no console simplesmente digitando seu nome:</p>
+
+<pre><code class="language-r">x
+</code></pre>
+
+<p>Em várias outras linguagens, e em R inclusive, usa-se a função <em>print</em> para imprimir os valores de uma variável:</p>
+
+<pre><code class="language-r">print(x)
+</code></pre>
+
+<p>Quando usar print? Veremos no futuro que, dependendo da situação (por exemplo, dentro de funções), é preciso explicitar que queremos &ldquo;imprimir&rdquo; algo, e, nestes casos, usamos a função <em>print</em>.</p>
+
+<p>Vamos criar mais uma variável, y, e fazer operações com variáveis:</p>
+
+<pre><code class="language-r">y &lt;- 5
+
+x + y
+x - y
+x / y
+x * y
+</code></pre>
+
+<p>Podemos armazenar o resultado de uma operação matemática em uma variável. Veja os exemplos:</p>
+
+<pre><code class="language-r">z1 &lt;- 42 / 3
+z2 &lt;- x + y
+z3 &lt;- ((x / 5 ) * 9) + 32
+</code></pre>
+
+<p>Veja que na última operação utilizamos diversos parênteses. (Ei! A fórmula acima é conhecida, não?) As regras para o uso de parênteses no R em operações matemáticas são semelhantes às da aritmética &ldquo;de papel e caneta&rdquo;. Os parênteses são executados sempre de dentro para fora. Aliás, essa regra vale em geral no R, ou seja, para aplicação de quaisquer funções, e não apenas para as operações matemáticas.</p>
+
+<h2 id="classes-dos-vetores-atômicos">Classes dos vetores atômicos</h2>
+
+<p>Há três <strong>classes</strong> fundamentais para os vetores atômicos. Vamos criar três variáveis e examinar suas classes:</p>
+
+<pre><code class="language-r">numero_pi &lt;- 3.14
+texto &lt;- &quot;Meu texto&quot;
+verdadeiro &lt;- TRUE
+</code></pre>
+
+<p>Usamos a função <em>class</em> para examinar a classe de um objeto:</p>
+
+<pre><code class="language-r">class(numero_pi)
+class(texto)
+class(verdadeiro)
+</code></pre>
+
+<p>Auto-explicativo, certo?</p>
+
+<h2 id="mais-um-pouco-sobre-vetores">Mais um pouco sobre vetores</h2>
+
+<p>Aproveitando o embalo dos vetores atômicos, vamos ver um pouco mais sobre vetores de tamanho maior que 1. Alguns exemplos e suas classes:</p>
+
+<pre><code class="language-r">vetor_numerico &lt;- c(42, 7, 999, 3.14)
+vetor_texto &lt;- c(&quot;texto&quot;, &quot;a&quot;, 'jota', &quot;Miriam&quot;, &quot;4&quot;)
+vetor_logico &lt;- c(TRUE, FALSE, F, F, T)
+class(vetor_numerico)
+class(vetor_texto)
+class(vetor_logico)
+</code></pre>
+
+<p>Detalhes para observarmos:</p>
+
+<ul>
+<li>No caso do vetor numérico, não importa se usamos números com casas decimais.</li>
+<li>Para vetores do tipo &ldquo;character&rdquo;, não importa o que há dentro dos parêntese. Tudo é texto.</li>
+<li>Você pode usar TRUE ou T, FALSE ou F, alternadamente. O R entende o que você quer dizer. Lembre-se de sempre usar maiúsculas.</li>
+</ul>
+
+<h2 id="exercícios">Exercícios:</h2>
+
+<p>Qual é a classe dos vetores abaixo? Imprima o vetor com <em>print</em> e tente advinhar. Use a função <em>class</em> para descobrir a resposta.</p>
+
+<pre><code class="language-r">v1 &lt;- c(1, 2, TRUE, 4)
+v2 &lt;- c(&quot;T&quot;, &quot;TRUE&quot;, &quot;FALSE&quot;, &quot;T&quot;)
+v3 &lt;- c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;)
+v4 &lt;- c(1, &quot;4&quot;, 4, 1)
+v5 &lt;- c(1, 2, &quot;feijao com arroz&quot;)
+v6 &lt;- c(&quot;Beatriz&quot;, &quot;Pedro&quot;, TRUE)
+v7 &lt;- c(T, T, F, T, F, F, 42)
+</code></pre>
+
+<p>Você consegue identificar as regras de combinação de tipos de dados diferentes em um mesmo vetor? Se tiver dúvidas, pergunte.</p>
+
+<h2 id="sequências">Sequências</h2>
+
+<p>Dá um trabalho danada criar uma sequência de números de, por exemplo, 42 a 66. Ou sequências ainda maiores. Uma maneira simples (mas não a única), de gerar uma sequência de inteiros em R é utilizar &ldquo;:&ldquo;. Veja o exemplo:</p>
+
+<pre><code class="language-r">sequencia &lt;- 42:66
+print(sequencia)
+</code></pre>
+
+<p>A sequência pode ter ordem reversa:</p>
+
+<pre><code class="language-r">sequencia_reversa &lt;- 10:1
+print(sequencia_reversa)
+</code></pre>
+
+<p>Podemos combinar sequências que contém um intervalo, ou mesmo sequências que se sobrepõe, em um único vetor:</p>
+
+<pre><code class="language-r">sequencia_intervalo &lt;- c(1:10, 20:30)
+print(sequencia_intervalo)
+sequencia_sobreposicao &lt;- c(10:20, 15:25)
+print(sequencia_sobreposicao)
+</code></pre>
+
+<h2 id="operações-matemáticas-com-vetores">Operações matemáticas com vetores</h2>
+
+<p>Ei, você advinhou a fórmula de conversão de temperatura de celsius para farenheit um pouco acima no tutorial? Bem, vamos usá-la num exemplo.</p>
+
+<p>Comecemos com um vetor de temperaturas médias dos meses de dezembro a abril em um lugar qualquer do hemisfério Norte:</p>
+
+<pre><code class="language-r">temperatura_celsius &lt;- c(-7, -10, 5, 12, 21)
+</code></pre>
+
+<p>Da mesma maneira que com vetores atômicos, podemos aplicar as operações matemáticas a vetores maiores. Por exemplo, vamos converter os valores do vetor &ldquo;temperatura_celsius&rdquo; para farenheit:</p>
+
+<pre><code class="language-r">temperatura_farenheit &lt;- ((temperatura_celsius / 5) * 9) + 32
+</code></pre>
+
+<p>Veja que as operações são aplicadas a todos os elementos do vetor.</p>
+
+<h2 id="nomes-do-vetor">Nomes do vetor</h2>
+
+<p>Aproveitando o exemplo, os elementos de um vetor podem ser nomeados. O vetor &ldquo;temperatura_celsius&rdquo;, por enquanto, não tem nome:</p>
+
+<pre><code class="language-r">names(temperatura_celsius)
+</code></pre>
+
+<p>(Ei, já usamos a função <em>names</em> no passado para ver o nome das colunas de um <em>data frame</em>).</p>
+
+<p>Se quiseremos atribuir os nomes aos elementos de &ldquo;temperatura_celsius&rdquo;, atribuimos um vetor a &ldquo;names(temperatura_celsius)&ldquo;. Esse uso da linguagem é um pouco estranho, pois estamos atribuindo algo a uma função de um objeto, não a um objeto.</p>
+
+<p>Uma maneira de pensar esse uso menos confusa, é imaginar que um objeto tem várias partes e que estamos atribuindo algo a uma parte específica &ndash; os nomes dos elementos, no caso &ndash; deste objeto. Veja:</p>
+
+<pre><code class="language-r">names(temperatura_celsius) &lt;- c(&quot;dezembro&quot;, &quot;janeiro&quot;, &quot;fevereiro&quot;, &quot;março&quot;, &quot;abril&quot;)
+</code></pre>
+
+<p>Outra forma, mais elegante, de nomear os elementos de um vetor é criar um novo vetor com os nomes, tal como abaixo&hellip;</p>
+
+<pre><code class="language-r">meses_experimento &lt;- c(&quot;dezembro&quot;, &quot;janeiro&quot;, &quot;fevereiro&quot;, &quot;março&quot;, &quot;abril&quot;)
+</code></pre>
+
+<p>&hellip; e a seguir atribuir aos nomes dos elementos do vetor existente (no nosso caso, temperatura_celsius):</p>
+
+<pre><code class="language-r">names(temperatura_celsius) &lt;- meses_experimento
+</code></pre>
+
+<p>A vantagem deste processo é poder usar mais de uma vez o vetor de nomes sem precisar escrevê-lo novamente, como faremos no exemplo abaixo.</p>
+
+<h2 id="operações-entre-vetores">Operações entre vetores</h2>
+
+<p>Criemos dois vetores, cada um registrando os gastos com sorvete e café de um pessoa em cada dia da semana, sábado e domingo, inclusive:</p>
+
+<pre><code class="language-r">semana_1 &lt;- c(32, 20, 15, 20, 18, 19, 40)
+semana_2 &lt;- c(32, 21, 12, 12, 24, 21, 50)
+</code></pre>
+
+<p>Antes de seguir com as operações entre os vetores, vamos nomear seus elementos. Vale a penas criar um único vetor, &ldquo;dias_da_semana&rdquo;, e atribuir aos nomes dos elementos dos vetores de dados de gasto com sorvete e café:</p>
+
+<pre><code class="language-r">dias_da_semana &lt;- c(&quot;Domingo&quot;, &quot;Segunda&quot;, &quot;Terca&quot;, &quot;Quarta&quot;, &quot;Quinta&quot;, &quot;Sexta&quot;, &quot;Sabado&quot;)
+names(semana_1) &lt;- dias_da_semana 
+names(semana_2) &lt;- dias_da_semana
+</code></pre>
+
+<p>Operações entre vetores seguem a mesma lógica das operações com vetores atômicos e com vetores e números, com a ressalva de que as operações são realizadas &ldquo;pareando&rdquo; os elementos dos vetores. Dito de outra forma, ao somarmos dois vetores, por exemplo, o vetor resultante terá na primeira posição a soma dos elementos da primeira posição dos vetores originais, a segunda posição terá a soma dos elementos da segunda posição dos vetores originais e assim por diante. Executando o exemplo:</p>
+
+<pre><code class="language-r">soma_semanas &lt;- semana_1 + semana_2
+print(soma_semanas)
+</code></pre>
+
+<p>Note que, como os vetores originais já estavam nomeados e os elementos em cada posição tinham o mesmo nome, o vetor resultante também já está nomeado.</p>
+
+<p>É bastante simples criar um vetor que seja a combinação de dois vetores. Por exemplo, se quisermos juntar as duas semanas em um único vetor, usamos a função <em>c</em>:</p>
+
+<pre><code class="language-r">duas_semanas &lt;- c(semana_1, semana_2)
+</code></pre>
+
+<h2 id="subconjunto-de-um-vetor-parte-1">Subconjunto de um vetor - parte 1</h2>
+
+<p>E se quisermos extrair elementos em apenas uma ou algumas posições de um vetor?</p>
+
+<p>(Ei, esta é uma parte bem importante da linguagem R).</p>
+
+<p>Quando queremos selecionar elementos de um vetor (ou, no futuro, de uma matriz ou de um <em>data frame</em>) usamos colchetes [] ao final do objeto. Vetores são objetos com uma única dimensão, então tudo que precisamos fazer é colocar o número da posição que queremos dentro dos colchetes. Chamamos esse procedimento em inglês de &ldquo;subset&rdquo; (no português, &ldquo;selecionar um subconjunto&rdquo;).</p>
+
+<p>Para extrair o primeiro dia do vetor com dados da semana 1 (domingo):</p>
+
+<pre><code class="language-r">semana_1[1]
+</code></pre>
+
+<p>Ou, para extrair o final de semana (domingo na posição 1 e sábado na posição 7):</p>
+
+<pre><code class="language-r">semana_1[c(1,7)]
+</code></pre>
+
+<p>Ou ainda, os dias úteis da semana:</p>
+
+<pre><code class="language-r">semana_1[2:6]
+</code></pre>
+
+<p>Se os elementos do vetor estiverem adequadamente nomeados, podemos usar seus nomes no lugar de suas posições. Repetindo os dois primeiros exemplos imediatamente acima temos:</p>
+
+<pre><code class="language-r">semana_1[&quot;Domingo&quot;]
+semana_1[c(&quot;Domingo&quot;, &quot;Sabado&quot;)]
+</code></pre>
+
+<p>Podemos usar um vetor para nos auxíliar a produzir o subconjunto:</p>
+
+<pre><code class="language-r">dias_uteis &lt;- c(&quot;Segunda&quot;, &quot;Terca&quot;, &quot;Quarta&quot;, &quot;Quinta&quot;, &quot;Sexta&quot;)
+semana_1[dias_uteis]
+</code></pre>
+
+<h2 id="exercício">Exercício:</h2>
+
+<ul>
+<li>Crie dois novos vetores. No primeiro, anote (invente) o número de palavras que você escreveu para sua tese/dissertação em cada mês, considerando os últimos seis meses (setembro a fevereiro). No segundo, anote (chute, novamente) quantos litros de café você tomou em cada mês.</li>
+<li>Nomeie os elementos dos 2 vetores.</li>
+<li>Calcule sua produtividade em &ldquo;palavras por Litro de café&rdquo;. Atribua o resultado a um novo vetor</li>
+<li>Gere um subcojunto do novo vetor com a produtividade no final 2016 e outro com a produtividade no começo de 2017.</li>
+</ul>
+
+<h2 id="soma-média-e-estatísticas-descritivas-dos-elementos-de-um-vetor">Soma, média e estatísticas descritivas dos elementos de um vetor</h2>
+
+<p>Ao longo do tempo, nosso repertório de funções de R aumentará rapidamente. Há um conjunto de funções fáceis de lembrar que são muito úteis para calcular estatísticas descritivas de um vetor (ou de uma variável em um <em>data frame</em>). Exemplo: meu consumo de litros de café por mês em 2016.</p>
+
+<pre><code class="language-r">litros_cafe &lt;- c(4.3, 3.1, 5.3, 5.5, 6.9, 8.3, 9.7, 9.9, 9.1, 7.0, 6.2, 5.6)
+</code></pre>
+
+<p>Observe as funções de soma, media, desvio padrão, variância, mediana, máximo, mínimo e quantil, na respectiva ordem:</p>
+
+<pre><code class="language-r">sum(litros_cafe)
+mean(litros_cafe)
+sd(litros_cafe)
+var(litros_cafe)
+median(litros_cafe)
+max(litros_cafe)
+min(litros_cafe)
+quantile(litros_cafe, probs = c(0, 0.25, 0.5, 0.75, 1))
+</code></pre>
+
+<p>Veja que, com a exceção de <em>quantile</em>, todas as funções retornam vetores atômicos. <em>quantile</em> retorna um vetor do tamanho do vetor de probabilidades, que é o segundo argumento da função, e que indica os quantis correspondentes a cada valor.</p>
+
+<h2 id="exercício-1">Exercício</h2>
+
+<p>Com os seus próprios exemplos do exercício acima (palavras e litros de café por mês), use 6 funções acima.</p>
+
+<h2 id="subconjunto-de-um-vetor-parte-2">Subconjunto de um vetor - parte 2</h2>
+
+<p>Finalmente, vamos usar operadores relacionais (ao qual voltaremos no início do próximo tutorial) para produzir um exemplo de subconjunto mais interessante. A &ldquo;Organização Mundial de Bebedores de Café&rdquo;, OMBC, recomenda que o consumo de café não ultrapasse o limite de até 7 litros por mês (inclusive). Vamos observar em quais meses de 2016 eu tomei mais café do que deveria.</p>
+
+<p>Nomeando o vetor:</p>
+
+<pre><code class="language-r">meses &lt;- c(&quot;Janeiro&quot;, &quot;Fevereiro&quot;, &quot;Marco&quot;, &quot;Abril&quot;, &quot;Maio&quot;, &quot;Junho&quot;, 
+           &quot;Julho&quot;, &quot;Agosto&quot;, &quot;Setembro&quot;, &quot;Outubro&quot;, &quot;Novembro&quot;, &quot;Dezembro&quot;)
+names(litros_cafe) &lt;- meses
+</code></pre>
+
+<p>Criando um vetor lógico (TRUE ou FALSE) que indique em quais meses meu consumo ultrapassou o limite recomendado:</p>
+
+<pre><code class="language-r">selecao &lt;- litros_cafe &gt; 7
+print(selecao)
+</code></pre>
+
+<p>Usamos o vetor &ldquo;selecao&rdquo; para fazer o subconjunto do vetor de dados de consumo de café:</p>
+
+<pre><code class="language-r">litros_cafe[selecao]
+</code></pre>
+
+<p>Para vetores pequenos, o procedimento adotado para gerar subconjuntos parece desnecessariamente trabalhos. Mas imagine agora que você queira observar os votos de todos os candidatos que atendam a determinada condição &ndash; por exemplo, teremo gastos de campanha acima de determinado patarmar. Com uma variável (gasto de campanha) você pode gerar um vetor de seleção que permite gerar o subconjunto desejado.</p>
+
+<p>Voltaremos em variações desse assunto em diversos momentos no futuro.</p>
+
+<h2 id="factors-e-variáveis-categóricas-no-r">Factors e variáveis categóricas no R</h2>
+
+<p>No tutorial anterior, trabalhamos com tipos de dados e deixamos de lado classe. Neste tutorial, falamos rapidamente de classe e o assunto pareceu relativamente simples. Vamos complicá-lo com um dos aspectos mais confusos da linguagem R: a classe de vetores <strong>factor</strong>.</p>
+
+<p><strong>factor</strong> é, basicamente, a classe de vetores em R utilizada para lidar com dados categóricos, nominais ou ordinais. Em vez de gastarmos tinta tentando entendê-los de forma abstrata, vamos a um exemplo.</p>
+
+<p>Suponhamos que temos um vetor de texto que representa uma variável categórica que pode receber dois valores, &ldquo;sim&rdquo; e &ldquo;nao&rdquo;.</p>
+
+<pre><code class="language-r">yes_no &lt;- c(&quot;sim&quot;, &quot;nao&quot;, &quot;nao&quot;, &quot;nao&quot;, &quot;sim&quot;, &quot;nao&quot;)
+print(yes_no)
+class(yes_no)
+</code></pre>
+
+<p>Vamos usar a função <em>factor</em> para gerar o vetor &ldquo;f_yes_no&rdquo; e observar o resultado:</p>
+
+<pre><code class="language-r">f_yes_no &lt;- factor(yes_no)
+print(f_yes_no)
+</code></pre>
+
+<p>Note que não temos mais aspas nos valores impressos do vetor de fatores. Além disso, ele vem acompanhado de uma nova informação: &ldquo;levels&rdquo;, ou niveis.</p>
+
+<p>Basicamente, &ldquo;factors&rdquo; são vetores numéricos cujos valores estão associados a um rótulo. Os &ldquo;levels&rdquo; são esses pares de código numérico + rótulo.</p>
+
+<p>Se tentamos transformar em números o vetor de fatores, veja o que obtemos:</p>
+
+<pre><code class="language-r">as.numeric(f_yes_no)
+</code></pre>
+
+<p>1 e 2 são os códigos numéricos gerados autormaticamente para &ldquo;nao&rdquo; e &ldquo;sim&rdquo;, respectivamente. O critério para atribuir valores foi a ordem alfabética dos textos transformados em fatores.</p>
+
+<p>Podemos investigar os níveis de um vetor de fatores com a função <em>levels</em>:</p>
+
+<pre><code class="language-r">levels(f_yes_no)
+</code></pre>
+
+<p>E também podemos alterá-los, tal como fazemos com os nomes dos elementos de um vetor:</p>
+
+<pre><code class="language-r">levels(f_yes_no) &lt;- c(&quot;No&quot;, &quot;Sim&quot;)
+print(f_yes_no)
+</code></pre>
+
+<p>Tudo bem até agora?</p>
+
+<p>E se os níveis de uma variável forem ordenados? Vejamos um exemplo:</p>
+
+<pre><code class="language-r">tamanho &lt;- c(&quot;alto&quot;, &quot;baixo&quot;, &quot;baixo&quot;, &quot;medio&quot;, &quot;alto&quot;, &quot;baixo&quot;, &quot;medio&quot;)
+f_tamanho &lt;- factor(tamanho)
+print(f_tamanho)
+</code></pre>
+
+<p>Como o R segue o ordenamento alfabético, os códigos numéricos 1, 2 e 3 estão associados a &ldquo;alto&rdquo;, &ldquo;baixo&rdquo; e &ldquo;medio&rdquo;, respectivamente. Mas qual é o problema de não ordenarmos? Veja abaixo:</p>
+
+<pre><code class="language-r, error = T">f_yes_no[1]
+f_yes_no[2]
+f_yes_no[1] &gt; f_yes_no[2]
+</code></pre>
+
+<p>Sem ordenarmos, não podemos comparar os níveis e estamos assumindo a variável como sendo nominal.</p>
+
+<p>Para ordernar os níveis de um vetor de fatores, temos que informar alguns parâmetros adicionais &ndash; <em>order</em> e <em>levels</em> &ndash; ao criá-lo:</p>
+
+<pre><code class="language-r">f_tamanho &lt;- factor(tamanho, order = T, levels &lt;- c(&quot;baixo&quot;, &quot;medio&quot;, &quot;alto&quot;))
+print(f_tamanho)
+</code></pre>
+
+<p>Note que a informação sobre os &ldquo;levels&rdquo; acompanha a ordem informada, que, neste caso, é diferente da alfabética. Comparações entre os níveis fazem sentido se a variável for ordinal:</p>
+
+<pre><code class="language-r">f_tamanho[1]
+f_tamanho[2]
+f_tamanho[1] &gt; f_tamanho[2]
+f_tamanho &gt; &quot;medio&quot;
+</code></pre>
+
+<p>Voltaremos aos &ldquo;factors&rdquo; em momento adequado. O importante agora é saber que eles existem e que é uma classe de vetores em R. Atenção especial deve ser dada ao fato de que diversas vezes, ao importarmos bases de dados para o &ldquo;workspace&rdquo;, o R considera variáveis de texto como sendo &ldquo;factors&rdquo;, mesmo de maneira inadequada. Para evitar este problema, devemos adotar o argumento &ldquo;stringAsFactors = F&rdquo; em diversas funções de importação. Como avisei no início deste tópico, &ldquo;factors&rdquo; é um dos aspectos mais confusos em R (em conjunto com &ldquo;missing values&rdquo;, que vamos adiar até um momento adequado).</p>
+
+<h2 id="exercício-2">Exercício</h2>
+
+<ul>
+<li>Crie um vetor de texto com categorias não ordenáveis.</li>
+<li>Crie um vetor de fatores a partir do vetor do item anterior.</li>
+<li>Traduza os níveis para o inglês (ou para o português se já estiverem em inglês)</li>
+<li>Crie um vetor de texto com categorias ordenáveis.</li>
+<li>Crie um vetor de fatores a partir do vetor do item anterior.</li>
+<li>Compare dois elementos do vetor criado no item anterior</li>
+</ul>
+
+<h2 id="matrizes-em-r">Matrizes em R</h2>
+
+<p>Durante o curso, utilizaremos poucas ou nenhuma vez matrizes. Há uma razão para isso: estamos interessad@s sorbetudo em dados no formato de <em>data frame</em>, que é um caso específico de matriz. Ainda assim, convém rapidamente aprender sobre matrizes para, advinhe, entender um pouco mais sobre <em>data frames</em>.</p>
+
+<p>Para matemáticos, matrizes são objetos com uma álgebra própria e parte de uma área denominada Álgebra Linear. Por exemplo, a multiplicação de matrizes, se você lembra dela de seu período de escola ou graduação, segue regras e tem propriedades diferentes da multiplicação de números. Apesar do R ter uma &ldquo;gramática&rdquo; para Álgebra Linear (que lembra o MATLAB e Octave), ela não nos interessa agora e a deixaremos de lado.</p>
+
+<p>Para criarmos um matriz, precisamos de um vetor que contenha o número de elementos a serem inseridos em uma matriz. Para uma matriz de 3 linhas e 3 colunas, precisamos de um vetor de 9 elementos, a exemplo do vetor gerado pelo comando &ldquo;1:9&rdquo;.</p>
+
+<p>Há duas maneiras de &ldquo;preencher&rdquo; a matriz: pelas linhas (&ldquo;byrow = T&rdquo;) ou pelas colunas (&ldquo;byrow = F&rdquo;). Veja os exemplos abaixo e tente compreender o funcionamento de <em>matrix</em>:</p>
+
+<pre><code class="language-r">matrix(1:9, byrow = TRUE, nrow = 3)
+matrix(1:9, byrow = FALSE, nrow = 3)
+</code></pre>
+
+<p>Vamos a um exemplo de matriz criada a partir de 3 vetores. Os vetores abaixo representam o gasto de café de 3 pessoas de segunda a sexta-feira em uma semana determinada.</p>
+
+<pre><code class="language-r">beatriz &lt;- c(4, 5, 0, 3, 5)
+pedro &lt;- c(2, 2, 2, 2, 2)
+mateus &lt;- c(0, 0, 12, 0, 0)
+</code></pre>
+
+<p>Vamos juntar todas os vetores em um só&hellip;</p>
+
+<pre><code class="language-r">vetor_cafe &lt;- c(beatriz, pedro, mateus)
+</code></pre>
+
+<p>&hellip; e criar uma matriz de 5 linhas e 3 colunas denominada café:</p>
+
+<pre><code class="language-r">cafe &lt;- matrix(vetor_cafe, byrow = FALSE, nrow = 5)
+print(cafe)
+</code></pre>
+
+<p>Veja que as margens da matriz não tem nomes. Vamos proceder como fizemos com vetores. Entretanto, não vamos nomear cada elemento, mas as linhas e colunas, e utilizaremos as funções <em>rownames</em> e <em>colnames</em> para a tarefa:</p>
+
+<pre><code class="language-r">fregueses &lt;- c(&quot;Beatriz&quot;, &quot;Pedro&quot;, &quot;Mateus&quot;)
+dias_uteis &lt;- c(&quot;Segunda&quot;, &quot;Terca&quot;, &quot;Quarta&quot;, &quot;Quinta&quot;, &quot;Sexta&quot;)
+
+rownames(cafe) &lt;- dias_uteis
+colnames(cafe) &lt;- fregueses
+
+print(cafe)
+</code></pre>
+
+<p>O processo de nomear as linhas e colunas poderia ser realizado no momento em que a matriz foi gerada com o usdo do argumento <em>dimnames</em>, como no exemplo:</p>
+
+<pre><code class="language-r">cafe &lt;- matrix(vetor_cafe, byrow = FALSE, nrow = 5,
+               dimnames = list(dias_uteis, fregueses))
+</code></pre>
+
+<p>E se quisermos trocar as linhas pelas colunas &ndash; processo conhecido como transposição da matriz? Usamos a função <em>t</em>. Dica: <em>c</em> e <em>t</em> são funções em R. Evite criar objetos com esse nome.</p>
+
+<pre><code class="language-r">t(cafe)
+</code></pre>
+
+<p>Se quisermos juntar os três vetores originais como se fosse colunas, podemos usar a função <em>cbind</em>.</p>
+
+<pre><code class="language-r">cbind(beatriz, pedro, mateus)
+</code></pre>
+
+<p><em>rbind</em>, função bastante útil e que voltará várias vezes no curso, faz o mesmo tratando os vetores como linhas:</p>
+
+<pre><code class="language-r">rbind(beatriz, pedro, mateus)
+</code></pre>
+
+<p>As funções <em>rowSums</em> e <em>colSums</em>, como é de se esperar, calculam as somas de todos os elementos de cada linha e de cada coluna, respectivamente:</p>
+
+<pre><code class="language-r">rowSums(cafe)
+colSums(cafe)
+
+</code></pre>
+
+<p>Combinando as funções de soma com as de combinação (sic), podemos gerar os totais nas margens da matriz:</p>
+
+<pre><code class="language-r">Total_Coluna &lt;- colSums(cafe)
+cafe2 &lt;- rbind(cafe, Total_Coluna)
+
+Total_Linha &lt;- rowSums(cafe2)
+cafe2 &lt;- cbind(cafe2, Total_Linha)
+print(cafe2)
+</code></pre>
+
+<p>Como com vetores, podemos fazer operações aritméticas (veja que não estamos falando de Álgebra Linear) com matrizes. Por exemplo, para transformar os gastos com café em doláres (cotação = 3.2):</p>
+
+<pre><code class="language-r">cafe / 3.2
+</code></pre>
+
+<p>Podemos também relizar operações entre matrizes de mesmas dimensões que considerem os elementos de forma pareada, tal como com vetores. Usando as duas matrizes do começo deste tópico:</p>
+
+<pre><code class="language-r">matrix(1:9, byrow = TRUE, nrow = 3) + matrix(1:9, byrow = FALSE, nrow = 3)
+</code></pre>
+
+<p>Tanto sobre matriz para chegarmos ao que realmente importa: subconjuntos de matrizes. Com vetores, usamos colchetes para produzirmos subconjuntos. As regras que aprendemos para vetores valem para matrizes. A diferença é que matrizes &ndash; e também <em>data frames</em> &ndash; são objetos com duas dimensões (linha e coluna). Portanto, ao extrairmos um subconjunto, precisamos informar as duas dimensões no colchetes, primeiro linha, depois coluna, separadas por vírgula. Se deixamos uma das dimensões em branco, estamos selecionando todos os elementos daquela dimensão.</p>
+
+<p>Vamos a uma série de exemplos para compreender as regras de subconjunto de matrizes.</p>
+
+<p>Selecionar toda a segunda coluna:</p>
+
+<pre><code class="language-r">cafe[, 2]
+</code></pre>
+
+<p>Selecionar toda a terceira linha:</p>
+
+<pre><code class="language-r">cafe[3, ]
+</code></pre>
+
+<p>Selecionar o elemento da linha 1 e coluna 3:</p>
+
+<pre><code class="language-r">cafe[1, 3]
+</code></pre>
+
+<p>Selecionar os elementos 4 e 5 da coluna 1:</p>
+
+<pre><code class="language-r">cafe[4:5, 1]
+</code></pre>
+
+<p>Selecionar os elementos 1, 3 e 5 da coluna 3:</p>
+
+<pre><code class="language-r">cafe[c(1,3,5), 3]
+</code></pre>
+
+<p>Selecionar o elemento 4 das colunas 2 e 3:</p>
+
+<pre><code class="language-r">cafe[4, 2:3]
+</code></pre>
+
+<p>Selecionar a segunda e terça-feira de Pedro:</p>
+
+<pre><code class="language-r">cafe[c(&quot;Segunda&quot;, &quot;Terca&quot;), &quot;Pedro&quot;]
+</code></pre>
+
+<p>Selecionar a quarta-feira de todos:</p>
+
+<pre><code class="language-r">cafe[&quot;Quarta&quot;,]
+</code></pre>
+
+<h2 id="exercício-3">Exercício</h2>
+
+<p>Subconjunto de matrizes são fundamentais para o futuro do curso. Seja criativ@ e faça 6 exemplos seus com a matriz &ldquo;cafe&rdquo; com a qual trabalhamos.</p>
+
+<h2 id="paramos-por-aqui">Paramos por aqui</h2>
+
+<p>Vimos nesse tutorial aspectos básicos da linguagem R e uma variedade de objetos e funções que utilizaremos no futuro. Deixamos de lado <em>data frames</em>, pois já trabalhamos com eles anteriormente e voltaremos a eles a seguir, e listas, que, dada sua complexidade, convém deixar para um estágio mais avançado do curso.</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial9/" title="MySQL e dplyr">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              MySQL e dplyr
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial11/" title="Texto no R">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Texto no R
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'RCCSilva\/materialR';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

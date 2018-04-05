@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Treinando Gráficos no R - R Sociais</title>
+    <meta name="generator" content="Hugo 0.38" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial12/">
+    
+    <meta name="author" content="Curso de Programação">
+    
+
+    <meta property="og:url" content="/tutorial12/">
+    <meta property="og:title" content="R Sociais">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="R Sociais">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('/fonts/icon.eot');
+        src: url('/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('/fonts/icon.woff')
+               format('woff'),
+             url('/fonts/icon.ttf')
+               format('truetype'),
+             url('/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Treinando Gráficos no R
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/RCCSilva" title="@RCCSilva on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/RCCSilva/materialR" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>R Sociais </strong>
+        
+          <br>
+          RCCSilva/materialR
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/RCCSilva/materialR/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/RCCSilva/materialR/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Primeiros Passos" href="../">
+	
+	Primeiros Passos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 1" href="../tutorial1/">
+	
+	Tutorial 1
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 2" href="../tutorial2/">
+	
+	Tutorial 2
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 3" href="../tutorial3/">
+	
+	Tutorial 3
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 4" href="../tutorial4/">
+	
+	Tutorial 4
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 5" href="../tutorial5/">
+	
+	Tutorial 5
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 6" href="../tutorial6/">
+	
+	Tutorial 6
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 7" href="../tutorial7/">
+	
+	Tutorial 7
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 8" href="../tutorial8/">
+	
+	Tutorial 8
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 9" href="../tutorial9/">
+	
+	Tutorial 9
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 10" href="../tutorial10/">
+	
+	Tutorial 10
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 11" href="../tutorial11/">
+	
+	Tutorial 11
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Tutorial 12" href="../tutorial12/">
+	
+	Tutorial 12
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorial 13" href="../tutorial13/">
+	
+	Tutorial 13
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/RCCSilva" target="_blank" title="@RCCSilva on GitHub">
+              @RCCSilva on GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacaosociais@gmail.com" title="Email of programacaosociais@gmail.com">
+              Contact via email
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Treinando Gráficos no R </h1>
+
+			
+
+<h1 id="treinando-gráficos-no-r">Treinando gráficos no R</h1>
+
+<p>Neste tutorial vamos treinar o uso do pacote <em>ggplot2</em>. Diferentemente dos demais tutoriais do curso, o objetivo deste é oferecer desafios, e não códigos. Você deve ver o gráfico e tentar reproduzí-lo. Recomendo que você use a versão deste tutorial em .pdf, que contém os gráficos, e tente criar os gráficos sem ajuda alguma. Ao final do tutorial estão &ldquo;colados&rdquo; os códigos de todos os gráficos, na sequência, para serem consultados em caso de dúvida.</p>
+
+<p>Escolhi os gráficos que, ao meu ver, são mais úteis para exploração e visualização de distribuições de variáveis, sozinhas ou conjuntas, discretas ou contínuas. <em>ggplot2</em> é um mundo vasto. Este tutorial contém apenas aquilo que considero o mínimo para produção de uma pesquisa.</p>
+
+<p>A fonte online sobre <em>ggplot2</em> que mais consulto é o website do livro <a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook</a>. Há pequenos tutoriais sobre os tópicos essenciais da produção de gráficos com <em>ggplot2</em> e você pode navegar por lá se sobrar tempo em sala de aula.</p>
+
+<p>Vamos usar o data frame &ldquo;fake_data&rdquo; para nosso treino:</p>
+
+<pre><code class="language-r, message = FALSE">library(readr)
+url_fake_data &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/fake_data.csv&quot;
+fake &lt;- read_delim(url_fake_data, delim = &quot;;&quot;, col_names = T)
+</code></pre>
+
+<p>Carregue o pacote <em>ggplot2</em> e comece:</p>
+
+<pre><code class="language-r">library(ggplot2)
+</code></pre>
+
+<h2 id="gráficos-para-uma-variável-discreta">Gráficos para uma variável discreta</h2>
+
+<p>Vamos começar com gráficos de barras, adequados para uma única variável discreta. Contrua o gráfico abaixo, para a variável &ldquo;party&rdquo;. O código esta propositalmente omitido e você deve &ldquo;se virar&rdquo; para construir o gráfico.</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party)) +
+  geom_bar()
+</code></pre>
+
+<p>Se utilizarmos no argumento &ldquo;fill&rdquo; na &ldquo;aesthetics&rdquo; do ggplot uma outra variável discreta, obtemos. Teste você mesm@:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
+  geom_bar()
+</code></pre>
+
+<p>Vamos agora variar as posições das barras alterando os valores do argumento &ldquo;position&rdquo; em <em>geom_bar</em>. Os valores para &ldquo;position&rdquo; são: &ldquo;stack&rdquo; (default, mostrado acima), &ldquo;dodge&rdquo; e &ldquo;fill&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
+  geom_bar(position = &quot;dodge&quot;)
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
+  geom_bar(position = &quot;fill&quot;)
+</code></pre>
+
+<h2 id="gráficos-para-uma-variável-contínua">Gráficos para uma variável contínua</h2>
+
+<p>Comecemos com a variável &ldquo;income&rdquo;. Vamos construir um histograma. Por termos poucos dados, use &ldquo;bins = 10&rdquo; como argumento para construção do histograma:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income)) +
+  geom_histogram(bins = 10)
+</code></pre>
+
+<p>Novamente, inclua &ldquo;turnout&rdquo; no argumento &ldquo;fill&rdquo; de &ldquo;aesthetics&rdquo; e observe o resultado</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
+  geom_histogram(bins = 10)
+</code></pre>
+
+<p>Tal como com os gráficos de barra, varie a posição do histograma. O argumento &ldquo;position&rdquo; pode receber os valores: &ldquo;stack&rdquo; (default, mostrado acima), &ldquo;dodge&rdquo; e &ldquo;fill&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
+  geom_histogram(bins = 10, position = &quot;dodge&quot;)
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
+  geom_histogram(bins = 10, position = &quot;fill&quot;)
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
+  geom_histogram(bins = 10, position = &quot;stack&quot;)
+</code></pre>
+
+<p>Gráficos de densidade costumam ser uma opção mais atrativa para variáveis verdadeiramente contínuas (e não númericas discretas, como idade em anos, por exemplo). Produza a densidade de &ldquo;income&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income)) +
+  geom_density()
+</code></pre>
+
+<p>Vamos agora separar as densidades inserindo uma variável discreta no argumento &ldquo;fill&rdquo;, tal como &ldquo;turnout&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
+  geom_density(alpha = 0.5)
+</code></pre>
+
+<p>Veja que só conseguimos separar as densidades por estarmos trabalhando com uma única variável contínua separada por uma variável discreta. Se quisermos, porém, sobrepor as densidades de duas variáveis contínuas, temos que passar os argumentos &ldquo;aesthetics&rdquo; da função <em>ggplot</em> para dentro de <em>geom_density</em>. Tente reproduzir o gráfico abaixo usando &ldquo;income&rdquo; e &ldquo;savings&rdquo;. Não se preocupe com os rótulos dos eixos por enquanto:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake) +
+  geom_density(aes(x = income), alpha = 0.5, fill = 'red') + 
+  geom_density(aes(x = savings), alpha = 0.5, fill = 'blue')
+</code></pre>
+
+<h2 id="uma-variável-discreta-e-uma-contínua">Uma variável discreta e uma contínua</h2>
+
+<p>Uma das opções para apresentarmos conjuntamente uma variável discreta e uma contínua é utilizarmos o gráfico de barras com o argumento &lsquo;stat = &ldquo;identity&rdquo;&rsquo; em <em>geom_bar</em>. Note que a variável discreta é o argumento &ldquo;x&rdquo; e a contínua, &ldquo;y&rdquo;. Tente você:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, y = income)) +
+  geom_bar(stat = &quot;identity&quot;)
+</code></pre>
+
+<p>Box-plots também são opções excelentes:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, y = income)) +
+  geom_boxplot()
+</code></pre>
+
+<h2 id="duas-variáveis-contínua">Duas variáveis contínua:</h2>
+
+<p>Vamos agora trabalhar com a apresentação conjunta de duas variáveis contínuas, &ldquo;income&rdquo; (x) e &ldquo;savings&rdquo; (y). O gráfico de dispersão é obviamente a opção básica:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_point()
+</code></pre>
+
+<p>A reta que descreve uma função linear entre as duas variáveis é outra opção. Dica: use <em>geom_smooth</em> e adota o argumento &lsquo;method = &ldquo;lm&rdquo;&rsquo;, onde &ldquo;lm&rdquo; significa &ldquo;linear model&rdquo;</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;)
+</code></pre>
+
+<p>Combine os dois gráficos anteriores:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_point() + 
+  geom_smooth(method = &quot;lm&quot;)
+</code></pre>
+
+<p>Se quiser retirar o intervalo de confiança do modelo linear, representado pela área cinza, use &ldquo;se = FALSE&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_point() + 
+  geom_smooth(method = &quot;lm&quot;, se = F)
+</code></pre>
+
+<p>Há alternativas ao modelo linear. Use &lsquo;method = &ldquo;loess&rdquo;&rsquo; para um ajuste polinomial:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_point() + 
+  geom_smooth(method = &quot;loess&quot;)
+</code></pre>
+
+<p>Voltando ao gráfico de dispersão básico, podemos separa os pontos por uma terceira variável (discreta). Use o argumento &ldquo;color&rdquo; em &ldquo;aesthetics&rdquo;. Vamos separar por &ldquo;turnout&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, color = turnout)) +
+  geom_point()
+</code></pre>
+
+<p>Podemos apresentar um modelo linear para cada grupo de &ldquo;turnout&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, color = turnout)) +
+  geom_point() +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE)
+</code></pre>
+
+<p>Se no lugar de colocarmos &ldquo;turnout&rdquo; no argumento &ldquo;color&rdquo;, colocarmos em &ldquo;shape&rdquo;, teremos variação no formato dos pontos:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, shape = turnout)) +
+  geom_point()
+</code></pre>
+
+<h2 id="mais-opções-gráficas">Mais opções gráficas</h2>
+
+<p>Se quisermos separar os dados em diferentes paineis, digamos, por grupo candidato de preferência (variável &ldquo;candidate&rdquo;), usamos <em>facet_wrap</em> com a seguinte fórmula &ldquo;(~ candidate)&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_point() +
+  geom_smooth(method = &quot;lm&quot;) +
+  facet_wrap(~ candidate)
+</code></pre>
+
+<p>Podemos alterar as legendas de um gráfico usando as funções <em>xlab</em> e <em>ylab</em>:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, fill = T)) +
+  geom_smooth(method = &quot;lm&quot;, se = F) +
+  ylab(&quot;Poupança&quot;) +
+  xlab(&quot;Renda&quot;)
+</code></pre>
+
+<p>E podemos adicionar título com <em>ggtitle</em>:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  ggtitle(&quot;Poupança por renda em Fakeland&quot;)
+</code></pre>
+
+<p>Há um conjunto de funções que alteram os &ldquo;temas&rdquo; dos gráficos. Por padrão, usamos <em>theme_grey</em>. Os temas básicos são: <em>theme_classic</em>, <em>theme_bw</em>, <em>theme_minimal</em>, <em>theme_void</em>. Teste cada uma deles, como na sequência abaixo. Há um pacote chamado <em>ggthemes</em> que contém diversos outros &ldquo;temas&rdquo;:</p>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  theme_classic()
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  theme_bw()
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  theme_minimal()
+</code></pre>
+
+<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  theme_void()
+</code></pre>
+
+<h2 id="salvando-os-gáficos">Salvando os gáficos</h2>
+
+<p>Você pode usar tanto o botão &ldquo;Export&rdquo; no RStudio quanto a função &ldquo;ggsave&rdquo;. Veja o exemplo abaixo, que salva o gráfico disponível no ferramenta de visualização em diversos formatos, respectivamente .png, pdf e .jpeg, e com dimensões definidas pelos argumentos <em>width</em> e <em>height</em>.</p>
+
+<pre><code class="language-r">ggsave(&quot;plot.png&quot;, width = 5, height = 5)
+ggsave(&quot;plot.pdf&quot;, width = 5, height = 5)
+ggsave(&quot;plot.jpeg&quot;, width = 5, height = 5)
+</code></pre>
+
+<h3 id="respostas">Respostas</h3>
+
+<p>Código dos gráficos acima, na sequência:</p>
+
+<pre><code class="language-r, eval = FALSE">ggplot(fake, aes(x = party)) +
+geom_bar()
+
+ggplot(fake, aes(x = party, fill = turnout)) +
+geom_bar()
+
+ggplot(fake, aes(x = party, fill = turnout)) +
+geom_bar(position = &quot;dodge&quot;)
+
+ggplot(fake, aes(x = party, fill = turnout)) +
+geom_bar(position = &quot;fill&quot;)
+
+ggplot(fake, aes(x = income)) +
+geom_histogram(bins = 10)
+
+ggplot(fake, aes(x = income, fill = turnout)) +
+geom_histogram(bins = 10)
+
+ggplot(fake, aes(x = income, fill = turnout)) +
+geom_histogram(bins = 10, position = &quot;dodge&quot;)
+
+ggplot(fake, aes(x = income, fill = turnout)) +
+geom_histogram(bins = 10, position = &quot;fill&quot;)
+
+ggplot(fake, aes(x = income, fill = turnout)) +
+geom_histogram(bins = 10, position = &quot;stack&quot;)
+
+ggplot(fake, aes(x = income)) +
+geom_density()
+
+ggplot(fake, aes(x = income, fill = turnout)) +
+geom_density(alpha = 0.5)
+
+ggplot(fake) +
+geom_density(aes(x = income), alpha = 0.5, fill = 'red') +
+geom_density(aes(x = savings), alpha = 0.5, fill = 'blue')
+
+ggplot(fake, aes(x = party, y = income)) +
+geom_bar(stat = &quot;identity&quot;)
+
+ggplot(fake, aes(x = party, y = income)) +
+geom_boxplot()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_point()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;)
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_point() +
+geom_smooth(method = &quot;lm&quot;)
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_point() +
+geom_smooth(method = &quot;lm&quot;, se = F)
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_point() +
+geom_smooth(method = &quot;loess&quot;)
+
+ggplot(fake, aes(x = income, y = savings, color = turnout)) +
+geom_point()
+
+ggplot(fake, aes(x = income, y = savings, color = turnout)) +
+geom_point() +
+geom_smooth(method = &quot;lm&quot;, se = FALSE)
+
+ggplot(fake, aes(x = income, y = savings, shape = turnout)) +
+geom_point()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_point() +
+geom_smooth(method = &quot;lm&quot;) +
+facet_wrap(~ candidate)
+
+ggplot(fake, aes(x = income, y = savings, fill = T)) +
+geom_smooth(method = &quot;lm&quot;, se = F) +
+ylab(&quot;Poupança&quot;) +
+xlab(&quot;Renda&quot;)
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;) +
+ggtitle(&quot;Poupança por renda em Fakeland&quot;)
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;) +
+theme_classic()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;) +
+theme_bw()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;) +
+theme_minimal()
+
+ggplot(fake, aes(x = income, y = savings)) +
+geom_smooth(method = &quot;lm&quot;) +
+theme_void()
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial13/" title="Treinando Funções no R">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Treinando Funções no R
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'RCCSilva\/materialR';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

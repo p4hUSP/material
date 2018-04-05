@@ -1,0 +1,47 @@
+---
+title: "Primeiros Passos"
+author: "Alexia, Léo, Nathan e Rafael"
+date: '2018-04-05'
+type: index
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Bem-vinda ao Curso de Programação para Cientistas Sociais! Estamos muito felizes com a oportunidade de lhe ensinar o pouco do que nós sabemos.
+
+##1. Estrutura do Curso
+
+Esse curso tem como bojetivo apresentar as ferramentas básicas disponíveis no R. A aprendizagem será realizada por meio de tutoriais, que podem ser divididos em 4 grandes temas da análise de dados.
+
+- __Importar__ bancos de dados no R
+
+-  __Estruturar__ o banco de dados
+
+-  __Transformar__, criar e modificar variáveis, no R 
+
+-  __Visualizar__ variáveis no R
+
+-  __Comunicar__ os resultados obtidos por meio do R Markdown
+
+Outros assuntos como modelagem e aplicativos (_shiny_) não fazem parte dos objetivos desse curso. Ainda assim, caso tenha interesse, a partir do conteúdo oferecido você será capaz de aprender muitas coisas no R.
+
+##2. O que é o R
+
+Antes de aprendermos o R em si, precisamos entendê-lo. R é uma linguagem de programação, ou seja, ele nos permite comunicar com o computador. Criado por estatísticos, o R é muito eficiente na análise de dados e possui uma infinitude de pacotes desenvolvidos pela comunidade. Esses pacotes são fundamentais para uma boa análise de dados. Nesse curso, aprenderemos um pouco sobre o __tidyverse__, um conjunto de pacotes que busca facilitar a análise de dados.
+
+##3. Instalando o R
+
+Acesse o [site](https://cran.r-project.org/) oficial do R.
+
+##4. Instalando o RStudio
+
+Embora o R possa ser utilizada a partir de um editor de texto e um terminal; em geral, para análise de dados, utilizamos uma interface de desenvolvimento (IDE) chamada RStudio. Ela facilita bastante o nosso trabalho.
+
+##5. Agora é com você!
+
+Aprender uma linguagem de programação pode se mostrar uma tarefa bastate difícil. No começo, é muito comum errarmos coisas bocas (esquecer uma vírgula, ou um ponto, ou até mesmo trocar letras maísculas por minúsculas e vice-versa) e ficar bons minutos não entendendo porque o nosso código não funciona. Ainda assim, não desista! Com o tempo você ganhará fluência no R e tudo ficará mais fácil!
+
+Por fim, não se esqueçam do principal, aprender programação e, em especial, aprender R deve ser uma coisa __divertida__!
+
