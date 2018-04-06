@@ -16,6 +16,12 @@ create_content <- function(){
 
   unzip(file, exdir = "./temp")
   
+  del_files <- list.files("./temp/material-master/content/")
+  
+  for(i in del_files){
+    system(sprintf("rm -Rf .content/%s", i))
+  }
+  
   system('mv -v ./temp/material-master/content/* ./content/')
   system('rm -Rf ./temp')
   file.remove(file)
