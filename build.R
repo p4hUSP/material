@@ -16,12 +16,12 @@ create_content <- function(){
 
   unzip(file, exdir = "./temp")
   
-  system('rsync --remove-source-files ./temp/material-master/content/* ./content/')
+  system('mv -v ./temp/material-master/content/* ./content/')
   system('rm -Rf ./temp')
   file.remove(file)
 }
 
-create_tutoriais()
+create_content()
 
 #Instala o Hugo (0.22) e constrói o site
 blogdown::install_hugo(version = "0.22", force = T)
