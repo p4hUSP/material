@@ -2,7 +2,8 @@ library(magrittr)
 
 # 1. Implementar o Conteúdo -----------------------------------------------
 
-create_tutoriais <- function(){
+#Transfere os materias do repositório "materials" para o site
+create_content <- function(){
   
   download_url <- "https://github.com/R4CS/material/archive/master.zip"
   
@@ -15,14 +16,14 @@ create_tutoriais <- function(){
 
   unzip(file, exdir = "./temp")
   
-  system('mv ./temp/material-master/content/tutorial* ./content/')
+  system('rsync --remove-source-files ./temp/material-master/content/* ./content/')
   system('rm -Rf ./temp')
   file.remove(file)
 }
 
 create_tutoriais()
 
-#Construir o site
+#Instala o Hugo (0.22) e constrói o site
 blogdown::install_hugo(version = "0.22", force = T)
 blogdown::build_site()
 
