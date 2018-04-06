@@ -506,15 +506,63 @@
 <p>Vamos começar com alguns exemplos simples:</p>
 
 <pre><code class="language-r">42 == 41
-42 != 41
-(2 + 2) == (3 + 1)
-(2 + 2) != (3 + 1)
-5 &gt; 3
-5 &lt; 3
-42 &gt; 42
-42 &lt; 41
-42 &gt;= 42
-42 &lt;= 41
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">42 != 41
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">(2 + 2) == (3 + 1)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">(2 + 2) != (3 + 1)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">5 &gt; 3
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">5 &lt; 3
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">42 &gt; 42
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">42 &lt; 41
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">42 &gt;= 42
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">42 &lt;= 41
+</code></pre>
+
+<pre><code>## [1] FALSE
 </code></pre>
 
 <p>Antes de avanças, tenha certeza que entendeu os exemplos acima.</p>
@@ -522,8 +570,21 @@
 <p>Operadores relacionais também vale para textos:</p>
 
 <pre><code class="language-r">&quot;texto&quot; == &quot;texto&quot;
-&quot;texto&quot; == &quot;texTo&quot;
-&quot;texto&quot; != &quot;texto&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">&quot;texto&quot; == &quot;texTo&quot;
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">&quot;texto&quot; != &quot;texto&quot;
+</code></pre>
+
+<pre><code>## [1] FALSE
 </code></pre>
 
 <p>Note no segundo exemplo que o R é &ldquo;case sensitive&rdquo;, ou seja, diferencia maiúsculas de minúsculas ao comparar textos.</p>
@@ -531,22 +592,61 @@
 <p>Textos também podem ser ordenados:</p>
 
 <pre><code class="language-r">&quot;a&quot; &gt; &quot;b&quot;
-&quot;a&quot; &lt; &quot;b&quot;
-&quot;A&quot; &lt; &quot;b&quot;
-&quot;A&quot; &gt; &quot;a&quot;
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">&quot;a&quot; &lt; &quot;b&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">&quot;A&quot; &lt; &quot;b&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">&quot;A&quot; &gt; &quot;a&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
 </code></pre>
 
 <p>Inclusive palavras inteiras e sentenças:</p>
 
 <pre><code class="language-r">&quot;cachorro&quot; &lt; &quot;cachorro quente&quot;
-&quot;churrasco de gato&quot; &gt;  &quot;cachorro quente&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">&quot;churrasco de gato&quot; &gt;  &quot;cachorro quente&quot;
+</code></pre>
+
+<pre><code>## [1] TRUE
 </code></pre>
 
 <p>E valores lógicos? Veja se entende o que acontece nos exemplos abaixo:</p>
 
 <pre><code class="language-r">TRUE == 1
-FALSE == 0
-TRUE &gt; FALSE
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">FALSE == 0
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="language-r">TRUE &gt; FALSE
+</code></pre>
+
+<pre><code>## [1] TRUE
 </code></pre>
 
 <p>Podemos comparar valores armazenados em variáveis da mesma maneira que fizemos nos exemplos até aqui:</p>
@@ -554,6 +654,9 @@ TRUE &gt; FALSE
 <pre><code class="language-r">x &lt;- 5
 y &lt;- 10
 x &gt; y
+</code></pre>
+
+<pre><code>## [1] FALSE
 </code></pre>
 
 <h2 id="operadores-relacionais-e-vetores">Operadores relacionais e vetores</h2>
@@ -564,10 +667,16 @@ x &gt; y
 votos16 &gt;= 1000
 </code></pre>
 
+<pre><code>## [1]  TRUE FALSE FALSE FALSE FALSE  TRUE
+</code></pre>
+
 <p>Vamos usar o vetor &ldquo;votos16&rdquo;, que contém votos de candidatos fictícios em 2016, com os votos dos mesmo candidatos em 2012:</p>
 
 <pre><code class="language-r">votos12 &lt;- c(890, 354, 950, 400, 50, 3416)
 votos16 &gt; votos12
+</code></pre>
+
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE
 </code></pre>
 
 <p>Veja que, na comparação entre dois vetores, os elementos são comparados par a par de acordo com a sua posição no vetor. O vetor lógico resultante tem o mesmo tamanho dos vetores comparados.</p>
@@ -607,14 +716,46 @@ votos16 &gt; votos12
 <pre><code class="language-r">votos16 &gt; 500 &amp; votos16 &lt;= 1500
 </code></pre>
 
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+</code></pre>
+
 <p>Veja a tabela de possibilidades de combinação de duas proposições com a conjunção &ldquo;e&rdquo;:</p>
 
-<p>| Proposição 1 | Proposição 2 | Combinação |
-| &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;- |
-| TRUE         | TRUE         | TRUE       |<br />
-| TRUE         | FALSE        | FALSE      |
-| FALSE        | TRUE         | FALSE      |
-| FALSE        | FALSE        | FALSE      |</p>
+<table>
+<thead>
+<tr>
+<th align="left">Proposição 1</th>
+<th align="left">Proposição 2</th>
+<th align="left">Combinação</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+</tr>
+
+<tr>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+
+<tr>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+
+<tr>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
 
 <p>Se o valor atende às duas condições, então o resultado é TRUE. Se ao menos uma proposição é falsa, sob a conjunção é, então a combinação das proposições também é.</p>
 
@@ -623,25 +764,73 @@ votos16 &gt; votos12
 <pre><code class="language-r">votos16 &lt; 500 | votos12 &gt; 1500
 </code></pre>
 
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
+</code></pre>
+
 <p>Veja a tabela de possibilidades de combinação de duas proposições com a conjunção &ldquo;ou&rdquo;:</p>
 
-<p>| Proposição 1 | Proposição 2 | Combinação |
-| &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;- |
-| TRUE         | TRUE         | TRUE       |<br />
-| TRUE         | FALSE        | TRUE       |
-| FALSE        | TRUE         | TRUE       |
-| FALSE        | FALSE        | FALSE      |</p>
+<table>
+<thead>
+<tr>
+<th align="left">Proposição 1</th>
+<th align="left">Proposição 2</th>
+<th align="left">Combinação</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+</tr>
+
+<tr>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+</tr>
+
+<tr>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+</tr>
+
+<tr>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
 
 <p>Finalmente, o operador lógico &ldquo;não&rdquo; tem a única função de reverter um proposição:</p>
 
 <pre><code class="language-r">!TRUE
-!(5 &gt; 3)
-!(votos16 &gt; 500 &amp; votos16 &lt;= 1500)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">!(5 &gt; 3)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="language-r">!(votos16 &gt; 500 &amp; votos16 &lt;= 1500)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
 </code></pre>
 
 <p>Lembre-se que, quando trabalhamos com vetores lógicos, podemos tratá-los como se fossem zeros e uns, tal qual no exemplo:</p>
 
 <pre><code class="language-r">sum(votos16 &gt; votos12)
+</code></pre>
+
+<pre><code>## [1] 4
 </code></pre>
 
 <h2 id="cláusulas-condicionais">Cláusulas condicionais</h2>
@@ -656,8 +845,12 @@ if (x &lt; 0){
 }
 
 print(x)
+</code></pre>
 
-# exemplo com x positivo
+<pre><code>## [1] 23
+</code></pre>
+
+<pre><code class="language-r"># exemplo com x positivo
 x &lt;- 23
 
 if (x &lt; 0){
@@ -665,7 +858,9 @@ if (x &lt; 0){
 }
 
 print(x)
+</code></pre>
 
+<pre><code>## [1] 23
 </code></pre>
 
 <p>A condição que o <em>if</em> deve atender vem entre parênteses. A instrução a ser atendida caso a cláusula seja verdadeira, vem dentro das chaves. Aliás, é boa prática (na maioria dos casos) abrir as chaves em uma linha, escrever as instruções em outra, e fechar as chaves na linha seguinte ao fim das instruções, como no exemplo. Também é boa prática &ldquo;identar&rdquo;, ou seja, desalinhar as instruções do restante do código. Falaremos sobre &ldquo;estilo&rdquo; em algum momento do curso, Por enquanto, apenas observe e não se assuste. Diferentemente de outras linguagens, R não requer identação para funcionar.</p>
@@ -679,7 +874,9 @@ if (votos &gt; 700){
 }
 
 print(status)
+</code></pre>
 
+<pre><code>## [1] &quot;eleito&quot;
 </code></pre>
 
 <p>Mas e se quisermos dar o valor &ldquo;nao eleito&rdquo; a &ldquo;status&rdquo; caso ele não tenha recebido mais de 700 votos? Usamos <em>else</em> para indicar o que fazer em todos os casos em que a condição em <em>if</em> não foi atendida.</p>
@@ -691,6 +888,9 @@ print(status)
 }
 
 print(status)
+</code></pre>
+
+<pre><code>## [1] &quot;eleito&quot;
 </code></pre>
 
 <p>Por fim, vamos imaginar um regra mais complexa. Se o total de &ldquo;votos&rdquo; do candidato for maior que 1200, então ele está eleito. Se a votação tiver ficado entre 700 (exclusive) e 1200 (inclusive), ele recebe &ldquo;status&rdquo; igual a &ldquo;suplente&rdquo;. Com 700 votos ou menos, o &ldquo;status&rdquo; é não eleito.</p>
@@ -708,6 +908,9 @@ print(status)
 print(status)
 </code></pre>
 
+<pre><code>## [1] &quot;suplente&quot;
+</code></pre>
+
 <p>Outro exemplos simples do uso de condicionais, agora com variável de texto e cláusulas</p>
 
 <pre><code class="language-r">partido &lt;- &quot;PMDB&quot;
@@ -717,6 +920,9 @@ if (partido == &quot;PMDB&quot; | partido == &quot;PSD&quot; | partido == &quot;
 } else {
   print(&quot;oposição&quot;)
 }
+</code></pre>
+
+<pre><code>## [1] &quot;governo&quot;
 </code></pre>
 
 <p>É possível complicar bastante o uso dos condicionais &ldquo;aninhando&rdquo; uma cláusula dentro da outra e criando labirintos de condições. Fazer isso, porém, é mais uma questão de lógica do que de uso da linguagem. Não há variações relevantes do uso em relação aos exemplos simples apresentados acima. Se você consegue fazer os condicionais em papel e caneta, então consegue fazê-los em R se os exemplos anteriores tiverem ficado claro.</p>
@@ -740,9 +946,56 @@ while (contador &lt;= 42) {
   print(contador)
   contador &lt;- contador + 1
 }
+</code></pre>
 
-print(contador)
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+## [1] 12
+## [1] 13
+## [1] 14
+## [1] 15
+## [1] 16
+## [1] 17
+## [1] 18
+## [1] 19
+## [1] 20
+## [1] 21
+## [1] 22
+## [1] 23
+## [1] 24
+## [1] 25
+## [1] 26
+## [1] 27
+## [1] 28
+## [1] 29
+## [1] 30
+## [1] 31
+## [1] 32
+## [1] 33
+## [1] 34
+## [1] 35
+## [1] 36
+## [1] 37
+## [1] 38
+## [1] 39
+## [1] 40
+## [1] 41
+## [1] 42
+</code></pre>
 
+<pre><code class="language-r">print(contador)
+</code></pre>
+
+<pre><code>## [1] 43
 </code></pre>
 
 <p>Traduzindo para o português: &ldquo;enquanto o contador for menor ou igual a 42, imprima e some um&rdquo;. A estrutura de um <em>while</em> loop é sempre: &ldquo;enquanto&rdquo; (condição), &ldquo;faça&rdquo;.</p>
@@ -761,8 +1014,35 @@ while (contador &lt;= 42) {
   }
   contador &lt;- contador + 1
 }
+</code></pre>
 
-print(contador)
+<pre><code>## [1] 1
+## [1] 3
+## [1] 5
+## [1] 7
+## [1] 9
+## [1] 11
+## [1] 13
+## [1] 15
+## [1] 17
+## [1] 19
+## [1] 21
+## [1] 23
+## [1] 25
+## [1] 27
+## [1] 29
+## [1] 31
+## [1] 33
+## [1] 35
+## [1] 37
+## [1] 39
+## [1] 41
+</code></pre>
+
+<pre><code class="language-r">print(contador)
+</code></pre>
+
+<pre><code>## [1] 43
 </code></pre>
 
 <p>Veja que temos agora um código &ldquo;aninhado&rdquo;, pois colocamos um condicional dentro de um loop. Novamente, combinar estruturas de código são mais um problema de lógica do que de linguagem e, se você consegue fazer no papel, consegue traduzir para o R.</p>
@@ -778,11 +1058,78 @@ print(contador)
 }
 </code></pre>
 
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+## [1] 12
+## [1] 13
+## [1] 14
+## [1] 15
+## [1] 16
+## [1] 17
+## [1] 18
+## [1] 19
+## [1] 20
+## [1] 21
+## [1] 22
+## [1] 23
+## [1] 24
+## [1] 25
+## [1] 26
+## [1] 27
+## [1] 28
+## [1] 29
+## [1] 30
+## [1] 31
+## [1] 32
+## [1] 33
+## [1] 34
+## [1] 35
+## [1] 36
+## [1] 37
+## [1] 38
+## [1] 39
+## [1] 40
+## [1] 41
+## [1] 42
+</code></pre>
+
 <p>Neste caso, lemos &ldquo;para cada i em 1 até 42, faça&rdquo;. O que o <em>for</em> loop faz é variar o i a cada iteração de acordo com a sequência estabelecida. Outro exemplo, agora na ordem reversa:</p>
 
 <pre><code class="language-r">for (i in 10:-10){
   print(i)
 }
+</code></pre>
+
+<pre><code>## [1] 10
+## [1] 9
+## [1] 8
+## [1] 7
+## [1] 6
+## [1] 5
+## [1] 4
+## [1] 3
+## [1] 2
+## [1] 1
+## [1] 0
+## [1] -1
+## [1] -2
+## [1] -3
+## [1] -4
+## [1] -5
+## [1] -6
+## [1] -7
+## [1] -8
+## [1] -9
+## [1] -10
 </code></pre>
 
 <p>Agora com a condição de não imprimir os pares:</p>
@@ -794,6 +1141,29 @@ print(contador)
 }
 </code></pre>
 
+<pre><code>## [1] 1
+## [1] 3
+## [1] 5
+## [1] 7
+## [1] 9
+## [1] 11
+## [1] 13
+## [1] 15
+## [1] 17
+## [1] 19
+## [1] 21
+## [1] 23
+## [1] 25
+## [1] 27
+## [1] 29
+## [1] 31
+## [1] 33
+## [1] 35
+## [1] 37
+## [1] 39
+## [1] 41
+</code></pre>
+
 <p><em>for</em> loops não precisam ser apenas com números. Na verdade, você pode colocar após o &ldquo;in&rdquo; qualquer vetor. Por exemplo, um vetor das regiões brasileiras (ou UFs, se você tiver paciência de escrever todas):</p>
 
 <pre><code class="language-r">vetor_regioes &lt;- c(&quot;norte&quot;, &quot;nordeste&quot;, &quot;sudeste&quot;,&quot;sul&quot;, &quot;centro-oeste&quot;)
@@ -801,6 +1171,13 @@ print(contador)
 for (regiao in vetor_regioes){
   print(regiao)
 }
+</code></pre>
+
+<pre><code>## [1] &quot;norte&quot;
+## [1] &quot;nordeste&quot;
+## [1] &quot;sudeste&quot;
+## [1] &quot;sul&quot;
+## [1] &quot;centro-oeste&quot;
 </code></pre>
 
 <p>Se você já trabalhou com dados eleitorais brasileiros, você certamente teve de abrir diversos arquivos semelhantes, cada um contendo informações de um estado brasileiro. Ou ainda, se você já obteve informações na internet, talvez tenha precisado &ldquo;passar&rdquo; por diversas páginas semelhantes. Loops resolvem problemas desse tipo: eles repetem procedimentos variando apenas um índice. Aprender a usar loops economiza um tempo enorme, pois conseguimos automatizar tarefas ou, pelo menos, escrever um código mais curto para aplicar o mesmo comando inúmeras vezes.</p>
@@ -817,7 +1194,15 @@ for (regiao in vetor_regioes){
 }
 
 conversor(212)
-conversor(32)
+</code></pre>
+
+<pre><code>## [1] 100
+</code></pre>
+
+<pre><code class="language-r">conversor(32)
+</code></pre>
+
+<pre><code>## [1] 0
 </code></pre>
 
 <p>Temos vários elementos no &ldquo;construtor&rdquo; de funções. Em primeiro lugar, criamos a função como criamos um objeto. Quer dizer, escolhemos um nome para ela e atribuímos a função criada a esse nome.</p>
@@ -828,7 +1213,7 @@ conversor(32)
 
 <p>Crie uma função chamada &ldquo;quadrado&rdquo; que recebe um número &ldquo;x&rdquo; e retorna o quadrado de x.</p>
 
-<h2 id="reposta">Reposta</h2>
+<h3 id="reposta">Reposta</h3>
 
 <pre><code class="language-r">quadrado &lt;- function(x){
   resultado &lt;- x * x
@@ -836,7 +1221,15 @@ conversor(32)
 }
 
 quadrado(4)
-quadrado(17)
+</code></pre>
+
+<pre><code>## [1] 16
+</code></pre>
+
+<pre><code class="language-r">quadrado(17)
+</code></pre>
+
+<pre><code>## [1] 289
 </code></pre>
 
 <h2 id="exercício-2">Exercício</h2>
@@ -846,7 +1239,7 @@ quadrado(17)
 <li>Crie uma função que recebe um valor em reais e uma cotação do dólar e retorna o valor em dólares.</li>
 </ul>
 
-<h2 id="reposta-do-segundo-item">Reposta do segundo item</h2>
+<h3 id="reposta-1">Reposta</h3>
 
 <pre><code class="language-r">conversor_moeda &lt;- function(valor, cotacao){
   dolares &lt;- valor / cotacao
@@ -854,6 +1247,9 @@ quadrado(17)
 }
 
 conversor_moeda(42, 3.2)
+</code></pre>
+
+<pre><code>## [1] 13.125
 </code></pre>
 
 

@@ -150,7 +150,7 @@ Há um conjunto de funções que alteram os "temas" dos gráficos. Por padrão, 
 
 ## Salvando os gáficos
 
-Você pode usar tanto o botão "Export" no RStudio quanto a função "ggsave". Veja o exemplo abaixo, que salva o gráfico disponível no ferramenta de visualização em diversos formatos, respectivamente .png, pdf e .jpeg, e com dimensões definidas pelos argumentos _width_ e _height_.
+Você pode usar tanto o botão "Export" no RStudio quanto a função `ggsave`. Veja o exemplo abaixo, que salva o gráfico disponível no ferramenta de visualização em diversos formatos, respectivamente .png, pdf e .jpeg, e com dimensões definidas pelos argumentos _width_ e _height_.
 
 
 ```r
