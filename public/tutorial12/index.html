@@ -460,7 +460,7 @@
 
 <p>Vamos usar o data frame &ldquo;fake_data&rdquo; para nosso treino:</p>
 
-<pre><code class="language-r, message = FALSE">library(readr)
+<pre><code class="language-r">library(readr)
 url_fake_data &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/fake_data.csv&quot;
 fake &lt;- read_delim(url_fake_data, delim = &quot;;&quot;, col_names = T)
 </code></pre>
@@ -474,187 +474,118 @@ fake &lt;- read_delim(url_fake_data, delim = &quot;;&quot;, col_names = T)
 
 <p>Vamos começar com gráficos de barras, adequados para uma única variável discreta. Contrua o gráfico abaixo, para a variável &ldquo;party&rdquo;. O código esta propositalmente omitido e você deve &ldquo;se virar&rdquo; para construir o gráfico.</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party)) +
-  geom_bar()
-</code></pre>
+<p><img src="figures//unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" /></p>
 
 <p>Se utilizarmos no argumento &ldquo;fill&rdquo; na &ldquo;aesthetics&rdquo; do ggplot uma outra variável discreta, obtemos. Teste você mesm@:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
-  geom_bar()
-</code></pre>
+<p><img src="figures//unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" /></p>
 
 <p>Vamos agora variar as posições das barras alterando os valores do argumento &ldquo;position&rdquo; em <em>geom_bar</em>. Os valores para &ldquo;position&rdquo; são: &ldquo;stack&rdquo; (default, mostrado acima), &ldquo;dodge&rdquo; e &ldquo;fill&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
-  geom_bar(position = &quot;dodge&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" /></p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, fill = turnout)) +
-  geom_bar(position = &quot;fill&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" /></p>
 
 <h2 id="gráficos-para-uma-variável-contínua">Gráficos para uma variável contínua</h2>
 
 <p>Comecemos com a variável &ldquo;income&rdquo;. Vamos construir um histograma. Por termos poucos dados, use &ldquo;bins = 10&rdquo; como argumento para construção do histograma:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income)) +
-  geom_histogram(bins = 10)
-</code></pre>
+<p><img src="figures//unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" /></p>
 
 <p>Novamente, inclua &ldquo;turnout&rdquo; no argumento &ldquo;fill&rdquo; de &ldquo;aesthetics&rdquo; e observe o resultado</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
-  geom_histogram(bins = 10)
-</code></pre>
+<p><img src="figures//unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" /></p>
 
 <p>Tal como com os gráficos de barra, varie a posição do histograma. O argumento &ldquo;position&rdquo; pode receber os valores: &ldquo;stack&rdquo; (default, mostrado acima), &ldquo;dodge&rdquo; e &ldquo;fill&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
-  geom_histogram(bins = 10, position = &quot;dodge&quot;)
+<p><img src="figures//unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" /></p>
+
+<pre><code>## Warning: Removed 4 rows containing missing values (geom_bar).
 </code></pre>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
-  geom_histogram(bins = 10, position = &quot;fill&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10" /></p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
-  geom_histogram(bins = 10, position = &quot;stack&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11" /></p>
 
 <p>Gráficos de densidade costumam ser uma opção mais atrativa para variáveis verdadeiramente contínuas (e não númericas discretas, como idade em anos, por exemplo). Produza a densidade de &ldquo;income&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income)) +
-  geom_density()
-</code></pre>
+<p><img src="figures//unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" /></p>
 
 <p>Vamos agora separar as densidades inserindo uma variável discreta no argumento &ldquo;fill&rdquo;, tal como &ldquo;turnout&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, fill = turnout)) +
-  geom_density(alpha = 0.5)
-</code></pre>
+<p><img src="figures//unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" /></p>
 
 <p>Veja que só conseguimos separar as densidades por estarmos trabalhando com uma única variável contínua separada por uma variável discreta. Se quisermos, porém, sobrepor as densidades de duas variáveis contínuas, temos que passar os argumentos &ldquo;aesthetics&rdquo; da função <em>ggplot</em> para dentro de <em>geom_density</em>. Tente reproduzir o gráfico abaixo usando &ldquo;income&rdquo; e &ldquo;savings&rdquo;. Não se preocupe com os rótulos dos eixos por enquanto:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake) +
-  geom_density(aes(x = income), alpha = 0.5, fill = 'red') + 
-  geom_density(aes(x = savings), alpha = 0.5, fill = 'blue')
-</code></pre>
+<p><img src="figures//unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14" /></p>
 
 <h2 id="uma-variável-discreta-e-uma-contínua">Uma variável discreta e uma contínua</h2>
 
 <p>Uma das opções para apresentarmos conjuntamente uma variável discreta e uma contínua é utilizarmos o gráfico de barras com o argumento &lsquo;stat = &ldquo;identity&rdquo;&rsquo; em <em>geom_bar</em>. Note que a variável discreta é o argumento &ldquo;x&rdquo; e a contínua, &ldquo;y&rdquo;. Tente você:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, y = income)) +
-  geom_bar(stat = &quot;identity&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15" /></p>
 
 <p>Box-plots também são opções excelentes:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = party, y = income)) +
-  geom_boxplot()
-</code></pre>
+<p><img src="figures//unnamed-chunk-16-1.png" alt="plot of chunk unnamed-chunk-16" /></p>
 
 <h2 id="duas-variáveis-contínua">Duas variáveis contínua:</h2>
 
 <p>Vamos agora trabalhar com a apresentação conjunta de duas variáveis contínuas, &ldquo;income&rdquo; (x) e &ldquo;savings&rdquo; (y). O gráfico de dispersão é obviamente a opção básica:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_point()
-</code></pre>
+<p><img src="figures//unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17" /></p>
 
 <p>A reta que descreve uma função linear entre as duas variáveis é outra opção. Dica: use <em>geom_smooth</em> e adota o argumento &lsquo;method = &ldquo;lm&rdquo;&rsquo;, onde &ldquo;lm&rdquo; significa &ldquo;linear model&rdquo;</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-18-1.png" alt="plot of chunk unnamed-chunk-18" /></p>
 
 <p>Combine os dois gráficos anteriores:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_point() + 
-  geom_smooth(method = &quot;lm&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19" /></p>
 
 <p>Se quiser retirar o intervalo de confiança do modelo linear, representado pela área cinza, use &ldquo;se = FALSE&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_point() + 
-  geom_smooth(method = &quot;lm&quot;, se = F)
-</code></pre>
+<p><img src="figures//unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20" /></p>
 
 <p>Há alternativas ao modelo linear. Use &lsquo;method = &ldquo;loess&rdquo;&rsquo; para um ajuste polinomial:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_point() + 
-  geom_smooth(method = &quot;loess&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21" /></p>
 
 <p>Voltando ao gráfico de dispersão básico, podemos separa os pontos por uma terceira variável (discreta). Use o argumento &ldquo;color&rdquo; em &ldquo;aesthetics&rdquo;. Vamos separar por &ldquo;turnout&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, color = turnout)) +
-  geom_point()
-</code></pre>
+<p><img src="figures//unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" /></p>
 
 <p>Podemos apresentar um modelo linear para cada grupo de &ldquo;turnout&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, color = turnout)) +
-  geom_point() +
-  geom_smooth(method = &quot;lm&quot;, se = FALSE)
-</code></pre>
+<p><img src="figures//unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23" /></p>
 
 <p>Se no lugar de colocarmos &ldquo;turnout&rdquo; no argumento &ldquo;color&rdquo;, colocarmos em &ldquo;shape&rdquo;, teremos variação no formato dos pontos:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, shape = turnout)) +
-  geom_point()
-</code></pre>
+<p><img src="figures//unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24" /></p>
 
 <h2 id="mais-opções-gráficas">Mais opções gráficas</h2>
 
 <p>Se quisermos separar os dados em diferentes paineis, digamos, por grupo candidato de preferência (variável &ldquo;candidate&rdquo;), usamos <em>facet_wrap</em> com a seguinte fórmula &ldquo;(~ candidate)&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_point() +
-  geom_smooth(method = &quot;lm&quot;) +
-  facet_wrap(~ candidate)
-</code></pre>
+<p><img src="figures//unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25" /></p>
 
 <p>Podemos alterar as legendas de um gráfico usando as funções <em>xlab</em> e <em>ylab</em>:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings, fill = T)) +
-  geom_smooth(method = &quot;lm&quot;, se = F) +
-  ylab(&quot;Poupança&quot;) +
-  xlab(&quot;Renda&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26" /></p>
 
 <p>E podemos adicionar título com <em>ggtitle</em>:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;) +
-  ggtitle(&quot;Poupança por renda em Fakeland&quot;)
-</code></pre>
+<p><img src="figures//unnamed-chunk-27-1.png" alt="plot of chunk unnamed-chunk-27" /></p>
 
 <p>Há um conjunto de funções que alteram os &ldquo;temas&rdquo; dos gráficos. Por padrão, usamos <em>theme_grey</em>. Os temas básicos são: <em>theme_classic</em>, <em>theme_bw</em>, <em>theme_minimal</em>, <em>theme_void</em>. Teste cada uma deles, como na sequência abaixo. Há um pacote chamado <em>ggthemes</em> que contém diversos outros &ldquo;temas&rdquo;:</p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;) +
-  theme_classic()
-</code></pre>
+<p><img src="figures//unnamed-chunk-28-1.png" alt="plot of chunk unnamed-chunk-28" /></p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;) +
-  theme_bw()
-</code></pre>
+<p><img src="figures//unnamed-chunk-29-1.png" alt="plot of chunk unnamed-chunk-29" /></p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;) +
-  theme_minimal()
-</code></pre>
+<p><img src="figures//unnamed-chunk-30-1.png" alt="plot of chunk unnamed-chunk-30" /></p>
 
-<pre><code class="language-r, echo = FALSE, fig.width=5, fig.height=3.5">ggplot(fake, aes(x = income, y = savings)) +
-  geom_smooth(method = &quot;lm&quot;) +
-  theme_void()
-</code></pre>
+<p><img src="figures//unnamed-chunk-31-1.png" alt="plot of chunk unnamed-chunk-31" /></p>
 
 <h2 id="salvando-os-gáficos">Salvando os gáficos</h2>
 
@@ -669,7 +600,7 @@ ggsave(&quot;plot.jpeg&quot;, width = 5, height = 5)
 
 <p>Código dos gráficos acima, na sequência:</p>
 
-<pre><code class="language-r, eval = FALSE">ggplot(fake, aes(x = party)) +
+<pre><code class="language-r">ggplot(fake, aes(x = party)) +
 geom_bar()
 
 ggplot(fake, aes(x = party, fill = turnout)) +

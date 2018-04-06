@@ -6,42 +6,37 @@ type: index
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
-Bem-vinda ao Curso de Programação para Cientistas Sociais! Estamos muito felizes com a oportunidade de lhe ensinar o pouco do que nós sabemos.
+Bem-vinda ao Curso de Programação para Cientistas Sociais!
 
-##1. Estrutura do Curso
+## 1. Estrutura do Curso
 
-Esse curso tem como bojetivo apresentar as ferramentas básicas disponíveis no R. A aprendizagem será realizada por meio de tutoriais, que podem ser divididos em 4 grandes temas da análise de dados.
+Esse curso tem como bojetivo apresentar as ferramentas básicas de programação e análise de dados no R. Com esse curso, você conseguirá:
 
-- __Importar__ bancos de dados no R
+- __Importar__ bancos de dados
 
--  __Estruturar__ o banco de dados
+- __Estruturar__ o banco de dados
 
--  __Transformar__, criar e modificar variáveis, no R 
+- __Transformar__, criar e modificar variáveis
 
--  __Visualizar__ variáveis no R
+- __Visualizar__ variáveis
 
--  __Comunicar__ os resultados obtidos por meio do R Markdown
+- __Comunicar__ os resultados obtidos por meio do R Markdown
 
-Outros assuntos como modelagem e aplicativos (_shiny_) não fazem parte dos objetivos desse curso. Ainda assim, caso tenha interesse, a partir do conteúdo oferecido você será capaz de aprender muitas coisas no R.
+## 2. O que é o R?
 
-##2. O que é o R
+R é uma linguagem de programação muito utilizado para análise de dados. Com ele, podemos fazer gráficos, mapas, análises estatísticas das mais simples às mais sofisticadas. Uma das grandes vantagens do R é a comunidade bastante ativa que atualiza os pacotes e traz constante novas funcionalidades para nós usuários.
 
-Antes de aprendermos o R em si, precisamos entendê-lo. R é uma linguagem de programação, ou seja, ele nos permite comunicar com o computador. Criado por estatísticos, o R é muito eficiente na análise de dados e possui uma infinitude de pacotes desenvolvidos pela comunidade. Esses pacotes são fundamentais para uma boa análise de dados. Nesse curso, aprenderemos um pouco sobre o __tidyverse__, um conjunto de pacotes que busca facilitar a análise de dados.
+## 3. Instalando o R e o RStudio
 
-##3. Instalando o R
+Para instalar o R, clique [aqui](https://cran.r-project.org/)
 
-Acesse o [site](https://cran.r-project.org/) oficial do R.
+Para instalar o RStudio, interface de desenvolvimento (IDE) na qual realizamos nossas análises, clique [aqui](https://www.rstudio.com/)
 
-##4. Instalando o RStudio
+## 4. Agora é com você!
 
-Embora o R possa ser utilizada a partir de um editor de texto e um terminal; em geral, para análise de dados, utilizamos uma interface de desenvolvimento (IDE) chamada RStudio. Ela facilita bastante o nosso trabalho.
+Aprender uma linguagem de programação pode ser uma tarefa bastate difícil. No começo, é muito comum errarmos coisas bobas e ficar bons minutos não entendendo porque o nosso código não funciona. Ainda assim, não desista! Com o tempo você ganhará fluência no R e tudo ficará mais fácil!
 
-##5. Agora é com você!
-
-Aprender uma linguagem de programação pode se mostrar uma tarefa bastate difícil. No começo, é muito comum errarmos coisas bocas (esquecer uma vírgula, ou um ponto, ou até mesmo trocar letras maísculas por minúsculas e vice-versa) e ficar bons minutos não entendendo porque o nosso código não funciona. Ainda assim, não desista! Com o tempo você ganhará fluência no R e tudo ficará mais fácil!
-
-Por fim, não se esqueçam do principal, aprender programação e, em especial, aprender R deve ser uma coisa __divertida__!
-
+Por fim, não se esqueçam do principal, programar deve ser uma coisa __divertida__!

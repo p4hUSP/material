@@ -43,6 +43,16 @@ library(dplyr)  Comparação dos pagamentos entre janeiro de 2011 e janeiro de 2
     </item>
     
     <item>
+      <title>Enviando E-Mails pelo R</title>
+      <link>/emailr/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/emailr/</guid>
+      <description>Nesse breve tutorial, vamos aprender a utilizar o R para enviar e-mails.
+#Essa função testa if(!require(gmailr)) install.packages(&amp;quot;gmailr&amp;quot;)  library(tidyverse) mtcars %&amp;gt;% ggplot(mapping = aes(x = gear)) + geom_bar()  </description>
+    </item>
+    
+    <item>
       <title>Funções no R</title>
       <link>/tutorial13/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
@@ -106,8 +116,10 @@ Informação espacial armazenada em data frames - pontos no google maps Vamos co
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/</guid>
-      <description>1. Estrutura do Curso 2. O que é o R 3. Instalando o R 4. Instalando o RStudio 5. Agora é com você!   Bem-vinda ao Curso de Programação para Cientistas Sociais! Estamos muito felizes com a oportunidade de lhe ensinar o pouco do que nós sabemos.
-1. Estrutura do Curso Esse curso tem como bojetivo apresentar as ferramentas básicas disponíveis no R. A aprendizagem será realizada por meio de tutoriais, que podem ser divididos em 4 grandes temas da análise de dados.</description>
+      <description>1. Estrutura do Curso 2. O que é o R? 3. Instalando o R e o RStudio 4. Agora é com você!   Bem-vinda ao Curso de Programação para Cientistas Sociais!
+1. Estrutura do Curso Esse curso tem como bojetivo apresentar as ferramentas básicas de programação e análise de dados no R. Com esse curso, você conseguirá:
+ Importar bancos de dados
+ Estruturar o banco de dados</description>
     </item>
     
     <item>
