@@ -19,7 +19,7 @@ create_content <- function(){
   del_files <- list.files("./temp/material-master/content/")
   
   for(i in del_files){
-    system(sprintf("rm -Rf .content/%s", i))
+    system(sprintf("rm -Rf ./content/%s", i))
   }
   
   system('mv -v ./temp/material-master/content/* ./content/')
