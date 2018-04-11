@@ -112,6 +112,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	url    = "tutorial13/"
 	weight = 65
 
+[[menu.main]]
+	name   = "Web Scraping"
+	url    = "webscraping/"
+	weight = 70
+
 [blackfriday]
 	smartypants	= true
 	fractions = true
