@@ -28,4 +28,3 @@ HUGO_VERSION = "0.22"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
-
