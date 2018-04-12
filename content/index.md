@@ -5,12 +5,6 @@ date: '2018-04-05'
 type: index
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
-```
-
-Bem-vinda ao Curso de Programação para Cientistas Sociais!
-
 ## 1. Estrutura do Curso
 
 Esse curso tem como bojetivo apresentar as ferramentas básicas de programação e análise de dados no R. Com esse curso, você conseguirá:
