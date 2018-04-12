@@ -32,4 +32,4 @@ create_content()
 
 # #Instala o Hugo (0.22) e constrói o site
 blogdown::install_hugo(version = "0.22", force = T)
-blogdown::build_site()
+blogdown::hugo_build()
