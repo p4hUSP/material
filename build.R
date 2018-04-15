@@ -5,7 +5,7 @@ library(magrittr)
 #Transfere os materias do repositório "materials" para o site
 create_content <- function(){
   
-  download_url <- "https://github.com/R4CS/material/archive/master.zip"
+  download_url <- "https://github.com/R4CS/material/archive/content.zip"
   
   file <- tempfile()
   
@@ -16,14 +16,10 @@ create_content <- function(){
 
   unzip(file, exdir = "./temp")
   
-  del_files <- list.files("./temp/material-master/content/")
+  del_files <- list.files("./temp/material-content/")
   
-  for(i in del_files){
-    system(sprintf("rm -Rf ./content/%s", i))
-  }
-  
-  system('mv -v ./temp/material-master/content/* ./content/')
-  system('rm -Rf ./temp')
+  system('mv -v ./temp/material-content/* ./content/')
+  system('rm -rf ./temp')
   file.remove(file)
 }
 
