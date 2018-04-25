@@ -116,6 +116,13 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	name   = "Web Scraping"
 	url    = "webscraping/"
 	weight = 70
+	
+[[menu.main]]
+	name   = "Gráficos"
+	url    = "tu.ggplot2/"
+	weight = 75
+	
+	
 
 [blackfriday]
 	smartypants	= true
