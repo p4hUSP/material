@@ -119,7 +119,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	
 [[menu.main]]
 	name   = "Gráficos"
-	url    = "tu.ggplot2/"
+	url    = "ggplot2/"
 	weight = 75
 	
 	
