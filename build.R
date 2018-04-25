@@ -17,7 +17,7 @@ create_content <- function(){
   unzip(file, exdir = "./temp")
   
   del_files <- list.files("./temp/material-content/")
-  
+  system("mkdir content")
   system('mv -v ./temp/material-content/* ./content/')
   system('rm -rf ./temp')
   file.remove(file)
