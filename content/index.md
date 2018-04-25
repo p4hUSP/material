@@ -5,11 +5,11 @@ date: '2018-04-05'
 type: index
 ---
   
-  ## 1. Estrutura do Curso
+## 1. Estrutura do Curso
   
   Esse curso tem como bojetivo apresentar as ferramentas básicas de programação e análise de dados no R. Com esse curso, você conseguirá:
   
-  - __Importar__ bancos de dados
+- __Importar__ bancos de dados
 
 - __Estruturar__ o banco de dados
 
