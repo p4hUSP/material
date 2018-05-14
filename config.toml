@@ -47,6 +47,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	email   = "programacao.sociais@gmail.com"
 	
 [[menu.main]]
+	name   = "Oficina SECS"
+	url    = "secs/"
+	weight = 4
+	
+[[menu.main]]
 	name   = "Web Scraping"
 	url    = "webscraping/"
 	weight = 5
