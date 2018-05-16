@@ -49,21 +49,21 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
 	name   = "Oficina SECS"
 	url    = "secs/"
-	weight = 4
-	
-[[menu.main]]
-	name   = "Web Scraping"
-	url    = "webscraping/"
-	weight = 5
+	weight = 1
 	
 [[menu.main]]
 	name   = "Gráficos"
 	url    = "ggplot2/"
-	weight = 10
+	weight = 5
 	
 [[menu.main]]
 	name   = "Mapas"
 	url    = "mapas/"
+	weight = 10
+	
+[[menu.main]]
+	name   = "Web Scraping"
+	url    = "webscraping/"
 	weight = 15
 	
 [[menu.main]]
