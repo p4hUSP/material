@@ -49,82 +49,82 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
 	name   = "Oficina SECS"
 	url    = "secs/"
-	weight = 1
+	weight = 5
 	
 [[menu.main]]
 	name   = "Gráficos"
 	url    = "ggplot2/"
-	weight = 5
+	weight = 10
 	
 [[menu.main]]
 	name   = "Mapas"
 	url    = "mapas/"
-	weight = 10
+	weight = 15
 	
 [[menu.main]]
 	name   = "Web Scraping"
 	url    = "webscraping/"
-	weight = 15
+	weight = 20
+	
+[[menu.main]]
+ 	name   = "SQL"
+	url    = "sql/"
+ 	weight = 25
 	
 [[menu.main]]
 	name   = "Tutorial 1"
 	url    = "tutorial1/"
-	weight = 20
+	weight = 30
 
 [[menu.main]]
 	name   = "Tutorial 2"
 	url    = "tutorial2/"
-	weight = 25
+	weight = 35
 	
 [[menu.main]]
 	name   = "Tutorial 3"
 	url    = "tutorial3/"
-	weight = 30
+	weight = 40
 
 [[menu.main]]
 	name   = "Tutorial 4"
 	url    = "tutorial4/"
-	weight = 35
+	weight = 45
 	
 [[menu.main]]
 	name   = "Tutorial 5"
 	url    = "tutorial5/"
-	weight = 40
+	weight = 50
 
 [[menu.main]]
 	name   = "Tutorial 6"
 	url    = "tutorial6/"
-	weight = 45
+	weight = 55
 	
 [[menu.main]]
 	name   = "Tutorial 7"
 	url    = "tutorial7/"
-	weight = 50
-	
-[[menu.main]]
-	name   = "Tutorial 9"
-	url    = "sql/"
-	weight = 55
+	weight = 60
 
 [[menu.main]]
 	name   = "Tutorial 10"
 	url    = "tutorial10/"
-	weight = 60
+	weight = 65
 	
 [[menu.main]]
 	name   = "Tutorial 11"
 	url    = "tutorial11/"
-	weight = 65
+	weight = 70
 
 [[menu.main]]
 	name   = "Tutorial 12"
 	url    = "tutorial12/"
-	weight = 70
+	weight = 75
 	
 [[menu.main]]
 	name   = "Tutorial 13"
 	url    = "tutorial13/"
-	weight = 75
+	weight = 80
 
 
 [blackfriday]
