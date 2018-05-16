@@ -103,7 +103,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	
 [[menu.main]]
 	name   = "Tutorial 9"
-	url    = "tutorial9/"
+	url    = "sql/"
 	weight = 55
 
 [[menu.main]]
