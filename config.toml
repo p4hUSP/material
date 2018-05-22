@@ -6,7 +6,7 @@ metadataformat = "yaml"
 canonifyurls = true
 relativeurls = true
 # Enable Google Analytics by entering your tracking id
-googleAnalytics = ""
+googleAnalytics = "UA-119683862-1"
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
@@ -42,9 +42,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     	code = "Ubuntu Mono"
 
 [social]
-	twitter = ""
-	github  = "R4CS"
-	email   = "programacao.sociais@gmail.com"
+	github   = "R4CS"
+	email    = "programacao.sociais@gmail.com"
 	
 [[menu.main]]
 	name   = "Oficina SECS"
