@@ -12,7 +12,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
 	# General information
-	author = "Curso de Programação para Ciências Sociais"
+	author = "P4H"
 	description = "Material do Curso de Programação para Ciências Sociais"
 	copyright = "Released under the MIT license"
 
@@ -44,6 +44,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [social]
 	github   = "R4CS"
 	email    = "programacao.sociais@gmail.com"
+	slack    = "p4h"
+	facebook = "p4hUSP"
 	
 [[menu.main]]
 	name   = "Oficina SECS"
@@ -69,6 +71,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
  	name   = "SQL"
 	url    = "sql/"
  	weight = 25
+ 	
+[[menu.main]]
+ 	name   = "Text Mining"
+	url    = "textmining/"
+ 	weight = 26
 	
 [[menu.main]]
 	name   = "Tutorial 1"
