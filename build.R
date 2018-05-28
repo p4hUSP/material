@@ -5,7 +5,7 @@ library(magrittr)
 #Transfere os materias do repositório "materials" para o site
 create_content <- function(){
   
-  download_url <- "https://github.com/R4CS/material/archive/content.zip"
+  download_url <- "https://github.com/p4hUSP/material_conteudo/archive/content.zip"
   
   file <- tempfile()
   
