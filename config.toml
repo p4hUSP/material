@@ -42,9 +42,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     	code = "Ubuntu Mono"
 
 [social]
-	github   = "R4CS"
+	github   = "p4hUSP"
 	email    = "programacao.sociais@gmail.com"
-	slack    = "p4h"
+	slack    = "p4husp"
 	facebook = "p4hUSP"
 	
 [[menu.main]]
@@ -131,7 +131,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	name   = "Tutorial 13"
 	url    = "tutorial13/"
 	weight = 80
-
 
 [blackfriday]
 	smartypants	= true
