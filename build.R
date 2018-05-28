@@ -16,8 +16,8 @@ create_content <- function(){
 
   unzip(file, exdir = "./temp")
   
-  del_files <- list.files("./temp/material-content/")
-  system('cp -rf ./temp/material-content/* ./content/')
+  del_files <- list.files("./temp/material_conteudo-content/")
+  system('cp -rf ./temp/material_conteudo-content/* ./content/')
   system('rm -rf ./temp')
   file.remove(file)
 }
