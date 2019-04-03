@@ -59,7 +59,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	
 [[menu.main]]
         name   = "Dplyr"
-	url    = "tyverse/"
+	url    = "dplyr/"
 	weight = 13
 	
 [[menu.main]]
