@@ -1,3 +1,4 @@
+install.packages(c("magrittr","blogdown"))
 library(magrittr)
 
 # 1. Implementar o Conteúdo -----------------------------------------------
