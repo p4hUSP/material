@@ -58,9 +58,14 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	weight = 10
 	
 [[menu.main]]
-        name   = "Dplyr"
+  name   = "Dplyr"
 	url    = "dplyr/"
 	weight = 13
+	
+[[menu.main]]
+  name   = "Wrap Up"
+	url    = "wrapup/"
+	weight = 14
 	
 [[menu.main]]
 	name   = "Mapas"
