@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Web Scraping - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../webscraping/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/webscraping/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/icons.css">
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Web Scraping
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introdução" href="../intro/">
+	
+	Introdução
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Gráficos" href="../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Web Scraping" href="../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Web Scraping </h1>
+
+			
+
+<h2 id="atividade-1">Atividade 1</h2>
+
+<h3 id="pacotes-no-r">Pacotes no R</h3>
+
+<p>Algumas das funções que vamos utilizar nesta atividade não estão na biblioteca básica do R. Temos, dessa forma, que começar instalando uma biblioteca chamada &ldquo;rvest&rdquo;. A biblioteca já está instalada nos computadores que vamos utilizar hoje. Porém, vamos refazer o processo de instalação para aprender um pouco mais. Execute o comando abaixo:</p>
+
+<pre><code class="language-r">install.packages(&quot;rvest&quot;)
+install.packages(&quot;dplyr&quot;)
+install.packages(&quot;stringr&quot;)
+</code></pre>
+
+<p>Uma vez instalada a biblioteca, as funções não estão automaticamente disponíveis. Para torná-las disponíveis é preciso &ldquo;chamar&rdquo; a biblioteca. Vamos fazer isso com a biblioteca &ldquo;rvest&rdquo;, &ldquo;dplyr&rdquo; e &ldquo;stringr&rdquo;. Execute o comando abaixo:</p>
+
+<pre><code class="language-r">library(rvest) # Web Scraping
+library(dplyr) # Manipular os dados
+library(stringr) # Substituir padroes nos textos
+</code></pre>
+
+<p>Excelente! Já temos as funções que precisamos disponíveis na nossa sessão. Vamos utilizá-las logo mais.</p>
+
+<h3 id="atividade-inicial-pesquisa-de-proposições-na-alesp">Atividade inicial - Pesquisa de Proposições na ALESP</h3>
+
+<h4 id="for-loop-e-links-com-numeração-de-página">For loop e links com numeração de página</h4>
+
+<p>Vamos começar visitando o site da ALESP e entrar na ferramenta de pesquisa de proposições: <a href="http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/">http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/</a>
+No site, vamos elaborar uma pesquisa qualquer que retorne uma quantidade de respostas que manualmente seria no mínimo ineficiente coletarmos.
+Por exemplo, podemos pesquisar por todas as proposições relacionados à palavra &ldquo;merenda&rdquo;.</p>
+
+<p>O resultado da pesquisa é dividido em diversas páginas com 10 observações em cada uma.
+Há 4 informações sobre as proposições: data, título (e número do projeto), autor e etapa.</p>
+
+<p>Podemos prosseguir, clicando nos botões de navegação ao final da página, para as demais páginas da pesquisa. Por exemplo, podemos ir para a página 2 clicando uma vez na seta indicando à direita.</p>
+
+<p>OBS: Há uma razão importante para começarmos nosso teste com a segunda página da busca. Em diversos servidores web, como este da ALESP, o link (endereço url) da primeira página é &ldquo;diferente&rdquo; dos demais. Em geral, os links são semelhantes da segunda página em diante.</p>
+
+<p>Nossa primeira tarefa consiste em capturar estas informações. Vamos, no decorrer da atividade aprender bastante sobre R, objetos, estruturas de dados, loops e captura de tabelas em HTML.</p>
+
+<p>Vamos armazenar a URL em um objeto (&ldquo;url_base&rdquo;, mas você pode dar qualquer nome que quiser).</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=1&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+</code></pre>
+
+<p>Há muitas informações nesse link, basicamente todos os campos que poderiam ter sido especificados na busca são apresentados no endereço. Como preenchemos apenas com o termo (&ldquo;merenda&rdquo;), esse será o único parametro definido na URL (&ldquo;text=merenda&rdquo;).</p>
+
+<p>Também podemos observar que a pesquisa retornou 75 páginas (&ldquo;lastPage=75&rdquo;) e que a página atual é a de número 1 (&ldquo;currentPage=1&rdquo;) &ndash; página 2 da pesquisa é numerada como 0 nesta ferramenta de busca, mas o padrão muda de página para página.</p>
+
+<p>Podemos ver que há muitas páginas de resultado para a palavra-chave que utilizamos. Nosso desafio é conseguir &ldquo;passar&rdquo; de forma eficiente por elas, ou seja, acessar os 75 links e &ldquo;raspar&rdquo; o seu conteúdo. Para isso, usaremos uma função essencial na programação, o &ldquo;for loop&rdquo;.</p>
+
+<p>Loops são processos iterativos e são extremamente úteis para instruir o computador a repetir uma tarefa por um número finito de vezes. Por exemplo, vamos começar &ldquo;imprimindo&rdquo; na tela os números de 1 a 9:</p>
+
+<pre><code class="language-r">for (i in 1:9) {
+  print(i)
+}
+</code></pre>
+
+<p>Simples, não? Vamos ler esta instrução da seguinte maneira: &ldquo;para cada número i no conjunto que vai de 1 até 9 (essa é a parte no parênteses) imprimir o número i (instrução entre chaves)&rdquo;. E se quisermos imprimir o número i multiplicado por 7 (o que nos dá a tabuada do 7!!!), como devemos fazer?</p>
+
+<pre><code class="language-r">for (i in 1:9) {
+  print(i * 7)
+}
+</code></pre>
+
+<p>Tente agora construir um exemplo de loop que imprima na tela os números de 3 a 15 multiplicados por 10 como exerício.</p>
+
+<h4 id="substituição-com-stringr-str-replace">Substituição com <code>stringr::str_replace</code></h4>
+
+<p>Ótimo! Já temos alguma intuição sobre como loops funcionam. Podemos agora fazer &ldquo;passar&rdquo; pelas páginas que contêm a informação que nos interessa. Temos que escrever uma pequena instrução que indique ao programa que queremos passar pelas páginas de 1 a 75, substituindo apenas o número da página atual &ndash; &ldquo;currentPage&rdquo; &ndash; no endereço URL que guardamos no objeto url_base.</p>
+
+<p>Nos falta, porém, uma função que nos permita substituir no texto básico do URL (&ldquo;url_base&rdquo;) os números das páginas.
+Há mais de uma opção para realizar essa tarefa, mas aqui usaremos a função <code>str_replace</code> do pacote <code>stringr</code>. Não se preocupem com caso não entenderem muito agora, veremos mais utilidade destes pacotes na Aula 10.</p>
+
+<p>Com a função &ldquo;str_replace&rdquo; podemos substituir um pedaço de um objeto de texto por outro, de acordo com o critério especificado.
+Os argumentos (o que vai entre os parenteses) da função são, em ordem, objeto no qual a substituição ocorrerá, o termo a ser substituído e o termo a ser colocado no lugar.</p>
+
+<p>Na prática, ela funciona da seguinte forma:</p>
+
+<pre><code class="language-r">o_que_procuro_para_susbtituir &lt;- &quot;palavra&quot;
+o_que_quero_substituir_por &lt;- &quot;batata&quot;
+meu_texto &lt;- &quot;quero substituir essa palavra&quot;
+
+texto_final &lt;- stringr::str_replace( meu_texto, o_que_procuro_para_susbtituir, o_que_quero_substituir_por)
+
+print(texto_final)
+</code></pre>
+
+<p>Agora que sabemos substituir partes de textos e fazer loops, podemos mudar o número da página do nosso endereço de pesquisa.</p>
+
+<p>Descobrimos que na URL, o que varia ao clicar na próxima página é o &ldquo;currentPage=1&rdquo; que vai para &ldquo;currentPage=2&rdquo;. Nesse caso é o &ldquo;1&rdquo; como segunda página e o &ldquo;2&rdquo; como terceira e assim por diante, mas isso não é uma regra.</p>
+
+<p>Vamos agora substituir na URL da página 2 da nossa busca o número por algo que &ldquo;guarde o lugar&rdquo; do número de página. Esse algo é um &ldquo;placeholder&rdquo; e pode ser qualquer texto. No caso, usaremos &ldquo;NUMPAG&rdquo;. Veja abaixo onde &ldquo;NUMPAG&rdquo; foi introduzido no endereço URL.</p>
+
+<p>Obs: Lembremos que ao colocar na URL, não devemos usar as aspas mas elas se mantêm ao escrever a função, pois queremos dizer que procuramos a palavra &ldquo;NUM_PAG&rdquo; e não o objeto chamado NUMPAG.</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+</code></pre>
+
+<p>Por exemplo, se quisermos gerar o link da página 6, podemos escrever:</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+
+url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, &quot;6&quot;)
+</code></pre>
+
+<p>Ou, em vez de usar um número diretamente na substituição, podemos usar uma variável que represente um número &ndash; por exemplo a variável i, que já usamos no loop anteriormente.</p>
+
+<pre><code class="language-r">i = &quot;6&quot;
+url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, i)
+print(url)
+</code></pre>
+
+<p>Agora que temos o código substituindo funcionando, vamos implementar o loop para que as URLs das páginas sejam geradas automaticamente. Por exemplo, se quisermos &ldquo;imprimir&rdquo; na tela as páginas 0 a 5, podemos usar o seguinte código:</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+for(i in 0:5){
+  url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, as.character(i))
+  print(url)
+}
+</code></pre>
+
+<h4 id="xml2-read-html-e-rvest-html-table"><code>xml2::read_html()</code> e <code>rvest::html_table()</code></h4>
+
+<p>Muito mais simples do que parece, não? Mas veja bem, até agora tudo que fizemos foi produzir um texto que, propositalmente, é igual ao endereço das páginas cujo conteúdo nos interessa. Porém, ainda não acessamos o seu conteúdo. Precisamos, agora, de funções que façam algo semelhante a um navegador de internet, ou seja, que se comuniquem com o servidor da página e receba o seu conteúdo.</p>
+
+<p>Por enquanto, vamos usar apenas as funções <code>xml2::read_html()</code> e <code>rvest::html_table()</code>, contida na biblioteca <code>rvest</code> (lembra que chamamos esta biblioteca lá no começo da atividade?). Algo que é legal destacarmos é que a função <code>read_html()</code> não é do <code>rvest</code>, porém ela é instalada junto com o pacote. Estas funççoes servem bem ao nosso caso: ela recebe uma URL como argumento e captura todas as tabelas da url, escritas em HTML, e retorna uma lista contendo as tabelas.</p>
+
+<p>Vamos ver como ela funciona para a página 2 (ou seja, currentPage=1) contendo tabelas com os resultados em que aparecem o nosso termo pesquisado:</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+i &lt;- &quot;1&quot;
+url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, i)
+tabela &lt;- xml2::read_html(url) %&gt;% # read_html ira ler a url e retornar uma estrutura html
+  rvest::html_table(header = T) # html_table ira procurar as tabelas na estrutura html e retornas cada uma delas estruturada em um data frame. Obs: O argumento header é para indicar que as tabelas tem nome nas colunas
+  
+print(tabela)
+</code></pre>
+
+<p>Simples não? Geramos um endereço de URL e, após obtermos o endereço, capturamos o conteúdo da página (no caso, só as tabelas) usando o link como argumento das funções <code>read_html</code> e <code>html_table</code>. Antes de avançar, vamos falar um pouco sobre listas no R (pois o resultado deste código é uma lista).</p>
+
+<h4 id="listas">Listas</h4>
+
+<p>Um detalhe fundamental do resultado da função <code>html_table</code> é que o resultado dela é uma lista. Por que uma lista? Porque pode haver mais de uma tabela na página e cada tabela ocupará uma posição na lista. Para o R, uma lista pode combinar objetos de diversas classes: vetores, data frames, matrizes, etc.
+No site da ALESP, já nessa pesquisa nos deparamos que a função <code>html_table</code> retorna várias tabelas e não apenas a dos resultados das proposições.</p>
+
+<p>Como acessar objetos em uma lista? Podemos ulitizar colchetes. Porém, se utilizarmos apenas um colchete, estamos obtendo uma sublista. Por exemplo, vamos criar diferentes objetos e combiná-los em uma lista:</p>
+
+<pre><code class="language-r"># Objetos variados
+matriz &lt;- matrix(c(1:6), nrow=2)
+vetor.inteiros &lt;- c(42:1)
+vetor.texto &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
+vetor.logico &lt;- c(T, F, T, T, T, T, T, T, F)
+texto &lt;- &quot;meu querido texto&quot;
+resposta &lt;- 42
+
+# Lista
+minha.lista &lt;- list(matriz, vetor.inteiros, vetor.texto, vetor.logico, texto, resposta)
+print(minha.lista)
+</code></pre>
+
+<p>Para produzirmos uma sublista, usamos um colchete (mesmo que a lista só tenha um elemento!):</p>
+
+<pre><code class="language-r">print(minha.lista[1:3])
+class(minha.lista[1:3])
+print(minha.lista[4])
+class(minha.lista[4])
+</code></pre>
+
+<p>Se quisermos usar o objeto de uma lista, ou seja, extraí-lo da lista, devemos usar dois colchetes:</p>
+
+<pre><code class="language-r">print(minha.lista[[4]])
+class(minha.lista[[4]])
+</code></pre>
+
+<p>Ao obter as tabelas de uma página como uma lista de tabelas (nem sempre vai parecer que são tabelas, exceto se você entender um pouco de HTML), devemos, portanto, utilizar dois colchetes para extrair a tabela que queremos (para poder combiná-las com as tabelas das demais páginas, algo que faremos ao final). Exemplo (no nosso caso já sabemos que a tabela que queremos ocupa a posição 1 da lista, mas é necessário examinar sempre):</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+i &lt;- &quot;1&quot;
+url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, i)
+lista.tabelas &lt;- xml2::read_html(url) %&gt;% rvest::html_table(header = T)
+tabela &lt;- lista.tabelas[[1]]
+print(tabela)
+class(tabela)
+</code></pre>
+
+<h4 id="captura-das-tabelas">Captura das tabelas</h4>
+
+<p>Podemos juntar tudo que vimos até agora: loop com a função <code>for</code>, substituição com <code>str_replace</code>, captura de tabelas em HTML, listas e seus elementos.</p>
+
+<p>Vamos tentar capturar as cinco primeiras páginas do resultado da pesquisa de proposições por meio da palavra-chave &ldquo;merenda&rdquo;. Para podermos saber que estamos capturando, vamos usar a função <code>head</code>, que retorna as 6 primeiras linhas de um data frame, e a função <code>print</code>.</p>
+
+<p>Avance devagar neste ponto. Leia o código abaixo com calma e veja se entendeu o que acontece em cada linha. Já temos um primeiro script de captura de dados quase pronto e é importante estarmos seguros para avançar.</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+for (i in 0:4) {
+  url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, as.character(i))
+  lista.tabelas &lt;- xml2::read_html(url) %&gt;% rvest::html_table(header = T)
+  tabela &lt;- lista.tabelas[[1]]
+  print(head(tabela))
+}
+</code></pre>
+
+<p>Vamos traduzir o que estamos fazendo: &ldquo;para cada i de 0 a 4, vamos criar um link que é a combinação da URL base (&ldquo;url_base&rdquo;) com i, vamos usar esta combinação (&ldquo;url&rdquo;) como argumento das funções para ler e extrair as tabelas e vamos imprimir as 6 primeiras linhas de cada tabela&rdquo;.</p>
+
+<h4 id="data-frames">Data Frames</h4>
+
+<p>Excelente, não? Mas e aí? Cadê os dados? O problema é que até agora ainda não fizemos nada com os dados, ou seja, ainda não guardamos eles em novos objetos para depois podermos utilizá-los na análise.</p>
+
+<p>Neste último passo, vamos fazer o seguinte: precisamos de uma estrutura que armazene as informações, então criamos um data frame vazio (chamado &ldquo;dados&rdquo;) e, para cada iteração no nosso loop (ou seja, para cada &ldquo;i&rdquo;), vamos inserir a tabela da página i como novas linhas no nosso data frame. A função nova que precisamos se chama <code>dplyr::bind_rows()</code>. Ela serve para unir diferentes data frames (ou vetores ou matrizes), colocando suas linhas uma debaixo da outra. Vejamos um exemplo antes de avançar:</p>
+
+<pre><code class="language-r"># Criando 2 data frames separados
+meus.dados1 &lt;- data.frame(&quot;id&quot; = 1:10, &quot;Experimento&quot; = rep(c(&quot;Tratamento&quot;), 10))
+print(meus.dados1)
+meus.dados2 &lt;- data.frame(&quot;id&quot; = 11:20, &quot;Experimento&quot; = rep(c(&quot;Controle&quot;), 10))
+print(meus.dados2)
+
+# Combinando os dois data.frames
+meus.dados.completos &lt;- dplyr::bind_rows(meus.dados1, meus.dados2)
+print(meus.dados.completos)
+</code></pre>
+
+<h4 id="captura-das-tabelas-com-armazenamento-em-data-frames">Captura das tabelas com armazenamento em data frames</h4>
+
+<p>Pronto. Podemos agora criar um data frame vazio (&ldquo;dados&rdquo;) e preenchê-lo com os dados capturados em cada iteração. O resultado final será um objeto com todas as tabelas de todas as páginas capturadas, que é o nosso objetivo central.</p>
+
+<p>Novamente vamos trabalhar apenas com as cinco primeiras páginas, mas bastaria alterar um único número para que o processo funcionasse para todas as páginas de resultados - desde que sua conexão de internet e a memória RAM do seu computador sejam boas! (Obs: vamos inserir um &ldquo;contador&rdquo; das páginas capturadas com &ldquo;print(i)&rdquo;. Isso será muito útil quando quisermos capturar um número grande de páginas, pois o contador nos dirá em qual iteração (sic, é sem &ldquo;n&rdquo; mesmo) do loop estamos. Além disso, incluímos o argumento &ldquo;stringsAsFactors = FALSE&rdquo; na função readHTMLTable para garantir que as variáveis de texto sejam lidas como &ldquo;character&rdquo; e não como &ldquo;factors&rdquo; &ndash; este é um assunto para você pesquisar após a oficina).</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://www.al.sp.gov.br/alesp/pesquisa-proposicoes/?direction=acima&amp;lastPage=75&amp;currentPage=NUMPAG&amp;act=detalhe&amp;idDocumento=&amp;rowsPerPage=10&amp;currentPageDetalhe=1&amp;tpDocumento=&amp;method=search&amp;text=merenda&amp;natureId=&amp;legislativeNumber=&amp;legislativeYear=&amp;natureIdMainDoc=&amp;anoDeExercicio=&amp;legislativeNumberMainDoc=&amp;legislativeYearMainDoc=&amp;strInitialDate=&amp;strFinalDate=&amp;author=&amp;supporter=&amp;politicalPartyId=&amp;tipoDocumento=&amp;stageId=&amp;strVotedInitialDate=&amp;strVotedFinalDate=&quot;
+dados &lt;- data.frame()
+for (i in 0:4) {
+  print(i)
+  url &lt;- stringr::str_replace(url_base, &quot;NUMPAG&quot;, as.character(i))
+  lista.tabelas &lt;- xml2::read_html(url) %&gt;% rvest::html_table(header = T)
+  tabela &lt;- lista.tabelas[[1]]
+  dados &lt;- dplyr::bind_rows(dados, tabela)
+}
+</code></pre>
+
+<p>Vamos observar o resultado utilizando a função <code>dplyr::glimpse()</code>, que retorna a estrutura do data frame, e <code>tail</code>, que é como a função <code>head</code>, mas retorna as 6 últimas em vez das 6 primeiras observações.</p>
+
+<p>São 50 observações (5 páginas com 10 resultados) e 4 variáveis (data, título, autor, etapa), exatamente como esperávamos. As 4 variáveis são do tipo &ldquo;character&rdquo; contêm as informações corretas. As 6 observações apresentam o resultado adequado, o que nos dá uma boa dica que que tudo ocorreu bem até a última página capturada.</p>
+
+<pre><code class="language-r"># Estrutura do data frame
+dplyr::glimpse(dados)
+
+# 6 primeiras observações
+head(dados)
+
+# 6 últimas observações
+tail(dados)
+</code></pre>
+
+<p>Pronto! Conseguimos fazer nossa primeira captura de dados. Se quiser, você pode repetir o procedimento para pegar o resto dos resultados ou reproduzir o mesmo processo para capturar outras informações do site.</p>
+
+<h2 id="atividade-2">Atividade 2</h2>
+
+<p>Na primeira atividades utilizamos o <em>rvest</em> para capturar uma tebela de um site. Quando a informação de interesse já se encontra dentro de uma tabela, o trabalho é relativamente fácil e com algumas linhas de código podemos criar um <em>data.frame</em>.</p>
+
+<p>O que fazer, entretanto, com páginas que não tem tabelas? Como obter apenas as informações que nos interessam quando o conteúdo está &ldquo;espalhado&rdquo; pela página? Utilizaremos, como veremos abaixo, a estrutura do código HTML da própria página para selecionar apenas o que desejamos e construir data frames.</p>
+
+<p>Nosso objetivo nessa atividade será capturar uma única página usando a estrutura do código HTML da página. Já sabemos que, uma vez resolvida a captura de uma página, podemos usar &ldquo;loop&rdquo; para capturar quantas quisermos, desde que tenha uma estrutura semelhante.</p>
+
+<p>Antes disso, porém, precisamos falar um pouco sobre XML e HTML.</p>
+
+<h3 id="atividade-2-1">Atividade 2.1</h3>
+
+<h4 id="xml-e-html">XML e HTML</h4>
+
+<p>XML significa &ldquo;Extensive Markup Language&rdquo;. Ou seja, é uma linguagem &ndash; e, portanto, tem sintaxe &ndash; e é uma linguagem com marcação. Marcação, neste caso, significa que todo o conteúdo de um documento XML está dentro de &ldquo;marcas&rdquo;, também conhecidas como &ldquo;tags&rdquo;. É uma linguagem extremamente útil para transporte de dados &ndash; por exemplo, a Câmara dos Deputados utiliza XML em seu Web Service para disponibilizar dados abertos (mas você não precisa saber disso se quiser usar o pacote de R bRasilLegis que nós desenvolvemos ;) &ndash; disponível aqui: <a href="https://github.com/leobarone/bRasilLegis">https://github.com/leobarone/bRasilLegis</a>.</p>
+
+<p>Por exemplo, se quisermos organizar a informação sobre um indivíduo que assumiu diversos postos públicos, poderíamos organizar a informação da seguinte maneira:</p>
+
+<pre><code>&lt;politicos&gt;
+  &lt;politico&gt;
+    &lt;id&gt; 33333 &lt;/id&gt;
+    &lt;nome&gt; Fulano Deputado da Silva &lt;/nome&gt;
+    &lt;data_nascimento&gt; 3/3/66 &lt;/data_nascimento&gt;
+    &lt;sexo&gt; Masculino &lt;/sexo&gt;
+    &lt;cargos&gt;
+      &lt;cargo&gt; 
+        &lt;cargo&gt; prefeito &lt;/cargo&gt; 
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2005 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2008 &lt;/ano_fim&gt;
+      &lt;/cargo&gt;
+      &lt;cargo&gt; 
+        &lt;cargo&gt; deputado federal &lt;/cargo&gt; 
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2003 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2004 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+       &lt;cargo&gt; 
+        &lt;cargo&gt; deputado estadual &lt;/cargo&gt; 
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 1998 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2002 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+      &lt;/cargos&gt;
+  &lt;/politicos&gt;
+&lt;/politicos&gt;
+</code></pre>
+
+<p>Exercício (difícil): se tivessemos que representar estes dados em um banco de dados (data frame), como seria? Quantas linhas teria? Quantas colunas teria?</p>
+
+<p>Veja no link abaixo um exemplo de arquivo XML proveniente do Web Service da Câmara dos Deputados:</p>
+
+<p><a href="http://www.camara.gov.br/SitCamaraWS/Deputados.asmx/ObterDetalhesDeputado?ideCadastro=141428&amp;numLegislatura=">http://www.camara.gov.br/SitCamaraWS/Deputados.asmx/ObterDetalhesDeputado?ideCadastro=141428&amp;numLegislatura=</a></p>
+
+<p>Abra agora a página inicial da ALESP. Posicione o mouse em qualquer elemento da página e, com o botão direito, selecione &ldquo;Inspecionar&rdquo; (varia de navegador para navegador). Você verá o código HTML da página.</p>
+
+<p>Sem precisar observar muito, é fácil identificar que o código HTML da ALESP se assemelha ao nosso breve exemplo de arquivo XML. Não por acaso: HTML é um tipo de XML. Em outra palavras, toda página de internet está em um formato de dados conhecido e, como veremos a seguir, pode ser re-organizado facilmente.</p>
+
+<h3 id="tags-nodes-atributos-valores-e-conteúdo-na-linguagem-xml">Tags, nodes, atributos, valores e conteúdo na linguagem XML</h3>
+
+<p>Todas as informações em um documento XML estão dispostas em &ldquo;tags&rdquo; (id, nome, etc são as tags do nosso exemplo). Um documento XML é um conjunto de &ldquo;tags&rdquo; que contém hierarquia. Um conjunto de &ldquo;tags&rdquo; hierarquicamente organizado é chamado de &ldquo;node&rdquo;. Por exemplo, no arquivo XML da Câmara dos Deputados apresentado acima, cada tag político contêm diversos outras &ldquo;tags&rdquo; e formam &ldquo;nodes&rdquo;, ou seja, pedaços do arquivo XML.</p>
+
+<p>Em geral, as &ldquo;tags&rdquo; vem em pares: uma de abertura e outra de fechamento. O que as diferencia é a barra invertida presente na tag de fechamento. Entre as &ldquo;tags&rdquo; de abertura e fechamento vemos o conteúdo da tag, que pode, inclusive, ser outras &ldquo;tags&rdquo;. Veja os exemplos abaixo:</p>
+
+<pre><code>&lt;minha_tag&gt; Este é o conteúdo da tag &lt;/minha_tag&gt;
+
+&lt;tag_pai&gt;
+  &lt;tag_filha&gt;
+  &lt;/tag_filha&gt;
+&lt;/tag_pai&gt;
+
+&lt;tag_pai&gt; Conteúdo da tag Pai
+  &lt;tag_filha&gt; Conteúdo da tag Filha
+  &lt;/tag_filha&gt;
+&lt;/tag_pai&gt;
+</code></pre>
+
+<p>Identação (espaços) nos ajudam a ver a hierarquia entre as tags, mas não é obrigatória. Também as quebras de linha são opcionais.</p>
+
+<p>Além do conteúdo e do nome da tag, é extremamente comum encontrarmos &ldquo;atributos&rdquo; nas tags em bancos de dados e, sobretudo, em códigos HTML. Atributos ajudam a especificar a tag, ou seja, identificam qual é o seu uso ou carregam quaisquer outras informações referentes. Voltando ao exemplo fictício acima, poderíamos transformar a informação do cargo, que hoje é uma tag cargo dentro de outra tag cargo (horrível, não?) em atributo.</p>
+
+<p>Em vez de:</p>
+
+<pre><code>&lt;politicos&gt;
+  &lt;politico&gt;
+    &lt;id&gt; 33333 &lt;/id&gt;
+    &lt;nome&gt; Fulano Deputado da Silva &lt;/nome&gt;
+    &lt;data_nascimento&gt; 3/3/66 &lt;/data_nascimento&gt;
+    &lt;sexo&gt; Masculino &lt;/sexo&gt;
+    &lt;cargos&gt;
+      &lt;cargo&gt; 
+        &lt;cargo&gt; prefeito &lt;/cargo&gt; 
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2005 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2008 &lt;/ano_fim&gt;
+      &lt;/cargo&gt;
+      &lt;cargo&gt; 
+        &lt;cargo&gt; deputado federal &lt;/cargo&gt; 
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2003 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2004 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+       &lt;cargo&gt; 
+        &lt;cargo&gt; deputado estadual &lt;/cargo&gt; 
+        &lt;partido&gt; PRONA &lt;/partido&gt;
+        &lt;ano_ini&gt; 1998 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2002 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+      &lt;/cargos&gt;
+  &lt;/politicos&gt;
+&lt;/politicos&gt;
+</code></pre>
+
+<p>Teríamos:</p>
+
+<pre><code>&lt;politicos&gt;
+  &lt;politico&gt;
+    &lt;id&gt; 33333 &lt;/id&gt;
+    &lt;nome&gt; Fulano Deputado da Silva &lt;/nome&gt;
+    &lt;data_nascimento&gt; 3/3/66 &lt;/data_nascimento&gt;
+    &lt;sexo&gt; Masculino &lt;/sexo&gt;
+    &lt;cargos&gt;
+      &lt;cargo tipo = 'prefeito'&gt;
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2005 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2008 &lt;/ano_fim&gt;
+      &lt;/cargo&gt;
+      &lt;cargo tipo = 'deputado federal'&gt;
+        &lt;partido&gt; PAN &lt;/partido&gt;
+        &lt;ano_ini&gt; 2003 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2004 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+      &lt;cargo tipo = 'deputado estadual'&gt;
+        &lt;partido&gt; PRONA &lt;/partido&gt;
+        &lt;ano_ini&gt; 1998 &lt;/ano_ini&gt;
+        &lt;ano_fim&gt; 2002 &lt;/ano_fim&gt;
+       &lt;/cargo&gt;
+      &lt;/cargos&gt;
+  &lt;/politicos&gt;
+&lt;/politicos&gt;
+</code></pre>
+
+<p>Veja que agora a tag &ldquo;cargo&rdquo; tem um atributo &ndash; &ldquo;tipo&rdquo; &ndash; cujos valores são &ldquo;prefeito&rdquo;, &ldquo;deputado federal&rdquo; ou &ldquo;deputado estadual&rdquo;. Estranho, não? Para bancos de dados em formato XML, faz menos sentido o uso de atributos. Mas para páginas de internet, atributos são essenciais. Por exemplo, sempre que encontrarmos um hyperlink em uma página, contido sempre nas tags de nome &ldquo;a&rdquo;, veremos apenas o &ldquo;texto clicável&rdquo; (conteúdo), pois o hyperlink estará, na verdade, no atributo &ldquo;href&rdquo;.  Veja o exemplo</p>
+
+<pre><code>&lt;a href = 'http://www.al.sp.gov.br/'&gt; Vá o site da ALESP &lt;/a&gt;
+</code></pre>
+
+<p>Tente, no próprio site da ALESP, clicar com o botão direito em um hyperlink qualquer (por exemplo, &ldquo;TV Assembléia SP&rdquo;) para observar algo semelhante ao exemplo acima. Adiante vamos ver como atributos são extremamente úteis ao nosso propósito.</p>
+
+<h3 id="caminhos-no-xml-e-no-html">Caminhos no XML e no HTML</h3>
+
+<p>O fato de haver hierarquia nos códigos XML e HTML nos permite construir &ldquo;caminhos&rdquo;, como se fossem caminhos de pastas em um computador, dentro do código.</p>
+
+<p>Por exemplo, o caminho das &ldquo;tags&rdquo; que contém a informação &ldquo;nome&rdquo; em nosso exemplo fictício é:</p>
+
+<p>&rdquo;/politicos/politico/nome&rdquo;.</p>
+
+<p>O caminho das &ldquo;tags&rdquo; que contém a informação &ldquo;partido&rdquo; em nosso exemplo fictício, por sua vez, é:</p>
+
+<p>&rdquo;/politicos/politico/cargos/cargo/partido&rdquo;.</p>
+
+<p>Seguindo tal caminho chegamos às três &ldquo;tags&rdquo; que contém a informação desejada.</p>
+
+<p>Simples, não? Mas há um problema: o que fazer quando chegamos a 3 informações diferentes (o indivíuo em nosso exemplo foi eleito duas vezes pelo PAN e uma pelo PRONA)? Há duas alternativa: a primeira, ficamos com as 3 informações armazenadas em um vetor, pois as 3 informações interessam. Isso ocorrerá com frequência.</p>
+
+<p>Mas se quisermos apenas uma das informações, por exemplo, a de quando o indivíduo foi eleito deputado estadual? Podemos usar os atributos e os valores dos atributos das tag para construir o caminho. Neste caso, teríamos como caminho:</p>
+
+<p>&rdquo;/politicos/politico/cargos/cargo[@tipo = &lsquo;deputado estadual&rsquo;]/partido&rdquo;</p>
+
+<p>Guarde bem este exemplo: ele será nosso modelo quando tentarmos capturar páginas.</p>
+
+<p>Vamos supor que queremos poupar nosso trabalho e sabemos que as únicas &ldquo;tags&rdquo; com nome &ldquo;partido&rdquo; no nosso documento são aquelas que nos interessam (isso nunca é verdade em um documento HTML). Podemos simplicar nosso caminho de forma a identificar &ldquo;todas as &lsquo;tags&rsquo; &ldquo;, não importa em qual nível hierarquíco do documento&rdquo;. Neste caso, basta usar duas barras:</p>
+
+<p>&rdquo;//partido&rdquo;</p>
+
+<p>Ou &ldquo;todas as tags &lsquo;partido&rsquo; que sejam descendentes de &lsquo;politico&rsquo;, não importa em qual nível hierarquíco do documento&rdquo;:</p>
+
+<p>&rdquo;/politicos/politico//partido&rdquo;</p>
+
+<p>Ou ainda &ldquo;todas as tags &lsquo;partido&rsquo; que sejam descendentes de quaisquer tag &lsquo;politico&rsquo;, não importa em qual nível hierarquíco do documento para qualquer uma das duas&rdquo;:</p>
+
+<p>&rdquo;//politico//partido&rdquo;</p>
+
+<p>Ou &ldquo;todas as &lsquo;tags&rsquo; filhas de qualquer &lsquo;tag&rsquo; &lsquo;cargo&rsquo;&rdquo; (usa-se um asterisco para indicar &lsquo;todas&rsquo;):</p>
+
+<p>&rdquo;//cargo/*&rdquo;</p>
+
+<p>Observe o potencial dos &ldquo;caminhos&rdquo; para a captura de dados: podemos localizar em qualquer documento XML ou HTML uma informação usando a própria estrutura do documento. Não precisamos organizar o documento todo, basta extrair cirurgicamente o que queremos &ndash; o que é a regra na raspagem de páginas de internet.</p>
+
+<h3 id="links-na-página-de-busca-da-alesp">Links na página de busca da ALESP</h3>
+
+<p>Vamos entrar na página principal da ALESP e fazer uma pesquisa simples na caixa de busca &ndash; exatamente como faríamos em um jornal ou qualquer outro portal de internet (o processo seria o mesmo em buscadores como Google ou DuckDuckGo). Por exemplo, vamos pesquisar a palavra &ldquo;merenda&rdquo;. A ferramenta de busca nos retorna uma lista de links que nos encaminharia para diversos documentos ou páginas da ALESP relacionadas ao termo buscado.</p>
+
+<p>Nosso objetivo é construir um vetor com os links dos resultados. Em qualquer página de internet, links estão dentro da tag &ldquo;a&rdquo;. Uma maneira equivocada de encontrar todos os links da página usando &ldquo;caminhos em XML&rdquo; seria:</p>
+
+<p>&rdquo;//a&rdquo;</p>
+
+<p>Entretanto, há diversos outros elementos &ldquo;clicáveis&rdquo; na página além dos links que nos interessam &ndash; por exemplo, as barras laterais, o banner com os logotipos, os links do mapa do portal, etc. Precisamos, portanto, especificar bem o &ldquo;caminho&rdquo; para que obtivéssemos apenas os links que nos interessam.</p>
+
+<p>Infelizmente não temos tempo para aprender aprofundadamente HTML, mas podemos usar lógica e intuição para obter caminhos unívocos. Neste exemplo, todos as &ldquo;tags&rdquo; &ldquo;a&rdquo; que nos interessam são filhas de alguma tag &ldquo;li&rdquo; (que é abreviação de &ldquo;list&rdquo; e indica um único elemento de uma lista). Podemos melhorar nosso caminho:</p>
+
+<p>&rdquo;//li/a&rdquo;</p>
+
+<p>A tag li, por sua vez, é filha da tag &ldquo;ul&rdquo; (&ldquo;unordered list&rdquo;), ou seja, é a tag que dá início à lista não ordenada formada pelos elementos &ldquo;li&rdquo;. Novamente, melhoramos nosso caminho:</p>
+
+<p>&rdquo;//ul/li/a&rdquo;</p>
+
+<p>E se houver mais de uma &ldquo;unordered list&rdquo; na página? Observe que essa tag &ldquo;ul&rdquo; tem atributos: class=&ldquo;lista_navegacao&rdquo;. Algumas tem função para o usuário da página &ndash; por exemplo, as tags &ldquo;a&rdquo; contém o atributo &ldquo;href&rdquo;, que é o link do elemento &ldquo;clicável&rdquo;. Mas, em geral, em uma página de internet os atributos não fazem nada além de identificar as tags para @ programador@. Diversos programas para construção de páginas criam atributos automaticamente. Por exemplo, se vocë fizer um blog em uma ferramenta qualquer de construção de blogs, sua página terá tags com atributos que você sequer escolheu.</p>
+
+<p>As tags mais comum em páginas HTML são: head, body, div, p, a, table, tbody, td, ul, ol, li, etc. Os atributos mais comuns são: class, id, href (para links), src (para imagens), etc. Em qualquer tutorial básico de HTML você aprenderá sobre elas. Novamente, não precisamos aprender nada sobre HTML e suas tags. Apenas precisamos compreender sua estrutura e saber navegar nela.</p>
+
+<p>Voltando ao nosso exemplo, se usarmos o atributo para especificar o &ldquo;caminho&rdquo; para os links teremos:</p>
+
+<p>&rdquo;//ul[@class=&lsquo;lista_navegacao&rsquo;]/li/a&rdquo;</p>
+
+<p>Poderíamos subir um nível hierárquico para melhorar o &ldquo;caminho&rdquo;:</p>
+
+<p>&rdquo;//div[@id=&lsquo;lista_resultado&rsquo;]/ul[@class=&lsquo;lista_navegacao&rsquo;]/li/a&rdquo;</p>
+
+<p>Pegou o espírito? Vamos agora dar o nome correto a este &ldquo;caminho&rdquo;: xPath.</p>
+
+<p>Vamos agora voltar ao R e aprender a usar os caminhos para criar objetos no R.</p>
+
+<h3 id="capturar-uma-página-e-examinar-sua-estrutura">Capturar uma página e examinar sua estrutura</h3>
+
+<p>O primeiro passo na captura de uma página de internet é criar um objeto que contenha o código HTML da página. Para tanto, usamos a função &ldquo;readLines&rdquo; do pacote <em>rvest</em> &ndash; que é a mesma que utilizaríamos para qualquer documento de texto, Vamos usar a segunda página da busca pela palavra &ldquo;merenda&rdquo; na ALESP como exemplo:</p>
+
+<pre><code class="language-r">rm(list = ls())
+
+library(rvest)
+
+url &lt;- &quot;http://www.al.sp.gov.br/alesp/busca/?q=merenda&amp;page=2&quot;
+
+pagina &lt;- readLines(url)
+</code></pre>
+
+<p>Em primeiro lugar, observe que a estrutura do endereço URL é bastante simples: &ldquo;q&rdquo; é o parâmetro que informa o texto buscado e &ldquo;page&rdquo; o número da página. Nesta atividade vamos capturar apenas a página 2, mas você já aprendeu na atividade anterior como capturar todas as páginas usando loops.</p>
+
+<p>Note também que essa função apenas captura o texto de uma página e o salva. No objeto criado, não há referências à estrutura de um HTML. Logo se utilizar a função &ldquo;class&rdquo; ou &ldquo;typeof&rdquo; para identificar a natureza do vetor, recebemos como resposta um &ldquo;character&rdquo;.</p>
+
+<pre><code class="language-r">class(pagina)
+</code></pre>
+
+<p>Após usar a função &ldquo;readLines&rdquo; o R sabe apenas que um texto foi capturado, mas é incapaz de identificar a estrutura do documento &ndash; tags, atributos, valores e conteúdos. Precisamos, pois, informar ao R que se trata de um documento XML. O verbo em inglês para esta tarefa se chama &ldquo;parse&rdquo;, cuja definição é &ldquo;to resolve (as a sentence) into component parts of speech and describe them grammatically&rdquo;. Em outras palavras, &ldquo;parsear&rdquo; é identificar a estrutura sintática de um objeto e dividí-lo em seus componentes.</p>
+
+<p>Para páginas em HTML, usaremos a função &ldquo;read_html&rdquo;. Essa função recebe um URL como argumento e retorna um objeto &ldquo;xml_document&rdquo;:</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(url)
+
+class(pagina)
+</code></pre>
+
+<p>A partir de agora, sempre que capturarmos uma página, seja em HTML ou em XML (como são os RSSs), vamos fazer um &ldquo;parse&rdquo;. Com a página HTML salva em um objeto &ldquo;xml_document&rdquo; podemos começar a trabalhar sobre as &ldquo;tags&rdquo; e os &ldquo;nodes&rdquo; a fim de coletar as informações de nosso interesse.</p>
+
+<h3 id="extraindo-os-conteúdos-de-uma-página-com-a-biblioteca-rvest">Extraindo os conteúdos de uma página com a biblioteca &ldquo;rvest&rdquo;</h3>
+
+<p>Vamos agora aprender a &ldquo;navegar&rdquo; um objeto XML dentro do R e extrair dele apenas o conteúdo que nos interessa.</p>
+
+<p>Basicamente, trabalharemos nas atividades com um conjunto limitado funções: &ldquo;xml_find_all&rdquo;, que extrai um pedaço (nodes) de um documento XML; &ldquo;xml_text&rdquo;, que extrai de um node o seu conteúdo; e &ldquo;xml_attr&rdquo;, que extrai os valores dos atributos específicados.</p>
+
+<p>Vamos trabalhar com a ferramenta de busca da página inicial da ALESP, em particular com a página 2 de uma busca qualquer.</p>
+
+<p>Em primeiro lugar, criamos um objeto com o endereço da página:</p>
+
+<pre><code class="language-r">url &lt;- &quot;http://www.al.sp.gov.br/alesp/busca/?q=merenda&amp;page=2&quot;
+</code></pre>
+
+<p>Dessa vez, podemos usar o &ldquo;read_html&rdquo; diretamente</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(url)
+</code></pre>
+
+<p>E, finalmente, usamos uma função nova chamada &ldquo;xml_root&rdquo; para eliminar quaisquer conteúdos (normalmente &ldquo;sujeira&rdquo;) que estejam foram da tag de maior nível hierárquico no documento (o que é necessário com frequência em páginas de internet e é mais raro em documentos XML):</p>
+
+<pre><code class="language-r">pagina &lt;- xml_root(pagina)
+</code></pre>
+
+<p>Pronto. Temos o conteúdo da página como documento XML pronto para ser &ldquo;raspado&rdquo;.</p>
+
+<p>Vamos começar usando a função &ldquo;xml_find_all&rdquo;. Essa função, como o próprio nome deixa a entender, captura os &ldquo;nodes&rdquo; de um documento XML a partir de um caminho especificado por nós. Esse caminho, conhecido como xPath, garante que rasparemos apenas a informação desejada.</p>
+
+<p>Nesse exemplo, o xPath é &ldquo;//ul[@class=&lsquo;lista_navegacao&rsquo;]/li/a&rdquo;. Antes de rodar a função, você consegue entender esse xPath?</p>
+
+<pre><code class="language-r">nodes_link &lt;- xml_find_all(pagina, &quot;//ul[@class='lista_navegacao']/li/a&quot;)
+
+print(nodes_link)
+</code></pre>
+
+<p>Note que o resultado é uma lista que contém em cada posição o primeiro &ldquo;node set&rdquo;. Ele poderia, inclusive, ter tags filhas, além de seu conteúdo e atributos. Vamos examinar melhor o primeiro node. Precisamos usar dois colchetes para indicar a posição, pois se trata de uma lista e não de um vetor.</p>
+
+<pre><code class="language-r">print(nodes_link[[1]])
+</code></pre>
+
+<p>Trata-se de uma tag &ldquo;a&rdquo;, com dois atributos, &ldquo;class&rdquo; e &ldquo;href&rdquo;, sendo que o valor deste último é o link para o qual seríamos direcionados ao clicar no conteúdo apresentado na página. Nesse caso somos direcionados para a notícia &ldquo;Newton Brandão critica administração da merenda escolar em Santo André&rdquo;.</p>
+
+<p>O que nos interessa é extrair diretamente o valor dos atributos (se tiverem alguma informação valiosa) e o conteúdo. Vamos treinar com a primeira posição e extratir primeiro o conteúdo:</p>
+
+<pre><code class="language-r">conteudo_1 &lt;- xml_text(nodes_link[[1]])
+
+print(conteudo_1)
+</code></pre>
+
+<p>Pronto, conseguimos extrair o texto. Depois, podemos extrair o valor do atributo &ldquo;href&rdquo;:</p>
+
+<pre><code class="language-r">atributo_1 &lt;- xml_attr(nodes_link[[1]], attr = &quot;href&quot;)
+
+print(atributo_1)
+</code></pre>
+
+<p>Excelente, não? Se quisessemos apenas a informação do primeiro link resultante da busca, teríamos terminado nossa tarefa. Mas queremos os 10 links. Vamos ver duas maneiras ineficientes de construir um data frame que contenha uma variável com os conteúdos e a outra com os links. Tente decifrá-las:</p>
+
+<p>Sem usar o &ldquo;for loop&rdquo;:</p>
+
+<pre><code class="language-r">conteudo_1 &lt;- xml_text(nodes_link[[1]])
+conteudo_2 &lt;- xml_text(nodes_link[[2]])
+conteudo_3 &lt;- xml_text(nodes_link[[3]])
+conteudo_4 &lt;- xml_text(nodes_link[[4]])
+conteudo_5 &lt;- xml_text(nodes_link[[5]])
+conteudo_6 &lt;- xml_text(nodes_link[[6]])
+conteudo_7 &lt;- xml_text(nodes_link[[7]])
+conteudo_8 &lt;- xml_text(nodes_link[[8]])
+conteudo_9 &lt;- xml_text(nodes_link[[9]])
+conteudo_10 &lt;- xml_text(nodes_link[[10]])
+
+conteudos &lt;- c(conteudo_1, conteudo_2, conteudo_3, conteudo_4, conteudo_5, conteudo_6, conteudo_7, conteudo_8, conteudo_9, conteudo_10)
+
+atributo_1 &lt;- xml_attr(nodes_link[[1]], attr = &quot;href&quot;)
+atributo_2 &lt;- xml_attr(nodes_link[[2]], attr = &quot;href&quot;)
+atributo_3 &lt;- xml_attr(nodes_link[[3]], attr = &quot;href&quot;)
+atributo_4 &lt;- xml_attr(nodes_link[[4]], attr = &quot;href&quot;)
+atributo_5 &lt;- xml_attr(nodes_link[[5]], attr = &quot;href&quot;)
+atributo_6 &lt;- xml_attr(nodes_link[[6]], attr = &quot;href&quot;)
+atributo_7 &lt;- xml_attr(nodes_link[[7]], attr = &quot;href&quot;)
+atributo_8 &lt;- xml_attr(nodes_link[[8]], attr = &quot;href&quot;)
+atributo_9 &lt;- xml_attr(nodes_link[[9]], attr = &quot;href&quot;)
+atributo_10 &lt;- xml_attr(nodes_link[[10]], attr = &quot;href&quot;)
+
+atributos &lt;- c(atributo_1, atributo_2, atributo_3, atributo_4, atributo_5, atributo_6, atributo_7, atributo_8, atributo_9, atributo_10)
+
+dados &lt;- data.frame(conteudos, atributos)
+
+head(dados)
+</code></pre>
+
+<p>Usando for loops:</p>
+
+<pre><code class="language-r">conteudos &lt;- c()
+atributos &lt;- c()
+for (i in 1:10){
+  
+  conteudo_i &lt;- xml_text(nodes_link[[1]])
+  conteudos &lt;- c(conteudos, conteudo_i)
+  
+  atributo_i &lt;- xml_attr(nodes_link[[1]], attr = &quot;href&quot;)
+  atributos &lt;- c(atributos, atributo_i)
+}
+
+dados &lt;- data.frame(conteudos, atributos)
+head(dados)
+</code></pre>
+
+<p>Excelente! Temos um data frame após a raspagem.</p>
+
+<p>Há, porém, uma forma mais rápida de resolver o problema: usando a função &ldquo;map&rdquo;! Esse será o seu primeiro passo dentro do que chamamos de programação funcional. Vamos imaginar, antes de utilizá-la o seguinte: por que criamos funções? A resposta mais breve seria &ldquo;porque não queremos repetir determinadas tarefas muitas vezes!&rdquo; Imagine se, para calcular a média de um vetor, tivesse que somar todos os valores e dividir pelo número de observações. Me parece uma coisa muito chata e por isso eu e você utilizamos a função &ldquo;mean&rdquo;.</p>
+
+<p>A ideia do map segue na mesma linha, porém com uma pequena diferença. Dessa vez nós não queremos repetir o uso de uma função muitas vezes. Logo podemos repetir o uso de qualquer função sobre um conjunto de valores sem escrever várias vezes a função ou utilizar loops.</p>
+
+<p>Veja como funciona e note que a função &ldquo;xml_text&rdquo; entra como argumento da função &ldquo;map&rdquo;:</p>
+
+<pre><code class="language-r">library(tidyverse)
+conteudos &lt;- map(nodes_link, xml_text)
+
+print(conteudos)
+</code></pre>
+
+<p>Incrível, não? Veja como economizamos na &ldquo;quantidade&rdquo; de código para a tarefa de capturar os conteúdos. Porém, a respposta da função &ldquo;map&rdquo; é uma lista, o que pode ser um pouco assustador já que estávamos trabalhando com vetores. Para resolver esse problema, basta utilizar a função &ldquo;map_chr&rdquo;. Ela devolve um vetor de &ldquo;characters&rdquo;.</p>
+
+<pre><code class="language-r">conteudos &lt;- map_chr(nodes_link, xml_text)
+
+print(conteudos)
+</code></pre>
+
+<p>Vamos repetir o procedimento para os valores dos atributos, com o cuidado de nota que o argumento &ldquo;attr&rdquo; necessário para a função &ldquo;xml_attr&rdquo; deve vir como argumento também quando usamos a função &ldquo;map&rdquo; após os demais. Vamos economizar tempo e pedir, dessa vez, &ldquo;map_chr&rdquo; diretamente:</p>
+
+<pre><code class="language-r">atributos &lt;- map_chr(nodes_link, xml_attr, attr = &quot;href&quot;)
+
+print(atributos)
+</code></pre>
+
+<p>Encerramos juntando ambos vetores em um data frame:</p>
+
+<pre><code class="language-r">dados &lt;- data.frame(conteudos, atributos)
+head(dados)
+</code></pre>
+
+<p>O desafio a partir de agora é conectar o que aprendemos da raspagem de dados de várias páginas com &ldquo;for loop&rdquo;, mas usando a função &ldquo;map&rdquo; ou &ldquo;map_chr&rdquo;. Existem outras funções da família &ldquo;map&rdquo; que irão variar conforme o tipo de vetor que você deseja como respota. Para saber mais, recomendo a leitura do capítulo 21 do livro &ldquo;R 4 Data Science&rdquo;.</p>
+
+<h3 id="atividade-2-2">Atividade 2.2</h3>
+
+<p>Agora que sabemos coletar de uma página da busca o link por meio da extração de atributos de um node e o título do resultado com a função &ldquo;xml_text&rdquo;, precisamos repetir o procedimento para todas as páginas de resultado.</p>
+
+<p>Fizemos algo semelhante na atividade 1, mas ainda usávamos a função &ldquo;html_table&rdquo;. O objetivo é repetir o que fizemos lá, mas com as novas funções que vimos ao longo da atividade 2.1.</p>
+
+<p>Para isso, vamos usar o &ldquo;for loop&rdquo; da atividade 1 para ir de uma página a outra.</p>
+
+<p>O primeiro passo é, mais uma vez, ter o nosso link da pesquisa que queremos coletar armazenado em um objeto.</p>
+
+<pre><code class="language-r">rm(list = ls()) #limpa a área de trabalho do R
+library(tidyverse)
+library(rvest)
+
+urlbase &lt;- &quot;http://www.al.sp.gov.br/alesp/busca/?q=merenda&amp;page=&quot;
+</code></pre>
+
+<h4 id="função-str-c">Função str_c</h4>
+
+<p>Como é possível reparar, o número da página fica ao final do link, por isso podemos utilizar uma nova função chamada &ldquo;str_c&rdquo; ou &ldquo;colar&rdquo; ao invés da função &ldquo;str_replace&rdquo;.</p>
+
+<p>O que faremos é colar nosso contador (o &ldquo;i&rdquo;, aquilo que vai mudar a cada vez que o loop realizar uma iteração) no final do link. Então o que queremos é uma combinação do nosso url com o contador sem nada separando os dois. A função &ldquo;str_c&rdquo; é ideal para isso e funciona com os argumentos da seguinte maneira: primeirao texto a ser colado, segundo texto a ser colado, terceiro, &hellip;,  último, e, finalmente, a especificação de qual é o separador que você deseja entre os textos (pode ser vazio &ldquo;&rdquo;).</p>
+
+<p>Na linguagem do R, escreveremos assim para o nosso caso:</p>
+
+<pre><code class="language-r">i = 10
+
+str_c(urlbase, i, sep = &quot;&quot;)
+</code></pre>
+
+<p>A &ldquo;URL&rdquo; é o endereço da página de busca, o &ldquo;i&rdquo; é o contador numérico do loop e o último argumento refere-se ao separador que igualamos a um par de aspas sem nada dentro, deixando claro que para funcionar corretamente nada, nem uma barra de espaço, deve ficar entre o endereço e o contador.</p>
+
+<h4 id="coletando-o-conteúdo-e-o-atributo-de-todos-os-links">Coletando o conteúdo e o atributo de todos os links</h4>
+
+<p>A lógica de coleta do atributo e do conteúdo de um node continua o mesma. A única diferença é que precisamos aplicar isso para todas as páginas. Agora que temos a URL construída, podemos montar um &ldquo;for loop&rdquo; que fará isso para nós.</p>
+
+<p>No momento que essa atividade foi feita, a pesquisa pelo termo &ldquo;merenda&rdquo; tinha 1068 páginas de resultado, o que implica que o nosso loop irá de 1, a primeira página, até a página 1068, a última. Colocamos um &ldquo;print(i)&rdquo; para mostrar que página o loop está durante a execução.</p>
+
+<pre><code class="language-r">for (i in 1:1068){
+  print(i)
+}
+</code></pre>
+
+<p>O que precisamos agora é incluir o que foi discutido ao longo da atividade 2.1. Para extrair as informações de uma página da internet precisamos examinar o código HTML, ler no R e transformar em um objeto XML.</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(urlbase)
+
+pagina &lt;- xml_root(pagina)
+</code></pre>
+
+<p>Sabemos também coletar de forma eficiente todos os títulos e links por meio do &ldquo;xml_text&rdquo; e &ldquo;xml_attr&rdquo;, respectivamente.</p>
+
+<pre><code class="language-r">nodes_link &lt;- xml_find_all(pagina, &quot;//ul[@class='lista_navegacao']/li/a&quot;)
+
+conteudos &lt;- map_chr(nodes_link, xml_text)
+
+atributos &lt;- map_chr(nodes_link, xml_attr, attr = &quot;href&quot;)
+</code></pre>
+
+<p>Falta empilhar o que produziremos em cada iteração do loop de uma forma que facilite a visualização. Usaremos a função &ldquo;bind_row&rdquo; com data frames, pois para cada página agora, teremos 10 resultados em uma tabela com duas variáveis. O que queremos é a junção dos 10 resultados em cada uma das 162 páginas.</p>
+
+<pre><code class="language-r">dados &lt;- rbind(dados, data.frame(conteudos, atributos))
+</code></pre>
+
+<p>Chegou o momento de colocar dentro loop tudo o que queremos que execute em cada uma das vezes que ele ocorrer. Ou seja, que imprima na tela a página que está executando, que a URL da página de resultados seja construída com a função &ldquo;str_c&rdquo;, para todas elas o código HTML seja examinado, lido no R e transformado em objeto XML, colete todos os links e todos os títulos e que &ldquo;empilhe&rdquo;. Lembrando que não podemos esquecer de definir a URL que estamos usando e criar um data frame vazio para colocar todos os links e títulos coletados antes de iniciar o loop.</p>
+
+<p>Por questão de tempo, não iremos criar um data.frame das 1000 páginas. Vamos nos concentrar nas 30 primeiras. Caso queira, sinta-se a vontade para colocar a quantidade que quiser no loop.</p>
+
+<pre><code class="language-r">urlbase &lt;- &quot;http://www.al.sp.gov.br/alesp/busca/?q=merenda&amp;page=&quot;
+
+dados &lt;- tibble()
+
+for (i in 1:30){
+    print(i)
+    url &lt;- paste(urlbase, i, sep = &quot;&quot;)
+  
+    pagina &lt;- read_html(url)
+    pagina &lt;- xml_root(pagina)
+    
+    nodes_link &lt;- xml_find_all(pagina, &quot;//ul[@class='lista_navegacao']/li/a&quot;)
+    
+    conteudos &lt;- map_chr(nodes_link, xml_text)
+    
+    atributos &lt;- map_chr(nodes_link, xml_attr, attr = &quot;href&quot;)
+    
+    dados &lt;- bind_rows(dados, data.frame(conteudos, atributos))
+    
+}
+</code></pre>
+
+<p>Pronto! Temos agora todos os títulos e links de todos os resultados do site da ALESP para a palavra &ldquo;merenda&rdquo; reunidos.</p>
+
+<h2 id="atividade-3">Atividade 3</h2>
+
+<p>Nas atividades 1 e 2 utilizamos as ferramentas básicas de captura de dados disponíveis na biblioteca <code>rvest</code>. Em primeiro, aprendemos a capturar várias páginas contendo tabelas em formato HTML de uma só vez. Depois, aprendemos como um documento XML está estruturado e que podemos a extrair com precisão os conteúdos de tags e os valores dos atributos das tags de páginas escritas em HTML. Nesta última atividade vamos colocar tudo em prática e construir um banco de dados de notícias. O nosso exemplo será o conjunto de notícias (516 na data da construção deste tutorial) publicadas sobre eleições no site do instituto de pesquisa DataFolha. Ainda que o DataFolha não seja um portal, por estar vinculado ao jornal Folha de São Paulo e ao portal UOL, a busca do DataFolha se assemelha muito às ferramentas de busca destes últimos.</p>
+
+<p>Entre no link abaixo e veja como está estruturada a busca do DataFolha sobre eleições:</p>
+
+<p><a href="http://search.folha.uol.com.br/search?q=elei%E7%F5es&amp;site=datafolha%2Feleicoes&amp;sr=1&amp;skin=datafolha&amp;results_count=516&amp;search_time=0.255&amp;url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Delei%25E7%25F5es%26site%3Ddatafolha%252Feleicoes%26sr%3D26%26skin%3Ddatafolha">http://search.folha.uol.com.br/search?q=elei%E7%F5es&amp;site=datafolha%2Feleicoes&amp;sr=1&amp;skin=datafolha&amp;results_count=516&amp;search_time=0.255&amp;url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Delei%25E7%25F5es%26site%3Ddatafolha%252Feleicoes%26sr%3D26%26skin%3Ddatafolha</a></p>
+
+<h3 id="raspando-uma-notícia-no-site-datafolha">Raspando uma notícia no site DataFolha</h3>
+
+<p>Antes de começar, vamos chamar a biblioteca <code>rvest</code> para tornar suas funções disponíveis em nossa sessão do R:</p>
+
+<pre><code class="language-r">library(rvest)
+library(dplyr)
+</code></pre>
+
+<p>Nossa primeira tarefa será escolher uma única notícia (a primeira da busca, por exemplo), e extrair dela 4 informações de interesse: o título da notícia; a data e hora da notícia; o link para a pesquisa completa em .pdf; e o texto da notícia.</p>
+
+<p>O primeiro passo é criar um objeto com endereço URL da notícia e outro que contenha o código HTML da página:</p>
+
+<pre><code class="language-r">url &lt;- &quot;http://datafolha.folha.uol.com.br/eleicoes/2016/02/1744581-49-nao-votariam-em-lula.shtml&quot;
+
+pagina &lt;- xml2::read_html(url)
+</code></pre>
+
+<p>Felizmente, a função <code>read_html</code> já estrutura os dados de forma que o R seja capaz de identificar as estruturas de um HTML, como por exemplo, tags, atributos, valores e conteúdo das tags. Para olharmos a estrutura do HTML que nós lemos, podemos utilizar a função <code>xml_structure(pagina)</code> do pacote <code>xml2</code></p>
+
+<pre><code class="language-r">xml2::xml_structure(pagina)
+</code></pre>
+
+<p>Com o objeto XML preparado e representando a página com a qual estamos trabalhando, vamos à caça das informações que queremos.</p>
+
+<p>Volte para a página da notícia. Procure o título da notícia e examine-o, inspencionando o código clicando com o botão direito do mouse e selecionando &ldquo;Inspecionar&rdquo;. Note o que encontramos:</p>
+
+<pre><code>&lt;h1 class=&quot;main_color main_title&quot;&gt;&lt;!--TITULO--&gt;49% não votariam em Lula&lt;!--/TITULO--&gt;&lt;/h1&gt;
+</code></pre>
+
+<p>Tente sozinh@ e por aproximadamente 1~2 minutos construir um &ldquo;xpath&rdquo; (caminho em XML) que nos levaria a este elemento antes de avançar. (Tente sozinh@ antes de copiar a resposta abaixo!)</p>
+
+<p>A resposta é: &ldquo;//h1[@class = &lsquo;main_color main_title&rsquo;]&rdquo;</p>
+
+<p>Usando agora as funções <code>rvest::html_node()</code> e <code>rvest::html_text()</code>, como vimos no tutorial anterior, vamos capturar o título da notícia:</p>
+
+<pre><code class="language-r">titulo &lt;- rvest::html_node(pagina ,
+                           xpath = '//h1[@class = &quot;main_color main_title&quot;]') %&gt;% 
+  rvest::html_text()
+print(titulo)
+</code></pre>
+
+<p>Simples, não? Repita agora o mesmo procedimento para data e hora (tente sozinh@ antes de copiar a resposta abaixo!):</p>
+
+<pre><code class="language-r">datahora &lt;- rvest::html_node(pagina ,
+                           xpath = '//time') %&gt;% 
+  rvest::html_text()
+print(datahora)
+</code></pre>
+
+<p>E também para o link do .pdf disponibilizado pelo DataFolha com o conteúdo completo da pesquisa &ndash; dica: o link é o valor do atributo &ldquo;href&rdquo; da tag &ldquo;a&rdquo; que encontramos ao inspecionar o botão para donwload:</p>
+
+<pre><code class="language-r">pesquisa &lt;- rvest::html_node(pagina ,
+                           xpath = '//p[@class = &quot;stamp download&quot;]/a') %&gt;% 
+  rvest::html_attr(&quot;href&quot;)
+print(pesquisa)
+</code></pre>
+
+<p>Note que para obtermos o atributo &ldquo;href&rdquo; mudamos da função <code>html_text()</code> para <code>html_attr()</code>.</p>
+
+<p>Finalmente, peguemos o texto. Note que o texto está dividido em vários parágrafos cujo conteúdo está inseridos em tags &ldquo;p&rdquo;, todas filhas da tag &ldquo;article&rdquo;. Se escolhemos o xpath sem especificar a tag &ldquo;p&rdquo; ao final, como abaixo, capturamos um monte de &ldquo;sujeira&rdquo;, como os botões de twitter e facebook.</p>
+
+<pre><code class="language-r">texto &lt;- rvest::html_node(pagina ,
+                           xpath = '//article[@class = &quot;news&quot;]') %&gt;% 
+  rvest::html_text()
+
+print(texto)
+</code></pre>
+
+<p>Por outro lado, se espificamos a tag &ldquo;p&rdquo; ao final do xpath, recebemos um vetor contendo cada um dos parágrafos do texto. Precisaríamos &ldquo;juntar&rdquo; (concatenar) todos os parágrafos para formar um texto único.</p>
+
+<pre><code class="language-r">texto &lt;- rvest::html_nodes(pagina ,
+                           xpath = '//article[@class = &quot;news&quot;]/p') %&gt;% 
+  rvest::html_text()
+print(texto)
+</code></pre>
+
+<p>Note que neste caso tivemos que utilizar <code>rvest::html_nodes()</code>! Não percebeu a diferença? Esta função tem um &ldquo;s&rdquo; no final, significa que ele vai raspar todos os xpath com o caminho <code>//article[@class = &quot;news&quot;]/p</code>, ou seja, caso tivessemos utilizado <code>rvest::html_node()</code>, nossa resultado seria apenas o primeiro parágrafo do texto.</p>
+
+<p>Por simplicidade, usaremos a primeira opção. Ao final, construímos um código ligeiramente mais complexo do que esperamos para a atividade que dá conta deste pequeno problema.</p>
+
+<h3 id="sua-vez-tente-raspar-a-notícia-seguinte-na-busca-do-datafolha">Sua vez - tente raspar a notícia seguinte na busca do DataFolha</h3>
+
+<p>Tente agora raspar a notícia seguinte usando a mesma estratégia. É fundamental notar que variamos a notícia, mas as informações continuam tendo o mesmo caminho. Essa é a propriedade fundamental do portal raspado que nos permite obter todas as notícias sem nos preocuparmos em abrir uma por uma. O link para a próxima notícia está no objeto &ldquo;url&rdquo; abaixo:</p>
+
+<pre><code class="language-r">url&lt;- &quot;http://datafolha.folha.uol.com.br/eleicoes/2015/11/1701573-russomanno-larga-na-frente-em-disputa-pela-prefeitura-de-sp.shtml&quot;
+</code></pre>
+
+<h3 id="download-de-arquivos">Download de arquivos</h3>
+
+<p>Por vezes, queremos fazer donwload de um arquivo cujo link encontramos na página raspada. Por exemplo, no datafolha seria interessante obter o relatório em .pdf da pesquisa (para extrair seu conteúdo no futuro, por exemplo). Vamos ver como fazer download de um arquivo online.</p>
+
+<p>Em primeiro lugar, obtemos seu endereço URL, como acabamos de fazer com a notícia que capturamos na busca do DataFolha (tente ler o código e veja se o entende por completo):</p>
+
+<pre><code class="language-r">library(rvest)
+library(dplyr)
+url &lt;- &quot;http://datafolha.folha.uol.com.br/eleicoes/2016/02/1744581-49-nao-votariam-em-lula.shtml&quot;
+pagina &lt;- read_html(url)
+pesquisa &lt;- rvest::html_nodes(pagina ,
+                           xpath = '//p[@class = &quot;stamp download&quot;]/a') %&gt;% 
+  rvest::html_attr(&quot;href&quot;)
+</code></pre>
+
+<p>O link está no objeto &ldquo;pesquisa&rdquo;:</p>
+
+<pre><code class="language-r">print(pesquisa)
+</code></pre>
+
+<p>Usando a função <code>download.file</code>, rapidamente salvamos o link no &ldquo;working directory&rdquo; (use &ldquo;getwd()&rdquo; para descobrir qual é o seu) e com o nome &ldquo;pesquisa.pdf&rdquo; (poderíamos salvar com o nome que quisessemos):</p>
+
+<pre><code class="language-r">getwd()
+download.file(pesquisa, &quot;pesquisa.pdf&quot;)
+</code></pre>
+
+<p>Caso você tenha problemas com essa função, talvez você tenha que substiuir as barras &ldquo;\&rdquo; por &ldquo;/&rdquo;. Para isso, utilizaremos o <code>gsub</code>.</p>
+
+<pre><code class="language-r">pesquisa2 &lt;- gsub(&quot;\\\\&quot;,&quot;/&quot;, pesquisa)
+
+download.file(pesquisa2, &quot;pesquisa.pdf&quot;)
+</code></pre>
+
+<p>Vá ao &ldquo;working directory&rdquo; e veja o arquivo!</p>
+
+<p>Sempre que estiver em posse de um conjunto de links que contém arquivos, você pode colocar a função <code>download.file</code> em loop e capturar todos os objetos ao mesmo tempo (por exemplo, na Câmara dos Deputados &ndash; vamos deixar um exemplo no github &ldquo;leobarone&rdquo;). Há uma dificuldade boba: nomear sem repetir os nomes diversos arquivos. Uma dica é usar o final do endereço URL como nome, mas você pode salvar os arquivos com nomes que sejam uma sequência numérica ou que provenham de um vetor que contenha os nomes todos. Use a criatividade!</p>
+
+<p>Vamos voltar agora às notícias do DataFolha em HTML e ignorar o donwload de arquivos com os relatórios das pesquisas.</p>
+
+<h3 id="um-código-duas-etapas-raspando-todas-as-notícias-de-eleições-do-datafolha">Um código, duas etapas: raspando todas as notícias de eleições do DataFolha</h3>
+
+<p>Vamos fazer um breve roteiro do que precisamos fazer para criar um banco de dados que contenha todos os títulos, data e hora e texto de todas as notícias sobre eleições do DataFolha (Obs: por enquanto vamos ignorar os links de pesquisa, pois nem todas as notícias contêm os links e isso causa interrupção do código. Ao final, apresentamos um código que resolve tal problema).</p>
+
+<h4 id="etapa-1">Etapa 1</h4>
+
+<ul>
+<li>Passo 1: conhecer a página de busca (e compreender como podemos &ldquo;passar&rdquo; de uma página para outra)</li>
+<li>Passo 2: raspar (em loop!) as páginas de busca para obter todos os links de notícia</li>
+</ul>
+
+<p>Esta é a primeira etapa da captura. Em primeiro lugar temos que buscar todos os URLs que contêm as notícias buscadas. Em outras palavras, começamos obtendo &ldquo;em loop&rdquo; os links das notícias e, só depois de termos os links, obtemos o conteúdo destes links. Nossos passos seguintes, portanto, são:</p>
+
+<h4 id="etapa-2">Etapa 2</h4>
+
+<ul>
+<li>Passo 3: conhecer a página da notícia (e ser capaz de obter nela as informações desejadas). Já fizemos isso acima!</li>
+<li>Passo 4: raspar (em um novo loop!) o conteúdo dos links capturados no Passo 2.</li>
+</ul>
+
+<p>Vamos construir o código da primeira etapa da captura e, uma vez resolvida a primeira etapa, faremos o código da segunda.</p>
+
+<h4 id="código-da-etapa-1">Código da etapa 1</h4>
+
+<p>Em primeiro lugar, vamos observar o URL da página de busca (poderíamos buscar termos chave, mas, neste caso, vamos pegar todas as notícias relacionadas a eleições).Na página 2 da busca vemos que o final é &ldquo;sr=26&rdquo;. Na página 3 o final é &ldquo;sr=51&rdquo;. Há um padrão: as buscas são realizadas de 25 em 25. De fato, a 21a. é última página da busca. Para &ldquo;passarmos&rdquo; de página em página, portanto, temos que ter um &ldquo;loop&rdquo; que conte não mais de 1 até 21, mas na seguinte sequência numérica: {1, 26, 51, 76, &hellip;, 476, 501}.</p>
+
+<p>Parece difícil, mas é extremamente simples. Veja o loop abaixo, que imprime a sequência desejada multiplicando (i - 1) por 25 e somando 1 ao final:</p>
+
+<pre><code class="language-r">for (i in 1:21){
+  i &lt;- (i - 1) * 25 + 1
+  print(i)
+}
+</code></pre>
+
+<p>Vamos, dessa forma, criar o objeto &ldquo;url_base&rdquo; a partir do URL da página 2 e substituir o número 26 em &ldquo;sr=26&rdquo; por um &ldquo;place holder&rdquo;, &ldquo;CONTADORLINK&rdquo;, por exemplo:</p>
+
+<pre><code class="language-r">url_base &lt;- &quot;http://search.folha.uol.com.br/search?q=elei%E7%F5es&amp;site=datafolha%2Feleicoes&amp;skin=datafolha&amp;results_count=516&amp;search_time=0.044&amp;url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Delei%25E7%25F5es%26site%3Ddatafolha%252Feleicoes%26skin%3Ddatafolha&amp;sr=CONTADORLINK&quot;
+</code></pre>
+
+<p>Capturar os links das notícias de uma única página é simples: examinamos o código HTML, lemos no R, transformamos em um objeto XML (&ldquo;parse&rdquo;) procuramos o &ldquo;xpath&rdquo; que caracteriza os links e extraímos o valor do atríbuto &ldquo;href&rdquo;. Este seria o Passo 1 descrito acima. Veja abaixo.</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(url)
+
+link &lt;- rvest::html_nodes(pagina, xpath = '//h2[@class = &quot;title&quot;]/a') %&gt;% 
+  rvest::html_attr(&quot;href&quot;)
+</code></pre>
+
+<p>Combinando o que vimos até agora, podemos executar o Passo 2. Falta apenas criar antes do loop um vetor vazio &ndash; por exemplo, o vetor &ldquo;links_datafolha&rdquo; no código abaixo &ndash; que, a cada iteração do loop &ldquo;guarda&rdquo; os links raspados da página. Sua tarefa é gastar MUITOS minutos no código abaixo para entendê-lo na totalidade.</p>
+
+<pre><code class="language-r">links_datafolha &lt;- c()
+for (i in 1:21){
+  print(i)
+  i &lt;- (i - 1) * 25 + 1
+  url &lt;- stringr::str_replace(url_base, &quot;CONTADORLINK&quot;, as.character(i))
+  pagina &lt;- read_html(url)
+  link &lt;- rvest::html_nodes(pagina,
+                            xpath = '//h2[@class = &quot;title&quot;]/a') %&gt;% 
+  rvest::html_attr(&quot;href&quot;)
+  links_datafolha &lt;- c(links_datafolha, link)
+}
+</code></pre>
+
+<p>Temos, ao final, o objeto links_datafolha que contém todos os links para as notícias sobre eleições no DataFolha. Encerramos com sucesso a Etapa 1 &ndash; caracterizada pelo primeiro loop. Esta etapa se assemelha bastante ao que fizemos nas atividades 1 e 2 e o código deve ser compreensível para você a essa altura do campeonato. Vamos agora iniciar a etapa 2.</p>
+
+<h4 id="código-da-etapa-2">Código da etapa 2</h4>
+
+<p>No começo da atividade resolvemos a captura do título, data e hora, link para o relatório de pesquisa completa e texto para uma única notícia no portal do instituto DataFolha. Nos resta agora capturar, em loop, o conteúdo de cada uma das páginas cujos links estão guardados no vetor &ldquo;links_datafolha&rdquo;.</p>
+
+<p>Vamos rever o procedimento, para uma URL qualquer, da captura do título, data e hora e texto (vamos deixar o link para o relatório de pesquisa de lado por enquanto, posto que algumas notícias não contêm o link e esta pequena ausência interromperia o funcionamento do código).</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(&quot;http://datafolha.folha.uol.com.br/eleicoes/2016/02/1744581-49-nao-votariam-em-lula.shtml&quot;)
+
+titulo &lt;- rvest::html_node(pagina ,
+                            xpath = '//h1[@class = &quot;main_color main_title&quot;]') %&gt;% 
+  rvest::html_text()
+datahora &lt;- rvest::html_node(pagina , xpath = '//time') %&gt;% 
+  rvest::html_text()
+
+texto &lt;- rvest::html_node(pagina , xpath = &quot;//article[@class = 'news']&quot;) %&gt;% 
+  rvest::html_text()
+</code></pre>
+
+<p>Para fazermos a captura de todos os links em &ldquo;loop&rdquo; deve ter o seguinte aspecto, como se vê no código abaixo que imprime todos os 516 links cujo conteúdo queremos capturar. Note que a forma de utilizar o loop é ligeiramente diferente da que havíamos visto até então. No lugar de uma variável &ldquo;i&rdquo; que &ldquo;percorre&rdquo; um vetor numérico (1:21, por exemplo), temos uma variável &ldquo;link&rdquo; que recebe, a cada iteração, um endereço URL do vetor &ldquo;links_datafolha&rdquo;, em ordem. Assim, na primeira iteração temos que &ldquo;link&rdquo; será igual &ldquo;links_datafolha[1]&ldquo;, na segunda &ldquo;links_datafolha[2]&rdquo; e assim por diante até a última posição do vetor &ldquo;links_datafolha&rdquo; &ndash; no nosso caso a posição 516.</p>
+
+<pre><code class="language-r">for (link in links_datafolha){
+  print(link)
+}
+</code></pre>
+
+<p>Combinando os dois código, e criando um data frame &ldquo;dados&rdquo; que é vazio antes do loop temos o código completo da captura. Tal como quando trabalhamos com tabelas, utilizando a função &ldquo;rbind&rdquo; para combinar o data frame que resultou da iteração anterior com a linha que combina o conteúdo armazenado em &ldquo;titulo&rdquo;, &ldquo;datahora&rdquo; e &ldquo;texto&rdquo;.</p>
+
+<pre><code class="language-r">dados &lt;- data.frame()
+
+for (link in links_datafolha){
+  print(link)
+  pagina &lt;- read_html(link)
+  titulo &lt;-  rvest::html_node(pagina, xpath = '//h1[@class = &quot;main_color main_title&quot;]') %&gt;%
+    rvest::html_text()
+  datahora &lt;- rvest::html_node(pagina, xpath = '//time') %&gt;%
+    rvest::html_text()
+  texto &lt;- rvest::html_node(pagina, xpath = &quot;//article[@class = 'news']&quot;) %&gt;%
+    rvest::html_text()
+  dados &lt;- rbind(dados, data.frame(titulo, datahora, texto))
+}
+</code></pre>
+
+<p>O resultado do código é um data frame (&ldquo;dados&rdquo;) que contém 3 variáveis em suas colunas: &ldquo;titulo&rdquo;, &ldquo;datahora&rdquo; e &ldquo;texto&rdquo;. A partir de agora você poderia, por exemplo, usar as ferramentas presentes no pacote &ldquo;tm&rdquo; da linguagem R (&ldquo;tm&rdquo; é acronismo de &ldquo;text mining&rdquo;) para criar uma nuvem de palavras (&ldquo;wordcloud&rdquo;), fazer a contagem de termos, examinar a semelhança da linguagem usada pelo instituto DataFolha com a usada por outros institutos de opinião pública, fazer análise de sentimentos, etc.</p>
+
+<p>Antes disso, sua tarefa é a seguinte: executar ambas as etapas do código e comentá-lo por completo (use # para inserir linhas de comentário). Comentar o código alheio é uma excelente maneira de ver se você conseguiu compreendê-lo por completo e serve para você voltar ao código no futuro quando for usá-lo de modelo para seus próprios programas em R.</p>
+
+<h4 id="extra-versão-do-código-com-links-para-pesquisa-e-com-texto-limpo">EXTRA: versão do código com links para pesquisa e com texto &ldquo;limpo&rdquo;</h4>
+
+<pre><code class="language-r">nullToNA &lt;- function(x) {
+  if (is.null(x)){
+    return(NA)
+    } else {
+      return(x)
+    }
+}
+</code></pre>
+
+<pre><code class="language-r">texto_vetor &lt;- rvest::html_nodes(pagina ,
+                           xpath = '//article[@class = &quot;news&quot;]/p') %&gt;% 
+  rvest::html_text()
+texto &lt;- c()
+for (paragrafo in texto_vetor){
+  texto &lt;- paste(texto, paragrafo)
+}
+texto &lt;- nullToNA(texto)
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial4/" title="Abrindo Dados no R">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Abrindo Dados no R
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

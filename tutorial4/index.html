@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Abrindo Dados no R - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial4/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/tutorial4/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/icons.css">
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Abrindo Dados no R
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introdução" href="../intro/">
+	
+	Introdução
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Gráficos" href="../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Web Scraping" href="../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Abrindo Dados no R </h1>
+
+			
+
+<p>Neste tutorial vamos cobrir uma série de métodos disponíveis para abrirmos arquivos de texto. excel e de outros softwares de análise de dadoss no R. Vamos dar atenção aos argumentos das funções de forma a solucionar dificuldades de abertura de dados com diferentes características ou em sistemas operacionais variados.</p>
+
+<h2 id="pacotes-no-r">Pacotes no R</h2>
+
+<p>Antes de avançarmos à tarefa principal, vamos aprender um pouco mais sobre pacotes. Já foi destacado diversas vezes que uma das vantagens do R é a existência de uma comunidade produtiva e que desenvolve continuamente novas funcionalidades, tudo em código aberto.</p>
+
+<p>Para instalarmos um novo pacote de R que esteja disponível no CRAN &ndash; &ldquo;The Comprehensive R Archive Network&rdquo; &ndash; utilizamos a função <em>install.packages</em>. Veja o exemplo com o pacote <em>beepr</em>:</p>
+
+<pre><code class="language-r, eval = F">install.packages(&quot;beepr&quot;)
+</code></pre>
+
+<p>Note que o nome do pacote deve estar em parêntese. Além disso, é possível que você tenha sido perguntad@ sobre de qual servidor do CRAN você quer baixar o pacote. A escolha em nada muda o resultado, exceto pelo tempo de duração.</p>
+
+<p>Uma vez que um pacote foi instalado, ele está disponível em seu computador, mas não ainda para uso. Apenas depois de executarmos a função <em>library</em> é que teremos o pacote em nossa &ldquo;biblioteca&rdquo; de funções.</p>
+
+<pre><code class="language-r">library(beepr)
+</code></pre>
+
+<p>Você pode dispensar as aspas ao usar a função <em>library</em>, pois é opcional. A função <em>require</em> é semelhante a <em>library</em> e a ignoraremos.</p>
+
+<h2 id="abrindo-dados-com-da-funções-do-pacote-utils">Abrindo dados com da funções do pacote utils</h2>
+
+<p>Quando você inicia uma nova sessão de R, alguns pacotes já estão automaticamente carregados. <em>utils</em> é um deles, e ele contém as funções mais conhecidas de abertura de dados em arquivos de texto.</p>
+
+<p>A principal função é <em>read.table</em>. Use a função <em>args</em> para explorar seus argumentos:</p>
+
+<pre><code class="language-r">args(read.table)
+</code></pre>
+
+<p>É imprescindível que a função <em>read.table</em> receba como primeiro argumento um arquivo de dados. Note que o caminho para o arquivo deve estar completo (ex: &ldquo;C:\\User\\Documents\\file.txt&rdquo;) ou ele deve estar no seu <strong>working directory</strong> (wd). Mas como eu descubro meu wd?</p>
+
+<h2 id="caminhos-no-r">Caminhos no R</h2>
+
+<pre><code class="language-r, eval = F">getwd()
+</code></pre>
+
+<p>E como eu altero meu wd?</p>
+
+<pre><code class="language-r, eval = F">setwd(&quot;C:\\Users\\fcslab18\\Documents\\&quot;)
+</code></pre>
+
+<p>Simples e muito útil para evitar escrever &ldquo;labirintos de pastas&rdquo; ao importar dados.</p>
+
+<p>Um detalhe fundamental para quem usa Windows: os caminhos devem ser escritos com duas barras no lugar de uma, como no exemplo acima. É uma chatice e a melhor solução é mudar definitivamente para linux.</p>
+
+<p>Vamos supor que você queira abrir diversos arquivos (&ldquo;file1.txt&rdquo; e &ldquo;file2.txt&rdquo;, por exemplo) que estão em uma pasta diferente do seu wd, por exemplo &ldquo;C:\\User\\Downloads\\&rdquo;. Mudar o wd pode não ser conviente, mas escrever o caminho todo é menos ainda. Uma solução é criar usar <em>file.path</em> para cadar arquivo armazenando a pasta e o caminho dos arquivos em algum objeto.</p>
+
+<pre><code class="language-r">pasta &lt;- &quot;C:\\Users\\fcslab18\\Downloads\\&quot;
+path_file1 &lt;- file.path(pasta, &quot;file1.txt&quot;)
+path_file2 &lt;- file.path(pasta, &quot;file2.txt&quot;)
+</code></pre>
+
+<p>O código acima pode parecer pouco inteligente neste momento, mas tente pensar a combinação dele com loops para abrir diversos arquivos.</p>
+
+<p>Use as funções que acabamos de ver para gerenciar caminhos de pastas no R. Vale a pena.</p>
+
+<h2 id="read-table">read.table</h2>
+
+<p>Voltando à função <em>read.table</em>, vamos examinar os argumentos seguintes a <em>file</em> usando um exemplo de dados retirado do Portal da Transparência. Extraí dos pagamentos do programa uma amostra de tamanho 50 e salvei em diversos arquivos com caracteristicas distintas.</p>
+
+<p>Para facilitar nossa vida, vamos usar como argumento &ldquo;file&rdquo; o endereço dos dados no repositório do curso. O primeiro arquivo está no enderço que guardaremos em &ldquo;file1&rdquo;.</p>
+
+<pre><code class="language-r">file1 &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/bf_amostra_hv.csv&quot;
+</code></pre>
+
+<p>Esse arquivo contém cabeçalho, ou seja, a primeira linha traz o nome das colunas. Por esta razão, informaremos &ldquo;header = T&rdquo;. Ignore por hora o argumento &ldquo;sep&rdquo;.</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file1, header = T, sep = &quot;,&quot;)
+head(dados)
+</code></pre>
+
+<p>O que aconteceria se escolhessemos &ldquo;header = F&rdquo;?</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file1, header = F, sep = &quot;,&quot;)
+head(dados)
+</code></pre>
+
+<p>Em primeiro lugar, o nome das variáveis é inserido automaticamente e na sequência V1, V2, &hellip;, Vn, onde n é o número de colunas. Além disso, os nomes das variávei é lido como se fosse uma observação. Disso resulta que todas as variáveis serão lidas com um texto na primeira coluna, resultando, em &ldquo;character&rdquo; ou &ldquo;factor&rdquo; a depender das características dos dados.</p>
+
+<pre><code class="language-r">str(dados)
+</code></pre>
+
+<p>Vamos observar agora uma versão dos dados que não contém a primeira linha como nome das variáveis. Os dados estão no url armazenado em file2:</p>
+
+<pre><code class="language-r">file2 &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/bf_amostra_nv.csv&quot;
+</code></pre>
+
+<p>Como já havíamos visto, quando não há cabeçalho na primeira linha, os nomes são inseridos automaticamente:</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file2, header = F, sep = &quot;,&quot;)
+head(dados)
+</code></pre>
+
+<p>E se cometermos o erro de indicar que há cabeçalho quando não há?</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file2, header = T, sep = &quot;,&quot;)
+head(dados)
+</code></pre>
+
+<p>A primeira linha de dados se torna o nome das variáveis (inclusive os números antecedidos por um &ldquo;X&rdquo;).</p>
+
+<p>Ambos arquivos têm o mesmo separador: vírgula. O argumento &ldquo;sep&rdquo; permite indicar qual é o separador.</p>
+
+<p>Não há muita graça em observar os exemplos com separadores diferente, mas vejamos como abrí-los. Os mais comuns, além da vírgula, são o ponto e vírgula e o tab, este último representado pelo símbolo &ldquo;\t&rdquo;</p>
+
+<pre><code class="language-r"># Ponto e virgula
+file3 &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/bf_amostra_hp.csv&quot;
+dados &lt;- read.table(file3, header = T, sep = &quot;;&quot;)
+
+file4 &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/bf_amostra_ht.csv&quot;
+dados &lt;- read.table(file4, header = T, sep = &quot;\t&quot;)
+</code></pre>
+
+<p>Há outras funções da mesma família de <em>read.table</em> no pacote <em>utils</em>. A diferença entre elas é o separador de colunas &ndash; vírgula para <em>read.csv</em>, ponto e vírgula para <em>read.csv2</em>, tab para <em>read.delim</em> e <em>read.delim2</em> &ndash; e o separador de decimal.</p>
+
+<p>Por default, <em>read.table</em> considera que os campos em cada coluna estão envolvidas por aspas duplas (quote = &ldquo;\&rdquo;&ldquo;. Para indicar que não há nada, use quote = &ldquo;&rdquo;.</p>
+
+<p>&ldquo;dec&rdquo; é o argumento para o separador decimais. Como o padrão brasileiro é a vírgula, e não o ponto, este argumento costuma ser importante.</p>
+
+<p>Por vezes é conveniente importar apenas um subconjunto das linhas. &ldquo;skip&rdquo; permite que pulemos algumas linhas e &ldquo;nrows&rdquo; indica o máximo de linhas a serem abertas. Se o banco de dados for desconhecido e muito grande, abrir uma fração permite conhecer (tentando e errando) os demais argumentos (&ldquo;header&rdquo;, &ldquo;sep&rdquo;, etc) adequados para abrir os dados com um baixo custo de tempo e paciência.</p>
+
+<p>Por exemplo, para pular as 3 primeiras linhas:</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file2, header = T, sep = &quot;,&quot;, skip = 3)
+head(dados)
+</code></pre>
+
+<p>Para abrir apenas 20 linhas:</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file2, header = T, sep = &quot;,&quot;, nrows = 20)
+head(dados)
+</code></pre>
+
+<p>Combinando, para abrir da linha 11 à linha 30:</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file1, header = T, sep = &quot;,&quot;, skip = 10, nrows = 30)
+head(dados)
+</code></pre>
+
+<p>Por vezes, é interessante definir as classes das variáveis a serem importadas. O argumento deve ser um vetor com uma classe para cada coluna. Por exemplo:</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file1, header = T, sep = &quot;,&quot;, 
+  colClasses = c(&quot;character&quot;, &quot;numeric&quot;,&quot;character&quot;, &quot;numeric&quot;, &quot;numeric&quot;))
+str(dados)
+</code></pre>
+
+<p>Perceba que quando abrimos os dados sem especificar o tipo da coluna, a função <em>read.table</em> tenta identificá-los. Uma das grandes chatices das funções de abertura de dados pacote <em>utils</em> é que colunas de texto são normalmente identificadas como &ldquo;factors&rdquo;, mesmo quando claramente não são. Veja os exemplos anteriores</p>
+
+<p>Para evitar que textos sejam lidos como &ldquo;factors&rdquo; é importante informar o parâmetro &ldquo;stringsAsFactors = F&rdquo;, pois o padrão é &ldquo;T&rdquo;. Este argumento incomoda tanto que diversas pessoas chegam a alterar a configuração básica da função para não ter de informá-lo diversas vezes.</p>
+
+<pre><code class="language-r">dados &lt;- read.table(file1, header = T, sep = &quot;,&quot;, stringsAsFactors = F)
+str(dados)
+</code></pre>
+
+<p>Note que, agora, &ldquo;uf&rdquo; e &ldquo;munic&rdquo; são importadas como &ldquo;character&rdquo;.</p>
+
+<p>Finalmente, é comum termos problemas para abrir arquivos que contenham caracteres especiais, pois há diferentes formas do computador transformar 0 e 1 em vogais acentuadas, cecedilha, etc. O &ldquo;encoding&rdquo; de cada arquivo varia de acordo com o sistema operacional e aplicativo no qual foi gerado.</p>
+
+<p>Para resolver este problema, informamos ao R o parâmetro &ldquo;fileEncoding&rdquo;, que indica qual é o &ldquo;encoding&rdquo; esperado do arquivo. Infelizmente não há formas automáticas de descobrir o &ldquo;encoding&rdquo; de um arquivo e é preciso conhecer como foi gerado &ndash; seja por que você produziu o arquivo ou por que teve acesso à documentação &ndash; ou partir para tentativa e erro. Alguns &ldquo;encodings&rdquo; comuns são &ldquo;latin1&rdquo;, &ldquo;latin2&rdquo; e &ldquo;utf8&rdquo;, mas há diversos outros. Como o arquivo com o qual estamos trabalhando não contém caracteres especiais, não é preciso fazer nada.</p>
+
+<h2 id="tibbles-e-tidyverse">Tibbles e tidyverse</h2>
+
+<p>O desenvolvimento de pacotes em R levou à criação de um tipo específico de <em>data frame</em>, chamado <em>tibble</em>. A estrura é idêntica à de um <em>data frame</em> regular e suas diferenças se resumem à forma que os dados aparecem no console ao &ldquo;imprimirmos&rdquo; o objeto, ao &ldquo;subsetting&rdquo;, ou seja, à seleção de linhas e à adoção de &ldquo;stringsAsFactors = F&rdquo; como padrão. Você pode ler mais sobre <em>tibbles</em> <a href="https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html">aqui</a>.</p>
+
+<p>O pacote <em>readr</em>, parte do <em>tidyverse</em> (conjunto de pacotes com o qual vamos trabalhar), contém funções para abertura de dados em .txt semelhantes às do pacote <em>utils</em>, mas que trazem algums vantagens: velocidade de abertura, simplicação de argumentos e a produção de <em>tibbles</em> como resultado da importação.</p>
+
+<pre><code class="language-r">library(readr)
+</code></pre>
+
+<p>A função análoga à <em>read.table</em> em <em>readr</em> chama-se <em>read_delim</em>. Veja:</p>
+
+<pre><code class="language-r">dados &lt;- read_delim(file1, delim = &quot;,&quot;)
+dados
+</code></pre>
+
+<p>Observe que não utilizamos <em>head</em> para imprimir as primeiras linhas. Essa é uma característica de <em>tibbles</em>: o output contém uma fração do banco, a informação sobre número de linhas e colunas, e os tipos de cada variável abaixo dos nomes das colunas. &ldquo;delim&rdquo; é o argumento que entra no lugar de &ldquo;sep&rdquo; ao utilizarmos as funções do <em>readr</em>.</p>
+
+<p>O padrão de <em>read_delim</em> é importar a primeira coluna como nome das variáveis. No lugar de <em>header</em>, temos agora o argumento &ldquo;col_names&rdquo;, que deve ser igual a &ldquo;FALSE&rdquo; para os dados armezenados em &ldquo;file2&rdquo;, por exemplo:</p>
+
+<pre><code class="language-r">dados &lt;- read_delim(file2, col_names = F, delim = &quot;,&quot;)
+dados
+</code></pre>
+
+<p>X1, X2, &hellip;, Xn, com &ldquo;n&rdquo; igual ao número de colunas, passam a ser os nomes das variáveis neste caso.</p>
+
+<p>Além dos valores lógicos, &ldquo;col_names&rdquo; também aceita um vetor com novos nomes para as colunas como argumento:</p>
+
+<pre><code class="language-r">dados &lt;- read_delim(file2, col_names = c(&quot;estado&quot;, &quot;municipio_cod&quot;, &quot;municipio_nome&quot;,
+                                         &quot;NIS&quot;, &quot;transferido&quot;),
+                    delim = &quot;,&quot;)
+dados
+</code></pre>
+
+<p>&ldquo;skip&rdquo; e &ldquo;n_max&rdquo; são os argumentos de <em>read_delim</em> correspondentes a &ldquo;skip&rdquo; e &ldquo;nrows&rdquo;.</p>
+
+<p>Finalmente, &ldquo;col_types&rdquo; cumpre a função de &ldquo;colClasses&rdquo;, com uma vantagem: não é preciso usar um vetor com os tipos de dados para cada variável. Basta escrever uma sequência de caracteres onde &ldquo;c&rdquo; = &ldquo;character&rdquo;, &ldquo;d&rdquo; = &ldquo;double&rdquo;, &ldquo;l&rdquo; = &ldquo;logical&rdquo; e &ldquo;i&rdquo; = &ldquo;integer&rdquo;:</p>
+
+<pre><code class="language-r">dados &lt;- read_delim(file1, delim = &quot;,&quot;, col_types = &quot;cicid&quot;)
+dados
+</code></pre>
+
+<p>Mais econômico, não?</p>
+
+<p><em>read_csv</em> e <em>read_tsv</em> são as versões de <em>read_delim</em> para arquivos separados por vírgula e arquivos separado por tabulações.</p>
+
+<p>Do ponto de vista forma, as três funções de importação de dados de texto do pacote <em>readr</em> geram objetos que pertecem à classe de <em>data frames</em> e também às classes <em>tbl</em> e <em>tbl_df</em>, que são as classes de <em>tibbles</em>.</p>
+
+<p>Ainda no pacote <em>readr</em>, duas funções são bastante úteis</p>
+
+<h2 id="outra-gramática-para-dados-em-r-data-table-opicional">Outra gramática para dados em R: data.table (OPICIONAL)</h2>
+
+<p>No curso vamos trabalhar com duas &ldquo;gramáticas&rdquo; para dados em R: a dos pacotes básicos e a fornecida pelos pacotes do <em>tidyverse</em>. O pacote <em>data.table</em> oferece uma terceira alternativa, que não trabalharemos no curso. Esta &ldquo;gramática&rdquo; guarda semelhanças (poucas, ao meu ver) com a linguagem SQL.</p>
+
+<pre><code class="language-r">library(data.table)
+</code></pre>
+
+<p>Há, porém, duas funções excepcionalmente boas neste pacote: <em>fread</em> e <em>fwrite</em>, que servem, respectivamente, para importar e exportar dados de texto.</p>
+
+<pre><code class="language-r">class(dados)
+</code></pre>
+
+<p>As duas grandes vantagens de utilizar <em>fread</em> são: a função detecta os automaticamente as características do arquivo de texto para definir delimitador, cabeçalho, tipos de dados das colunas, etc; e é extremamente rápida em comparação às demais. &ldquo;f&rdquo; vem de &ldquo;Fast and friendly file finagler&rdquo;.</p>
+
+<pre><code class="language-r">dados &lt;- fread(file1)
+head(dados)
+</code></pre>
+
+<p>Além de ser um <em>data.frame</em>, os objeto criado com <em>fread</em> também é da classe <em>data.table</em> e aceita a &ldquo;gramática&rdquo; do pacote de mesmo nome.</p>
+
+<p>Obviamente, se você precisar especificar os argumentos para <em>fread</em> ler um arquivo, não há problemas. Eles são muito parecidos aos de <em>read.table</em>.</p>
+
+<h2 id="dados-em-arquivos-editores-de-planilhas">Dados em arquivos editores de planilhas</h2>
+
+<p>Editores de planilha são, em geral, a primeira ferramenta de análise de dados que aprendemos. Diversas organizações disponibilizam (infelizmente) seus dados em formato .xls ou .xlsx e muitos pesquisadores utilizam editores de planilha para construir bases de dados.</p>
+
+<p>Vamos ver como obter dados em formato .xls ou .xlsx diretamente, sem precisar abrir os arquivos e exportá-los para um formato de texto.</p>
+
+<p>Há dois bons pacotes com funções para dados em editores de planilha: <em>readxl</em> e <em>gdata</em>. Vamos trabalhar apenas com o primeiro, mas convém conhecer o segundo se você for trabalhar constantemente com planilhas e quiser editá-las, e não só salvá-las. <em>readxl</em> também é parte do <em>tidyverse</em>. Importe o pacote:</p>
+
+<pre><code class="language-r">library(readxl)
+</code></pre>
+
+<h2 id="um-pouco-sobre-donwload-e-manipulação-de-arquivos">Um pouco sobre donwload e manipulação de arquivos</h2>
+
+<p>Nosso exemplo será a Pesquisa Perfil dos Municípios Brasileiros de 2005, produzida pelo IBGE e apelidade de MUNIC. Diferentemente das demais funções deste tutorial, precisamos baixar o arquivo para o computador e acessá-lo localmente. Faça o download diretamente do <a href="ftp://ftp.ibge.gov.br/Perfil_Municipios/2005/base_MUNIC_2005.zip">site do IBGE</a> e descompacte. Ou, mais interessante ainda, vamos automatizar o download e descompactação do arquivo (aviso: pode dar erro no Windowns e tentaremos corrigir na hora).</p>
+
+<p>Em primeiro lugar, vamos guardar o endereço url do arquivo em um objeto e fazer o download. Note que na função <em>download.file</em> o primeiro argumento é o url e o segundo é o nome do arquivo que será salvo (nota: você pode colocá-lo em qualquer pasta utilizando <em>file.path</em> para construir o caminho completo para o arquivo a ser gerado).</p>
+
+<pre><code class="language-r">url_arquivo &lt;- &quot;ftp://ftp.ibge.gov.br/Perfil_Municipios/2005/base_MUNIC_2005.zip&quot;
+download.file(url_arquivo, &quot;temp.zip&quot;, quiet = F)
+</code></pre>
+
+<p>O argumento &ldquo;quiet = F&rdquo; serve para não imprimirmos no console &ldquo;os números&rdquo; do download (pois o tutorial ficaria poluído), mas você pode retirá-lo ou alterá-lo caso queira ver o que acontece.</p>
+
+<p>Com <em>unzip</em>, vamos extrair o conteúdo da pasta:</p>
+
+<pre><code class="language-r">unzip(&quot;temp.zip&quot;)
+</code></pre>
+
+<p>Use <em>list.files</em> para ver todos os arquivos que estão na sua pasta caso você não saiba o nome do arquivo baixado. No nosso caso utilizaremos o arquivo &ldquo;Base 2005.xls&rdquo;</p>
+
+<pre><code class="language-r, eval = F">list.files()
+</code></pre>
+
+<p>Vamos aproveitar e excluir nosso arquivo .zip temporário:</p>
+
+<pre><code class="language-r">file.remove(&quot;temp.zip&quot;)
+</code></pre>
+
+<h2 id="voltando-às-planilhas">Voltando às planilhas</h2>
+
+<p>Para não repetir o nome do arquivo diversas vezes, vamos criar o objeto &ldquo;arq&rdquo; que contém o endereço do arquivo no seu computador (ou só o nome do arquivo entre aspas se você tivê-lo no seu wd):</p>
+
+<pre><code class="language-r">arquivo &lt;- &quot;Base 2005.xls&quot;
+</code></pre>
+
+<p>Com <em>excel_sheets</em> examinamos quais são as planilhas existentes do no arquivo:</p>
+
+<pre><code class="language-r, echo = F, results = 'hide'">excel_sheets(arquivo)
+</code></pre>
+
+<p>No caso, temos 11 planilhas diferentes (e um bocao de mensagens de erro estranhas). O dicionário, para quem já trabalhou alguma vez com a MUNIC, não é uma base de dados, apenas textos espalhados entre células. As demias, no entanto, têm formato adequado para <em>data frame</em>.</p>
+
+<p>Vamos importar os dados da planilha &ldquo;Variáveis externas&rdquo;. Todas duas maneiras abaixo se equivalem:</p>
+
+<pre><code class="language-r, echo = F, results = 'hide'"># 1
+transporte &lt;- read_excel(arquivo, &quot;Variáveis externas&quot;)
+
+# 2
+transporte &lt;- read_excel(arquivo, 11)
+</code></pre>
+
+<p>A função <em>read_excel</em> aceita os argumentos &ldquo;col_names&rdquo;, &ldquo;col_types&rdquo; e &ldquo;skip&rdquo; tal como as funções de importação do pacote <em>readr</em>.</p>
+
+<pre><code class="language-r, include = F">file.remove(&quot;Base 2005.xls&quot;)
+</code></pre>
+
+<h2 id="dados-de-spss-stata-e-sas">Dados de SPSS, Stata e SAS</h2>
+
+<p>R é bastante flexível quanto à importação de dados de outros softwares estatísticos. Para este fim também há dois pacotes, <em>foreign</em>, mais antigo e conhecido, e <em>haven</em>, que é, advinhe só, parte do <em>tidyverse</em>. São parecidos entre si e recomendo o uso do segundo, que examinaremos abaixo.</p>
+
+<pre><code class="language-r">library(haven)
+</code></pre>
+
+<p>Basicamente, há cinco funções de importação de dados em <em>haven</em>: <em>read_sas</em>, para dados em SAS; <em>read_stata</em> e <em>read_dta</em>, idênticas, para dados em formato .dta gerados em Stata; e <em>read_sav</em> e <em>read_por</em>, uma para cada formato de dados em SPSS. O uso, como era de se esperar, é bastante similar ao que vimos no tutorial todo.</p>
+
+<p>Vamos usar como exemplo o <a href="http://www.latinobarometro.org/latContents.jsp">Latinobarômetro 2015</a>, que está disponível para SAS, Stata, SPSS e R. Como os arquivos são grandes demais e o portal do Latinobarômetro é &ldquo;cheio de javascript&rdquo; (dá mais trabalho pegar dados de um portal com funcionalidades construídas nesta linguagem), vamos fazer o processo manual de baixar os dados, descompactá-los e abrí-los. Vamos ignorar SAS por razões que não interessam agora e por não ser uma linguagem popular nas ciências se sociais, mas se você tiver interesse em saber mais, me procure.</p>
+
+<p>O Latinobarômetro é uma pesquisa de opinião pública realizada em diferentes países latino-americanos. O questionário utilizado contém perguntas sobre democracia, liberdades civis, opiniões sobre a perfomance polícia e econômica, entre outras questões. Caso tenha interesse, sinta-se a vontade para explorar o <a href="http://www.latinobarometro.org/latContents.jsp">site</a> da pesquisa.</p>
+
+<h2 id="abrindo-os-dados-com-haven">Abrindo os dados com haven</h2>
+
+<p>Vejamos o uso das funções em arquivos de diferentes formatos:</p>
+
+<pre><code class="language-r"># SPSS
+lat &lt;- read_spss(&quot;/home/acsa/FLS/Latinobarometro_2015_Eng.sav&quot;)
+head(lat)
+
+# Stata
+lat &lt;- read_stata(&quot;/home/acsa/FLS/Latinobarometro_2015_Eng.dta&quot;)
+head(lat)
+</code></pre>
+
+<p>Simples assim.</p>
+
+<p>Há critérios de conversão de variáveis categóricas e rótulos dentro R ao importar arquivos de outras linguagens. No pacote <em>haven</em>, a função responsável por realizar essa conversão é a a <em>as_factor</em>.</p>
+
+<pre><code class="language-r"># SPSS
+lat &lt;- read_spss(&quot;C:\\User\\fcslab18\\Downloads\\Latinobarometro_2015_Eng.sav&quot;)
+lat &lt;- as_factor(lat)
+head(lat)
+
+# Stata
+lat &lt;- read_stata(&quot;C:\\User\\fcslab18\\Downloads\\Latinobarometro_2015_Eng.sav&quot;)
+lat &lt;- as_factor(lat)
+head(lat)
+</code></pre>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../webscraping/" title="Web Scraping">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Web Scraping
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../tutorial1/" title="Começando pelo Meio">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Começando pelo Meio
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>ggplot2 - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../ggplot2/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/ggplot2/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/icons.css">
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        ggplot2
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introdução" href="../intro/">
+	
+	Introdução
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Gráficos" href="../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Web Scraping" href="../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>ggplot2 </h1>
+
+			
+
+<h2 id="tópicos-do-tutorial">Tópicos do tutorial</h2>
+
+<ol>
+<li><p>Rever os tutoriais passados de <em>web scraping</em> e <em>tidyverse</em></p></li>
+
+<li><p><code>ggplot2</code></p></li>
+
+<li><p>Gráficos interativos</p></li>
+
+<li><p>Desafio</p></li>
+</ol>
+
+<h2 id="introdução">Introdução</h2>
+
+<p>As informações podem vir de diversas maneiras, sejam por meio de tabelas ou textos. Veremos hoje como transmitir conteúdo com gráficos, especialmente utilizando <code>ggplot2</code>, um pacote desenvolvido por Hadley Wickham, o mesmo criador de pacotes como <code>dplyr</code>, <code>rvest</code> e <code>readr</code>, e que atualmente é um dos mais utilizados para visualização gráfica no R. Se ele é um dos mais utilizados significa que existem outros, como por exemplo, <code>lattice</code> e <code>qplot</code>.</p>
+
+<p>Porém, antes de falarmos sobre gráficos, vamos retomar um pouco da aula passada, pois não é possível criar visualizações sem base de dados, não?</p>
+
+<p><img src="img/imagem2.jpg" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+<h2 id="web-scraping">Web Scraping</h2>
+
+<pre><code class="language-r">library(rvest)
+library(dplyr)
+library(readr)
+</code></pre>
+
+<p>Neste tutorial iremos manipular uma [bases de dados](&ldquo;<a href="https://github.com/fivethirtyeight/data/tree/master/bad-drivers&quot;">https://github.com/fivethirtyeight/data/tree/master/bad-drivers&quot;</a>) com informação de acidentes de carro nos EUA.</p>
+
+<pre><code class="language-r">url &lt;- &quot;https://github.com/fivethirtyeight/data/tree/master/bad-drivers&quot;
+</code></pre>
+
+<p>Precisamos começar estruturando O HTML de forma que o R possa interpretá-lo.</p>
+
+<pre><code class="language-r">pagina &lt;- read_html(url)
+
+pagina
+</code></pre>
+
+<pre><code>## {xml_document}
+## &lt;html lang=&quot;en&quot;&gt;
+## [1] &lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset= ...
+## [2] &lt;body class=&quot;logged-out env-production&quot;&gt;\n    \n\n  &lt;div class=&quot;posi ...
+</code></pre>
+
+<p>Vamos utilizar o <code>%&gt;%</code> para ficar mais fácil de emendar as funções. Lembrando que o pipe vai pegar o primeiro argumento da função, que no nosso caso é o objeto <code>pagina</code>, e aplicar sobre ele outras funções.</p>
+
+<pre><code class="language-r">prefixo &lt;- pagina %&gt;%
+  html_nodes(xpath = '//td/span/a[@title=&quot;bad-drivers.csv&quot;]') %&gt;% 
+  html_attr('href')
+
+prefixo
+</code></pre>
+
+<pre><code>## [1] &quot;/fivethirtyeight/data/blob/master/bad-drivers/bad-drivers.csv&quot;
+</code></pre>
+
+<p>Para não ficarmos perdidos vamos entender o que aconteceu acima. Nós aplicamos a função <code>html_nodes</code> que vai localizar a tag do HTML que temos interesse. Em seguida para obter a informação que queremos vamos obter um atributo especifico da tag desejada.</p>
+
+<p>Em detalhes, a tag <code>&lt;a&gt;</code> no HTML serve para criar objetos clicaveis em um site, ou seja, quando clicamos em um link dentro de um site, estamos clicando nesta tag. Porém, ela só irá nos redirecionar para outras paginas se ela tiver o atributo <code>href</code> (<strong>h</strong>yper-<strong>ref</strong>erence), que no caso, é a informação que queremos.</p>
+
+<p>Porém, objeto acima nos retornou apenas o fim das url. Precisamos juntar as informações geradas com o link principal <code>https://github.com</code>.</p>
+
+<pre><code class="language-r">link &lt;- paste0(&quot;https://github.com&quot;, prefixo)
+</code></pre>
+
+<p>Agora com o link montado vamos ler o HTML e pegar o link para o banco de dados que iramos utilizar.</p>
+
+<pre><code class="language-r">link_dados &lt;- link %&gt;% read_html() %&gt;% html_node(xpath = '//a[@id=&quot;raw-url&quot;]') %&gt;% html_attr('href')
+</code></pre>
+
+<pre><code class="language-r">banco_de_dados &lt;- paste0(&quot;https://github.com&quot;, link_dados)
+</code></pre>
+
+<p>Com o link em mão podemos abrir o banco de dados</p>
+
+<pre><code class="language-r">tabela &lt;- read_csv(banco_de_dados)
+</code></pre>
+
+<p>Parece que deu certo, não? Quantas linhas e colunas temos?</p>
+
+<pre><code class="language-r">glimpse(tabela)
+</code></pre>
+
+<pre><code>## Observations: 51
+## Variables: 8
+## $ State                                                                                                    &lt;chr&gt; …
+## $ `Number of drivers involved in fatal collisions per billion miles`                                       &lt;dbl&gt; …
+## $ `Percentage Of Drivers Involved In Fatal Collisions Who Were Speeding`                                   &lt;dbl&gt; …
+## $ `Percentage Of Drivers Involved In Fatal Collisions Who Were Alcohol-Impaired`                           &lt;dbl&gt; …
+## $ `Percentage Of Drivers Involved In Fatal Collisions Who Were Not Distracted`                             &lt;dbl&gt; …
+## $ `Percentage Of Drivers Involved In Fatal Collisions Who Had Not Been Involved In Any Previous Accidents` &lt;dbl&gt; …
+## $ `Car Insurance Premiums ($)`                                                                             &lt;dbl&gt; …
+## $ `Losses incurred by insurance companies for collisions per insured driver ($)`                           &lt;dbl&gt; …
+</code></pre>
+
+<p>Pelo visto temos 8 variáveis, porém apesar de intuitivas para nós, elas são mais chatas para o computador entender, então vamos renomeá-las outros nomes!</p>
+
+<pre><code class="language-r">tabela &lt;- tabela %&gt;% rename(state = State,
+                            n_involved_fatal = `Number of drivers involved in fatal collisions per billion miles`,
+                            p_speeding = `Percentage Of Drivers Involved In Fatal Collisions Who Were Speeding`,
+                            p_alcohol = `Percentage Of Drivers Involved In Fatal Collisions Who Were Alcohol-Impaired`,
+                            p_not_distracted = `Percentage Of Drivers Involved In Fatal Collisions Who Were Not Distracted`,
+                            p_not_previous_accident = `Percentage Of Drivers Involved In Fatal Collisions Who Had Not Been Involved In Any Previous Accidents`,
+                            car_insurance = `Car Insurance Premiums ($)`,
+                            losses_incurred = `Losses incurred by insurance companies for collisions per insured driver ($)`)
+
+colnames(tabela) # nome das colunas
+</code></pre>
+
+<pre><code>## [1] &quot;state&quot;                   &quot;n_involved_fatal&quot;       
+## [3] &quot;p_speeding&quot;              &quot;p_alcohol&quot;              
+## [5] &quot;p_not_distracted&quot;        &quot;p_not_previous_accident&quot;
+## [7] &quot;car_insurance&quot;           &quot;losses_incurred&quot;
+</code></pre>
+
+<p>Para aqueles que possuem dúvidas sobre o que significa cada variável, vamos dar uma olhada na tabela abaixo:</p>
+
+<table>
+<thead>
+<tr>
+<th>variável</th>
+<th>descrição</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>n_involved_fatal</td>
+<td>Número de motoristas envolvidos em colisões fatais por bilhões de milhas</td>
+</tr>
+
+<tr>
+<td>p_speeding</td>
+<td>Porcentagem de motoristas envolvidos em colisões fatais que estavam em alta velocidade</td>
+</tr>
+
+<tr>
+<td>p_not_distracted</td>
+<td>Porcentagem de motoristas envolvidos em colisões fatais que não estavam distraídos</td>
+</tr>
+
+<tr>
+<td>p_not_previous_accident</td>
+<td>Porcentagem de motoristas envolvidos em colisões fatais e que não haviam se envolvido em nenhum acidente prévio</td>
+</tr>
+
+<tr>
+<td>car_insurance</td>
+<td>Preço do seguro (quanto o motorista paga)</td>
+</tr>
+
+<tr>
+<td>losses_incurred</td>
+<td>Perdas incorridas pelas companhias de seguros</td>
+</tr>
+</tbody>
+</table>
+
+<p>Podemos também incluir outras informações na nossa tabela, como por exemplo, as regiões dos Estados Unidos.</p>
+
+<pre><code class="language-r">geo_census_areas &lt;- tibble(
+   state = c(&quot;Connecticut&quot;,&quot;Maine&quot;,&quot;Massachusetts&quot;,&quot;New Hampshire&quot;,
+             &quot;Rhode Island&quot;,&quot;Vermont&quot;,&quot;New Jersey&quot;,&quot;New York&quot;,&quot;Pennsylvania&quot;,
+             &quot;Indiana&quot;,&quot;Illinois&quot;,&quot;Michigan&quot;,&quot;Ohio&quot;,&quot;Wisconsin&quot;,&quot;Iowa&quot;,
+             &quot;Kansas&quot;,&quot;Minnesota&quot;,&quot;Missouri&quot;,&quot;Nebraska&quot;,&quot;North Dakota&quot;,
+             &quot;South Dakota&quot;,&quot;Delaware&quot;,&quot;District of Columbia&quot;,&quot;Florida&quot;,
+             &quot;Georgia&quot;,&quot;Maryland&quot;,&quot;North Carolina&quot;,&quot;South Carolina&quot;,&quot;Virginia&quot;,
+             &quot;West Virginia&quot;,&quot;Alabama&quot;,&quot;Kentucky&quot;,&quot;Mississippi&quot;,&quot;Tennessee&quot;,
+             &quot;Arkansas&quot;,&quot;Louisiana&quot;,&quot;Oklahoma&quot;,&quot;Texas&quot;,&quot;Arizona&quot;,&quot;Colorado&quot;,
+             &quot;Idaho&quot;,&quot;New Mexico&quot;,&quot;Montana&quot;,&quot;Utah&quot;,&quot;Nevada&quot;,&quot;Wyoming&quot;,
+             &quot;Alaska&quot;,&quot;California&quot;,&quot;Hawaii&quot;,&quot;Oregon&quot;,&quot;Washington&quot;),
+   census_region = c(rep(&quot;Northeast Area&quot;, 9), rep(&quot;Midwest Area&quot;, 12),
+                     rep(&quot;South Area&quot;, 17), rep(&quot;West Area&quot;, 13)),
+   divisions = c(rep(&quot;New England&quot;,6), rep(&quot;Middle Atlantic&quot;,3), 
+                 rep(&quot;East North Central&quot;,5), rep(&quot;West North Central&quot;,7),
+                 rep(&quot;South Atlantic&quot;,9), rep(&quot;East South Central&quot;,4),
+                 rep(&quot;West South Central&quot;,4), rep(&quot;Mountain&quot;,8),
+                 rep(&quot;Pacific&quot;,5))
+)
+
+tabela &lt;- left_join(tabela, geo_census_areas, by = c(&quot;state&quot;= &quot;state&quot;))
+
+# Vamos colocar os nomes em ordem crescente para não ter problemas na hora de fazer os gráficos
+tabela$state &lt;- factor(tabela$state, levels = tabela$state[order(tabela$state)])
+
+View(tabela)
+</code></pre>
+
+<pre><code>## Error in .External2(C_dataviewer, x, title): unable to start data viewer
+</code></pre>
+
+<p>Agora podemos ir ao que interessa, os gráficos!</p>
+
+<h2 id="ggplot2"><code>ggplot2</code></h2>
+
+<p><img src="img/imagem3.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
+
+<p>Como foi brevemente discutido, visualizações gráficas são muito importantes para transmitir informações, juntanto inclusive elementos da estatística e design para resultar em visualizações que buscam informar e explorar algum fenomêno de interesse.</p>
+
+<p>O <code>ggplot2</code> especificamente, foi contruído no que se chamou Grammar of Graphics (por isso <strong>gg</strong> antes do plot2), que nada mais é do que uma estrutura (framework) para realização de gráficos, que nós também chamamos de <code>plot</code>. Além disso, o Grammar of Graphics tem o seguinte principio:</p>
+
+<blockquote>
+<p>Gráficos são construídos com diferentes <code>layers</code></p>
+</blockquote>
+
+<p>Mas o que são <code>layers</code>? Layers são elementos (ou componentes) gramáticais utilizados para fazer um <em>plot</em>. Estes componentes são importantes para determinar a representação dos dados. Como o Hadley Wickham apontou em um artigo chamado &ldquo;A layered grammar of graphics&rdquo; (2010), a associação destes layers com uma certa grámatica auxilia o usuário em atualizar e contruir gráficos com uma facilidade maior.</p>
+
+<p>Os elementos gramáticais que temos no <code>ggplot2</code> são:</p>
+
+<p>a. Data - O dado que será plotado, mapeando as variáveis de interesse.</p>
+
+<p>b. Aesthetics - A escala em que o dado será plotado, sinalizando os eixos x e y, cor, tamanho, preenchimento e etc.</p>
+
+<p>c. Geom - Estrutura que será utilizada nos seus dados, como por exemplo, gráfico de dispersão, linha, boxplot e etc.</p>
+
+<p>d. Facets - plotar multiplos grupos</p>
+
+<p>e. Stats - Transformações estatísticas</p>
+
+<p>f. Coordinates System - O espaço no qual o dado sera plotado, como por exemplo, espaço cartesiano, polar e entre outros.</p>
+
+<p>g. Theme - Controle e modificação de aparência de tudo que não diz respeito ao dado utilizado.</p>
+
+<p>h. Scales - Para cada Aesthetics, descreve como a característica visual é convertida em valores, como por exemplo, escala por tamanho, cor e etc.</p>
+
+<p>Caso você queira conhecer mais sobre os layers do <code>ggplot2</code> <a href="http://ggplot2.tidyverse.org/index.html">clique aqui</a></p>
+
+<p>Chega de falar! Mãos a obra!</p>
+
+<p>A primeira coisa que precisamos fazer é habilitar o pacote do <code>ggplot2</code></p>
+
+<pre><code class="language-r">library(ggplot2)
+</code></pre>
+
+<p>Como vamos ver os gráficos com <code>ggplot2</code> seguem um padrão de <em>&ldquo;building blocks&rdquo;</em>, ou seja, adicionamos layers sobre layers até que resulte na visualização gráfica desejada.</p>
+
+<p>Vamos então começar com a adição dos layers <code>data</code> e <code>aesthetics</code></p>
+
+<p><img src="img/montar_grafico_1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =n_involved_fatal, y = car_insurance))
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" style="display: block; margin: auto;" /></p>
+
+<p>Cade os pontos? É só isso? Não!</p>
+
+<p>O código que acabamos de executar apenas mapeia os dados em um plano, ou seja, ele retorna, neste caso um plano cartesiano vazio, com as variáveis e suas respectivas escalas. Para que possamos ver os pontos, temos que adicionar os <code>geoms</code> que neste caso será o <code>geom_point</code></p>
+
+<p><img src="img/montar_grafico_2.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =losses_incurred, y = car_insurance)) + geom_point()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" style="display: block; margin: auto;" /></p>
+
+<p>Agora podemos ter uma noção de como o dado se comporta! O que você pode nos dizer sobre esse gráfico? Um palpite pode ser que quanto maior as perdas incorridas pelas companhias de seguros, mais o motorista paga de seguro.</p>
+
+<p>Podemos nos perguntar se essa característica muda de região para região, não é mesmo? Para verificarmos se esta mudança ocorre podemos incluir os <code>facets</code>.</p>
+
+<p><img src="img/montar_grafico_3.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =n_involved_fatal, y = car_insurance)) + geom_point() + facet_wrap(~census_region)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-20-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =n_involved_fatal, y = car_insurance)) + geom_point() + facet_grid(census_region~.)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =n_involved_fatal, y = car_insurance)) + geom_point() + facet_grid(.~census_region)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" style="display: block; margin: auto;" /></p>
+
+<p>Como podemos notar, exitem duas funções que são responsáveis por incluir os <em>facets</em> no ggplot2.</p>
+
+<ul>
+<li><p><code>facet_wrap</code>: retorna gráficos dispostos de forma simétrica para cada nível da variável. Como a variável <code>census_region</code> tem 4 níveis (Midwest, Northheast, South e West), teremos quatro gráficos dispostos em uma matriz dois por dois (2 linhas e 2 colunas).</p></li>
+
+<li><p><code>facet_grid</code>: irá retornar multiplos gráficos distribuidos na vertical ou na horizontal.</p></li>
+</ul>
+
+<p>Perceba que tanto no <code>facet_grid</code>, quanto no <code>facet_wrap</code>, temos que colocar como argumento a variriável antes ou depois de um til (<code>~</code>, <code>.~</code>, <code>~.</code>). Esse <code>~</code> e suas variações, significam &ldquo;dividir o gráfico por [NOME DA VARIÁVEL]&ldquo;.</p>
+
+<p>Bom destacar que <code>.~</code> é diferente de <code>~.</code>! Apesar de ambos serem usados apenas no <code>facet_grid</code>, o primeiro distribui os gráficos na horizontal, enquanto o segundo na vertical.</p>
+
+<p>Dando continuidade à construção dos gráficos, o próximo layer que iremos utilizar é o <code>Statistics</code>. Ele é muito importante para verificarmos distribuições de variáveis, contagem de casos e visualização de odelos estatísticos.</p>
+
+<p><img src="img/montar_grafico_4.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" style="display: block; margin: auto;" /></p>
+
+<h3 id="geom-smooth"><code>geom_smooth</code></h3>
+
+<p>Auxilia na localização de padrões nos dados, como por exemplo, uma reta de uma <a href="https://pt.wikipedia.org/wiki/Regress%C3%A3o_linear">regressão linear</a></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =n_involved_fatal, y = car_insurance)) + geom_point() + geom_smooth(method = &quot;lm&quot;, se = FALSE)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-24-1.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" style="display: block; margin: auto;" /></p>
+
+<p>Os argumentos <code>method = &quot;lm&quot;</code> e <code>se = FALSE</code>, significam ajustar uma regressão linear nos dados e retirar o intervalo de confiança. Caso você tenha curiosidade, mude o <code>se</code> para <code>se = TRUE</code> e <code>method</code> para <code>method = &quot;auto&quot;</code>.</p>
+
+<h3 id="geom-bar"><code>geom_bar</code></h3>
+
+<p>Auxilia na contagem de variáveis, como por exemplo, quantos estados norte americanos estão em cada regiãos do censo demográfico.</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =census_region)) + geom_bar()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-25-1.png" title="plot of chunk unnamed-chunk-25" alt="plot of chunk unnamed-chunk-25" style="display: block; margin: auto;" /></p>
+
+<h3 id="geom-histogram"><code>geom_histogram</code></h3>
+
+<p>Permite obtermos a distribuição de uma variável contínua, como por exemplo, as perdas incorridas pelas companhias de seguro.</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =losses_incurred))+geom_histogram()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-26-1.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" style="display: block; margin: auto;" /></p>
+
+<h3 id="geom-boxplot-e-geom-violin"><code>geom_boxplot</code> e <code>geom_violin</code></h3>
+
+<p>Permite obtermos a distribuição de variáveis continuas, porém diferente do histogragrama, o boxplot inclui estatísticas descritivas como a mediana e os quartis.</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(y =losses_incurred, x = census_region)) +geom_boxplot()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-27-1.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(y =losses_incurred, x = census_region)) +geom_violin()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-28-1.png" title="plot of chunk unnamed-chunk-28" alt="plot of chunk unnamed-chunk-28" style="display: block; margin: auto;" /></p>
+
+<p>O próximo layer que iremos ver são as <code>coordinates</code>, que no ggplot2 são indicadas por <code>coord_</code>. Vamos começar pelo seguinte exemplo,</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =factor(1), fill = census_region)) + geom_bar() # Não se preocupe com o fill neste momento veremos ele mais adiante. O importante é saber que ele preenche as colunas com cores padrões do R.
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-29-1.png" title="plot of chunk unnamed-chunk-29" alt="plot of chunk unnamed-chunk-29" style="display: block; margin: auto;" /></p>
+
+<p>O ggplot2 possibilita utilizarmos muitos sistemas de coordenadas, porém focaremos apenas em dois:</p>
+
+<ul>
+<li><code>coord_flip</code></li>
+</ul>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =factor(1), fill = census_region)) + geom_bar() + coord_flip()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-30-1.png" title="plot of chunk unnamed-chunk-30" alt="plot of chunk unnamed-chunk-30" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><code>coord_polar</code></li>
+</ul>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =factor(1), fill = census_region)) + geom_bar() + coord_polar(theta = 'y')
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-31-1.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" style="display: block; margin: auto;" /></p>
+
+<p>Por fim, temos os <code>Themes</code>, que modificam tudo aquilo que não é considerado como dado, como por exemplo, a cor do título do gráfico.</p>
+
+<p><img src="img/montar_grafico_6.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x =losses_incurred, y = car_insurance)) + geom_point()+
+  labs(title = &quot;Losses_incurred x Car_insurance&quot;,
+       subtitle = &quot;Curso de Programação para Ciências Sociais&quot;,
+       x = &quot;Perdas incorridas&quot;, 
+       y = &quot;Valor do Seguro&quot;, 
+       caption = &quot;Fonte: FiveThirtyEight&quot;)+ 
+  theme(plot.title=element_text(color=&quot;blue&quot;, size=24, hjust= 0.5),
+        axis.title=element_text(size=14,face=&quot;bold&quot;),
+        axis.ticks.y=element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line( size=.8, color=&quot;red&quot;))
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-33-1.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" style="display: block; margin: auto;" /></p>
+
+<p><img src="img/imagem4.jpg" title="plot of chunk unnamed-chunk-34" alt="plot of chunk unnamed-chunk-34" style="display: block; margin: auto;" /></p>
+
+<p>Pensa que acabou? Precisamos ver um pouco mais de <code>Aesthetics</code> antes de irmos para os gráficos interativos.</p>
+
+<h3 id="aesthetics-mapping-e-parameter-setting"><em>Aesthetics mapping</em> e <em>parameter setting</em></h3>
+
+<p>É muito comum mudarmos algumas características nas variáveis de interesse para diferenciá-las e assim trazer mais informações para o gráfico. Podemos mudar a cor, o tamanho, a forma e entre outras coisas de acordo com a variável que queremos destacar, como por exemplo, o número de envolvidos em acidentes fatais por bilhões de milhas e o preço pago pelos motoristas por regiões do censo demográfico.</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance, color = census_region))+geom_point()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-35-1.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance, shape = census_region))+geom_point()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-36-1.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance, color = census_region, shape = census_region))+geom_point()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance, size = car_insurance))+geom_point()
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-38-1.png" title="plot of chunk unnamed-chunk-38" alt="plot of chunk unnamed-chunk-38" style="display: block; margin: auto;" /></p>
+
+<p>Perceba que neste caso nós colocamos os parâmetros dentro de <code>aes()</code>. Nós chamamos isto de <em>aesthetics mapping</em>, ou seja, o valor do dado determina a característica visual dele, seja cor, tamanho, ou forma. Porém, se nós quisermos um valor constante, na qual a cor seja a mesma para o gráfico inteiro, devemos colocar os parêmetros de cor, forma, tamanho e entre outros fora do <code>aes()</code> e sim dentro do geom que estamos utilizando (em alguns casos também funciona colocar dentro do <code>ggplot()</code> ainda que fora do <code>aes()</code>). Isto se chama de <em>parameter setting</em>.</p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance))+geom_point(size = 6)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance))+geom_point(color = &quot;red&quot;)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-40-1.png" title="plot of chunk unnamed-chunk-40" alt="plot of chunk unnamed-chunk-40" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance))+geom_point(alpha = 1/5)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" style="display: block; margin: auto;" /></p>
+
+<pre><code class="language-r">ggplot(data = tabela, aes(x = n_involved_fatal, y = car_insurance))+geom_point(shape = 7)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-42-1.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" style="display: block; margin: auto;" /></p>
+
+<h2 id="gráficos-interativos-com-plotly">Gráficos interativos com <code>Plotly</code></h2>
+
+<p>Os gráficos interativos no R são construídos com um pacote que se comunica perfeitamente com o <code>ggplot2</code>, o <code>plotly</code>. Além de ser um pacote muito utilizado não só no R, como também, em Python e Javascript, o <a href="https://plot.ly/">plotly</a> é uma empresa que fornece serviços de comunicação com dados e como forma de promover seus produtos, eles liberam alguns dos seus códigos para serem utilizados por qualquer pessoa.</p>
+
+<p>Para instalar o pacote, nós utilizamos o <code>install.packages(&quot;plotly&quot;)</code> e depois <code>library(plotly)</code> para habilitar as funções disponíveis.</p>
+
+<pre><code class="language-r">#install.packages(&quot;plotly&quot;)
+library(plotly)
+</code></pre>
+
+<p>Feito isso, precisamos fazer um gráfico no <code>ggplot2</code> e em seguida usar a função <code>ggplotly()</code> para fazer o gráfico interativo.</p>
+
+<pre><code class="language-r">p &lt;- ggplot(data = tabela, aes(x =losses_incurred, y = car_insurance, color = census_region)) + 
+  geom_point(size = 2, shape = 8)
+
+ggplotly(p)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-44-1.png" title="plot of chunk unnamed-chunk-44" alt="plot of chunk unnamed-chunk-44" style="display: block; margin: auto;" /></p>
+
+<h2 id="desafio">Desafio</h2>
+
+<p>As informações que nós utilizamos neste tutorial fazem parte de uma <a href="https://fivethirtyeight.com/features/which-state-has-the-worst-drivers/">notícia</a> vinculada pelo site <strong>FiveThirtyEight</strong>, site famoso por prever eleições e que atualmente faz parte da rede da ESPN (Sim, o canal de esportes!).</p>
+
+<p>Os gráficos deste site são muito populares e feitos majoritariamente no R! Que tal nós tentarmos reproduzir um dos gráficos desta notícia? O gráfico abaixo reproduz o primeiro gráfico que aparece na página e o mais legal é que ele serve de padrão para os próximos</p>
+
+<pre><code class="language-r">ggplot(data = tabela)+
+  geom_col(aes(x = state, y = (p_not_distracted*n_involved_fatal)/100), fill = &quot;#FBB506&quot;)+
+  coord_flip()+
+  geom_col(aes(x = state, y = n_involved_fatal), fill =&quot;#FBB506&quot;, alpha = 1/2) +
+  scale_x_discrete(limits = rev(levels(tabela$state)))+ # Para colocar os Estados em ordem crescente
+  ggthemes::theme_fivethirtyeight() + 
+  ggthemes::scale_fill_fivethirtyeight()+
+  theme(panel.grid.major.y = element_blank(), 
+        panel.grid.major.x = element_line(size=.2, color=&quot;gray&quot;))+
+  labs(title = &quot;Drivers Involved In Fatal Collisions Who Were Not\nDistracted&quot;, 
+       subtitle = &quot;As a share of number of fatal collisions per billion miles, 2012&quot;,
+       caption = &quot;SOURCE: NATIONAL HIGHWAY TRAFFIC SAFETY ADMINISTRATION&quot;)
+</code></pre>
+
+<p><img src="figures//unnamed-chunk-45-1.png" title="plot of chunk unnamed-chunk-45" alt="plot of chunk unnamed-chunk-45" style="display: block; margin: auto;" /></p>
+
+<p>Ficou parecido? Sua vez!</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../wrapup/" title="Wrap Up">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Wrap Up
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

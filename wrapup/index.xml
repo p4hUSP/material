@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wrapups on P4H  - Material</title>
+    <link>/wrapup/</link>
+    <description>Recent content in Wrapups on P4H  - Material</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/wrapup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wrap Up</title>
+      <link>/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wrapup/</guid>
+      <description>Introdução Parabéns, você já é capaz de importar dados, manipulá-los e retirar alguns insights de gráficos e tabelas. Contudo, vimos isso em aulas separadas e talvez você não se sinta confiante para realizar uma análise do começo ao fim. Nesta aula, o objetivo é justamente capacitá-la o ciclo de ciência de dados.
+Parte 1 - A pergunta Toda análise é motivada por uma pergunta. Essa pergunta pode ter origem uma origem teórica, como normalmente vemos na academia, ou prática, como normalmente vemos em empresas.</description>
+    </item>
+    
+  </channel>
+</rss>

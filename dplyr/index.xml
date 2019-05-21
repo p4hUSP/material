@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dplyrs on P4H  - Material</title>
+    <link>/dplyr/</link>
+    <description>Recent content in Dplyrs on P4H  - Material</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/dplyr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aula 3</title>
+      <link>/dplyr/dplyr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/dplyr/dplyr/</guid>
+      <description>Manipulação de dados Na aula de hoje, antes de retornar as ferramentas de manipulação de dados iremos entender um pouco melhor sobre tipos de dados e estruturas de dados.
+Objetos e atribuições I “To understand computations in R, two slogans are helpful: • Everything that exists is an object. • Everything that happens is a function call.&amp;rdquo; — John Chambers
+Dados são guardados dentro de objetos. Objetos possuem diferentes formas de estruturas os dados.</description>
+    </item>
+    
+    <item>
+      <title>Aula 3</title>
+      <link>/dplyr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/dplyr/</guid>
+      <description>Manipulação de dados Na aula de hoje, antes de retornar as ferramentas de manipulação de dados iremos entender um pouco melhor sobre tipos de dados e estruturas de dados.
+Objetos e atribuições I “To understand computations in R, two slogans are helpful: • Everything that exists is an object. • Everything that happens is a function call.&amp;rdquo; — John Chambers
+Dados são guardados dentro de objetos. Objetos possuem diferentes formas de estruturas os dados.</description>
+    </item>
+    
+  </channel>
+</rss>

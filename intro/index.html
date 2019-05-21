@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Introdução - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../intro/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/intro/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/icons.css">
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Introdução
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Introdução" href="../intro/">
+	
+	Introdução
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Gráficos" href="../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Web Scraping" href="../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Introdução </h1>
+
+			
+
+<h1 id="introdução-ao-r">Introdução ao R</h1>
+
+<p>Nesta seção, iremos abordar como (1) instalar o R e o RStudio, (2) realizar operações aritméticas e salvar valores em variáveis, (3) abrir tabelas, (4) retirar estatísticas descritivas e (5) montar um gráfico de barras e um histograma. A ideia é trazer de maneira breve e superficial as funcionalidades do R para que possam ser exploradas posteriormente nas próximas aulas.</p>
+
+<h2 id="primeiros-passos">Primeiros passos</h2>
+
+<h3 id="o-que-é-o-r">O que é o R?</h3>
+
+<p>R é uma linguagem de programação voltada para a análise de dados. Criada por estatísticos, em 1993 ela vem se tornando alplamente utilizada na academia não só para pesquisas nas exatas, mas também nas ciências humanas, como na ciência política, economia, etc. Ela também tem uma entrada em empresas ao lado do SQL e Python.</p>
+
+<h3 id="instalando-o-r-e-o-rstudio">Instalando o R e o RStudio</h3>
+
+<p>Antes de tudo, vamos nos certificar de que você possui o R e o RStudio instaldos no seu computador. O R pode ser baixado <a href="https://cloud.r-project.org/">aqui</a>. Instale a versão equivalente com o seu sistema operacional. Após esse processo, você deve ser capaz de iniciar o R e obter essa tela.</p>
+
+<pre><code class="language-r">knitr::include_graphics(&quot;r-project-7840-3.jpg&quot;)
+</code></pre>
+
+<p>É possível utilizar essa interface para programar em R. Contudo, em geral, preferimos utilizar o RStudio, já quele oferece uma carinha mais limpa e amigável, além de possuir diversas funções bem úteis durante a análise de dados. Para instalá-lo, você pode clicar <a href="https://www.rstudio.com/">aqui</a>. Ao instalá-lo, você obterá essa tela:</p>
+
+<pre><code class="language-r">knitr::include_graphics(&quot;&quot;)
+</code></pre>
+
+<h2 id="nossas-primeiras-linhas-de-código">Nossas primeiras linhas de código</h2>
+
+<h3 id="operações-aritméticas">Operações aritméticas</h3>
+
+<p>Como o R funciona? O R é conhe Todo código escrito no <em>console</em> do R é <strong>avaliado</strong> pelo interpretador e o resultado é devolvido para você.</p>
+
+<p>Vamos testar isso com algumas operações aritméticas básicas.</p>
+
+<pre><code class="language-r">1 + 1
+</code></pre>
+
+<pre><code class="language-r">2 - 1
+</code></pre>
+
+<pre><code class="language-r">5 * 5
+</code></pre>
+
+<pre><code class="language-r">9 / 3
+</code></pre>
+
+<h3 id="variáveis">Variáveis</h3>
+
+<p>Porém, isso não parece muito eficiente. E se quiséssemos guardar uma informação para acessá-la posteriormente? Para isso, podemos utilizar <strong>variáveis</strong>.</p>
+
+<pre><code class="language-r">x &lt;- 2
+
+x * 2
+</code></pre>
+
+<pre><code class="language-r">x &lt;- 3
+
+x / 3
+</code></pre>
+
+<h2 id="abrindo-tabelas-no-r">Abrindo tabelas no R</h2>
+
+<p>Entretando, não queremos fazer apenas isso com o R. O real poder dele aparece durante a análise de dados. Vamos começar carregando um banco de dados no R. Para isso, iremos utilizar o pacote <code>readr</code> do <code>tidyverse</code></p>
+
+<p>Mas o que são pacotes e o que é o <code>tidyverse</code>? Um pacote contém um conjunto de funções desenvolvidas por outros usuários a fim de realizar uma determinada tarefa. Funções realizam alguma operação sobre um determinado objeto e nos <strong>devolvem</strong> esse resultado. Por sua vez, o <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> diz respeito a um conjunto de pacotes criados para facilitar a nossa vida durante a análise de dados. Nos últimos anos, o <code>tidyverse</code> revolucionou a maneira que se faz análise no R. Todo o nosso curso irá utilizar o <code>tidyverse</code> quando possível.</p>
+
+<p>Agora que sabemos o que é um pacote e uma função. Como carregar um pacote no R? Primeiro precisamos instalá-lo com a função <code>install.packages()</code> e depois carregá-lo com o comando <code>library()</code>.</p>
+
+<pre><code class="language-r">install.packages(&quot;tidyverse&quot;)
+
+library(tidyverse)
+</code></pre>
+
+<p>Uma vez feito isso, podemos utilizar o comando <code>read_csv</code> para ler um arquivo <code>.csv</code> e transformá-lo em um <code>data.frame</code>. Preste atenção pois existe um outro comando <code>read.csv</code>. Estamos utilizando aquele com o _ (underline). Nesta aula, iremos trabalhar com um banco de dados de Pokemons! Você pode baixá-lo <a href="https://github.com/p4hUSP/material_conteudo/blob/master/tu.intro/pokemon.csv">aqui</a>. O banco original pode ser acessado no <a href="https://www.kaggle.com/rounakbanik/pokemon">Kaggle</a>.</p>
+
+<pre><code class="language-r">read_csv(&quot;pokemon.csv&quot;)
+</code></pre>
+
+<p>Para um momento para entender o que aconteceu. Essa é a maneira mais interessante de abrir um banco de dados? Qual ação podemos associar a abertura do banco de tal maneira que possamos reutilizá-lo ao longo de nossa análise?</p>
+
+<p>Se você pensou em variáveis, acertou! Sempre devemos salvar bancos e outros dados dentro de variáveis caso haja interesse um utilizá-los continuamente durante a nossa análise.</p>
+
+<pre><code class="language-r">banco &lt;- read_csv(&quot;pokemon.csv&quot;)
+</code></pre>
+
+<h3 id="pausa-para-explicação-mas-o-que-são-data-frames-e-variáveis">Pausa para explicação: mas o que são data frames e variáveis?</h3>
+
+<p>Data frames é uma estrutura de dados com objetivo de organizar tabelas no R. Ele é bastante parecida com planilhas de Excel.Podemos imaginá-lo como um conjunto de colunas ordenadas, sendo que cada coluna representa uma variável, um atributo, das nossas insformações. No nosso caso, as colunas possuem variáveis sobre cada um dos 801 pokemons.</p>
+
+<p>As variáveis podem ser divididas em dois tipos:</p>
+
+<ol>
+<li><p>Variáveis categóricas: representam características que podem ser descritas em categorias (gênero, nacionalidade, nível de satisfação, etc.). Elas podem ser <strong>nominal</strong>, ou seja, as categorias não possuem uma ordem intrísica (gênero, nacionalidade), ou <strong>ordinal</strong>, as categorias possuem uma ordem (nível de satisfação).</p></li>
+
+<li><p>Variáveis quantitativas: são representadas por números e, em geral, podem ser do tipo <strong>discretas</strong> ou <strong>contínuas</strong>.  As discretas são variáveis relacionadas a contagens (número de gols, número de vitórias, número de alunos, etc.). Já as contínuas fazem referências a fenômenos que podem possuir, em tese, infinitos valores (altura, peso, renda, etc.).</p></li>
+</ol>
+
+<p>Fique atento pois muitas vezes iremos nos referir a variáveis quantitativas apenas como contínuas. Contudo, isso é uma aproximação e não necessariamente é verdade para todos os casos.</p>
+
+<h3 id="de-volta-para-as-análises">De volta para as análises!</h3>
+
+<p>Agora que temos o nosso banco salvo em uma variável, podemos começar a extrair algumas informações. Vamos começar pelo básico. Que tal dar uma olhada por cima do banco? Para isso, utilizamos a função <code>head()</code>. Ela extrai e imprimi na nossa tela as primeiras linhas do nosso banco.</p>
+
+<pre><code class="language-r">head(banco)
+</code></pre>
+
+<p>Outra função que podemos utilizar para ter uma noção geral do nosso banco é a <code>glimpse()</code></p>
+
+<pre><code class="language-r">glimpse(banco)
+</code></pre>
+
+<p>Quais informações chamam a sua atenção?</p>
+
+<p>Podemos ver diversas informações, como nome (<code>name</code>), pontos de vida (<code>hp</code>), pontos de ataque (<code>attack</code>), pontos de defesa (<code>defense</code>), entre outras informações.</p>
+
+<p>Contudo, olhar o banco por inteiro quase nunca é um processo eficiente de análise. Nós sempre queremos resumir as informações presentes no nosso banco de dados de alguma maneira. Em geral, uma forma de fazer isso é por meio de estatísticas descritivas (média, desvio padrão, correlação, quartis, etc.). Por exemplo, qual a média de pontos de vida para todos os pokemons? Quais categorias de pokemons são mais frequentes?</p>
+
+<pre><code class="language-r">mean(banco$hp)
+</code></pre>
+
+<h3 id="pausa-para-explicação-por-que-o">Pausa para explicação: por que o $?</h3>
+
+<p>Você entendeu porque utilizamos o <code>$</code> aqui? Lembra que o <code>data.frame</code> nada mais é do que um conjunto de colunas uma atrás da outra? Então, com o <code>$</code> podemos acessar uma dessas colunas e calcular, por exemplo, a média dos valores presente nela. Como queremos a média dos pontos de vida, utilizamos <code>banco$hp</code>. Em outro caso, poderíamos tirar a média dos pontos de ataque. Para isso, utilizaríamos <code>banco$attack</code>.</p>
+
+<h3 id="de-volta-para-as-análises-1">De volta para as análises</h3>
+
+<p>Vamos agora ver a distribuição dos tipos de pokemons (<code>type1</code>).</p>
+
+<pre><code class="language-r">table(banco$type1)
+</code></pre>
+
+<p>Legal, não? Porém, a tabela não está organizada em ordem crescente nem decrescente. Podemos concertar isso com uma função chamada <code>sort()</code>.</p>
+
+<pre><code class="language-r">tabeça_type1 &lt;- table(banco$type1)
+sort(tabeça_type1)
+</code></pre>
+
+<p>Bem melhor!</p>
+
+<p>Ainda falta muita coisas para vermos durante o nosso curso, mas você já aprendeu a abrir um banco de dados e a gerar estatísticas descritivas.</p>
+
+<h2 id="gráficos">Gráficos</h2>
+
+<p>Números são legais e normalmente trazem <em>insights</em> sobre a distribuição dos nossos dados. Contudo, durante uma análise, gráficos são extremamente poderosos uma vez que informam sobre a dispersão e a centralidade dos nossos valores com um simples olhar.</p>
+
+<p>É possível criar gráficos no R sem utilizar pacotes externos. Entretanto, o <code>ggplot2</code> é muito poderoso e nos permite fazer praticamente qualquer coisa, ao estabelecer uma gramática para dispor informações. O objetivo da aula de hoje não é avaliar a fundo as funcionalidades desse pacote. Logo tente apenas entender a linguagem para alguns gráficos simples.</p>
+
+<p>Que tal observar a distribuição dos dados acessados anteriormente?</p>
+
+<h3 id="variáveis-contínuas">Variáveis contínuas</h3>
+
+<p>Uma maneira de fazer isso</p>
+
+<pre><code class="language-r">ggplot(banco,
+       mapping = aes(x = hp)) +
+  geom_histogram()
+</code></pre>
+
+<h3 id="variáveis-categóricas">Variáveis categóricas</h3>
+
+<p>Por outro lado, para variáveis categóricas, podemos utilizar gráficos de barras.</p>
+
+<pre><code class="language-r">ggplot(banco, mapping = aes(x = type1)) + 
+  geom_bar()
+</code></pre>
+
+<h2 id="exercícios">Exercícios</h2>
+
+<ol>
+<li><p>O que é uma função? O que é um pacote?</p></li>
+
+<li><p>Em que devo guardar um valor para que eu possa acessá-lo posteriormente?</p></li>
+
+<li><p>Escolha 2 variáveis categóricas e 2 variáveis contínuas que te chamem atenção. Agora, retire algumas estatísticas descritivas (média, desvio padrão, etc.) e faça um gráfico de acordo o tipo da variável.</p></li>
+</ol>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tyverse/aula-3/" title="Dplyr">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Dplyr
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../secs/" title="SECS 2018">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              SECS 2018
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

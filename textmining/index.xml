@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Textminings on P4H  - Material</title>
+    <link>/textmining/</link>
+    <description>Recent content in Textminings on P4H  - Material</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/textmining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aula Text Mining</title>
+      <link>/textmining/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/textmining/</guid>
+      <description>Análise de texto no R A quantidade de informações geradas atualmente são incríveis e consequentemente a forma como eles estão estruturados pode variar muito, entre elas, o casos dos textos.
+Análise de texto não é algo relativamente novo, podemos notar isso em papers e livros sobre análise de discurso ou conteúdo. Ocorre que o poder computacional foi capaz de trazer análises ainda mais escaláveis do que se fazia antes e com uma força quantitativa muito mais robusta.</description>
+    </item>
+    
+  </channel>
+</rss>

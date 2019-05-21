@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Dplyr - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../../tyverse/aula-3/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/tyverse/aula-3/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" href="../../stylesheets/icons.css">
+    <link rel="stylesheet" href="../../stylesheets/application.css">
+    <link rel="stylesheet" href="../../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Dplyr
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introdução" href="../../intro/">
+	
+	Introdução
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Gráficos" href="../../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Web Scraping" href="../../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Dplyr </h1>
+
+			
+
+<h1 id="manipulação-de-bancos-de-dados">Manipulação de bancos de dados</h1>
+
+<p>A manipulação de dados é a parte do trabalho que antecepe a produção de gráfico e a análise dos resultados. Seja se você está utilizando uma base de dados produzida por terceiros ou de produção própria, utilizará ferramentas de manipulação de dados. Tais ferramentas são essenciais para que você consiga obter o resultado final desejado com a sua análise.
+Com essas ferramentas você poderá:
+- visualizar as informações que o banco fornece, permitindo checagens e pequenas explorações
+- criar novas variáveis a partir de variáveis já extistentes no banco.
+- modificar a estrutura do banco, seja modificando nome de variáveis, e quais as variáveis são de seu interesse.
+- agregar informações de outras bases de dados.</p>
+
+<p>[colocar o ciclo de ciencia de dados]</p>
+
+<p>Depois de todo o processso de manipulação, você obterá sua própria base de dados!</p>
+
+<h1 id="por-que-utilizamos-o-pacote-tidyverse-para-manipular-dados">Por que utilizamos o pacote tidyverse para manipular dados?</h1>
+
+<p>Nós que utilizamos a programação sem sermos programadores nos favorecemos com a criação de pacotes como o tidyverse. Esse super pacote abriga dentro de si uma série de outros pacotes (que podem ser utilizados separadamente, mas que poupam muito trabalhando sendo reunidos em um só) que dão conta de todas as etapas do ciclo da ciência de dados.</p>
+
+<ul>
+<li><p>Importação (readr, DBI)</p></li>
+
+<li><p>Tidy (tidyr)</p></li>
+
+<li><p>Transformação (dplyr)</p></li>
+
+<li><p>Visualização (ggplot2)</p></li>
+
+<li><p>Modelagem (modelr)</p></li>
+</ul>
+
+<p>Nas aulas três e quatro passaremos pela importação, mas nosso foco será a transformação de nossas bases em formato tidy e a manipulação de dados utilizando o dplyr.</p>
+
+<h1 id="começando-pelo-começo">Começando pelo começo</h1>
+
+<p>Para utilizar o tidyverse temos que instalá-lo e habitá-lo em nossos computadores. Então, vamos nessa!</p>
+
+<pre><code class="language-r">#install.packages(&quot;tidyverse&quot;)
+library(tidyverse)
+</code></pre>
+
+<h1 id="tydr-r">Tydr R</h1>
+
+<p>Existem dois conjuntos de pacotes que utilizamos para estruturar bancos de dados</p>
+
+<ul>
+<li>1º conjunto: estrutura como as variáveis aparecem</li>
+</ul>
+
+<p>Derreter (gather)
+Esticar (spread)</p>
+
+<ul>
+<li>2º conjunto: permite unir o conteúdo de dois ou mais variáveis</li>
+</ul>
+
+<p>Unir (unite)
+Separar (separate)</p>
+
+<p>[inserir imagem do tidyr]</p>
+
+<h1 id="tidyr-parte-1-estruturar-o-seu-banco-de-dados-no-formato-tidy">Tidyr parte 1: Estruturar o seu banco de dados no formato tidy</h1>
+
+<p>Esse primeiro conjunto de variáveisé aquele capaz de realizar modificações estruturais no nosso banco de dados, e antes de explicar o que isso quer dizer vamos comparar duas bases de dados que trazem as mesmas informações, mas com estruturas diferentes para pensarmos no impacto que isso gera sobre a utilização dos funções.</p>
+
+<p>Primeiro, importe esse banco.</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018 &lt;- read_csv(&quot;https://raw.githubusercontent.com/anabeatrizdutra04/tu.tyverse/master/VOTOS_PRIMEIROTURNO_UF_2018.csv&quot;)
+</code></pre>
+
+<pre><code>## Warning: Missing column names filled in: 'X1' [1]
+</code></pre>
+
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   DESCRICAO_CARGO = col_character()
+## )
+</code></pre>
+
+<pre><code>## See spec(...) for full column specifications.
+</code></pre>
+
+<pre><code class="language-r"># se tiver problemas com a internet, tente:
+
+VOTOS_PRIMEIROTURNO_UF_2018 &lt;- read_csv(&quot;H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRIMEIROTURNO_UF_2018.csv&quot;)
+</code></pre>
+
+<pre><code>## Error: 'H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRIMEIROTURNO_UF_2018.csv' does not exist.
+</code></pre>
+
+<p>O que esse banco mostra?
+O total de votos que todos os candidatos à presidência obtiveram no primeiro turno da eleição.</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018_2 &lt;- read_csv(&quot;https://raw.githubusercontent.com/anabeatrizdutra04/tu.tyverse/master/VOTOS_PRIMEIROTURNO_UF_2018_2.csv&quot;)
+</code></pre>
+
+<pre><code>## Warning: Missing column names filled in: 'X1' [1]
+</code></pre>
+
+<pre><code>## Parsed with column specification:
+## cols(
+##   X1 = col_double(),
+##   ANO_ELEICAO = col_double(),
+##   UF = col_character(),
+##   NUM_TURNO = col_double(),
+##   NUMERO_CANDIDATO = col_double(),
+##   DESCRICAO_CARGO = col_character(),
+##   QTDE_VOTOS = col_double()
+## )
+</code></pre>
+
+<pre><code class="language-r"># se tiver problemas com a internet, tente:
+
+VOTOS_PRIMEIROTURNO_UF_2018_2 &lt;- read_csv(&quot;H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRIMEIROTURNO_UF_2018_2.csv&quot;)
+</code></pre>
+
+<pre><code>## Error: 'H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRIMEIROTURNO_UF_2018_2.csv' does not exist.
+</code></pre>
+
+<p>Nesse segundo banco, temos a mesma informação. Mas a estrutura do banco está diferente, os estados deixaram de ser representados em uma mesma coluna passando a nomear novas colunas. Qual dos dois bancos seria o ideal para aplicar as ferramentas de manipulação?</p>
+
+<p>Para entender a diferença e saber qual é o melhor, temos que pensar como queremos agregar a informação sobre os estados em nossa análise. A informação sobre os estados é também uma variável que se agrega dentro da variável de UFs, o que quer dizer que quando ela está da forma não tidy, não conseguimos aplicar muitos das funções de manipulação.</p>
+
+<p>O formato da primeira tabela é o que consideramos tidy, esse formato é o ideal para que possamos aplicar os verbos do pacote tidyverse.</p>
+
+<p>Existe um comando que é capaz de realizar ambas as transformações.</p>
+
+<p>Gather:</p>
+
+<p>Caso quereiramos transformar o segundo banco no formato tidy pode usar o comando gather.
+Esse comando derrete/agrupa colunas em duas colunas finais</p>
+
+<p>gather(casos, &ldquo;performance&rdquo;, &ldquo;n&rdquo;, &ldquo;valores&rdquo;)</p>
+
+<p>Data frame a ser remodelado
+Nome da nova coluna-chave (character string)
+Nome da nova coluna de valores
+Nomes ou índices numéricos das colunas agrupadas</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018_tidy &lt;- gather(VOTOS_PRIMEIROTURNO_UF_2018, AC:ZZ, key = &quot;UF&quot;, value = &quot;QTDE_VOTOS&quot;)
+</code></pre>
+
+<p>Spread</p>
+
+<p>Com essa função, podemos fazer com que uma das variáveis se transforme em nome das variáveis, ou seja,gera multiplas colunas a partir de duas colunas.</p>
+
+<p>spread(casos, &ldquo;performance&rdquo;, casos, valores)</p>
+
+<p>Data frame a ser remodelado
+Coluna para usar para as &lsquo;chaves&rsquo; (nomes das novas colunas)
+Coluna para usar para os valores (novas células nas colunas)</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018_2_spread &lt;- spread(VOTOS_PRIMEIROTURNO_UF_2018_2, UF, QTDE_VOTOS)
+</code></pre>
+
+<h1 id="unite-e-separate">Unite e separate</h1>
+
+<p>Vamos começar pela unite. Essa função permite a criação de uma nova variável formada pelo conteúdo de duas outras delas. Ou seja, ela concatena duas ou mais informações.</p>
+
+<p>Vamos unir então o ano da eleição e o turno.</p>
+
+<p>unite(banco, &ldquo;nova_variavel&rdquo;, primeira_variavel, segunda_variavel, sep = &ldquo; - &ldquo;)</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018_2_unite &lt;- unite(VOTOS_PRIMEIROTURNO_UF_2018_2,&quot;ANO_TURNO&quot;, ANO_ELEICAO, NUM_TURNO, sep = &quot; -&quot; )
+</code></pre>
+
+<p>Já a separate que vai fazer o oposto, a partir de uma variável separa em mais variáveis.</p>
+
+<p>separate(banco, variável_criada, into = c(&ldquo;variável_1&rdquo;, &ldquo;variavel_2&rdquo;&ldquo;), sep = &rdquo; - &ldquo;)</p>
+
+<pre><code class="language-r">VOTOS_PRIMEIROTURNO_UF_2018_2_separate &lt;- separate(VOTOS_PRIMEIROTURNO_UF_2018_2_unite, ANO_TURNO, into = c(&quot;ANO&quot;, &quot;TURNO&quot;), sep = &quot; - &quot;)
+</code></pre>
+
+<pre><code>## Warning: Expected 2 pieces. Missing pieces filled with `NA` in 421 rows [1,
+## 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...].
+</code></pre>
+
+<h1 id="dplyr-e-seus-verbos">Dplyr e seus verbos</h1>
+
+<p>Agora que entendemos sobre a estrutura de um banco de dados, vamos começar a explorar as funções que permitem a manipulação de dados. Para isso vamos analisar o banco de dados que originou esse que utilizamos anterior. Nosso objetivo nessas aulas é cpnseguir entender quais a aplicações foram feitas para chegar ao estado das tabelas acima, replicar esse comandos e avançar ainda mais nas possibilidades de manipulação.</p>
+
+<h1 id="rename">Rename</h1>
+
+<p>Esse verbo permite renomear uma variável. Então ela se aplica apenas aos nomes das variáveis.</p>
+
+<p>Vamos utilizar o banco que deu origem aos dois primeiros anteriores. Ou seja, é a quantidade de votos obtidas pelos candidatos à presidência em cada estado da federação no primeiro e no segunda turno.</p>
+
+<p>rename(banco, nome_novo = nome_velho)</p>
+
+<pre><code class="language-r">#Vamos importar o banco completo:
+
+VOTOS_PRESIDENTE_UF_2018 &lt;-read_csv(&quot;https://raw.githubusercontent.com/anabeatrizdutra04/tu.tyverse/master/VOTOS_PRESIDENTE_UF_2018.csv&quot;)
+</code></pre>
+
+<pre><code>## Parsed with column specification:
+## cols(
+##   ANO_ELEICAO = col_double(),
+##   UF = col_character(),
+##   NUM_TURNO = col_double(),
+##   NUMERO_CANDIDATO = col_double(),
+##   DESCRICAO_CARGO = col_character(),
+##   QTDE_VOTOS = col_double()
+## )
+</code></pre>
+
+<pre><code class="language-r">#ou caso tenha problema com a internet.
+
+VOTOS_PRESIDENTE_UF_2018 &lt;-read_csv(&quot;H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRESIDENTE_UF_2018.csv&quot;)
+</code></pre>
+
+<pre><code>## Error: 'H:/P4H/Curso semestral 2019.1/Aula 3/VOTOS_PRESIDENTE_UF_2018.csv' does not exist.
+</code></pre>
+
+<pre><code class="language-r"># Vamos renomear a variável UF
+
+VOTOS_PRESIDENTE_UF_2018_rename &lt;- rename(VOTOS_PRESIDENTE_UF_2018, ESTADO = UF)
+</code></pre>
+
+<h1 id="select">Select</h1>
+
+<p>Essa variável permite a seleção de algumas variáveis entre todas as disponíveis</p>
+
+<p>select(dataframe, variavel_1, variavel_2)</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_select &lt;- select(VOTOS_PRESIDENTE_UF_2018, ANO_ELEICAO, NUM_TURNO, UF, NUMERO_CANDIDATO, QTDE_VOTOS)
+</code></pre>
+
+<h1 id="filter">Filter</h1>
+
+<p>Se a função select seleciona as variáveis, agora apresentaremos funções que lidam com as observações das variáveis.</p>
+
+<p>filter(dataframe, variavel == &ldquo;observação&rdquo;)</p>
+
+<p>Dessa forma, podemos fazer uma tabela que contenha apenas resultado de um estado.</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_filter1 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, UF == &quot;SP&quot;)
+</code></pre>
+
+<p>Podemos selecionar mais de uma categoria de uma vez usando o sinal de |</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_filter2 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, UF == &quot;SP&quot;| UF == &quot;RJ&quot;| UF == &quot;ES&quot;| UF == &quot;MG&quot;)
+</code></pre>
+
+<p>E também observações de diferentes categorias. Nesse caso podemos usar ou uma vírgula ou o sinal &amp;.</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_filter3 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, UF == &quot;SP&quot;, NUM_TURNO == 2)
+
+VOTOS_PRESIDENTE_UF_2018_filter3 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, UF == &quot;SP&quot; &amp; NUM_TURNO == 2)
+</code></pre>
+
+<p>Repare a importância sobre a diferença entre os tipos de variáveis e a forma como são representantas. Quanto temos variáveis de tipo texto, devemos usar aspas, diferente de quando temos números.</p>
+
+<p>Podemos usar o filtro para excluir a variável usando o sinal (!=)</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_filter4 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, UF != &quot;SP&quot;)
+</code></pre>
+
+<p>A seleção de números é feita de forma um pouco diferente da anterior porque diferente do filtro de variáveis categóricas. Podemos selecionar intervalos de valores com os seguintes operadores: maior (&gt;), maior ou igual (&gt;=), menor (&lt;), menor ou igual (&lt;=).</p>
+
+<p>Vamos selecionar as observações dos estados que obtiveram mais de 1000 votos.</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_filter5 &lt;- filter(VOTOS_PRESIDENTE_UF_2018, QTDE_VOTOS &gt; 1000)
+</code></pre>
+
+<h1 id="mutate-criar-uma-nova-variável">Mutate + criar uma nova variável</h1>
+
+<p>O mutate é o verbo usando amplamente dentro das funções do dyplr já que tem o seu sentido é o de produzir mudanças, como a criação de uma nova variável.</p>
+
+<p>Podemos criar uma variável em branco dessa forma.</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_nova1 &lt;- mutate(VOTOS_PRESIDENTE_UF_2018, nova_var = NA)
+</code></pre>
+
+<p>Podemos também copiar uma outra variável e fazer operações com ela para resultar em uma nova.</p>
+
+<pre><code class="language-r">VOTOS_PRESIDENTE_UF_2018_nova2 &lt;- mutate(VOTOS_PRESIDENTE_UF_2018, nova_var2 = QTDE_VOTOS-1)
+</code></pre>
+
+<h1 id="exercícios">Exercícios</h1>
+
+<p>Com tudo o que aprendemos hoje utilize o banco VOTOS_PRESIDENTE_UF_2018 e siga as seguintes instruções:</p>
+
+<p>1- Crie uma nova variável que vai conter as regiões
+2- Selecione apenas observações do segundo turno da região nordeste
+3- Selecione as variáveis de numero do candidato, região e de quantidade de votos.</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../../textmining/" title="Aula Text Mining">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Aula Text Mining
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../../intro/" title="Introdução">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Introdução
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tyverses on P4H  - Material</title>
+    <link>/tyverse/</link>
+    <description>Recent content in Tyverses on P4H  - Material</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Released under the MIT license</copyright>
+    
+	<atom:link href="/tyverse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dplyr</title>
+      <link>/tyverse/aula-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tyverse/aula-3/</guid>
+      <description>Manipulação de bancos de dados A manipulação de dados é a parte do trabalho que antecepe a produção de gráfico e a análise dos resultados. Seja se você está utilizando uma base de dados produzida por terceiros ou de produção própria, utilizará ferramentas de manipulação de dados. Tais ferramentas são essenciais para que você consiga obter o resultado final desejado com a sua análise. Com essas ferramentas você poderá: - visualizar as informações que o banco fornece, permitindo checagens e pequenas explorações - criar novas variáveis a partir de variáveis já extistentes no banco.</description>
+    </item>
+    
+  </channel>
+</rss>

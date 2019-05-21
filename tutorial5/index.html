@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="pt-br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Manipulação de Dados - P4H  - Material</title>
+    <meta name="generator" content="Hugo 0.22" />
+
+    
+    <meta name="description" content="Material do Curso de Programação para Ciências Sociais">
+    
+    <link rel="canonical" href="../tutorial5/">
+    
+    <meta name="author" content="P4H">
+    
+
+    <meta property="og:url" content="/tutorial5/">
+    <meta property="og:title" content="P4H  - Material">
+    <meta property="og:image" content="/logo_r4sc.jpg">
+    <meta name="apple-mobile-web-app-title" content="P4H  - Material">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/icons.css">
+    <link rel="stylesheet" href="../stylesheets/application.css">
+    <link rel="stylesheet" href="../stylesheets/temporary.css">
+    <link rel="stylesheet" href="../stylesheets/palettes.css">
+    <link rel="stylesheet" href="../stylesheets/prism.css">
+
+    <link rel="stylesheet" href="../stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="../javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Manipulação de Dados
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/p4hUSP" title="@p4hUSP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="../" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../logo_r4sc.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>P4H  - Material </strong>
+        
+          <br>
+          R4CS/site
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/R4CS/site/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/R4CS/site/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Introdução" href="../intro/">
+	
+	Introdução
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Gráficos" href="../ggplot2/">
+	
+	Gráficos
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Dplyr" href="../dplyr/">
+	
+	Dplyr
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Wrap Up" href="../wrapup/">
+	
+	Wrap Up
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Mapas" href="../mapas/">
+	
+	Mapas
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Web Scraping" href="../webscraping/">
+	
+	Web Scraping
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="SQL" href="../sql/">
+	
+	SQL
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Text Mining" href="../textmining/">
+	
+	Text Mining
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">Contatos</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/p4hUSP" target="_blank" title="@p4hUSP no GitHub">
+              @p4hUSP no GitHub
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://facebook.com/p4hUSP" target="_blank" title="@p4hUSP on Facebook">
+              @p4hUSP no Facebook
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://p4husp.herokuapp.com" target="_blank" title="@p4hUSP on Slack">
+              @p4hUSP on Slack
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="mailto:programacao.sociais@gmail.com" title="Nosso E-Email programacao.sociais@gmail.com">
+              Envie um E-Mail
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Manipulação de Dados </h1>
+
+			
+
+<h2 id="manipulação-de-dados-com-a-gramática-básica-do-r">Manipulação de dados com a gramática básica do R</h2>
+
+<p>A esta altura do campeonato, você já tem bastante recursos para programar em R. Combinando seu conhecimento sobre vetores, <em>data frames</em>, tipos de dados, loops, condicionais e funções dá para fazer um bocado de coisas legais. Depois deste tutorial, voltaremos a esteś tópicos para exercitar o que aprendemos.</p>
+
+<p>Falta, porém, algo essencial e muito próprio da linguagem R: como manipular variáveis e observações em um <em>data frame</em>. Boa parte da tarefa de organização de dados para a pesquisa se resume ao que faremos neste tópico. Este é o uso da linguagem R que se aproxima do uso de outras ferramantas como SPSS, Stata e SAS.</p>
+
+<p>No tutorial anterior, sobre abertura de dados, mencionei que há &ldquo;gramáticas&rdquo; diferentes para a manipulação de dados em R. Nosso objetivo é aprender bem a &ldquo;gramática&rdquo; do <em>tidyverse</em> (que por si só seria suficiente) e vamos ignorar a do pacote <em>data.table</em> (por pura economia de tempo, pois ela pode ser bastante útil).</p>
+
+<p>A &ldquo;gramática&rdquo; básica do R é pouco elegante e essa é uma das barreiras ao aprendizado da linguagem. Ela é bem mais confusa e &ldquo;verbosa&rdquo; (ou seja, tem que escrever muito para realizar pouco) do que as dos demais softwares de análise de dados e do <em>tidyverse</em>. Mas sem conhecer como funciona a &ldquo;gramática&rdquo; básica da linguagem R, nossa capacidade de aprender mais no futuro ficaria bastante limitada. Lembre-se que aprenderemos num futuro breve (próxima aula) formas equivalentes de fazermos as mesmas coisas.</p>
+
+<h2 id="variáveis-e-data-frames">Variáveis e data frames</h2>
+
+<p>Nessa atividade, iremos utilizar um banco de dados falso. Ele está em inglês. Caso sinta alguma dificuldade, basta chamar um dos monitores!</p>
+
+<p>Vamos nos adaptar a abrir dados com funções dos pacotes <em>readr</em>, <em>data.table</em> e <em>haven</em>. Para este exercício, podemos usar <em>read_delim</em>:</p>
+
+<pre><code class="language-r">library(readr)
+
+url_fake_data &lt;- &quot;https://raw.githubusercontent.com/leobarone/FLS6397/master/data/fake_data.csv&quot;
+
+fake &lt;- read_delim(url_fake_data, delim = &quot;;&quot;, col_names = T)
+</code></pre>
+
+<p>A descrição das variáveis do banco de dados está abaixo:</p>
+
+<p>&ldquo;Fakeland is a very stable democracy that helds presidential elections every 4 years. We are going to work with the fake dataset of Fakeland individual citizens that contains information about their basic fake characteristics and fake political opinions/positions. The variables that our fake dataset are:</p>
+
+<ul>
+<li><em>age</em>: age</li>
+<li><em>sex</em>: sex</li>
+<li><em>educ</em>: educational level</li>
+<li><em>income</em>: montly income measured in fake money (FM\$)</li>
+<li><em>savings</em>: total fake money (FM\$) in savings account</li>
+<li><em>marrige</em>: marriage status (yes = married)</li>
+<li><em>kids</em>: number of children</li>
+<li><em>party</em>: party affiliation</li>
+<li><em>turnout</em>: intention to vote in the next election</li>
+<li><em>vote_history</em>: numbers of presidential elections that turned out since 2002 elections</li>
+<li><em>economy</em>: opinion about the national economy performance</li>
+<li><em>incumbent</em>: opinion about the incumbent president performance</li>
+<li><em>candidate</em>: candidate of preference&rdquo;</li>
+</ul>
+
+<h2 id="exercício">Exercício</h2>
+
+<p>Utilize as funções que você já conhece &ndash; <em>head</em>, <em>dim</em>, <em>names</em>, <em>str</em>, etc &ndash; para conhecer os dados. Quantas linhas há no <em>data frame</em>? Quantas colunas? Como estão armazenadas cada variável (tipo de dados e classe dos vetores colunas)?</p>
+
+<h2 id="data-frame-como-conjunto-de-vetores">Data frame como conjunto de vetores</h2>
+
+<p>No primeiro tutorial construímos um <em>data frame</em> a partir de vetores de mesmo tamanho e &ldquo;pareados&rdquo;, ou seja, com as posições das informações representando cada observação. Para trabalhar com variáveis do <em>data frame</em> como vetores usamos o símbolo &ldquo;$&rdquo; separando o nome do <em>data frame</em> da variável. Por exemplo, escrevemos fake\$age para indicar a variável &ldquo;age&rdquo; no <em>data frame</em> &ldquo;fake&rdquo;:</p>
+
+<pre><code class="language-r">print(fake$age)
+</code></pre>
+
+<p>Podemos fazer uma cópia do vetor &ldquo;age&rdquo; que não seja variável &ldquo;fake&rdquo;? Sim:</p>
+
+<pre><code class="language-r">idade &lt;- fake$age
+
+print(idade)
+</code></pre>
+
+<p>Porque não podemos simplesmente usar &ldquo;age&rdquo; e precisamos colocar o nome do <em>data frame</em> seguido de &ldquo;$&rdquo; para indicar o vetor do conjunto de dados? Por que podemos ter mais de um <em>data frame</em> no mesmo <strong>workspace</strong> com uma variável de nome &ldquo;age&rdquo;. Pense no <em>data frame</em> + nome da variável como um endereço composto da variável no seu workspace que evita ambiguidade. Para quem está aconstumad@ a trabalhar com SPSS, Stata ou SAS, ter que indicar qual é o <em>data frame</em> ao qual a variável pertence parece estranho, mas faz todo sentido para o R, além de se demonstrar um recurso muito útil para realizar <em>merges</em> (veremos isso em uma aula futura).</p>
+
+<p>Outros exemplos simples de como usar variáveis de um <em>data frame</em> em outras funções (algumas das quais veremos no futuro, mas você já pode ir se acostumando à linguagem).</p>
+
+<p>Gráfico de distribuição de uma variável contínua:</p>
+
+<pre><code class="language-r">plot(density(fake$age), main = &quot;Distribuição de Idade&quot;, xlab = &quot;Idade&quot;)
+
+</code></pre>
+
+<p>Gráfico de dispersão de duas variáveis contínuas:</p>
+
+<pre><code class="language-r">plot(fake$age, fake$savings, main = &quot;Idade x Poupança&quot;, xlab = &quot;Idade&quot;, ylab = &quot;Poupança&quot;)
+</code></pre>
+
+<p>Tabela de uma variável categórica (contagem):</p>
+
+<pre><code class="language-r">table(fake$party)
+</code></pre>
+
+<p>Tabela de duas entradas para duas variávels categóricas (contagem):</p>
+
+<pre><code class="language-r">table(fake$party, fake$candidate)
+</code></pre>
+
+<h2 id="dimensões-em-um-data-frame">Dimensões em um data frame</h2>
+
+<p>Tal como uma matriz, um <em>data frame</em> tem duas dimensões: linha e coluna. Se queremos selecionar elementos de um <em>data frame</em>, podemos usar colchetes separados por uma vírgula e inserir antes da vírgula uma seleção de linhas e depois da vírgula uma seleção de colunas &ndash; [linhas, colunas]. Vejamos alguns exemplos de seleção de linhas:</p>
+
+<p>Quinta linha fazemos:</p>
+
+<pre><code class="language-r">fake[5, ]
+</code></pre>
+
+<p>Quinta e a oitava linhas:</p>
+
+<pre><code class="language-r">fake[c(5,8), ]
+</code></pre>
+
+<p>As linhas 4 a 10:</p>
+
+<pre><code class="language-r">fake[4:10,]
+</code></pre>
+
+<p>Agora alguns exemplos de colunas. Segunda coluna:</p>
+
+<pre><code class="language-r">fake[, 2]
+</code></pre>
+
+<p>Note que o resultado é semelhante ao de:</p>
+
+<pre><code class="language-r">fake$sex
+</code></pre>
+
+<p>No entanto, no primeiro caso estamos produzindo um <em>data frame</em> de uma única coluna, enquanto no segundo estamos produzinho um vetor. Exceto pela classe, são idênticos.</p>
+
+<p>Segunda e sétima colunas:</p>
+
+<pre><code class="language-r">fake[, c(2,7)]
+</code></pre>
+
+<p>Três primeiras colunas:</p>
+
+<pre><code class="language-r">fake[, 1:3]
+</code></pre>
+
+<h2 id="exercício-1">Exercício</h2>
+
+<p>Qual é a idade do 17o. indivíduo? Qual é o candidato de preferência do 25o. indivíduo?</p>
+
+<h2 id="seleção-de-colunas-com-nomes-das-variáveis">Seleção de colunas com nomes das variáveis</h2>
+
+<p>Neste <em>data frame</em> as linhas não têm nomes (mas poderiam ter). As colunas, no entanto, sempre têm. A regra é trabalharmos com muito mais linhas do que colunas e por esta razão os nomes das colunas costumam ser mais úteis do que os das linhas. Podemos usar os nomes das colunas no lugar de suas posições para selecioná-las.</p>
+
+<pre><code class="language-r">fake[, c(&quot;age&quot;, &quot;income&quot;, &quot;party&quot;)]
+</code></pre>
+
+<p>Mas o código seguinte <strong>não</strong> é válido, pois o operador &ldquo;:&rdquo; serve somente para gerar sequências de números inteiros.</p>
+
+<pre><code class="language-r, error = T">fake[, &quot;age&quot;:&quot;sex&quot;]
+</code></pre>
+
+<p>Vamos super que acabamos de abrir os resultados eleitorais do Rio Grande do Sul nas eleições de 2016 retirados do Repositório de Dados Eleitorais do TSE (exatamente como faremos na atividade que segue este tutorial). Há um número grande de colunas desnecessárias a análise dos resultados (por exemplo, o ano da eleição, a hora da extração dos dados, etc). Para liberar memória do computador e trabalhar com um <em>data frame</em> menor, fazemos uma seleção de colunas exatamente como acima, seja usando sua posição ou seu nome e geramos um <em>data frame</em> novo (ou sobrescrevemos o atual). Veja um exemplo com &ldquo;fake&rdquo;:</p>
+
+<pre><code class="language-r">new_fake &lt;- fake[, c(&quot;age&quot;, &quot;income&quot;, &quot;party&quot;, &quot;candidate&quot;)]
+</code></pre>
+
+<p>E se quiseremos todas as colunas menos &ldquo;turnout&rdquo; e &ldquo;vote_history&rdquo;? Podemos usar a função <em>setdiff</em>, que gera a diferença entre dois vetores, por exemplo, o vetor com todos os nomes de colunas (gerado com a função <em>names</em>) e o vetor com as colunas que desejamos excluir. Vamos guardar o resultado em &ldquo;new_fake2&rdquo;</p>
+
+<pre><code class="language-r">selecao_colunas &lt;- setdiff(names(fake), c(&quot;turnout&quot;, &quot;vote_history&quot;))
+
+print(selecao_colunas)
+
+new_fake2 &lt;- fake[,selecao_colunas]
+</code></pre>
+
+<h2 id="selecionando-linhas-com-o-operadores-relacionais">Selecionando linhas com o operadores relacionais</h2>
+
+<p>No item acima fizemos uma seleção de colunas nos dados usando os nomes das colunas. Bancos de dados com muitas colunas, como os Censos Populacional e Escolar, ou o Latinobarômetro, não são tão comuns e raramente o número de colunas ultrapassa as poucas centenas.</p>
+
+<p>O que fazer, então, com linhas, que são normalmente muito mais numerosas, as vezes na casa dos milhões? Precisamos utilizar operadores relacionais. Vamos fazer isso dando passos curtos para entendermos todo o processo.</p>
+
+<p>Vamos supor que queremos selecionar apenas os indivíduos que pretendem votar na próxima eleição (variável &ldquo;turnout&rdquo;). Podemos gerar um vetor lógico que represente essa seleção:</p>
+
+<pre><code class="language-r">fake$turnout == &quot;Yes&quot;
+</code></pre>
+
+<p>Vamos guardar esse vetor lógico em um objeto denominado &ldquo;selecao_linhas&rdquo;</p>
+
+<pre><code class="language-r">selecao_linhas &lt;- fake$turnout == &quot;Yes&quot;
+print(selecao_linhas)
+</code></pre>
+
+<p>Agora, podemos inserir esse vetor lógico na posição das linhas dentro dos colchetes para gerar um novo conjunto de dados que atenda à condição (intenção de votar):</p>
+
+<pre><code class="language-r">fake_will_vote &lt;- fake[selecao_linhas, ]
+</code></pre>
+
+<p>Basicamente, para fazermos uma seleção podemos usar a posição das linhas (ou das colunas), seus nomes ou um vetor lógico do mesmo tamanho das linhas (ou colunas). Sequer precisamos fazer o passo a passo acima. Veja um exemplo que gera um <em>data frame</em> de indivíduos que se identificam como &ldquo;Independent&rdquo;:</p>
+
+<pre><code class="language-r">fake_independents &lt;- fake[fake$party == &quot;Independent&quot;, ]
+</code></pre>
+
+<p>Podemos, obviamente, combinar condições e usar os operador lógicos (&ldquo;ou&rdquo;, &ldquo;e&rdquo; e &ldquo;não&rdquo;) para fazer seleções mais complexas:</p>
+
+<pre><code class="language-r">fake_married_no_college_yong &lt;- fake[fake$marriage == &quot;Yes&quot; &amp; 
+                                       fake$age &lt;= 30 &amp; 
+                                       !(fake$educ == &quot;College Degree or more&quot;), ]
+</code></pre>
+
+<h2 id="exercício-2">Exercício</h2>
+
+<p>Produza um novo <em>data frame</em> com apenas 4 variáveis &ndash; &ldquo;age&rdquo;, &ldquo;income&rdquo;, &ldquo;economy&rdquo; e &ldquo;candidate&rdquo; &ndash; e que contenha apenas eleitores homens, ricos (&ldquo;income&rdquo; maior que FM\$ 3 mil, que é dinheiro pra caramba em Fakeland) e inclinados a votar no candidato &ldquo;Trampi&rdquo;.</p>
+
+<p>Quais as dimensões do novo <em>data frame</em>? Qual é a idade média dos eleitores no novo <em>data frame</em>? Qual é a soma da renda no novo <em>data frame</em>?</p>
+
+<h2 id="função-subset">Função subset</h2>
+
+<p>Uma maneira alternativa de fazer a seleção de linhas é usar a função <em>subset</em>. Veja como (repetindo o exemplo de indivíduos identificados como &ldquo;independentes&rdquo;):</p>
+
+<pre><code class="language-r">fake_independents &lt;- subset(fake, party == &quot;Independent&quot;)
+</code></pre>
+
+<p>O resultado é o mesmo e você pode achar essa maneira mais elegante. Veremos, no futuro, outra ainda mais simples com o pacote <em>dplyr</em>.</p>
+
+<h2 id="criando-uma-nova-coluna">Criando uma nova coluna</h2>
+
+<p>Criar uma nova coluna em um <em>data frame</em> é trivial. Por exemplo, vamos criar a coluna &ldquo;vazia&rdquo;, onde colocaremos apenas &ldquo;missing values&rdquo;, que são representados no R por &ldquo;NA&rdquo;</p>
+
+<pre><code class="language-r">fake$vazia &lt;- NA
+</code></pre>
+
+<p>Podemos criar uma coluna a partir de outra(s). Por exemplo, vamos criar duas novas colunas, &ldquo;poupança&rdquo;, que será igual a coluna &ldquo;savings&rdquo; mas em real (cotação de um FM\$ &ndash; fake money &ndash; é R\$ 17, ou seja 1 <em>fake money</em> equivale a 17 reais) e a coluna &ldquo;savings_year&rdquo;, que será a divisão de &ldquo;savings&rdquo; por anos do indíviduo a partir dos 18.</p>
+
+<pre><code class="language-r">fake$poupanca &lt;- fake$savings / 17
+
+fake$savings_year &lt;- fake$savings / (fake$age - 18)
+</code></pre>
+
+<p>Você pode fazer qualquer operação com vetores que vimos em tutoriais anteriores para criar novas variáveis. A única imposição é que os vetores tenham sempre o mesmo tamanho, o que não é um problema em um <em>data frame</em>.</p>
+
+<p>Se quiser substituir o conteúdo de uma variável em vez de gerar uma nova, o procedimento é o mesmo. Basta atribuir o resultado da operação entre vetores à variável existente, tal qual no exemplo, que transforma &ldquo;age&rdquo; em uma variável medida em meses:</p>
+
+<pre><code class="language-r">fake$age &lt;- fake$age * 12
+</code></pre>
+
+<p>Vamos ver agora como substituir valores em uma variável para depois aprendermos a recodificarmos variáveis.</p>
+
+<h2 id="substituindo-valores-em-um-variável">Substituindo valores em um variável</h2>
+
+<p>Vamos &ldquo;traduzir&rdquo; para o português a variável &ldquo;party&rdquo;. Faremos isso alterando cada uma das categorias individualmente e, por enquanto, sem usar nenhuma função que auxilie a substituição de valores. Começemos com uma tabela simples da variável &ldquo;party&rdquo;</p>
+
+<pre><code class="language-r">table(fake$party)
+</code></pre>
+
+<p>Agora, observe o resultado do código abaixo:</p>
+
+<pre><code class="language-r">fake$party[fake$party == &quot;Independent&quot;]
+</code></pre>
+
+<p>Fizemos um subconjunto de apenas uma variável do <em>data frame</em>, e não do <em>data frame</em> todo. Note a ausência da vírgula dentro do colchetes, pois  Se atribuirmos algo a essa selação, por exemplo, o texto &ldquo;Independentes&rdquo;, substituiremos os valores da seleção:</p>
+
+<pre><code class="language-r">fake$party[fake$party == &quot;Independent&quot;] &lt;- &quot;Independente&quot;
+</code></pre>
+
+<p>Importante: a seleção do vetor (colchetes) está à direita do símbolo de atribuição.</p>
+
+<p>Observe o resultado na tabela:</p>
+
+<pre><code class="language-r">table(fake$party)
+</code></pre>
+
+<h2 id="exercício-3">Exercício</h2>
+
+<p>Traduza para o português as demais categorias da variável &ldquo;party&rdquo;.</p>
+
+<h2 id="substituição-com-o-comando-replace">Substituição com o comando replace</h2>
+
+<p>O procedimento de substituir valores em uma mesma variável pode ser alternativamente realizado com a função <em>replace</em>. Vamos traduzir para o português a variável &ldquo;sex&rdquo;</p>
+
+<pre><code class="language-r">fake$sex &lt;- replace(fake$sex, fake$sex == &quot;Female&quot;, &quot;Mulher&quot;)
+fake$sex &lt;- replace(fake$sex, fake$sex == &quot;Male&quot;, &quot;Homem&quot;)
+table(fake$sex)
+</code></pre>
+
+<h2 id="recodificando-uma-variável">Recodificando uma variável</h2>
+
+<p>Vamos supor que não nos interessa trabalhar com renda (&ldquo;income&rdquo;) como variável contínua. Vamos transformá-la na variável &ldquo;rich&rdquo;, que receberá valor &ldquo;rich&rdquo; se a renda for maior que FM\$ 3 mil e &ldquo;not rich&rdquo; caso contrário. Seguiremos o seguinte procedimento: criaremos uma variável com &ldquo;missing values&rdquo;; substituiremos os valores para os indivíduos ricos; e depois substituiremos os valores para os não-ricos. Note que a seleção da variável &ldquo;rich&rdquo; para a substituição de valores é feita utilizando a variável &ldquo;income&rdquo;:</p>
+
+<pre><code class="language-r">fake$rich &lt;- NA
+fake$rich[fake$income &gt; 3000] &lt;- &quot;rich&quot;
+fake$rich[fake$income &lt;= 3000] &lt;- &quot;not rich&quot;
+table(fake$rich)
+</code></pre>
+
+<h2 id="exercício-4">Exercício</h2>
+
+<p>Utilize o que você aprendeu sobre transformações de variáveis neste tutorial e o sobre fatores (&ldquo;factors&rdquo;) no tutorial 2 para transformar a variável &ldquo;rich&rdquo; em fatores.</p>
+
+<h2 id="exercício-mais-um">Exercício (mais um)</h2>
+
+<p>Crie a variável &ldquo;kids2&rdquo; que indica se o indivíduo tem algum filho (TRUE) ou nenhum (FALSE). Dica: essa é uma variável de texto, e não numérica.</p>
+
+<h2 id="recodificando-uma-variável-contínua-com-a-função-cut">Recodificando uma variável contínua com a função cut</h2>
+
+<p>Quando vamos recodificar uma variável contínua, podemos usar a função <em>cut</em>. Vamos repetir o exemplo da criação da variável &ldquo;rich&rdquo;, agora com &ldquo;rich2&rdquo;:</p>
+
+<pre><code class="language-r">fake$rich2 &lt;- cut(fake$income, 
+                  breaks = c(-Inf, 3000, Inf), 
+                  labels = c(&quot;não rico&quot;, &quot;rico&quot;))
+table(fake$rich2)
+</code></pre>
+
+<p>Algumas observações importantes: se a nova variável tiver 2 categorias, precisamos de 3 &ldquo;break points&rdquo;; &ldquo;-Inf&rdquo; e &ldquo;Inf&rdquo; são os símbolos do R para menos e mais infinito, respectivamente; por padrão, o R nao inclui o primeiro &ldquo;break point&rdquo; na primeira categoria, exceto se o argumento &ldquo;include.lowest&rdquo; for alterado para TRUE; também por padrão, os intervalos são fechados à direita, e abertos à esquerda (ou seja, incluem o valor superior que delimita o intervalor, mas não o inferior), exceto se &ldquo;right&rdquo; o argumento for alterado para FALSE.</p>
+
+<h2 id="exercício-5">Exercício</h2>
+
+<p>Crie a variável &ldquo;poupador&rdquo;, gerada a partir de avings_year (que criamos anteriormente, antes de transformar &ldquo;age&rdquo; em meses), e que separa os indivíduos que poupam muito (mais de FM/$ 1000 por ano) dos que poupam pouco. Use a função <em>cut</em>.</p>
+
+<h2 id="recodificando-uma-variável-contínua-com-a-função-recode">Recodificando uma variável contínua com a função recode</h2>
+
+<p>O equivalente da função <em>cut</em> para variáveis categóricas, estejam elas como texto ou como fatores é a função <em>recode</em>, do pacote <em>dplyr</em>. Seu uso é simples e intuitivo. Vamos recodificar como exemplo a variável &ldquo;educ&rdquo;:</p>
+
+<pre><code class="language-r">library(dplyr)
+fake$college &lt;- recode(fake$educ, 
+                       &quot;No High School Degree&quot; = &quot;No College&quot;,
+                       &quot;High School Degree&quot; = &quot;No College&quot;,
+                       &quot;College Incomplete&quot; = &quot;No College&quot;,
+                       &quot;College Degree or more&quot; = &quot;College&quot;)
+table(fake$college)
+</code></pre>
+
+<p>Podemos comparar as mudanças com uma tabela de 2 entradas:</p>
+
+<pre><code class="language-r">table(fake$college, fake$educ)
+</code></pre>
+
+<h2 id="exercício-6">Exercício</h2>
+
+<p>Crie a variável &ldquo;economia&rdquo;, que os indivíduos que avaliam a economia (variável &ldquo;economy&rdquo;) como &ldquo;Good&rdquo; ou melhor recebem o valor &ldquo;positivo&rdquo; e os demais recebem &ldquo;negativo&rdquo;.</p>
+
+<h2 id="ordenar-linhas-e-remover-linhas-duplicadas">Ordenar linhas e remover linhas duplicadas:</h2>
+
+<p>Finalmente, vamos ordenar linhas em um banco de dados e aprender a remover duplicidades. Com a função <em>order</em>, podemos gerar um vetor que indica qual a posição que cada linha deveria receber no ordenamento desejado. Vamos ordernar &ldquo;fake&rdquo; por renda.</p>
+
+<pre><code class="language-r">ordem &lt;- order(fake$income)
+print(ordem)
+</code></pre>
+
+<p>Se aplicarmos um vetor numérico com um novo ordenaemnto à parte destinada às linhas no colchetes, receberemos o <em>data frame</em> ordenado:</p>
+
+<pre><code class="language-r">fake_ordenado &lt;- fake[ordem, ]
+head(fake_ordenado)
+</code></pre>
+
+<p>Poderíamos ter aplicado a função order diretamente dentro dos colchetes:</p>
+
+<pre><code class="language-r">fake_ordenado &lt;- fake[order(fake$income), ]
+</code></pre>
+
+<p>Para encerrar, vamos duplicar articialmente parte dos nossos dados (as 10 primeiras linhas) usando o comando <em>rbind</em>, que &ldquo;empilha&rdquo; dois <em>data frames</em>:</p>
+
+<pre><code class="language-r">fake_duplicado &lt;- rbind(fake, fake[1:10, ])
+</code></pre>
+
+<p>Vamos ordenar para ver algumas duplicidades:</p>
+
+<pre><code class="language-r">fake_duplicado[order(fake_duplicado$income), ]
+</code></pre>
+
+<p>E agora removemos da seguinte maneira:</p>
+
+<pre><code class="language-r">fake_novo &lt;- fake_duplicado[!duplicated(fake_duplicado),]
+</code></pre>
+
+<p>Note que precisamos da exclamação (operador lógico &ldquo;não&rdquo;) para ficar com todas as linhas <strong>não</strong> duplicadas.</p>
+
+<h2 id="item-adicional-renomeando-variáveis">Item Adicional - Renomeando variáveis</h2>
+
+<p>Em breve veremos como renomear variáveis de uma maneira bastante mais simples. Por enquanto, vamos aprender o jeito trabalhoso de renomear um variável.</p>
+
+<p>Podemos observar os nomes das variáveis de um <em>data frame</em> usando o comando <em>names</em>:</p>
+
+<pre><code class="language-r">names(fake)
+</code></pre>
+
+<p>Os nomes das colunas são um vetor. Para renomear as variáveis, basta substituir o vetor de nomes por outro. Por exemplo, vamos manter todas as variáveis com o mesmo nome, exceto as três primeiras:</p>
+
+<pre><code class="language-r">names(fake) &lt;- c(&quot;idade&quot;, &quot;sexo&quot;, &quot;educacao&quot;, &quot;income&quot;, &quot;savings&quot;, &quot;marriage&quot;, &quot;kids&quot;, &quot;party&quot;, &quot;turnout&quot;, &quot;vote_history&quot;, &quot;economy&quot;, &quot;incumbent&quot;, &quot;candidate&quot;, &quot;vazia&quot;, &quot;poupanca&quot;, &quot;savings_year&quot;, &quot;rich&quot;, &quot;rich2&quot;, &quot;college&quot;)
+head(fake)
+</code></pre>
+
+<p>Você não precisa de um vetor com todos os nomes sempre que precisar alterar algum. Basta conhecer a posição da variável que quer alterar. Veja um exemplo com &ldquo;marriage&rdquo;, que está na sexta posição:</p>
+
+<pre><code class="language-r">names(fake)[6] &lt;- &quot;casado&quot;
+</code></pre>
+
+<p>Simples, porém um pouco mala.</p>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2019 Released under the MIT license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="../tutorial12/" title="Gráficos no R">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Gráficos no R
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="../mapas/" title="Mapas">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Mapas
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = '\/';
+      var repo_id  = 'R4CS\/site';
+    
+    </script>
+
+    <script src="../javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-119683862-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
+    
+
+    <script src="../javascripts/prism.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
