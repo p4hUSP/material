@@ -76,6 +76,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 	name   = "Web Scraping"
 	url    = "webscraping/"
 	weight = 20
+
+[[menu.main]]
+	name   = "Web Scraping - rvest"
+	url    = "webscraping_rvest/"
+	weight = 20
 	
 [[menu.main]]
  	name   = "SQL"
